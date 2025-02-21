@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
-[ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/2-19-25 Hello, Earl.mp3" id="2_fyrm4"]
+[ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
 [ext_resource type="Script" path="res://Scripts/day-cycle.gd" id="4_fxdxl"]
 [ext_resource type="PackedScene" uid="uid://cj68v47c1clgg" path="res://scenes/Level 1/World.tscn" id="5_7vcgx"]
 

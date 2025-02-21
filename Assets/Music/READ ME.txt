@@ -1,0 +1,17 @@
+I've included all of the sections, what the new arrangement started from, and what it sounds like after looping the looping tracks as if they were implimented in the game.
+
+the first track, a, is designed to be crossfaded with the next, b. I've also left a long tail on A incase the player takes forever.
+
+B is designed to play right at the start of the game. I think it'd be cool to have the duration of B last until the early sunrise, where the game will pause the daylight cycle as it's new minimum. B's end will perfectly align with the beginning of this mechanic.
+
+From there, C will be looped. no need for a crossfade, it lines up. that being said, there was some exporting cringe in fl studio where some of the sections' wave forms start ever so slightly after the track starts, so there might be a bit of a glitchy start in between each section, but this may not happen in engine. you may want to experiment with cross fading
+
+once a daycycle milestone is hit, D will play through and then lead right into E which wil loop. There should also be milestones for losing progress. I think you should be able to crossfade back to the previous looping section and it work musically. I don't know the logistics of this, but I thought you might try playing a loop and a previous loop at the same time, but the old loop stays muted until potential backward progress happens, then a cross fade could happen and the two loops would swap and they'd be in time with eachother. this may cause issues when crossing a threshold going backward and then making forward preogress past the threshold quickly, becuase the transition track might get triggered suboptimally. Might try putting the backwards milestone further back than its cooresponding forward milestone, that is, if you choose to code this system like this.
+
+DE, FG, and HI all should work the same.
+
+I've edited J slightly from the origianl track to make it sound cooler. reverby, flanger, panomatic magic, cool ambience. anyways, I think it should play only when the player enters the basement, and I think the doors should close behind them. I think you'll get the vibe.
+
+anyways, good luck
+
+P.S. I like the original metre better, but I needed to standardize the different sections to all be easily loopable, and in doing so, I destroyed the origianl metre. I hope this is worth it.

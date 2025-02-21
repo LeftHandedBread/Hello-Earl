@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dviktw7wfv5e4"
+path="res://.godot/imported/Pre Chop Mix.mp3-9b8ba9453059b39fc70a05929a3951d3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Pre Chop Mix.mp3"
+dest_files=["res://.godot/imported/Pre Chop Mix.mp3-9b8ba9453059b39fc70a05929a3951d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
