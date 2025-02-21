@@ -189,17 +189,17 @@ autoplay = true
 parameters/looping = true
 script = SubResource("GDScript_gedvi")
 
-[node name="enviroment" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485046, 0.712285, 0.156724)
+[node name="Day Cycle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485046, 50.7393, 0.156724)
 script = SubResource("GDScript_gedvi")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="enviroment"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Day Cycle"]
 environment = SubResource("Environment_hatdx")
 
-[node name="Node3D" type="Node3D" parent="enviroment/WorldEnvironment"]
+[node name="Node3D" type="Node3D" parent="Day Cycle/WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviroment/WorldEnvironment/Node3D"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
 transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858065, -0.485046, 4.10208, 3.41707)
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 2.16
@@ -211,18 +211,18 @@ shadow_bias = 0.0
 shadow_normal_bias = 1.495
 shadow_blur = 2.793
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="enviroment/WorldEnvironment/Node3D/DirectionalLight3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]
 transform = Transform3D(154.605, 0, 0, 0, 154.605, 0, 0, 0, 154.605, 0, -2.07424e-05, 483.623)
 mesh = SubResource("SphereMesh_lbn6l")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="enviroment/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
 transform = Transform3D(1, 0, -2.98023e-08, 2.98023e-08, 1, -2.98023e-08, -2.98023e-08, 0, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="enviroment/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 2.98023e-08, 1, 0, 0, 0)
 shape = SubResource("SphereShape3D_v3sq0")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enviroment"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle"]
 root_node = NodePath("../WorldEnvironment/Node3D/DirectionalLight3D")
 libraries = {
 "": SubResource("AnimationLibrary_k13is")
