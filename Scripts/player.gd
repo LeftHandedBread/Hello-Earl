@@ -1,0 +1,162 @@
+class_name PlayerCharacter
+extends CharacterBody3D
+
+enum CharacterState {
+	WALKING = 0,
+	CROUCHING = 1
+}
+
+# All of the actually important stuff
+@onready var head := $head
+@onready var plrGUI := $PlayerGUI
+@onready var InteractRaycast := $head/RayCast3D
+@onready var camera := $head/Camera3D
+@onready var animator := $AnimationPlayer
+var currentBody : Interactible3D = null
+var currentState : CharacterState = CharacterState.WALKING
+@onready var SPEED = DEFAULT_SPEED # DEFAULT_SPEED doesn't load until _ready(), so we have to use @onready (you could also just move SPEED a bit to the bottom)
+
+# Options
+@export var DEFAULT_SPEED := 5
+@export var JUMP_VELOCITY := 7.5
+@export var mouse_sensitivity := 0.1
+@export var CROUCH_SPEED := 2.5
+@export var GROUND_FRICTION := 10
+@export var AIR_FRICTION := 0.5
+@export var GRAVITY_MULTIPLIER := 2
+var inputEnabled := true # can the player move?
+var aimlookEnabled := true # can the player look around?
+var interactionsEnabled := true # can the player interact with Interactibles3D?
+
+#region Main control flow 
+
+func _ready():
+	$MeshInstance3D.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	GameManager.player = self
+	change_state(CharacterState.WALKING)
+
+func _physics_process(delta: float) -> void:
+	if !inputEnabled:
+		return
+	
+	# Apply gravity if in the air
+	if not is_on_floor():
+		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
+	
+	# Jumping
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	
+	# Get movement input
+	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	# Movement
+	if direction != Vector3.ZERO:
+		# Accelerate towards movement direction
+		velocity.x = lerp(velocity.x, direction.x * SPEED, 0.1)  # Adjust 0.1 for smoothness
+		velocity.z = lerp(velocity.z, direction.z * SPEED, 0.1)  # Adjust 0.1 for smoothness
+	else:
+		# Apply friction to gradually stop movement
+		if is_on_floor():
+			velocity.x = move_toward(velocity.x, 0, GROUND_FRICTION * delta)
+			velocity.z = move_toward(velocity.z, 0, GROUND_FRICTION * delta)
+		else:
+			velocity.x = move_toward(velocity.x, 0, AIR_FRICTION * delta)
+			velocity.z = move_toward(velocity.z, 0, AIR_FRICTION * delta)
+	
+	# All of the other processing functions go here
+	_process_interact()
+	_handle_states()
+	
+	move_and_slide()
+#endregion
+
+#region Processing input
+
+func _process_interact():
+	if !interactionsEnabled:
+		return
+	
+	# Check if the raycast detects a collision
+	if not InteractRaycast.is_colliding():
+		plrGUI.update_text("")
+		return
+	
+	# Get the collider hit by the RayCast
+	var collider = InteractRaycast.get_collider()
+	
+	# Ensure the collider is an interactable object
+	if not collider is Interactible3D:
+		plrGUI.update_text("")
+		return
+	
+	if collider == currentBody and not Input.is_action_just_pressed("interact"): # This is a bit hacky imo, but works
+		plrGUI.update_text(currentBody.InteractText)
+		return
+	
+	currentBody = collider
+	plrGUI.update_text(currentBody.InteractText)
+	if Input.is_action_just_pressed("interact") && currentBody.CanInteract:
+		currentBody.OnInteract.emit()
+
+
+# Handles the mouse 🐁🐁🐁🐁🐁🐁🐁🐁
+func _unhandled_input(event : InputEvent):
+	if !aimlookEnabled:
+		return
+	
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		var mouseInput : Vector2
+		mouseInput.x += event.relative.x
+		mouseInput.y += event.relative.y
+		self.rotation_degrees.y -= mouseInput.x * mouse_sensitivity
+		head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
+
+#endregion
+
+#region Processing Character States
+
+## Handles the input for character state changing. 
+func _handle_states():
+	if Input.is_action_just_pressed("crouch"):
+		if currentState == CharacterState.CROUCHING:
+			change_state(CharacterState.WALKING)
+		else:
+			change_state(CharacterState.CROUCHING)
+	elif Input.is_action_pressed("sprint"):
+		if currentState == CharacterState.CROUCHING:
+			return
+	else:
+		if currentState != CharacterState.WALKING and currentState != CharacterState.CROUCHING:
+			change_state(CharacterState.WALKING)
+
+## Handles the state changing itself. This function must be fired only once, and not run every single frame. 
+func change_state(state : CharacterState):
+	match state:
+		CharacterState.CROUCHING:
+			animator.play("crouch")
+			SPEED = CROUCH_SPEED
+		CharacterState.WALKING:
+			if currentState == CharacterState.CROUCHING:
+				animator.play_backwards("crouch")
+			SPEED = DEFAULT_SPEED
+	
+	currentState = state
+	
+func sit(target_transform: Transform3D):
+	# Disable movement controls
+	inputEnabled = true
+	interactionsEnabled = true
+	change_state(CharacterState.CROUCHING)
+	
+	# Move the player to the seat
+	global_transform = target_transform
+
+func stand_up():
+	# Enable movement controls again
+	inputEnabled = true
+	interactionsEnabled = true
+
+#endregion

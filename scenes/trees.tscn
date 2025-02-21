@@ -1,0 +1,156 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwp5wxi30rh5c"]
+
+[ext_resource type="PackedScene" uid="uid://cpe3ef5mmvdao" path="res://raw assets/trees/uploads_files_3523647_shapespark-low-poly-plants-kit.gltf" id="1_0wc51"]
+
+[node name="uploads_files_3523647_shapespark-low-poly-plants-kit" instance=ExtResource("1_0wc51")]
+
+[node name="Tree-01-1" parent="." index="0"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-01-2" parent="." index="1"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-01-3" parent="." index="2"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-01-4" parent="." index="3"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-02-1" parent="." index="4"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-02-2" parent="." index="5"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-02-3" parent="." index="6"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-02-4" parent="." index="7"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-03-1" parent="." index="8"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-03-2" parent="." index="9"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-03-3" parent="." index="10"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Tree-03-4" parent="." index="11"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Hedge-01" parent="." index="12"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Bush-01" parent="." index="13"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Bush-02" parent="." index="14"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Bush-03" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20959, 0.0213468, 7.38199)
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Bush-04" parent="." index="16"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Bush-05" parent="." index="17"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Clover-01" parent="." index="18"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Clover-02" parent="." index="19"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Clover-03" parent="." index="20"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Clover-04" parent="." index="21"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Clover-05" parent="." index="22"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Grass-01" parent="." index="23"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Grass-02" parent="." index="24"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Grass-03" parent="." index="25"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Flowers-02" parent="." index="26"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Flowers-04" parent="." index="27"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Flowers-01" parent="." index="28"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1
+
+[node name="Flowers-03" parent="." index="29"]
+lod_bias = 0.001
+ignore_occlusion_culling = true
+visibility_range_fade_mode = 1

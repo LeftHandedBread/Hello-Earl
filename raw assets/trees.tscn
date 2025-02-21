@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwp5wxi30rh5c"]
+
+[ext_resource type="PackedScene" uid="uid://cpe3ef5mmvdao" path="res://raw assets/trees/uploads_files_3523647_shapespark-low-poly-plants-kit.gltf" id="1_wqwjb"]
+
+[node name="uploads_files_3523647_shapespark-low-poly-plants-kit" instance=ExtResource("1_wqwjb")]
+
+[node name="Bush-03" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20959, 0.0213468, 7.38199)

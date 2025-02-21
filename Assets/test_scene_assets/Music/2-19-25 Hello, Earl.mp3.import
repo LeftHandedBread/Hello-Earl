@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cag0olqpj7kse"
+path="res://.godot/imported/2-19-25 Hello, Earl.mp3-e1c55d4a93048e844e8b0cefc1b94257.mp3str"
+
+[deps]
+
+source_file="res://Assets/test_scene_assets/Music/2-19-25 Hello, Earl.mp3"
+dest_files=["res://.godot/imported/2-19-25 Hello, Earl.mp3-e1c55d4a93048e844e8b0cefc1b94257.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

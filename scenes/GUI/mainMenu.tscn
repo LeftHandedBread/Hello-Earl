@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://ee6lb27nmpu1"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_2s5sd"]
+[ext_resource type="PackedScene" uid="uid://bs035oor8cgug" path="res://scenes/GUI/SettingsWindow.tscn" id="2_m3nvr"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2s5sd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20871, 0.20871, 0.20871, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -200.0
+offset_right = 128.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Hello, Earl"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 300.0
+offset_right = 688.0
+offset_bottom = 482.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit to desktop"
+
+[node name="Settings" parent="." instance=ExtResource("2_m3nvr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 468.0
+offset_top = 239.0
+offset_right = 690.0
+offset_bottom = 490.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_play"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_settings"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_quit"]
+[connection signal="Closing" from="Settings" to="." method="_on_close_button"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1bpkmxrhtaih"]
+
+[ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://raw assets/geode asset/geode.gltf" id="1_yx2ed"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="geode" parent="." instance=ExtResource("1_yx2ed")]
+transform = Transform3D(0.952677, 0.172104, 0.250572, 0.303983, -0.53937, -0.785286, -5.3728e-08, 0.824294, -0.566162, -0.214506, 0, 0.066531)

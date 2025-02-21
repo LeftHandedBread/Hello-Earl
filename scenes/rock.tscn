@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bpkmxrhtaih"]
+
+[ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/geode asset/geode.gltf" id="1_yx2ed"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_77i1v"]
+radius = 0.843582
+
+[node name="Node3D" type="Node3D"]
+
+[node name="geode" parent="." instance=ExtResource("1_yx2ed")]
+transform = Transform3D(1, 0, 0, 0, -0.566162, -0.824294, 0, 0.824294, -0.566162, -0.214506, 0, 0.066531)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="geode"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="geode/StaticBody3D"]
+shape = SubResource("SphereShape3D_77i1v")

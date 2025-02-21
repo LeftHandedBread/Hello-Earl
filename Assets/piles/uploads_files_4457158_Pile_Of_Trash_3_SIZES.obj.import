@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dl2uch8t767jj"
+path="res://.godot/imported/uploads_files_4457158_Pile_Of_Trash_3_SIZES.obj-279a8622ea3e579a1ba193df8a81a889.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uploads_files_4457158_Pile_Of_Trash_3_SIZES.obj-279a8622ea3e579a1ba193df8a81a889.mesh"]
+
+source_file="res://Assets/piles/uploads_files_4457158_Pile_Of_Trash_3_SIZES.obj"
+dest_files=["res://.godot/imported/uploads_files_4457158_Pile_Of_Trash_3_SIZES.obj-279a8622ea3e579a1ba193df8a81a889.mesh", "res://.godot/imported/uploads_files_4457158_Pile_Of_Trash_3_SIZES.obj-279a8622ea3e579a1ba193df8a81a889.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
