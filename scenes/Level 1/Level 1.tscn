@@ -1,0 +1,234 @@
+[gd_scene load_steps=15 format=3 uid="uid://piq1qo6dhgdh"]
+
+[ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
+[ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/2-19-25 Hello, Earl.mp3" id="2_fyrm4"]
+[ext_resource type="Script" path="res://Scripts/day-cycle.gd" id="4_fxdxl"]
+[ext_resource type="PackedScene" uid="uid://cj68v47c1clgg" path="res://scenes/Level 1/World.tscn" id="5_7vcgx"]
+
+[sub_resource type="GDScript" id="GDScript_gedvi"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mu0k0"]
+filter = false
+
+[sub_resource type="Sky" id="Sky_ih2gf"]
+sky_material = SubResource("PanoramaSkyMaterial_mu0k0")
+
+[sub_resource type="Environment" id="Environment_hatdx"]
+background_mode = 2
+sky = SubResource("Sky_ih2gf")
+sky_rotation = Vector3(0, 0, -0.794125)
+ambient_light_source = 2
+ambient_light_color = Color(0.767196, 0.930646, 0.995519, 1)
+ambient_light_energy = 0.1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0.132272, 0.21706, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_begin = 50.0
+volumetric_fog_albedo = Color(0.0652313, 0.261841, 0.241536, 1)
+volumetric_fog_emission = Color(0.955963, 0.955963, 0.955963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gflcj"]
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lbn6l"]
+material = SubResource("StandardMaterial3D_gflcj")
+radial_segments = 20
+rings = 11
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v3sq0"]
+
+[sub_resource type="Animation" id="Animation_5m47g"]
+resource_name = "Day"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.14159, 1.46608, 0), Vector3(3.14159, 1.46608, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.23333, 6.53333, 23.3333, 28.8667, 32.2, 33.7333, 58, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.932913, 0.42069, 3.85046e-07, 1), Color(1, 1, 0.72549, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 0.72549, 1), Color(0.932913, 0.42069, 3.85046e-07, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.932913, 0.42069, 3.85046e-07, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:mesh:material:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-1.90735e-06, 2.23333, 28.8667, 31.9, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.932913, 0.42069, 3.85046e-07, 1), Color(1, 1, 0.72549, 1), Color(1, 1, 0.72549, 1), Color(0.932913, 0.42069, 3.85046e-07, 1), Color(0.932913, 0.42069, 3.85046e-07, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:environment:fog_light_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.53333, 4.5, 26, 30.8333, 33.0333, 33.8333, 57.8333, 60.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0.132272, 0.21706, 1), Color(1, 0.627451, 0.72549, 1), Color(0.671268, 0.956535, 1, 1), Color(0.671268, 0.956535, 1, 1), Color(1, 0.627451, 0.72549, 1), Color(0, 0.132272, 0.21706, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0.132272, 0.21706, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..:environment:fog_sky_affect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.33786e-06, 1.23333, 31.5667, 33.8, 58.8667),
+"transitions": PackedFloat32Array(1, 2.54912, 2.14355, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sr7h4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(6.28319, -0.539307, 1.21649), Vector3(-3.14159, 1.46608, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.932913, 0.42069, 3.85046e-07, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:mesh:material:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-1.90735e-06),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.932913, 0.42069, 3.85046e-07, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:environment:fog_light_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.132272, 0.21706, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..:environment:fog_sky_affect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
+_data = {
+"Day": SubResource("Animation_5m47g"),
+"RESET": SubResource("Animation_sr7h4")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xbq7m")]
+transform = Transform3D(0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, -33.9041, 0.340559, 35.878)
+floor_max_angle = 0.872665
+safe_margin = 0.01
+GRAVITY_MULTIPLIER = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fyrm4")
+autoplay = true
+parameters/looping = true
+script = SubResource("GDScript_gedvi")
+
+[node name="enviroment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485046, 0.712285, 0.156724)
+script = SubResource("GDScript_gedvi")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="enviroment"]
+environment = SubResource("Environment_hatdx")
+
+[node name="Node3D" type="Node3D" parent="enviroment/WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviroment/WorldEnvironment/Node3D"]
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858065, -0.485046, 4.10208, 3.41707)
+light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
+light_energy = 2.16
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 1.495
+shadow_blur = 2.793
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enviroment/WorldEnvironment/Node3D/DirectionalLight3D"]
+transform = Transform3D(154.605, 0, 0, 0, 154.605, 0, 0, 0, 154.605, 0, -2.07424e-05, 483.623)
+mesh = SubResource("SphereMesh_lbn6l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="enviroment/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 2.98023e-08, 1, -2.98023e-08, -2.98023e-08, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enviroment/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, -2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 2.98023e-08, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_v3sq0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enviroment"]
+root_node = NodePath("../WorldEnvironment/Node3D/DirectionalLight3D")
+libraries = {
+"": SubResource("AnimationLibrary_k13is")
+}
+autoplay = "Day"
+speed_scale = 0.05
+script = ExtResource("4_fxdxl")
+
+[node name="World" parent="." instance=ExtResource("5_7vcgx")]

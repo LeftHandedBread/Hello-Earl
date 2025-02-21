@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6jyj2gxhphso"]
+
+[ext_resource type="PackedScene" uid="uid://b4tv05j7krx5t" path="res://Assets/Level 1/objects/boulder2.gltf" id="1_5xbe3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="boulder2" parent="." instance=ExtResource("1_5xbe3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0188591, -1.19209e-07, -0.0208516)
