@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://iehjwfldlrrn"]
+[gd_scene load_steps=5 format=3 uid="uid://iehjwfldlrrn"]
 
 [ext_resource type="PackedScene" uid="uid://ch73x2bfq1bxu" path="res://Assets/Level 1/objects/flashlight.gltf" id="1_tkew2"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/flahslight_interactable.gd" id="2_jnats"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/mesh_tools.gd" id="3_3b6c6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_217fh"]
+size = Vector3(0.286133, 0.112305, 0.143555)
 
 [node name="flashlight" instance=ExtResource("1_tkew2")]
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(0.300003, -4.86944, 0, 1.80494, 0.809361, 0, 0, 0, 5.35228, 0.01087, 0.0953845, 0.000351111)
+script = ExtResource("3_3b6c6")
+
+[node name="Interactible3D" type="Area3D" parent="." index="1"]
+transform = Transform3D(0.936305, 0.351188, 0, -0.351188, 0.936305, 0, 0, 0, 1, 0, 0.0777391, 0)
+script = ExtResource("2_jnats")
+InteractText = "E - Pickup \\n F - Toggle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D" index="0"]
+transform = Transform3D(0.981561, -0.191152, 0, 0.191152, 0.981561, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_217fh")
