@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://bf3fv7uapkgip"]
 
-[ext_resource type="Texture2D" uid="uid://cqmmwvn2v3us0" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_shrubbery-1-01.png" id="1_qano7"]
-[ext_resource type="Texture2D" uid="uid://cd350w5nw5ejr" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_shrubbery-1-02.png" id="2_ufoj7"]
+[ext_resource type="Texture2D" uid="uid://dq0cw0fngxxwj" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_shrubbery-1-01.png" id="1_qano7"]
+[ext_resource type="Texture2D" uid="uid://cwdodxf3vovnd" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_shrubbery-1-02.png" id="2_ufoj7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofqh6"]
 resource_name = "shrubbery-2-01"
