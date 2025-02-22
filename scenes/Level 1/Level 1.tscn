@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=19 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
@@ -6,6 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://cj68v47c1clgg" path="res://scenes/Level 1/World.tscn" id="5_7vcgx"]
 
 [sub_resource type="GDScript" id="GDScript_gedvi"]
+
+[sub_resource type="Curve" id="Curve_o82yl"]
+_data = [Vector2(0, 0.054945), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_eydtw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.923077), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g0gvs"]
+_data = [Vector2(0, 0.208791), 0.0, 0.0, 0, 0, Vector2(0.484211, 0.406593), 0.875576, 0.875576, 0, 0, Vector2(1, 0.868132), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_kisck"]
+curve_x = SubResource("Curve_o82yl")
+curve_y = SubResource("Curve_eydtw")
+curve_z = SubResource("Curve_g0gvs")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mu0k0"]
 filter = false
@@ -20,14 +37,25 @@ sky_rotation = Vector3(0, 0, -0.794125)
 ambient_light_source = 2
 ambient_light_color = Color(0.767196, 0.930646, 0.995519, 1)
 ambient_light_energy = 0.1
+tonemap_mode = 2
+tonemap_exposure = 0.9
 fog_enabled = true
-fog_mode = 1
 fog_light_color = Color(0, 0.132272, 0.21706, 1)
-fog_density = 1.0
+fog_light_energy = 1.33
+fog_sun_scatter = 0.17
+fog_density = 0.005
+fog_aerial_perspective = 0.295
 fog_sky_affect = 0.0
-fog_depth_begin = 50.0
+fog_height_density = 0.3368
+fog_depth_curve = 2.0
+fog_depth_begin = 20.0
 volumetric_fog_albedo = Color(0.0652313, 0.261841, 0.241536, 1)
 volumetric_fog_emission = Color(0.955963, 0.955963, 0.955963, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.2
+adjustment_saturation = 0.85
+adjustment_color_correction = SubResource("CurveXYZTexture_kisck")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gflcj"]
 transparency = 1
@@ -67,7 +95,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.23333, 6.53333, 23.3333, 28.8667, 32.2, 33.7333, 58, 60),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.932913, 0.42069, 3.85046e-07, 1), Color(1, 1, 0.72549, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 0.72549, 1), Color(0.932913, 0.42069, 3.85046e-07, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.932913, 0.42069, 3.85046e-07, 1)]
+"values": [Color(0.507927, 0.216055, 0, 1), Color(1, 1, 0.72549, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 0.72549, 1), Color(0.485416, 0.205216, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.932913, 0.42069, 3.85046e-07, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -104,6 +132,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 2.54912, 2.14355, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 2.2, 6.53333, 15.2667, 28.3333, 32.2, 33.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.676, 2.973, 4.0, 6.0, 4.0, 1.676, 1.5]
 }
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
@@ -168,6 +208,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
 _data = {
@@ -209,7 +261,7 @@ light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 1.5
-shadow_opacity = 0.95
+shadow_opacity = 0.85
 shadow_blur = 2.177
 directional_shadow_split_1 = 0.11
 directional_shadow_split_2 = 0.19
