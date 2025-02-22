@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=10 format=3 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yofdb"]
+[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="2_ecvki"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/GUI/PlayerGUI.tscn" id="2_ywley"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
@@ -102,6 +103,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -1.815)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="flashlight" type="SpotLight3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00164127, 0)
+light_energy = 0.0
+spot_range = 381.099
+spot_angle = 40.0583
+script = ExtResource("2_ecvki")
 
 [node name="PlayerGUI" parent="." instance=ExtResource("2_ywley")]
 
