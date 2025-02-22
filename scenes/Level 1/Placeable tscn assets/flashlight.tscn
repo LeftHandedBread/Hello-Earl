@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://iehjwfldlrrn"]
+
+[ext_resource type="PackedScene" uid="uid://ch73x2bfq1bxu" path="res://Assets/Level 1/objects/flashlight.gltf" id="1_tkew2"]
+
+[node name="flashlight" instance=ExtResource("1_tkew2")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.300003, -4.86944, 0, 1.80494, 0.809361, 0, 0, 0, 5.35228, 0.01087, 0.0953845, 0.000351111)

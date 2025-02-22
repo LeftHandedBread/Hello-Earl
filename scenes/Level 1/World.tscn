@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=40 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://dredxxiopatnc" path="res://Assets/Level 1/objects/Untitled.jpg" id="1_gd2aq"]
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://c33vneo5j8nu3" path="res://scenes/Level 1/Placeable tscn assets/clover2.tscn" id="32_rekgv"]
 [ext_resource type="PackedScene" uid="uid://big4cclh1y3kj" path="res://scenes/Level 1/Placeable tscn assets/door.tscn" id="33_4tqj2"]
 [ext_resource type="PackedScene" uid="uid://ctq8qk8vlib4l" path="res://scenes/Level 1/Placeable tscn assets/rock E.tscn" id="33_umj4v"]
+[ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="34_d58lb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhjpk"]
 resource_name = "Material.001"
@@ -1069,3 +1070,6 @@ transform = Transform3D(0.0552158, 0.162178, -0.985216, -0.116274, 0.981052, 0.1
 
 [node name="Node3D298" parent="." instance=ExtResource("24_33myn")]
 transform = Transform3D(0.924672, 0.380764, 0, -0.380764, 0.924672, 0, 0, 0, 1, -43.8013, 0.486348, -6.78362)
+
+[node name="flashlight" parent="." instance=ExtResource("34_d58lb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6393, -1.19209e-07, 35.43)
