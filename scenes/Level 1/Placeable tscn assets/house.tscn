@@ -331,7 +331,7 @@ roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12v3l"]
 resource_name = "Material.015"
-transparency = 4
+transparency = 1
 cull_mode = 2
 albedo_color = Color(0.577914, 0.746468, 0.906806, 0.230159)
 metallic = 0.81746

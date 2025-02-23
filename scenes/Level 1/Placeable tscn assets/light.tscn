@@ -19,6 +19,7 @@ light_color = Color(0.955851, 0.857204, 0.600687, 1)
 light_energy = 3.225
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
+spot_range = 10.0
 spot_angle = 85.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." index="4"]
