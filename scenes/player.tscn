@@ -84,6 +84,7 @@ floor_max_angle = 0.877901
 floor_snap_length = 0.0
 safe_margin = 0.1
 script = ExtResource("1_yofdb")
+GROUND_FRICTION = 20
 GRAVITY_MULTIPLIER = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

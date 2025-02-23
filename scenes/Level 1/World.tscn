@@ -719,7 +719,7 @@ transform = Transform3D(0.839658, 0, 0.543116, 0, 1, 0, -0.543116, 0, 0.839658, 
 [node name="Node3D53" parent="." instance=ExtResource("33_4tqj2")]
 transform = Transform3D(-0.125697, 0, 0.992069, 0, 1, 0, -0.992069, 0, -0.125697, 34.8232, 1.19209e-07, 28.4301)
 
-[node name="Node3D197" parent="." instance=ExtResource("24_d2yq2")]
+[node name="House" parent="." instance=ExtResource("24_d2yq2")]
 
 [node name="Grid" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_36dsk")
