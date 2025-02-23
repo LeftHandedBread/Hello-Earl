@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgbae8m6j40b0"]
+
+[ext_resource type="PackedScene" uid="uid://b4tv05j7krx5t" path="res://Assets/Level 1/objects/boulder2.gltf" id="1_8gq7e"]
+
+[node name="boulder2" instance=ExtResource("1_8gq7e")]

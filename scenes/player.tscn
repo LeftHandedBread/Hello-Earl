@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/GUI/PlayerGUI.tscn" id="2_ywley"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
-radius = 0.497944
+radius = 0.45826
 height = 3.3011
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
@@ -85,7 +85,7 @@ floor_snap_length = 0.0
 safe_margin = 0.1
 script = ExtResource("1_yofdb")
 GROUND_FRICTION = 20
-GRAVITY_MULTIPLIER = 3
+AIR_FRICTION = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)

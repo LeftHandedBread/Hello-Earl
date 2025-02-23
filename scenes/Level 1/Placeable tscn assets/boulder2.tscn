@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6jyj2gxhphso"]
 
-[ext_resource type="PackedScene" uid="uid://b4tv05j7krx5t" path="res://Assets/Level 1/objects/boulder2.gltf" id="1_5xbe3"]
+[ext_resource type="PackedScene" uid="uid://dgbae8m6j40b0" path="res://scenes/Level 1/Placeable tscn assets/boulder_2_inherited.tscn" id="1_i2tts"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="boulder2" parent="." instance=ExtResource("1_5xbe3")]
+[node name="boulder2" parent="." instance=ExtResource("1_i2tts")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0188591, -1.19209e-07, -0.0208516)
