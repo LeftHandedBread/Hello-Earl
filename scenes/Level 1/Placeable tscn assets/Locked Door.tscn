@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://duca5dns4bioq" path="res://Assets/Level 1/objects/door.gltf" id="1_7pa0s"]
 
 [node name="door2" instance=ExtResource("1_7pa0s")]
+
+[node name="Cube_001" parent="." index="2"]
+transform = Transform3D(-0.03, 0, -4.37114e-09, 0, 0.05, 0, 2.62268e-09, 0, -0.05, 0.06, 0.85, -0.75)
