@@ -127,4 +127,31 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_gpfxj")
 
 [node name="Node3D" parent="." instance=ExtResource("4_yo6oh")]
-transform = Transform3D(1.80814, 0, 0.0365808, 0, 1.80851, 0, -0.0365808, 0, 1.80814, -0.0692445, 0.916992, -1.48856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0474585, 0.782628, -1.17629)
+
+[node name="Node3D2" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.834906, 0, 0.550393, 0, 1, 0, -0.550393, 0, 0.834906, -0.906746, 1.38971, -0.861759)
+
+[node name="Node3D3" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.428746, 0, -0.903425, 0, 1, 0, 0.903425, 0, 0.428746, -1.12358, 2.11973, -0.0419705)
+
+[node name="Node3D4" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.647189, 0, -0.76233, 0, 1, 0, 0.76233, 0, 0.647189, -0.573482, 2.78922, 1.15725)
+
+[node name="Node3D5" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.782347, 0, 0.622842, 0, 1, 0, -0.622842, 0, 0.782347, 0.446388, 3.5061, 0.894615)
+
+[node name="Node3D6" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.468192, 0, -0.883627, 0, 1, 0, 0.883627, 0, 0.468192, 0.629194, 4.34738, -0.249442)
+
+[node name="Node3D7" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.993238, 0, 0.116099, 0, 1, 0, -0.116099, 0, 0.993238, -0.543489, 5.32614, -0.698552)
+
+[node name="Node3D8" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.491846, 0, -0.870682, 0, 1, 0, 0.870682, 0, 0.491846, -1.10971, 6.32495, 0.609937)
+
+[node name="Node3D9" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.500922, 0, -0.865493, 0, 1, 0, 0.865493, 0, 0.500922, -0.975438, 6.32461, 0.863386)
+
+[node name="Node3D10" parent="." instance=ExtResource("4_yo6oh")]
+transform = Transform3D(0.483145, 0, -0.87554, 0, 1, 0, 0.87554, 0, 0.483145, -0.825266, 6.33274, 1.14847)

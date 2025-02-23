@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=44 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://dredxxiopatnc" path="res://Assets/Level 1/objects/Untitled.jpg" id="1_gd2aq"]
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://df66g4ei4hlsk" path="res://scenes/Level 1/Placeable tscn assets/sign.tscn" id="35_wi3uo"]
 [ext_resource type="PackedScene" uid="uid://bygwej3ni6auw" path="res://scenes/Level 1/Placeable tscn assets/light.tscn" id="36_vx0nf"]
 [ext_resource type="PackedScene" uid="uid://e6gvr2nfotnq" path="res://scenes/Level 1/tree puzzle.tscn" id="37_0p0x8"]
+[ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="38_aggnv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhjpk"]
 resource_name = "Material.001"
@@ -1850,3 +1851,6 @@ transform = Transform3D(-8.70203e-09, 0.199079, 0.0191691, -0.2, -8.74228e-09, 0
 
 [node name="Node3D197" parent="." instance=ExtResource("37_0p0x8")]
 transform = Transform3D(-0.624684, 0, 0.780878, 0, 1, 0, -0.780878, 0, -0.624684, 47.4123, 2.01942, -46.3894)
+
+[node name="Node3D415" parent="." instance=ExtResource("38_aggnv")]
+transform = Transform3D(-0.521963, 0, 0.852968, 0, 1, 0, -0.852968, 0, -0.521963, 49.2315, 8.37354, -46.1143)
