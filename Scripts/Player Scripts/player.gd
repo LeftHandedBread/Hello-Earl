@@ -132,7 +132,6 @@ func _unhandled_input(event : InputEvent):
 			head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
 	
 	var head_x_rot = fposmod(head.rotation_degrees.x, 360)
-	print(head_x_rot)
 	if head_x_rot > 90 and head_x_rot < 270 :
 		isUpsideDown = true
 	else :
