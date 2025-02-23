@@ -88,21 +88,6 @@ shadow_mesh = SubResource("ArrayMesh_whqtp")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ludrx"]
 size = Vector3(5.48776, 1.5058, 1.29504)
 
-[sub_resource type="Animation" id="Animation_125es"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_57q15"]
 resource_name = "Door Open"
 tracks/0/type = "value"
@@ -116,6 +101,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.707107, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.85005, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_125es"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0g86n"]

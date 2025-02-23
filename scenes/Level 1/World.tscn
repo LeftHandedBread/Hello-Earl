@@ -1,6 +1,7 @@
-[gd_scene load_steps=44 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=45 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://dredxxiopatnc" path="res://Assets/Level 1/objects/Untitled.jpg" id="1_gd2aq"]
+[ext_resource type="PackedScene" uid="uid://dsx3aed6tsis5" path="res://scenes/Level 1/Placeable tscn assets/sittable-chair.tscn" id="4_45wg3"]
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
 [ext_resource type="PackedScene" uid="uid://craylfbc2iohq" path="res://Assets/Level 1/objects/TV.gltf" id="14_7b7j8"]
@@ -131,7 +132,7 @@ transform = Transform3D(-0.0386883, 0.00572263, 0.144812, 0.0208652, 0.148541, -
 [node name="TV2" parent="." instance=ExtResource("14_7b7j8")]
 transform = Transform3D(0.24909, -1.85963, 9.0639e-08, 0, -8.1735e-08, -2.085, 2.36993, 0.195455, -9.52654e-09, 38.001, 0, 29.413)
 
-[node name="chair3" parent="." instance=ExtResource("15_p2qbq")]
+[node name="chair2" parent="." instance=ExtResource("4_45wg3")]
 transform = Transform3D(-1.01629e-07, 0, 2.325, 0, 2.325, 0, -2.325, 0, -1.01629e-07, 36.4221, 0, 29.1202)
 
 [node name="geode4" parent="." instance=ExtResource("13_ob23a")]
