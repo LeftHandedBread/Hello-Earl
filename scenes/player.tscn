@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
 radius = 0.497944
-height = 3.00148
+height = 3.3011
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
 
@@ -87,11 +87,11 @@ script = ExtResource("1_yofdb")
 GRAVITY_MULTIPLIER = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
 shape = SubResource("CapsuleShape3D_p0oft")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1.167, 0, 0, 0, 1.75, 0, 0, 0, 1.167, 0, 0.974566, 0)
 mesh = SubResource("CapsuleMesh_jse87")
 
 [node name="head" type="Node3D" parent="."]
@@ -100,6 +100,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Camera3D" type="Camera3D" parent="head"]
 
 [node name="RayCast3D" type="RayCast3D" parent="head"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 target_position = Vector3(0, 0, -1.815)
 collide_with_areas = true
 collide_with_bodies = false

@@ -3,7 +3,8 @@ extends CharacterBody3D
 
 enum CharacterState {
 	WALKING = 0,
-	CROUCHING = 1
+	CROUCHING = 1,
+	SPRINTING = 2
 }
 
 # All of the actually important stuff
@@ -48,11 +49,6 @@ func _physics_process(delta: float) -> void:
 	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
-	if Input.is_action_just_pressed("sprint"):
-		SPEED = SPRINT_SPEED
-	if Input.is_action_just_released("sprint"):
-		SPEED = DEFAULT_SPEED
 	
 	# Get movement input
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -133,10 +129,14 @@ func _handle_states():
 			change_state(CharacterState.CROUCHING)
 	elif Input.is_action_pressed("sprint"):
 		if currentState == CharacterState.CROUCHING:
+			change_state(CharacterState.SPRINTING)
+		else:
+			change_state(CharacterState.SPRINTING)
 			return
 	else:
 		if currentState != CharacterState.WALKING and currentState != CharacterState.CROUCHING:
 			change_state(CharacterState.WALKING)
+	
 
 ## Handles the state changing itself. This function must be fired only once, and not run every single frame. 
 func change_state(state : CharacterState):
@@ -148,6 +148,10 @@ func change_state(state : CharacterState):
 			if currentState == CharacterState.CROUCHING:
 				animator.play_backwards("crouch")
 			SPEED = DEFAULT_SPEED
+		CharacterState.SPRINTING:
+			if currentState == CharacterState.CROUCHING:
+				animator.play_backwards("crouch")
+			SPEED = SPRINT_SPEED
 	
 	currentState = state
 	
