@@ -1,11 +1,10 @@
-[gd_scene load_steps=41 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=42 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://dredxxiopatnc" path="res://Assets/Level 1/objects/Untitled.jpg" id="1_gd2aq"]
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
 [ext_resource type="PackedScene" uid="uid://craylfbc2iohq" path="res://Assets/Level 1/objects/TV.gltf" id="14_7b7j8"]
 [ext_resource type="PackedScene" uid="uid://bw38mp0kciw03" path="res://Assets/Level 1/objects/chair.gltf" id="15_p2qbq"]
-[ext_resource type="PackedScene" uid="uid://c4spsvnlpiyw3" path="res://Assets/Level 1/objects/light.gltf" id="16_p60k1"]
 [ext_resource type="PackedScene" uid="uid://ctwn1nr40eviq" path="res://Assets/Level 1/objects/washingmachineopen.gltf" id="17_npnpt"]
 [ext_resource type="PackedScene" uid="uid://nucb17uacop3" path="res://Assets/Level 1/objects/uploads_files_4457158_Pile_Of_Trash_3_SIZES.glb" id="18_nnhm5"]
 [ext_resource type="PackedScene" uid="uid://bf3fv7uapkgip" path="res://scenes/Level 1/Placeable tscn assets/bush 3.tscn" id="19_bsy6g"]
@@ -34,7 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://big4cclh1y3kj" path="res://scenes/Level 1/Placeable tscn assets/door.tscn" id="33_4tqj2"]
 [ext_resource type="PackedScene" uid="uid://ctq8qk8vlib4l" path="res://scenes/Level 1/Placeable tscn assets/rock E.tscn" id="33_umj4v"]
 [ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="34_d58lb"]
+[ext_resource type="PackedScene" uid="uid://bqyjsakub54ti" path="res://scenes/Level 1/Placeable tscn assets/Locked Door.tscn" id="35_qt7fq"]
 [ext_resource type="PackedScene" uid="uid://df66g4ei4hlsk" path="res://scenes/Level 1/Placeable tscn assets/sign.tscn" id="35_wi3uo"]
+[ext_resource type="PackedScene" uid="uid://bygwej3ni6auw" path="res://scenes/Level 1/Placeable tscn assets/light.tscn" id="36_vx0nf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhjpk"]
 resource_name = "Material.001"
@@ -130,9 +131,6 @@ transform = Transform3D(0.24909, -1.85963, 9.0639e-08, 0, -8.1735e-08, -2.085, 2
 
 [node name="chair3" parent="." instance=ExtResource("15_p2qbq")]
 transform = Transform3D(-1.01629e-07, 0, 2.325, 0, 2.325, 0, -2.325, 0, -1.01629e-07, 36.4221, 0, 29.1202)
-
-[node name="light2" parent="." instance=ExtResource("16_p60k1")]
-transform = Transform3D(-0.275, 4.15238e-08, 0, -4.15238e-08, -0.275, 0, 0, 0, 0.275, 35.4366, 3.00725, 30.2891)
 
 [node name="geode4" parent="." instance=ExtResource("13_ob23a")]
 transform = Transform3D(0.689556, 0, 0.724232, 0, 1, 0, -0.724232, 0, 0.689556, 35.7296, -2.10626, 30.5081)
@@ -1836,3 +1834,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1219, 4.65347, 47.6715)
 
 [node name="Node3D412" parent="." instance=ExtResource("22_cygau")]
 transform = Transform3D(0.651648, 0, -0.758521, 0, 1, 0, 0.758521, 0, 0.651648, 3.35985, 6.40625, 22.4437)
+
+[node name="Node3D413" parent="." instance=ExtResource("22_cygau")]
+transform = Transform3D(0.380134, 0, -0.924931, 0, 1, 0, 0.924931, 0, 0.380134, 40.4671, 1.49408, 13.4515)
+
+[node name="Node3D414" parent="." instance=ExtResource("22_cygau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2108, 0.298116, 41.4011)
+
+[node name="door2" parent="." instance=ExtResource("35_qt7fq")]
+transform = Transform3D(-0.110485, 0, 1.01527, 0, 1.03422, 0, -0.991867, 0, -0.113091, 34.551, 0.000612438, 32.5523)
+
+[node name="light" parent="." instance=ExtResource("36_vx0nf")]
+transform = Transform3D(0.378803, 0, 0, 0, -0.378803, 3.3116e-08, 0, -3.3116e-08, -0.378803, 35.5248, 3.00595, 30.602)
+
+[node name="light2" parent="." instance=ExtResource("36_vx0nf")]
+transform = Transform3D(-8.70203e-09, 0.199079, 0.0191691, -0.2, -8.74228e-09, 0, 8.3791e-10, -0.0191691, 0.199079, 33.22, 4.762, 31.315)
