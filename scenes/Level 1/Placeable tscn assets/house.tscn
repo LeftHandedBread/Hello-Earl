@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://drchhh67gxdcy"]
+[gd_scene load_steps=60 format=4 uid="uid://drchhh67gxdcy"]
 
 [ext_resource type="Texture2D" uid="uid://cdh3srxj3ubbd" path="res://Assets/Level 1/objects/shingles.jpg" id="1_pw71l"]
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="2_1t22b"]
@@ -723,6 +723,15 @@ size = Vector3(5.00891, 0.100586, 5.03625)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6acdw"]
 size = Vector3(0.0390625, 1, 1.85693)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufb27"]
+size = Vector3(0.0263672, 3.04395, 0.256836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jab3b"]
+size = Vector3(0.00976563, 2.93884, 1.76117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56px7"]
+size = Vector3(0.0107422, 1.92984, 3.54694)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Cylinder_003" type="MeshInstance3D" parent="."]
@@ -737,7 +746,6 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house2"]
 transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 33, 0, 30.584)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02376, -1.0296, -1.48668)
@@ -818,3 +826,15 @@ shape = SubResource("BoxShape3D_xxjfs")
 [node name="CollisionShape3D20" type="CollisionShape3D" parent="house2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05607, -0.476476, -1.16086)
 shape = SubResource("BoxShape3D_6acdw")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="house2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03813, 0.503946, 0.871557)
+shape = SubResource("BoxShape3D_ufb27")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="house2/StaticBody3D"]
+transform = Transform3D(1.00001, 0, 0.000890195, 0, 1, 0, -0.000890195, 0, 1.00001, 3.04072, -2.5198, 0.0834446)
+shape = SubResource("BoxShape3D_jab3b")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="house2/StaticBody3D"]
+transform = Transform3D(0.997307, 0.0688035, 0.0256961, -0.0688034, 0.752817, 0.654624, 0.0256962, -0.654626, 0.755519, 3.04961, -3.04568, -1.20311)
+shape = SubResource("BoxShape3D_56px7")
