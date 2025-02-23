@@ -47,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
 	
+	
+	
 	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -143,19 +145,16 @@ func _unhandled_input(event : InputEvent):
 
 ## Handles the input for character state changing. 
 func _handle_states():
-	if Input.is_action_just_pressed("crouch"):
-		if currentState == CharacterState.CROUCHING:
-			change_state(CharacterState.WALKING)
-		else:
+	if Input.is_action_pressed("crouch"):
+		if currentState != CharacterState.CROUCHING:
 			change_state(CharacterState.CROUCHING)
+			return
 	elif Input.is_action_pressed("sprint"):
-		if currentState == CharacterState.CROUCHING:
-			change_state(CharacterState.SPRINTING)
-		else:
+		if currentState != CharacterState.SPRINTING:
 			change_state(CharacterState.SPRINTING)
 			return
 	else:
-		if currentState != CharacterState.WALKING and currentState != CharacterState.CROUCHING:
+		if currentState != CharacterState.WALKING:
 			change_state(CharacterState.WALKING)
 	
 
