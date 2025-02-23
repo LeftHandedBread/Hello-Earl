@@ -26,7 +26,6 @@ func _process(delta):
 	# Sync animation position to time_of_day
 	anim_player.seek(time_of_day * anim_player.get_animation("Day").length)
 	
-	print(time_of_day)
 	# Trigger events based on time_of_day thresholds
 	if time_of_day > 0 and time_of_day < 0.01:
 		trigger_morning_event()

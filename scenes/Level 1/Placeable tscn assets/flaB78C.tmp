@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://iehjwfldlrrn"]
+
+[ext_resource type="PackedScene" uid="uid://ch73x2bfq1bxu" path="res://Assets/Level 1/objects/flashlight.gltf" id="1_tkew2"]
+[ext_resource type="Script" path="res://Scripts/Interactible3D.gd" id="2_sfseu"]
+[ext_resource type="Script" path="res://Scripts/flashlight_object.gd" id="2_ug2yl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bx8pu"]
+size = Vector3(0.0654297, 0.0544434, 0.0197754)
+
+[node name="flashlight" instance=ExtResource("1_tkew2")]
+script = ExtResource("2_ug2yl")
+InteractText = null
+CanInteract = null
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.300003, -4.86944, 0, 1.80494, 0.809361, 0, 0, 0, 5.35228, 0.01087, 0.0953845, 0.000351111)
+script = ExtResource("2_ug2yl")
+InteractText = null
+CanInteract = null
+
+[node name="Interactible3D" type="Area3D" parent="Cube" index="0"]
+script = ExtResource("2_sfseu")
+InteractText = "Press [E] to equip"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/Interactible3D" index="0"]
+transform = Transform3D(1, -1.78814e-07, 0, -1.11759e-08, 1, 0, 0, 0, 1, -0.0157828, -0.000972368, 0)
+shape = SubResource("BoxShape3D_bx8pu")

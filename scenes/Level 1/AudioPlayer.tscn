@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvhbxyh01cke2"]
 
-[ext_resource type="Script" path="res://Scripts/AudioPlayer.gd" id="1_3f0uf"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/AudioPlayer.gd" id="1_3f0uf"]
 [ext_resource type="AudioStream" uid="uid://v4wah0qkup7w" path="res://Assets/Music/c - loop.mp3" id="2_ip7se"]
 [ext_resource type="AudioStream" uid="uid://dc81gqgalg7ns" path="res://Assets/Music/d - transition.mp3" id="3_7kbjm"]
 

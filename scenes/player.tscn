@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://brpt71jl5cg2q"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_yofdb"]
-[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="2_ecvki"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/player.gd" id="1_yofdb"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight.gd" id="2_ecvki"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/GUI/PlayerGUI.tscn" id="2_ywley"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
