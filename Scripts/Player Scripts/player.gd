@@ -18,6 +18,7 @@ var currentState : CharacterState = CharacterState.WALKING
 
 # Options
 @export var DEFAULT_SPEED := 5
+@export var SPRINT_SPEED := 10
 @export var JUMP_VELOCITY := 7.5
 @export var mouse_sensitivity := 0.1
 @export var CROUCH_SPEED := 2.5
@@ -47,6 +48,11 @@ func _physics_process(delta: float) -> void:
 	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed("sprint"):
+		SPEED = SPRINT_SPEED
+	if Input.is_action_just_released("sprint"):
+		SPEED = DEFAULT_SPEED
 	
 	# Get movement input
 	var input_dir := Input.get_vector("left", "right", "up", "down")
