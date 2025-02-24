@@ -78,9 +78,6 @@ transform = Transform3D(0.24909, -1.85963, 9.0639e-08, 0, -8.1735e-08, -2.085, 2
 [node name="chair3" parent="." instance=ExtResource("15_p2qbq")]
 transform = Transform3D(-1.01629e-07, 0, 2.325, 0, 2.325, 0, -2.325, 0, -1.01629e-07, 36.4221, 0, 29.1202)
 
-[node name="geode4" parent="." instance=ExtResource("13_ob23a")]
-transform = Transform3D(0.689556, 0, 0.724232, 0, 1, 0, -0.724232, 0, 0.689556, 35.7296, -2.10626, 30.5081)
-
 [node name="washingmachineopen2" parent="." instance=ExtResource("17_npnpt")]
 transform = Transform3D(0.00885548, -0.00464532, 3.89175e-05, 2.2177e-12, -8.3775e-05, -0.00999965, 0.00464548, 0.00885516, -7.41867e-05, 35.1223, 3.02491, 29.2506)
 
@@ -986,7 +983,7 @@ transform = Transform3D(0.0552158, 0.162178, -0.985216, -0.116274, 0.981052, 0.1
 transform = Transform3D(0.924672, 0.380764, 0, -0.380764, 0.924672, 0, 0, 0, 1, -43.8013, 0.486348, -6.78362)
 
 [node name="flashlight" parent="." instance=ExtResource("34_d58lb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6393, -1.19209e-07, 35.43)
+transform = Transform3D(-0.0817819, 0, -0.99665, 0, 1, 0, 0.99665, 0, -0.0817819, 34.6053, -2.17108, 31.3167)
 
 [node name="rocks5" parent="." instance=ExtResource("28_tfb07")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -32.5516, 0.00589371, 19.0687)
@@ -1945,3 +1942,6 @@ InteractText = "Boingers"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sign2/Interactible3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
 shape = SubResource("BoxShape3D_8msvw")
+
+[node name="untitled" parent="." instance=ExtResource("12_uc604")]
+transform = Transform3D(1.84492, 0, 0, 0, 1.84492, 0, 0, 0, 1.84492, 34.3348, -2.99711, 31.7129)
