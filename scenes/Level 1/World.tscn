@@ -1937,7 +1937,7 @@ transform = Transform3D(-0.0377249, 0.441262, -0.896586, -0.0894372, -0.895115, 
 
 [node name="Interactible3D2" type="Area3D" parent="sign2"]
 script = ExtResource("32_ts30l")
-InteractText = "Boingers"
+InteractText = "Boinger Caverns"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sign2/Interactible3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
