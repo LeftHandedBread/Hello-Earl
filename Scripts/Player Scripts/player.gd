@@ -29,7 +29,6 @@ var currentState : CharacterState = CharacterState.WALKING
 var inputEnabled := true # can the player move?
 var aimlookEnabled := true # can the player look around?
 var interactionsEnabled := true # can the player interact with Interactibles3D?
-var isUpsideDown := false # Is the player upside down?
 
 #region Main control flow 
 
@@ -53,15 +52,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	var is_upside_down : bool
-
-	
 	# Get movement input
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if !isUpsideDown :
+	if !GameManager.isUpsideDown :
 		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	elif isUpsideDown :
+	elif GameManager.isUpsideDown :
 		direction = (transform.basis * Vector3(input_dir.x, 0, -input_dir.y)).normalized()
 	
 
@@ -122,12 +118,12 @@ func _unhandled_input(event : InputEvent):
 	
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var mouseInput : Vector2
-		if !isUpsideDown : 
+		if !GameManager.isUpsideDown : 
 			mouseInput.x += event.relative.x
 			mouseInput.y += event.relative.y
 			self.rotation_degrees.y -= mouseInput.x * mouse_sensitivity
 			head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
-		elif isUpsideDown:
+		elif GameManager.isUpsideDown:
 			mouseInput.x -= event.relative.x
 			mouseInput.y += event.relative.y
 			self.rotation_degrees.y -= mouseInput.x * mouse_sensitivity
@@ -135,9 +131,9 @@ func _unhandled_input(event : InputEvent):
 	
 	var head_x_rot = fposmod(head.rotation_degrees.x, 360)
 	if head_x_rot > 90 and head_x_rot < 270 :
-		isUpsideDown = true
+		GameManager.isUpsideDown = true
 	else :
-		isUpsideDown = false
+		GameManager.isUpsideDown = false
 
 #endregion
 
