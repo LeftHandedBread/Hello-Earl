@@ -1,17 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://df66g4ei4hlsk"]
+[gd_scene load_steps=2 format=3 uid="uid://df66g4ei4hlsk"]
 
 [ext_resource type="PackedScene" uid="uid://q6ysqcrxrimt" path="res://Assets/Level 1/objects/sign.gltf" id="1_a58ar"]
-[ext_resource type="Script" path="res://Scripts/Interactibles/Interactible3D.gd" id="2_buain"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4ps0i"]
-size = Vector3(0.0302734, 0.354492, 0.552734)
 
 [node name="sign" instance=ExtResource("1_a58ar")]
-
-[node name="Interactible3D" type="Area3D" parent="." index="15"]
-script = ExtResource("2_buain")
-InteractText = "Earl's House"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
-shape = SubResource("BoxShape3D_4ps0i")

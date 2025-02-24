@@ -6,3 +6,11 @@
 
 [node name="Circle_002" parent="." index="0"]
 transform = Transform3D(0.275419, -0.0382313, 0.112618, -0.0218976, 0.262919, 0.142808, -0.116897, -0.139327, 0.238586, -0.00906742, 0, -0.0198256)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.03, 0)
+light_color = Color(0.180392, 1, 0.501961, 1)
+light_energy = 0.322
+light_indirect_energy = 2.22
+spot_attenuation = -0.01
+spot_angle = 90.0

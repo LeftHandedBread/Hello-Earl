@@ -69,28 +69,34 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_1lq5w")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.997074, 0, -0.0763531, 0, 1, 0, 0.0763531, 0, 0.997074, 1.129, -0.490263, -0.0854807)
+visible = false
 shape = SubResource("BoxShape3D_amaec")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.998541, 0, 0.0534675, 0, 1, 0, -0.0534675, 0, 0.998541, -0.216344, 0.103409, -0.0353055)
+visible = false
 shape = SubResource("BoxShape3D_brpk5")
 script = ExtResource("2_o6d8j")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.996046, 0, -0.0881762, 0, 1, 0, 0.0881762, 0, 0.996046, 1.53359, 0.115169, -0.0639486)
+visible = false
 shape = SubResource("BoxShape3D_uplay")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.999881, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 0.999881, 1.35624, 0.128702, 0.127191)
+visible = false
 shape = SubResource("BoxShape3D_uplay")
 script = ExtResource("2_o6d8j")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.999976, 0, 9.68575e-08, 0, 1, 0, -9.68575e-08, 0, 0.999976, -2.58804, 0.0780113, 0.0415289)
+visible = false
 shape = SubResource("BoxShape3D_61mi1")
 
 [node name="granite counter top" parent="." instance=ExtResource("2_lg3oj")]

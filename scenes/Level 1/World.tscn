@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=50 format=3 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jyj2gxhphso" path="res://scenes/Level 1/Placeable tscn assets/boulder2.tscn" id="31_rtj3g"]
 [ext_resource type="PackedScene" uid="uid://clpjx7x10k6sg" path="res://scenes/Level 1/Placeable tscn assets/rock D.tscn" id="32_pti3d"]
 [ext_resource type="PackedScene" uid="uid://c33vneo5j8nu3" path="res://scenes/Level 1/Placeable tscn assets/clover2.tscn" id="32_rekgv"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/Interactible3D.gd" id="32_ts30l"]
 [ext_resource type="PackedScene" uid="uid://big4cclh1y3kj" path="res://scenes/Level 1/Placeable tscn assets/door.tscn" id="33_4tqj2"]
 [ext_resource type="PackedScene" uid="uid://ctq8qk8vlib4l" path="res://scenes/Level 1/Placeable tscn assets/rock E.tscn" id="33_umj4v"]
 [ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="34_d58lb"]
@@ -39,12 +40,17 @@
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="38_aggnv"]
 [ext_resource type="PackedScene" uid="uid://d4ka24kc6cev3" path="res://scenes/Level 1/Long Well.tscn" id="38_iegmp"]
 [ext_resource type="PackedScene" uid="uid://behkm56aldjjo" path="res://scenes/Level 1/Placeable tscn assets/boingers.tscn" id="39_jaune"]
+[ext_resource type="PackedScene" uid="uid://cg5vvncm6r02e" path="res://scenes/Level 1/Placeable tscn assets/crystal pink.tscn" id="40_q24ip"]
+[ext_resource type="PackedScene" uid="uid://coj56beqbopa3" path="res://scenes/Level 1/Placeable tscn assets/crystal green.tscn" id="41_kgelh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_52jve"]
 radius = 1.65529
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yhkry"]
 size = Vector3(8.03958, 0.0634766, 10.653)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8msvw"]
+size = Vector3(0.0302734, 0.354492, 0.552734)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lmcwi"]
 radius = 0.839088
@@ -1412,6 +1418,14 @@ transform = Transform3D(0.299774, 0, 0.95401, 0, 1, 0, -0.95401, 0, 0.299774, -3
 [node name="sign" parent="." instance=ExtResource("35_wi3uo")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 33, 0, 11)
 
+[node name="Interactible3D2" type="Area3D" parent="sign"]
+script = ExtResource("32_ts30l")
+InteractText = "Earl's House"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sign/Interactible3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
+shape = SubResource("BoxShape3D_8msvw")
+
 [node name="Node3D437" parent="." instance=ExtResource("21_ahsd0")]
 transform = Transform3D(2.24026, 0, 0, 0, 2.24026, 0, 0, 0, 2.24026, 50.0009, 4.95021, 39.9701)
 
@@ -1899,3 +1913,35 @@ shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="coke shoe" parent="." instance=ExtResource("39_jaune")]
 transform = Transform3D(0.116081, 0, -0.99324, 0, 1, 0, 0.99324, 0, 0.116081, -11.2508, -3.46614, -28.3217)
+
+[node name="pink crystal" parent="." instance=ExtResource("40_q24ip")]
+transform = Transform3D(0.134867, -0.167101, 0.976672, 0.377721, 0.91992, 0.105232, -0.916045, 0.354717, 0.187185, 0.0514739, -3.82032, -43.0441)
+
+[node name="green crystal" parent="." instance=ExtResource("41_kgelh")]
+transform = Transform3D(-0.951165, 0.281971, -0.125605, 0.218891, 0.90303, 0.369627, 0.21765, 0.324083, -0.920651, -8.87781, -3.76564, -43.3822)
+
+[node name="green crystal2" parent="." instance=ExtResource("41_kgelh")]
+transform = Transform3D(0.382894, 0.351958, 0.413059, -0.127591, 0.549742, -0.350149, -0.527459, 0.122513, 0.384549, -9.35972, -3.91794, -42.3638)
+
+[node name="green crystal3" parent="." instance=ExtResource("41_kgelh")]
+transform = Transform3D(-0.437272, 0.533412, 0.304018, -0.558521, -0.500594, 0.0749855, 0.25497, -0.181769, 0.685647, -13.6005, -1.1179, -26.5429)
+
+[node name="pink crystal2" parent="." instance=ExtResource("40_q24ip")]
+transform = Transform3D(-0.0888534, 0.021422, -0.428529, -0.0499943, -0.435157, -0.0113873, -0.426141, 0.0465853, 0.0906872, -12.645, -1.28815, -29.4531)
+
+[node name="pink crystal3" parent="." instance=ExtResource("40_q24ip")]
+transform = Transform3D(-0.764828, -0.498586, -0.407983, 0.514668, -0.853783, 0.0785615, -0.387499, -0.14989, 0.909603, -6.04277, -0.304979, -30.7303)
+
+[node name="green crystal4" parent="." instance=ExtResource("41_kgelh")]
+transform = Transform3D(0.994858, -0.101282, 0, 0.100837, 0.990488, 0.0936218, -0.0094822, -0.0931404, 0.995608, -0.132051, -7.67603, -29.0105)
+
+[node name="sign2" parent="." instance=ExtResource("35_wi3uo")]
+transform = Transform3D(-0.0473247, 0.340225, -0.939153, -0.08475, -0.938184, -0.335604, -0.995278, 0.0637109, 0.0732333, -3.431, -1.15344, -40.4196)
+
+[node name="Interactible3D2" type="Area3D" parent="sign2"]
+script = ExtResource("32_ts30l")
+InteractText = "Boingers"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sign2/Interactible3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
+shape = SubResource("BoxShape3D_8msvw")
