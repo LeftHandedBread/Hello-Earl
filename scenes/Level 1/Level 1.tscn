@@ -335,7 +335,7 @@ directional_shadow_max_distance = 818.7
 sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]
-transform = Transform3D(-145.281, -52.878, 0, -2.31137e-06, 6.35044e-06, -154.605, 52.878, -145.281, -6.758e-06, 0, -2.07424e-05, 483.623)
+transform = Transform3D(-145.281, -52.8782, 0, -0.000191418, 0.000525916, -154.605, 52.8782, -145.281, -0.000559669, 0, -2.07424e-05, 483.623)
 mesh = SubResource("SphereMesh_lbn6l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
