@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://7edcl6c0vn55"]
+[gd_scene load_steps=11 format=4 uid="uid://7edcl6c0vn55"]
 
-[ext_resource type="Texture2D" uid="uid://cewg030jhm65" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="1_ct6ck"]
-[ext_resource type="Texture2D" uid="uid://bu8hb03cpcx1a" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-02.png" id="2_blyv0"]
-[ext_resource type="Texture2D" uid="uid://vnvno6xwfvle" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-01.png" id="3_pe5d6"]
+[ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="1_ct6ck"]
+[ext_resource type="Texture2D" uid="uid://6o23ub7ndqdh" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-02.png" id="2_blyv0"]
+[ext_resource type="Texture2D" uid="uid://uk7t2p0io3lm" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-01.png" id="3_pe5d6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys7tm"]
 resource_name = "trunk-01"
@@ -110,9 +110,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pgmm4")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uafar"]
+radius = 0.134704
+height = 1.51567
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cuxh7"]
+radius = 0.067067
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Tree-01-3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0337753, 0, 0.000993729)
 mesh = SubResource("ArrayMesh_cq0q2")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0110802, 0.70454, 0.00850663)
+shape = SubResource("CapsuleShape3D_uafar")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41154, 0)
+shape = SubResource("CapsuleShape3D_cuxh7")
