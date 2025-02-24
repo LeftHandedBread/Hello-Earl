@@ -21,3 +21,7 @@ InteractText = "E - Pickup \\n F - Toggle"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D" index="0"]
 transform = Transform3D(0.981561, -0.191152, 0, 0.191152, 0.981561, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_217fh")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Interactible3D" index="1"]
+transform = Transform3D(-4.09272e-08, -0.351188, 0.936305, -1.53509e-08, 0.936305, 0.351188, -1, 0, -4.37114e-08, -0.136967, -0.0396156, 0)
+light_energy = 2.0
