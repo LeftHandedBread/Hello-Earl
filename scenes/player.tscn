@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=15 format=4 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player.gd" id="1_yofdb"]
 [ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight.gd" id="2_ecvki"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/GUI/PlayerGUI.tscn" id="2_ywley"]
+[ext_resource type="Script" path="res://Scripts/flashlight_hitbox.gd" id="3_f34k4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
 radius = 0.45826
@@ -163,9 +164,13 @@ transform = Transform3D(1.99418e-14, 1.5758e-07, 10.521, 10.437, -1.5758e-07, 0,
 mesh = SubResource("ArrayMesh_q5tef")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="head/flashlight/Cone_006"]
+[node name="Area3D" type="Area3D" parent="head/flashlight/Cone_006"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_f34k4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight/Cone_006/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight/Cone_006/Area3D"]
+transform = Transform3D(1, 0, -8.47033e-22, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_gdof4")
 
 [node name="PlayerGUI" parent="." instance=ExtResource("2_ywley")]

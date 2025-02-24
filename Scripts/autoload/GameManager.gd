@@ -4,6 +4,7 @@ extends Node
 
 var player : PlayerCharacter
 var flashlight : SpotLight3D = null	
+@onready var flashlight_hitbox = $head/flashlight/Cone_006/Area3D
 var isUpsideDown : bool
 var characterShoes := Shoes.NONE
 enum Shoes {
