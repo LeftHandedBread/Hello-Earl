@@ -167,6 +167,7 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight/Cone_006/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_gdof4")
+disabled = true
 
 [node name="PlayerGUI" parent="." instance=ExtResource("2_ywley")]
 

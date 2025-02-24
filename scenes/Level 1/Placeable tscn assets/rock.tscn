@@ -8,9 +8,10 @@ radius = 0.88383
 [node name="Node3D" type="Node3D"]
 
 [node name="geode" parent="." instance=ExtResource("1_yx2ed")]
-transform = Transform3D(0.952677, 0.172104, 0.250572, 0.303983, -0.53937, -0.785286, -5.3728e-08, 0.824294, -0.566162, -0.214506, 0, 0.066531)
+transform = Transform3D(0.391364, 0.0707011, 0.102936, 0.124878, -0.221576, -0.322599, -2.20717e-08, 0.338624, -0.232582, -0.214506, 0, 0.066531)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="geode"]
+transform = Transform3D(2.42759, -1.8622e-08, -3.35609e-08, 1.27018e-08, 2.42759, -3.57628e-07, 1.35495e-08, 3.57628e-07, 2.42759, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="geode/StaticBody3D"]
 shape = SubResource("SphereShape3D_bly2u")
