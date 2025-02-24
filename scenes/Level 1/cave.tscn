@@ -83,7 +83,6 @@ script = ExtResource("2_o6d8j")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.996046, 0, -0.0881762, 0, 1, 0, 0.0881762, 0, 0.996046, 1.53359, 0.115169, -0.0639486)
 shape = SubResource("BoxShape3D_uplay")
-script = ExtResource("2_o6d8j")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 transform = Transform3D(0.999881, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 0.999881, 1.35624, 0.128702, 0.127191)

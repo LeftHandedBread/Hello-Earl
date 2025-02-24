@@ -22,6 +22,7 @@ grow_vertical = 2
 expand_mode = 1
 
 [node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
 offset_left = -134.0
 offset_top = 12.0
 offset_right = 145.0
