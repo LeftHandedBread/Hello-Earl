@@ -122,6 +122,7 @@ mesh = SubResource("ArrayMesh_cq0q2")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-3"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gpfxj")

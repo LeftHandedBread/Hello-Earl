@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://coj56beqbopa3"]
+
+[ext_resource type="PackedScene" uid="uid://bq85ioegyrmfd" path="res://Assets/Level 1/objects/green crystal.gltf" id="1_o7hbi"]
+
+[node name="green crystal" instance=ExtResource("1_o7hbi")]
+
+[node name="Circle_002" parent="." index="0"]
+transform = Transform3D(0.275419, -0.0382313, 0.112618, -0.0218976, 0.262919, 0.142808, -0.116897, -0.139327, 0.238586, -0.00906742, 0, -0.0198256)

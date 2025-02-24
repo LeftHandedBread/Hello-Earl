@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=41 format=3 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://do67lq8jvg1v8" path="res://scenes/Level 1/cave.tscn" id="37_wkjg6"]
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="38_aggnv"]
 [ext_resource type="PackedScene" uid="uid://d4ka24kc6cev3" path="res://scenes/Level 1/Long Well.tscn" id="38_iegmp"]
+[ext_resource type="PackedScene" uid="uid://cg5vvncm6r02e" path="res://scenes/Level 1/Placeable tscn assets/crystal pink.tscn" id="39_02hnh"]
+[ext_resource type="PackedScene" uid="uid://coj56beqbopa3" path="res://scenes/Level 1/Placeable tscn assets/crystal green.tscn" id="40_fi5bw"]
 
 [node name="World" type="Node3D"]
 
@@ -1766,3 +1768,12 @@ transform = Transform3D(-0.521963, 0, 0.852968, 0, 1, 0, -0.852968, 0, -0.521963
 [node name="Node3D478" parent="." instance=ExtResource("37_wkjg6")]
 
 [node name="Node3D542" parent="." instance=ExtResource("38_iegmp")]
+
+[node name="pink crystal" parent="." instance=ExtResource("39_02hnh")]
+transform = Transform3D(-0.865254, 0.342901, -0.365724, 0.0981499, 0.831249, 0.547166, 0.491632, 0.437542, -0.752898, -8.98205, -3.91636, -43.9138)
+
+[node name="green crystal" parent="." instance=ExtResource("40_fi5bw")]
+transform = Transform3D(0.0968574, -0.536622, 0.798841, 0.398793, 0.741333, 0.467795, -0.886211, 0.274949, 0.297815, 1.00106, -3.8123, -43.18)
+
+[node name="green crystal2" parent="." instance=ExtResource("40_fi5bw")]
+transform = Transform3D(0.458011, -0.25117, -0.288256, 0, 0.449815, -0.391943, 0.382332, 0.300886, 0.345314, 0.738553, -3.6069, -41.9534)

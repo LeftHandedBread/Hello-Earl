@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8amxy3yj6mj"]
+
+[ext_resource type="PackedScene" uid="uid://ct8ws0hih5c3" path="res://Assets/Level 1/objects/granite counter top.gltf" id="1_vk33b"]
+
+[node name="granite counter top" instance=ExtResource("1_vk33b")]

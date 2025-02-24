@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg5vvncm6r02e"]
+
+[ext_resource type="PackedScene" uid="uid://c5q30yokd87n5" path="res://Assets/Level 1/objects/pink crystal.gltf" id="1_ydvbd"]
+
+[node name="pink crystal" instance=ExtResource("1_ydvbd")]
+
+[node name="Circle_002" parent="." index="0"]
+transform = Transform3D(0.275419, -0.0382313, 0.112618, -0.0218976, 0.262919, 0.142808, -0.116897, -0.139327, 0.238586, 0.000447899, 0, 0.001821)
