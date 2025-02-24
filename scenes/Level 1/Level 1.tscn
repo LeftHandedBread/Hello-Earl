@@ -145,6 +145,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [1.676, 2.973, 4.0, 6.0, 4.0, 1.676, 1.5]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../..:environment:ambient_light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.03333, 25.2, 31.5667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.1, 0.3, 0.3, 0.1]
+}
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
 length = 0.001
@@ -220,6 +232,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [6.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../..:environment:ambient_light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
 _data = {
@@ -260,13 +284,13 @@ light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 1.5
-shadow_opacity = 0.85
 shadow_blur = 2.177
 directional_shadow_split_1 = 0.11
 directional_shadow_split_2 = 0.19
 directional_shadow_split_3 = 0.362
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.7
+sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]
 transform = Transform3D(154.605, 0, 0, 0, 154.605, 0, 0, 0, 154.605, 0, -2.07424e-05, 483.623)
