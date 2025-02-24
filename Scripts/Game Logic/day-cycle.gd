@@ -2,7 +2,7 @@ extends Node
 
 @onready var anim_player = $"."
 var time_of_day = 0.0  # Time value from 0.0 (midnight) to 1.0 (next midnight)
-var time_speed = 0.003  # Default speed of the cycle
+var time_speed = 0.001  # Default speed of the cycle
 var is_reversed = false
 
 func _ready():
