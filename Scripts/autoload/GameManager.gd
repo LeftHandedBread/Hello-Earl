@@ -5,3 +5,9 @@ extends Node
 var player : PlayerCharacter
 var flashlight : SpotLight3D = null	
 var isUpsideDown : bool
+var characterShoes := Shoes.NONE
+enum Shoes {
+	NONE = 0,
+	NICOTINE = 1,
+	COKE = 2
+}

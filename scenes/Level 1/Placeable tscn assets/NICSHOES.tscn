@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://b6v7po57r0005"]
+[gd_scene load_steps=9 format=4 uid="uid://b6v7po57r0005"]
 
 [ext_resource type="Texture2D" uid="uid://dvit8r4y5gbua" path="res://Assets/Level 1/objects/cigarette.webp" id="1_fdrpd"]
+[ext_resource type="Script" path="res://Scripts/nicotine_shoes.gd" id="2_3jy6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bif3b"]
 resource_name = "Material.001"
@@ -102,6 +103,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bh2qf")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_e7kee"]
+size = Vector3(0.209961, 0.14209, 0.204041)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
@@ -113,3 +117,11 @@ skeleton = NodePath("")
 transform = Transform3D(0.0490824, 0, 0.00939138, 0, 0.00903763, 0, -0.00939138, 0, 0.0490824, 0.141278, 0, -0.0254577)
 mesh = SubResource("ArrayMesh_k6gub")
 skeleton = NodePath("")
+
+[node name="Interactible3D" type="Area3D" parent="."]
+script = ExtResource("2_3jy6s")
+InteractText = "Nicotine Shoes"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D"]
+transform = Transform3D(0.999998, 0, -0.00211185, 0, 1, 0, 0.00211185, 0, 0.999998, 0.0547582, 0.0570239, -0.0749859)
+shape = SubResource("BoxShape3D_e7kee")

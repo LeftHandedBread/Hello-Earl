@@ -18,8 +18,8 @@ var currentState : CharacterState = CharacterState.WALKING
 @onready var SPEED = DEFAULT_SPEED # DEFAULT_SPEED doesn't load until _ready(), so we have to use @onready (you could also just move SPEED a bit to the bottom)
 
 # Options
-@export var DEFAULT_SPEED := 5
-@export var SPRINT_SPEED := 10
+@export var DEFAULT_SPEED := 4
+@export var SPRINT_SPEED := 7.5
 @export var JUMP_VELOCITY := 7.5
 @export var mouse_sensitivity := 0.1
 @export var CROUCH_SPEED := 2.5
@@ -29,6 +29,7 @@ var currentState : CharacterState = CharacterState.WALKING
 var inputEnabled := true # can the player move?
 var aimlookEnabled := true # can the player look around?
 var interactionsEnabled := true # can the player interact with Interactibles3D?
+
 
 #region Main control flow 
 
@@ -74,6 +75,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, AIR_FRICTION * delta)
 			velocity.z = move_toward(velocity.z, 0, AIR_FRICTION * delta)
+	if GameManager.characterShoes == GameManager.Shoes.NONE:
+		reset_shoe_effects()
+	elif GameManager.characterShoes == GameManager.Shoes.COKE:
+		reset_shoe_effects()
+		JUMP_VELOCITY = 17
+	elif GameManager.characterShoes == GameManager.Shoes.NICOTINE:
+		reset_shoe_effects()
+		DEFAULT_SPEED = 5
+		SPRINT_SPEED = 12
 	
 	# All of the other processing functions go here
 	_process_interact()
@@ -183,6 +193,10 @@ func stand_up():
 	# Enable movement controls again
 	inputEnabled = true
 	interactionsEnabled = true
-	
+
+func reset_shoe_effects():
+	JUMP_VELOCITY = 7.5
+	DEFAULT_SPEED = 4
+	SPRINT_SPEED = 7.5
 
 #endregion
