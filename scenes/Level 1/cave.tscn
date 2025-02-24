@@ -67,7 +67,6 @@ mesh = SubResource("ArrayMesh_m102e")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1lq5w")

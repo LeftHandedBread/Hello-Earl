@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=46 format=3 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://do67lq8jvg1v8" path="res://scenes/Level 1/cave.tscn" id="37_wkjg6"]
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="38_aggnv"]
 [ext_resource type="PackedScene" uid="uid://d4ka24kc6cev3" path="res://scenes/Level 1/Long Well.tscn" id="38_iegmp"]
+[ext_resource type="PackedScene" uid="uid://behkm56aldjjo" path="res://scenes/Level 1/Placeable tscn assets/boingers.tscn" id="39_jaune"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_52jve"]
 radius = 1.65529
@@ -1895,3 +1896,6 @@ shape = SubResource("SphereShape3D_nnk27")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 2.28705, -32.3433)
 shape = SubResource("SphereShape3D_cdh0o")
+
+[node name="coke shoe" parent="." instance=ExtResource("39_jaune")]
+transform = Transform3D(0.116081, 0, -0.99324, 0, 1, 0, 0.99324, 0, 0.116081, -11.2508, -3.46614, -28.3217)
