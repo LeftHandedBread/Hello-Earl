@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if GameManager.timeOfDay > .55 and GameManager.timeOfDay < .95:
+	if GameManager.timeOfDay > .52 and GameManager.timeOfDay < .98:
 		if !is_visible:
 			enable_visibility()
 			is_visible = true
