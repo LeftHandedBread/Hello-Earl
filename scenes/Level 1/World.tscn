@@ -1,5 +1,6 @@
-[gd_scene load_steps=57 format=3 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=61 format=3 uid="uid://cj68v47c1clgg"]
 
+[ext_resource type="Script" path="res://Scripts/Interactibles/sit_handler.gd" id="5_npnlb"]
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
 [ext_resource type="PackedScene" uid="uid://craylfbc2iohq" path="res://Assets/Level 1/objects/TV.gltf" id="14_7b7j8"]
@@ -50,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://dwgyhhvh4owon" path="res://scenes/Level 1/Placeable tscn assets/tree4 noenvi.tscn" id="47_d73o6"]
 [ext_resource type="PackedScene" uid="uid://itcivjr2dp28" path="res://scenes/Level 1/Placeable tscn assets/hedge noenvi.tscn" id="48_166k4"]
 [ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="50_4vojj"]
+[ext_resource type="PackedScene" uid="uid://brerpijvuqvnm" path="res://scenes/Level 1/Placeable tscn assets/usable chair.tscn" id="51_cfdhk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_52jve"]
 radius = 1.65529
@@ -69,6 +71,12 @@ radius = 1.53023
 [sub_resource type="SphereShape3D" id="SphereShape3D_nnk27"]
 radius = 2.45309
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfmsh"]
+size = Vector3(2.10922, 2.03711, 2.1355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qprbw"]
+size = Vector3(0.488525, 0.846222, 0.500763)
+
 [node name="World" type="Node3D"]
 
 [node name="untitled2" parent="." instance=ExtResource("12_uc604")]
@@ -79,9 +87,6 @@ transform = Transform3D(-0.0956036, 0.0134822, 0.0430779, 0.0145091, 0.104722, -
 
 [node name="TV2" parent="." instance=ExtResource("14_7b7j8")]
 transform = Transform3D(0.24909, -1.85963, 9.0639e-08, 0, -8.1735e-08, -2.085, 2.36993, 0.195455, -9.52654e-09, 38.001, 0, 29.413)
-
-[node name="chair3" parent="." instance=ExtResource("15_p2qbq")]
-transform = Transform3D(-1.01629e-07, 0, 2.325, 0, 2.325, 0, -2.325, 0, -1.01629e-07, 36.4221, 0, 29.1202)
 
 [node name="washingmachineopen2" parent="." instance=ExtResource("17_npnpt")]
 transform = Transform3D(0.00885548, -0.00464532, 3.89175e-05, 2.2177e-12, -8.3775e-05, -0.00999965, 0.00464548, 0.00885516, -7.41867e-05, 35.1223, 3.02491, 29.2506)
@@ -2213,3 +2218,23 @@ transform = Transform3D(1, 0, 0, 0, 0.712185, 0.701991, 0, -0.701991, 0.712185, 
 
 [node name="Node3D594" parent="." instance=ExtResource("27_w23ay")]
 transform = Transform3D(1.59916, 0, 0, 0, 1.53521, 0, 0, 0, 1.4456, -10.5012, 4.36757, -8.92295)
+
+[node name="chair2" parent="." instance=ExtResource("51_cfdhk")]
+transform = Transform3D(-0.131755, 0, 0.991282, 0, 1, 0, -0.991282, 0, -0.131755, 35.8584, 0.000612378, 29.5566)
+
+[node name="Node3D" type="Node3D" parent="chair2"]
+transform = Transform3D(-0.997563, 0, -0.0697564, 0, 1, 0, 0.0697564, 0, -0.997563, -0.00795746, 0.0624447, 0.0734463)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="chair2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chair2/StaticBody3D"]
+transform = Transform3D(0.23, 0, -2.6077e-08, 0, 0.23, 0, 2.6077e-08, 0, 0.23, 0.0824814, 0.241284, 0.0625935)
+shape = SubResource("BoxShape3D_lfmsh")
+
+[node name="Interactible3D" type="Area3D" parent="chair2"]
+script = ExtResource("5_npnlb")
+InteractText = "[E] Sit | [Esc] Stand up"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chair2/Interactible3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0890503, 0.423215, 0.0607719)
+shape = SubResource("BoxShape3D_qprbw")

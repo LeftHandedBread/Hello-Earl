@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsx3aed6tsis5"]
 
 [ext_resource type="PackedScene" uid="uid://bw38mp0kciw03" path="res://Assets/Level 1/objects/chair.gltf" id="1_7wq8l"]
-[ext_resource type="Script" path="res://Scripts/Player Scripts/sit_handler.gd" id="2_3ruah"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/sit_handler.gd" id="2_3ruah"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_veu8m"]
 size = Vector3(0.216431, 0.436279, 0.275513)

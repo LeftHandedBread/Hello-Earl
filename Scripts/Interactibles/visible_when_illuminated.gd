@@ -18,7 +18,6 @@ func _on_area_entered(body):
 		illuminated = true
 		toggle_illumination()
 
-
 func _on_area_exited(body):
 	if body.is_in_group("flashlight beam"):
 		illuminated = false
