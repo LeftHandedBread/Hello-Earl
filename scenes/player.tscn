@@ -156,6 +156,7 @@ collide_with_bodies = false
 [node name="flashlight" type="SpotLight3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00164127, 0)
 light_energy = 0.0
+light_cull_mask = 4294966783
 spot_range = 381.099
 spot_angle = 40.0583
 script = ExtResource("2_ecvki")

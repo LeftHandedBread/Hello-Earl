@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=4 uid="uid://cmwhebbqi1di5"]
 
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="1_vh8ss"]
-[ext_resource type="Script" path="res://Scripts/visible_when_not_illuminated.gd" id="2_inf3c"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="2_inf3c"]
 [ext_resource type="Texture2D" uid="uid://cp2y6e2t8swl8" path="res://Assets/Level 1/objects/shinglesred.jpg" id="2_vl0q8"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="3_ddgbm"]
 [ext_resource type="Texture2D" uid="uid://crryy7r0g1ukj" path="res://Assets/Level 1/objects/concrete floor.jpg" id="4_oq6ps"]
