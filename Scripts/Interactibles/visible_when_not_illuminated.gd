@@ -8,10 +8,10 @@ func _ready():
 	monitorable = true
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	connect("area_exited", Callable(self, "_on_area_exited"))
-	self.get_parent().visible = false
+	self.get_parent().visible = true
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
-			shape.set_deferred("disabled", true)
+			shape.set_deferred("disabled", false)
 
 func _on_area_entered(body):
 	if body.is_in_group("flashlight beam"):
