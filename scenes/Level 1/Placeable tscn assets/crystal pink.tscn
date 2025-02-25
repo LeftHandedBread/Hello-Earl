@@ -50,10 +50,23 @@ mesh = SubResource("ArrayMesh_gnp83")
 skeleton = NodePath("")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.24065, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.88708, 0)
 light_color = Color(1, 0.227451, 1, 1)
-light_energy = 2.1
-light_indirect_energy = 2.5
-spot_range = 69.978
-spot_angle = 86.45
-spot_angle_attenuation = 4.59479
+light_energy = 0.25
+light_indirect_energy = 0.0
+light_size = 0.087
+spot_range = 12.519
+spot_attenuation = -0.24
+spot_angle = 67.83
+spot_angle_attenuation = 2.37842
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.33923, 0)
+light_color = Color(1, 0.227451, 1, 1)
+light_energy = 0.02
+light_indirect_energy = 0.0
+light_size = 0.087
+spot_range = 7.054
+spot_attenuation = -2.14
+spot_angle = 38.04
+spot_angle_attenuation = 2.37842

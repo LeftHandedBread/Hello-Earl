@@ -303,7 +303,6 @@ roughness = 0.5
 resource_name = "Material.007"
 cull_mode = 2
 diffuse_mode = 2
-disable_ambient_light = true
 albedo_texture = ExtResource("7_n0hsv")
 roughness = 0.5
 
@@ -328,7 +327,6 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t80gr"]
 resource_name = "Material.014"
 cull_mode = 2
-disable_ambient_light = true
 albedo_texture = ExtResource("10_on2w1")
 roughness = 0.5
 

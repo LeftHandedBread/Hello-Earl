@@ -1937,7 +1937,7 @@ transform = Transform3D(-0.764828, -0.498586, -0.407983, 0.514668, -0.853783, 0.
 transform = Transform3D(0.88806, -0.458438, -0.0344295, 0.443682, 0.83504, 0.325351, -0.120403, -0.304207, 0.944966, 0.543169, -5.62001, -28.1843)
 
 [node name="sign2" parent="." instance=ExtResource("35_wi3uo")]
-transform = Transform3D(-0.512546, 0.552821, -1.02798, -0.114013, -1.14108, -0.556792, -1.16162, -0.131927, 0.508231, -3.69479, -1.07414, -38.7787)
+transform = Transform3D(-0.805806, 0.631548, -1.12927, -0.136328, -1.36441, -0.665769, -1.28667, -0.250956, 0.777773, -3.72223, -1.07414, -36.0274)
 
 [node name="Interactible3D2" type="Area3D" parent="sign2"]
 script = ExtResource("32_ts30l")
@@ -1967,7 +1967,7 @@ transform = Transform3D(0.0772853, 1.2666e-07, 0.246166, -1.11759e-08, 0.258013,
 transform = Transform3D(0.255409, 7.45058e-09, -0.191613, 7.45058e-09, 0.319295, 0, 0.191613, -1.16415e-07, 0.255408, 0.793462, -6.36542, -39.3479)
 
 [node name="pink crystal6" parent="." instance=ExtResource("40_q24ip")]
-transform = Transform3D(0.975672, 8.9407e-08, 0.219233, 0, 1, 7.45058e-09, -0.219233, 1.49012e-07, 0.975672, -3.20858, -7.61759, -36.9662)
+transform = Transform3D(0.433532, -0.282889, 0.855583, 0.345287, 0.929133, 0.132248, -0.832362, 0.238089, 0.500486, -1.69706, -7.83368, -38.0022)
 
 [node name="untitled" parent="." instance=ExtResource("12_uc604")]
 transform = Transform3D(1.84492, 0, 0, 0, 1.84492, 0, 0, 0, 1.84492, 34.3348, -2.99711, 31.7129)
@@ -1988,7 +1988,7 @@ transform = Transform3D(2.72678, 0, 0, 0, 2.71364, 0.267414, 0, -0.267414, 2.713
 [node name="Node3D" parent="Node3D545" instance=ExtResource("43_h2aok")]
 
 [node name="Node3D546" parent="." instance=ExtResource("19_bsy6g")]
-transform = Transform3D(1.93346, 0, 0, 0, 1.93346, 0, 0, 0, 1.93346, -2.94771, -7.62239, -31.9975)
+transform = Transform3D(1.93346, 0, 0, 0, 1.93346, 0, 0, 0, 1.93346, -3.04201, -7.62239, -31.9882)
 
 [node name="Node3D" parent="Node3D546" instance=ExtResource("44_042l7")]
 
@@ -2028,10 +2028,10 @@ transform = Transform3D(1, 0, 0, 0, -0.977648, 0.21025, 0, -0.21025, -0.977648, 
 [node name="Node3D" parent="Node3D553" instance=ExtResource("46_lg2o8")]
 
 [node name="pink crystal7" parent="." instance=ExtResource("40_q24ip")]
-transform = Transform3D(0.137146, 0, 0.152793, 0, 0.205316, 0, -0.152793, 0, 0.137146, -10.0736, -7.39304, -30.0206)
+transform = Transform3D(0.137146, 0, 0.152793, 0, 0.205316, 0, -0.152793, 0, 0.137146, -9.37649, -7.39304, -30.4265)
 
 [node name="green crystal9" parent="." instance=ExtResource("41_kgelh")]
-transform = Transform3D(0.331414, 0, -0.324601, 0, 0.463898, 0, 0.324601, 0, 0.331414, -2.95719, -7.61864, -32.0898)
+transform = Transform3D(-0.459317, 0, -0.0650273, -0.0148115, 0.451704, 0.10462, 0.063318, 0.105663, -0.447244, -3.72671, -5.41793, -40.131)
 
 [node name="Node3D554" parent="." instance=ExtResource("26_ue82y")]
 transform = Transform3D(1.34417, 0, 0, 0, 1.31489, 0.279033, 0, -0.279033, 1.31489, -9.3271, -7.44837, -39.4574)
@@ -2121,7 +2121,7 @@ transform = Transform3D(1.43773, 0, -0.0567318, 0, 2.14221, 0, 0.0500809, 0, 1.6
 transform = Transform3D(1.15693, 0, -0.850158, 0, 2.13135, 0, 0.988256, 0, 0.995266, -6.57797, 4.16538, -0.96749)
 
 [node name="Node3D574" parent="." instance=ExtResource("25_315pm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13895, 4.62514, -2.2158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.35961, 4.36217, -2.05532)
 
 [node name="Node3D575" parent="." instance=ExtResource("23_q6doc")]
 transform = Transform3D(1.20731, 0.0677414, 0.451824, -0.150356, 1.03294, 0.0670103, -0.62797, -0.11708, 0.852617, -7.6664, 4.42085, 4.46825)
