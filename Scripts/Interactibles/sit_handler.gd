@@ -22,9 +22,11 @@ func sit_down():
 	is_occupied = true
 	collider.disabled = true
 	GameManager.player.sit(sit_position)
+	GameManager.timeSpeed = 0.02
 
 
 func stand_up():
 	is_occupied = false
 	collider.disabled = false
 	GameManager.player.stand_up()
+	GameManager.timeSpeed = 0.002

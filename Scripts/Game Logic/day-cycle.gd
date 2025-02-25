@@ -2,7 +2,6 @@ extends Node
 
 @onready var anim_player = $"."
 var time_of_day = 0.0
-var time_speed = 0.001  # Default speed of the cycle
 var is_reversed = false
 
 func _ready():
@@ -14,18 +13,18 @@ func _process(delta):
 	GameManager.timeOfDay = time_of_day
 	# Update time of day based on the time speed and whether it's reversed
 	if is_reversed:
-		time_of_day -= time_speed * delta
+		time_of_day -= GameManager.timeSpeed * delta
 	else:
-		time_of_day += time_speed * delta
+		time_of_day += GameManager.timeSpeed * delta
 	
 	if Input.is_action_just_pressed("time warp"):
-		time_speed = 0.5
+		GameManager.timeSpeed = 0.5
 	if Input.is_action_just_released("time warp"):
-		time_speed = 0.001
+		GameManager.timeSpeed = 0.002
 	if Input.is_action_just_pressed("reverse warp"):
-		time_speed = -0.5
+		GameManager.timeSpeed = -0.5
 	if Input.is_action_just_released("reverse warp"):
-		time_speed = -0.001
+		GameManager.timeSpeed = 0.002
 	# Loop the day cycle
 	if time_of_day > 1.0:
 		time_of_day = 0.0
@@ -59,11 +58,11 @@ func _process(delta):
 
 # Function to control animation speed dynamically
 func set_animation_speed():
-	anim_player.speed_scale = time_speed  # Correct way to set speed
+	anim_player.speed_scale = GameManager.timeSpeed  # Correct way to set speed
 
 # Function to change the speed of the day cycle
 func change_time_speed(new_speed: float):
-	time_speed = new_speed
+	GameManager.timeSpeed = new_speed
 	set_animation_speed()
 
 # Function to reverse time direction

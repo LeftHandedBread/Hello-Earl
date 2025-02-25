@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://behkm56aldjjo"]
+[gd_scene load_steps=12 format=4 uid="uid://behkm56aldjjo"]
 
 [ext_resource type="PackedScene" uid="uid://b1d3vy00w0wk4" path="res://Assets/Level 1/objects/coke shoe.gltf" id="1_u3ii3"]
 [ext_resource type="Texture2D" uid="uid://bdwas5lacuk75" path="res://Assets/Level 1/objects/simply skibidi.png" id="2_m52pe"]
-[ext_resource type="Script" path="res://Scripts/Interactibles/boinger_shoes.gd" id="3_c8qgx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gf8ev"]
 resource_name = "Material.001"
@@ -208,9 +207,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x7a5q")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eaqke"]
-size = Vector3(1.56094, 0.389526, 0.95874)
-
 [node name="coke shoe" instance=ExtResource("1_u3ii3")]
 
 [node name="Cylinder" parent="." index="0"]
@@ -231,20 +227,12 @@ transform = Transform3D(0.00711297, 0.00234083, 0.0324455, 0.0324746, 0.00142346
 mesh = SubResource("ArrayMesh_pb6li")
 skeleton = NodePath("")
 
-[node name="Interactible3D" type="Area3D" parent="." index="4"]
-script = ExtResource("3_c8qgx")
-InteractText = "Boingers"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0630951, 0.161026, 0.457681)
-shape = SubResource("BoxShape3D_eaqke")
-
-[node name="Cylinder3" type="MeshInstance3D" parent="." index="5"]
+[node name="Cylinder3" type="MeshInstance3D" parent="." index="4"]
 transform = Transform3D(0.0449772, -0.0250911, -0.109528, 0.210656, 0.00650666, 0.00923366, 0.0160326, -0.0151029, 0.185942, -0.459, 0.241039, 0.87598)
 mesh = SubResource("ArrayMesh_i6fpq")
 skeleton = NodePath("")
 
-[node name="Circle3" type="MeshInstance3D" parent="." index="6"]
+[node name="Circle3" type="MeshInstance3D" parent="." index="5"]
 transform = Transform3D(0.00827414, 0.0137548, -0.0253445, 0.028819, -0.003029, 0.00776457, 0.00100104, -0.0264883, -0.0140487, -0.304, 0.367, 0.601)
 mesh = SubResource("ArrayMesh_pb6li")
 skeleton = NodePath("")
