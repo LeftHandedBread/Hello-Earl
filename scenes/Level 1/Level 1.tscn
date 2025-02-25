@@ -354,7 +354,7 @@ environment = SubResource("Environment_hatdx")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46637e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
