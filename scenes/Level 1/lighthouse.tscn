@@ -5,25 +5,25 @@
 [node name="lighthouse" instance=ExtResource("1_rnh3p")]
 
 [node name="the changbang" parent="." index="0"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
 
 [node name="railings" parent="." index="1"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
 
 [node name="glass" parent="." index="2"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
 
 [node name="window seals" parent="." index="3"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
 
 [node name="door frame" parent="." index="4"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(1.98813, 0, 0, 0, 1.49967, 0, 0, 0, 1.81558, 0.329668, 3.71809, 0.397077)
 
 [node name="window frame" parent="." index="5"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
 
 [node name="magic threshold" parent="." index="6"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
 
 [node name="magic wall mesh" parent="." index="7"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 4, 0)
+transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dngo8rw87gayn"]
 
-[ext_resource type="PackedScene" uid="uid://creoecq6a8e14" path="res://scenes/Level 1/Placeable tscn assets/boulder1-inherited.tscn" id="1_54q1v"]
+[ext_resource type="PackedScene" uid="uid://creoecq6a8e14" path="res://scenes/Level 1/Placeable tscn assets/boulder1-no collision.tscn" id="1_54q1v"]
 
 [node name="Node3D" type="Node3D"]
 
