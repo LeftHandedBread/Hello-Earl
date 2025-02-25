@@ -563,6 +563,7 @@ transform = Transform3D(1.885, 0, 0, 0, 1.72967, 0.749318, 0, -0.749318, 1.72967
 transform = Transform3D(-0.0435667, 0, -0.488059, 0, 0.49, 0, 0.488059, 0, -0.0435667, -46.4183, 4.74167, -34.7372)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+visible = false
 shape = SubResource("SphereShape3D_52jve")
 
 [node name="Node3D164" parent="." instance=ExtResource("30_6ib88")]
@@ -906,7 +907,7 @@ transform = Transform3D(0.0362808, 0, -1.25115, 0, 1.25168, 0, 1.25115, 0, 0.036
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6461, 0.0476224, 1.44987)
 
 [node name="Node3D277" parent="." instance=ExtResource("21_ahsd0")]
-transform = Transform3D(2.25168, 0, -3.39973, 0, 2.869, 0, 3.39973, 0, 2.25168, -20.1967, 0.260052, -11.1787)
+transform = Transform3D(2.25168, 0, -3.39973, 0, 2.869, 0, 3.39973, 0, 2.25168, -21.2726, 0.260052, -12.5285)
 
 [node name="Node3D278" parent="." instance=ExtResource("27_w23ay")]
 transform = Transform3D(0.653619, 0, 0.756824, 0, 0.632289, 0, -0.756824, 0, 0.653619, -33.1252, 0.000555515, 2.59509)
@@ -1000,6 +1001,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8329, 3.61304, -23.8119)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
 transform = Transform3D(0.880736, 0.124258, 0.457016, 0.0136873, 0.957887, -0.286818, -0.473409, 0.258866, 0.841945, -3.0458, -1.77804, -3.95983)
+visible = false
 shape = SubResource("BoxShape3D_yhkry")
 
 [node name="Node3D301" parent="." instance=ExtResource("30_6ib88")]
@@ -1419,6 +1421,7 @@ InteractText = "Earl's House"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sign/Interactible3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
+visible = false
 shape = SubResource("BoxShape3D_8msvw")
 
 [node name="Node3D437" parent="." instance=ExtResource("21_ahsd0")]
@@ -1461,6 +1464,7 @@ transform = Transform3D(1.60884, 0, 0, 0, 1.60884, 0, 0, 0, 1.60884, 1.82832, 0.
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D447/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.206663, 0)
+visible = false
 shape = SubResource("SphereShape3D_lmcwi")
 
 [node name="Node3D448" parent="." instance=ExtResource("30_6ib88")]
@@ -1471,6 +1475,7 @@ transform = Transform3D(0.875, 4.47035e-08, 4.47035e-08, 0, 0.875, 0, 0, 5.96046
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D448/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.206663, 0)
+visible = false
 shape = SubResource("SphereShape3D_lmcwi")
 
 [node name="Node3D449" parent="." instance=ExtResource("26_ue82y")]
@@ -1594,7 +1599,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09234, 0.108979, -32.1693)
 transform = Transform3D(-0.667547, 0, 0.744568, 0, 1, 0, -0.744568, 0, -0.667547, -4.82338, 0.127493, -32.0174)
 
 [node name="Node3D490" parent="." instance=ExtResource("21_ahsd0")]
-transform = Transform3D(3.58516, 0, 1.93792, 0, 4.0754, 0, -1.93792, 0, 3.58516, 9.48107, 1.69391, -42.6362)
+transform = Transform3D(3.58516, 0, 1.93792, 0, 4.0754, 0, -1.93792, 0, 3.58516, 9.48107, 1.34826, -42.6362)
 
 [node name="Node3D491" parent="." instance=ExtResource("22_cygau")]
 transform = Transform3D(0.704671, 0, 0.709534, 0, 1, 0, -0.709534, 0, 0.704671, 5.52661, 1.07877, -39.0537)
@@ -1819,12 +1824,14 @@ transform = Transform3D(4.01, 0, 0, 0, 4.01, 0, 0, 0, 4.01, -5.75931, 5.76806, 1
 transform = Transform3D(-0.0733521, 0, -0.821733, 0, 0.825, 0, 0.821733, 0, -0.0733521, -47.4776, 4.74167, -34.6399)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+visible = false
 shape = SubResource("SphereShape3D_52jve")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.0284517, 0, -0.318733, 0, 0.32, 0, 0.318733, 0, -0.0284517, -46.7711, 4.58368, -33.3706)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+visible = false
 shape = SubResource("SphereShape3D_52jve")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
@@ -1832,60 +1839,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8329, 3.61304, -23.8119)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
 transform = Transform3D(0.899944, -0.0449017, 0.433687, 0.0484943, 0.998819, 0.00278234, -0.433301, 0.0185274, 0.901059, -4.76928, -0.223091, -14.8685)
+visible = false
 shape = SubResource("BoxShape3D_yhkry")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 2.28705, -32.3433)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0331, 1.37814, -29.8818)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6712, 1.4479, -30.3841)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D9" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 0.50797, -27.5832)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D10" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9172, 0.608813, -28.1324)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D11" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8396, -0.166435, -25.7093)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D12" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3794, 2.83789, -38.2211)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D13" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3342, 1.64112, -36.5332)
+visible = false
 shape = SubResource("SphereShape3D_nnk27")
 
 [node name="StaticBody3D14" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 2.28705, -32.3433)
+visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="coke shoe" parent="." instance=ExtResource("39_jaune")]
@@ -1921,6 +1938,7 @@ InteractText = "Boinger Caverns"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sign2/Interactible3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
+visible = false
 shape = SubResource("BoxShape3D_8msvw")
 
 [node name="green crystal5" parent="." instance=ExtResource("41_kgelh")]
@@ -2050,7 +2068,7 @@ transform = Transform3D(1.25745, 0, -0.854982, 0, 1.52059, 0, 0.854982, 0, 1.257
 transform = Transform3D(0.670465, 0, 0.741941, 0, 1, 0, -0.741941, 0, 0.670465, 21.7677, 1.67711, 2.89121)
 
 [node name="Node3D571" parent="." instance=ExtResource("21_ahsd0")]
-transform = Transform3D(2.4936, 0, 1.34183, 0, 2.8317, 0, -1.34183, 0, 2.4936, -9.03407, 2.61279, -13.4839)
+transform = Transform3D(2.4936, 0, 1.34183, 0, 2.8317, 0, -1.34183, 0, 2.4936, -9.29611, 2.61279, -14.3388)
 
 [node name="Node3D572" parent="." instance=ExtResource("25_315pm")]
 transform = Transform3D(1.43773, 0, -0.0567318, 0, 2.14221, 0, 0.0500809, 0, 1.62866, -5.18986, 3.90421, 1.57093)
@@ -2082,6 +2100,7 @@ InteractText = "Boinger Moment"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sign3/Interactible3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
+visible = false
 shape = SubResource("BoxShape3D_8msvw")
 
 [node name="sign4" parent="." instance=ExtResource("35_wi3uo")]
@@ -2093,6 +2112,7 @@ InteractText = "You are NOT supposed to be here."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sign4/Interactible3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
+visible = false
 shape = SubResource("BoxShape3D_8msvw")
 
 [node name="Node3D577" parent="." instance=ExtResource("33_4tqj2")]
