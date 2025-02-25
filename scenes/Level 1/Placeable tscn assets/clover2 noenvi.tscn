@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=4 uid="uid://dlvoxba2nu3iv"]
+
+[ext_resource type="Texture2D" uid="uid://bw7js3suptnbq" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_clover-04.png" id="1_66pri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mbps"]
+resource_name = "clover-02"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_66pri")
+metallic_specular = 0.0
+roughness = 0.24
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5ovy1"]
+_surfaces = [{
+"aabb": AABB(-0.822492, 0.00665807, -0.821066, 1.60858, 0.0440042, 1.60858),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAAEAAEAAgADAAQABAAAAAIAAwABAAQA"),
+"name": "clover-02",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("//8AAP//AAD//wAAAAAAAAAAAAD//wAAAAAAAAAAAAB7jv//WI0AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cngsx"]
+resource_name = "uploads_files_3523647_shapespark-low-poly-plants-kit_Plane_576"
+_surfaces = [{
+"aabb": AABB(-0.822492, 0.00665807, -0.821066, 1.60858, 0.0440042, 1.60858),
+"attribute_data": PackedByteArray("AAD//wAA/////////////wAAAAAAAAAA//8AAP//AACmcnuOpnJ7jqZye46mcnuO"),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AQALAAMABAAGAAgACQAAAAUABwACAAoA"),
+"material": SubResource("StandardMaterial3D_0mbps"),
+"name": "clover-02",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAP//6NP//wAA///l0///AAAAAIHW//8AAAAA5dMAAAAA//9+1gAAAAD//+jTAAAAAAAAftYAAAAAAACB1nuO//9YjX7We47//1iN6NN7jv//WI2B1nuO//9YjeXTNNbKKY/Txymh1F0rj9PHKbfWWys01sopt9ZbK6HUXSu31lsrNNbKKaHUXSuP08cp")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5ovy1")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Clover-02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0083102, -2.38419e-07, 0.00135159)
+mesh = SubResource("ArrayMesh_cngsx")
+skeleton = NodePath("")

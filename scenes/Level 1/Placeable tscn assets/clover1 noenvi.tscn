@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=4 uid="uid://ptnbcweoq76u"]
+
+[ext_resource type="Texture2D" uid="uid://ch6xma26m3tvx" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_clover-05.png" id="1_d3nma"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgrmd"]
+resource_name = "clover-01"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_d3nma")
+metallic_specular = 0.0
+roughness = 0.69
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3rh15"]
+_surfaces = [{
+"aabb": AABB(-0.757521, -0.0114668, -0.783109, 1.60858, 0.0688008, 1.60858),
+"format": 34896613377,
+"index_count": 15,
+"index_data": PackedByteArray("AgADAAUABAAAAAUAAwAEAAUAAwABAAQAAAACAAUA"),
+"lods": [0.0884419, PackedByteArray("BAAAAAMAAAACAAMAAwABAAQA")],
+"name": "clover-01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("//8AAP//AAD//wAAAAAAAAAAAAD//wAAAAAAAAAAAAD//wAABgIAAC9t///EcAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_beray"]
+resource_name = "uploads_files_3523647_shapespark-low-poly-plants-kit_Plane_575"
+_surfaces = [{
+"aabb": AABB(-0.757521, -0.0114668, -0.783109, 1.60858, 0.0688008, 1.60858),
+"attribute_data": PackedByteArray("AAD//wAA////////AAAAAAAAAAD//wAA//8AAPj9///4/f//Oo8vbTqPL206jy9tOo8vbQ=="),
+"format": 34896613399,
+"index_count": 15,
+"index_data": PackedByteArray("AwAFAAkACAABAAwABgAHAAsABgACAAcAAAAEAAoA"),
+"lods": [0.0884419, PackedByteArray("BwAAAAUAAAADAAUABQACAAcA")],
+"material": SubResource("StandardMaterial3D_vgrmd"),
+"name": "clover-01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 13,
+"vertex_data": PackedByteArray("//8AAP//j9P//wAA//+Z0///AAAAAJrXAAAAAP//uNcAAAAA//+P0wAAAAAAALjXAAAAAAAAmdf//wAABgKZ1///AAAGApnTL23//8RwuNcvbf//xHCP0y9t///EcJnXL23//8RwmdNu1pApL9OXKffT/ysg2BAsbtaQKSDYECz30/8r99P/Ky/Tlykg2BAsbtaQKffT/ysv05cp")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3rh15")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Clover-01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0216666, -2.38419e-07, 7.62939e-06)
+mesh = SubResource("ArrayMesh_beray")
+skeleton = NodePath("")
