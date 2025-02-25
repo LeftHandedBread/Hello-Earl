@@ -140,7 +140,7 @@ func _unhandled_input(event : InputEvent):
 			head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
 	
 	var head_x_rot = fposmod(head.rotation_degrees.x, 360)
-	if head_x_rot > 90 and head_x_rot < 270 :
+	if head_x_rot > 100 and head_x_rot < 260 :
 		GameManager.isUpsideDown = true
 	else :
 		GameManager.isUpsideDown = false
@@ -180,19 +180,41 @@ func change_state(state : CharacterState):
 			SPEED = SPRINT_SPEED
 	currentState = state
 	
-func sit(target_transform: Transform3D):
-	# Disable movement controls
-	inputEnabled = true
+var is_sitting = false
+var can_sit = true
+var original_parent = null  # Store original parent
+var original_rotation : Quaternion
+var original_position : Vector3
+
+
+func sit(seat: Node3D):
+	if is_sitting:
+		return
+
+	# Disable movement
+	inputEnabled = false
 	interactionsEnabled = true
-	change_state(CharacterState.CROUCHING)
-	
-	# Move the player to the seat
-	global_transform = target_transform
+	is_sitting = true
+	original_parent = get_parent()
+	# Attach player to seat to inherit movement
+	reparent(seat)
+	# Align rotation and position
+	global_transform = seat.global_transform
+
 
 func stand_up():
-	# Enable movement controls again
+	if not is_sitting:
+		return
+
+	is_sitting = false
+	
+	# Reattach player to the original parent (scene root or wherever it was)
+	reparent(original_parent)
+
+	# Re-enable movement
 	inputEnabled = true
 	interactionsEnabled = true
+
 
 func reset_shoe_effects():
 	JUMP_VELOCITY = 7.5

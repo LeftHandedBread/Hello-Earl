@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_hitbox.gd" id="3_f34k4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
-radius = 0.45826
-height = 3.3011
+radius = 0.225108
+height = 1.44623
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
 
@@ -53,8 +53,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ajdfm")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sfodt"]
-height = 4.73235
-radius = 0.718603
+height = 4.7496
+radius = 0.470789
 
 [sub_resource type="Animation" id="Animation_fnymu"]
 length = 0.001
@@ -71,7 +71,7 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("head")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 2, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0)
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -80,7 +80,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(75, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(80, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -100,7 +100,7 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("head")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 2, 0, 0.25, 1, 0, 0.75, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0, 0.25, 1, 0, 0.2, 0)
 
 [sub_resource type="Animation" id="Animation_px50k"]
 resource_name = "sprint"
@@ -135,17 +135,18 @@ GROUND_FRICTION = 20
 AIR_FRICTION = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0106263, 0)
 shape = SubResource("CapsuleShape3D_p0oft")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.167, 0, 0, 0, 1.75, 0, 0, 0, 1.167, 0, 0.974566, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.5, 0, -0.0302949, 0)
 mesh = SubResource("CapsuleMesh_jse87")
 
 [node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
+fov = 80.0
 
 [node name="RayCast3D" type="RayCast3D" parent="head"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -174,6 +175,7 @@ collision_mask = 2
 script = ExtResource("3_f34k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight/Cone_006/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102089, 0, 0)
 shape = SubResource("CylinderShape3D_sfodt")
 disabled = true
 
