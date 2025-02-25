@@ -5,20 +5,16 @@
 [node name="light" instance=ExtResource("1_4lw5e")]
 
 [node name="Cube" parent="." index="0"]
-visible = false
 cast_shadow = 0
 
 [node name="Cube_001" parent="." index="1"]
-visible = false
 cast_shadow = 0
 
 [node name="Cube_002" parent="." index="2"]
-visible = false
 cast_shadow = 0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.01, 0)
-visible = false
 light_color = Color(0.955851, 0.857204, 0.600687, 1)
 light_energy = 3.225
 light_indirect_energy = 0.0
@@ -29,7 +25,6 @@ spot_angle = 85.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.46328, 0)
-visible = false
 light_color = Color(0.955851, 0.857204, 0.600687, 1)
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0

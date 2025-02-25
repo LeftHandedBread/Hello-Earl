@@ -10,6 +10,7 @@
 resource_name = "Material.003"
 cull_mode = 2
 disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("1_eifjr")
 metallic_specular = 0.22
 roughness = 0.5
@@ -109,21 +110,3 @@ shape = SubResource("BoxShape3D_61mi1")
 
 [node name="granite counter top" parent="." instance=ExtResource("2_lg3oj")]
 transform = Transform3D(-4.37114e-08, 0, -0.86, 0, 1, 0, 1, 0, -3.75918e-08, -4.355, -4.735, -34.919)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.292662, 0.69992, -0.651507, 0.0514972, 0.691887, 0.720167, 0.954828, 0.177215, -0.238533, -2.74011, -2.89362, -32.4202)
-layers = 512
-light_energy = 0.669
-light_indirect_energy = 0.0
-spot_range = 8.75983
-spot_attenuation = 0.45
-spot_angle = 180.0
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.621614, -0.756908, 0.201709, 0.769408, -0.638303, -0.0240979, 0.146991, 0.140217, 0.979149, -6.28092, -2.4415, -39.1638)
-layers = 512
-light_energy = 0.669
-light_indirect_energy = 0.0
-spot_range = 8.75983
-spot_attenuation = 0.45
-spot_angle = 180.0
