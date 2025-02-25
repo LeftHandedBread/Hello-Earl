@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=57 format=3 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://bcptu0nih574d" path="res://scenes/Level 1/Placeable tscn assets/bush 5 noenvi.tscn" id="46_lg2o8"]
 [ext_resource type="PackedScene" uid="uid://dwgyhhvh4owon" path="res://scenes/Level 1/Placeable tscn assets/tree4 noenvi.tscn" id="47_d73o6"]
 [ext_resource type="PackedScene" uid="uid://itcivjr2dp28" path="res://scenes/Level 1/Placeable tscn assets/hedge noenvi.tscn" id="48_166k4"]
+[ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="50_4vojj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_52jve"]
 radius = 1.65529
@@ -2158,8 +2159,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754899, 0)
 visible = false
 shape = SubResource("BoxShape3D_8msvw")
 
-[node name="Node3D577" parent="." instance=ExtResource("33_4tqj2")]
+[node name="Lighthouse Door" parent="." instance=ExtResource("33_4tqj2")]
 transform = Transform3D(0.909287, 0, 0.444668, 0, 1.01219, 0, -0.444668, 0, 0.909287, -6.5524, 5.37692, 1.12229)
+script = ExtResource("50_4vojj")
 
 [node name="Node3D578" parent="." instance=ExtResource("27_w23ay")]
 transform = Transform3D(1.39498, 0, 0, 0, 1.12055, 0, 0, 0, 1.58862, 14.2954, 6.20893, 0.782983)
