@@ -11,6 +11,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62ghd"]
 resource_name = "drywall"
 cull_mode = 2
+diffuse_mode = 1
+disable_ambient_light = true
 albedo_texture = ExtResource("1_vh8ss")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16plo"]
@@ -21,23 +23,31 @@ albedo_texture = ExtResource("2_vl0q8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8n6tu"]
 resource_name = "wooden tiles"
 cull_mode = 2
+diffuse_mode = 3
+disable_ambient_light = true
 albedo_texture = ExtResource("3_ddgbm")
 roughness = 0.675258
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypcye"]
 resource_name = "concrete floor"
 cull_mode = 2
+diffuse_mode = 1
+specular_mode = 1
+disable_ambient_light = true
 albedo_texture = ExtResource("4_oq6ps")
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrd7j"]
 resource_name = "geode"
 cull_mode = 2
+diffuse_mode = 1
+disable_ambient_light = true
 albedo_texture = ExtResource("5_npw6f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3sg3"]
 resource_name = "gold"
 cull_mode = 2
+diffuse_mode = 1
 albedo_color = Color(0.906667, 0.588999, 0.00868334, 1)
 metallic = 0.628866
 roughness = 0.5
@@ -500,10 +510,12 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="the changbang"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="the changbang/StaticBody3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_gcyuu")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="the changbang/StaticBody3D"]
 transform = Transform3D(0.766515, 0.642226, 0, -0.642226, 0.766515, 0, 0, 0, 1, 1.53927, -1.09574, 0.785622)
+visible = false
 shape = SubResource("BoxShape3D_83il6")
 
 [node name="railings" type="MeshInstance3D" parent="."]
@@ -545,6 +557,7 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.15538e-05, -0.243272, -1.01767)
+visible = false
 shape = SubResource("BoxShape3D_e1o5r")
 
 [node name="Area3D" type="Area3D" parent="magic wall mesh"]
@@ -554,4 +567,5 @@ script = ExtResource("2_inf3c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.15538e-05, -0.243272, -1.01767)
+visible = false
 shape = SubResource("BoxShape3D_e1o5r")

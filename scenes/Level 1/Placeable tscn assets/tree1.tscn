@@ -129,8 +129,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-1/StaticBody3D"]
 transform = Transform3D(0.99154, -0.129428, -0.00981126, 0.129799, 0.988704, 0.0749484, 0, -0.0755879, 0.997139, -0.168497, 1.47215, -0.106103)
+visible = false
 shape = SubResource("CapsuleShape3D_tlp4r")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Tree-01-1/StaticBody3D"]
 transform = Transform3D(0.995971, 0.0893274, -0.00790626, -0.0896766, 0.992093, -0.0878089, 0, 0.0881641, 0.996106, 0.0536773, 1.21574, 0.185602)
+visible = false
 shape = SubResource("CapsuleShape3D_okwe5")

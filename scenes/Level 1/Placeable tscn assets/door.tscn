@@ -189,6 +189,7 @@ InteractText = "Door [E]"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cube/Interactible3D"]
 transform = Transform3D(4.735, 0, 0, 0, 4.735, 0, 0, 0, 4.735, 1.38836, 2.20035, 5.94847)
+visible = false
 shape = SubResource("BoxShape3D_ludrx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Cube/Interactible3D"]
@@ -207,4 +208,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0278562, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0163574, 0.952156, -0.451721)
+visible = false
 shape = SubResource("BoxShape3D_o6wpe")

@@ -128,10 +128,12 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_gpfxj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139585, 1.75151, 0.0275638)
+visible = false
 shape = SubResource("CylinderShape3D_54x17")
 
 [node name="Node3D" parent="." instance=ExtResource("4_yo6oh")]
