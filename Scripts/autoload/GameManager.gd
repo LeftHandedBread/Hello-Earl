@@ -7,6 +7,7 @@ var flashlight : SpotLight3D = null
 var flashlight_hitbox : Area3D = null
 var isUpsideDown : bool
 var characterShoes := Shoes.NONE
+var timeOfDay = 0.0
 enum Shoes {
 	NONE = 0,
 	NICOTINE = 1,

@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://big4cclh1y3kj"]
 
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="1_mdsut"]
-[ext_resource type="Script" path="res://Scripts/open_door.gd" id="2_tiaej"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/open_door.gd" id="2_tiaej"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1lea"]
 resource_name = "Material.004"
@@ -100,7 +100,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.707107, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.85005, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.88496, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_125es"]
