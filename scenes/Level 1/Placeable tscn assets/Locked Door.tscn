@@ -1,8 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqyjsakub54ti"]
+[gd_scene load_steps=7 format=3 uid="uid://bqyjsakub54ti"]
 
 [ext_resource type="PackedScene" uid="uid://duca5dns4bioq" path="res://Assets/Level 1/objects/door.gltf" id="1_7pa0s"]
+[ext_resource type="Script" path="res://Scripts/basement_puzzle.gd" id="2_ktydv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhqr1"]
+size = Vector3(0.0571289, 1.90016, 0.937866)
+
+[sub_resource type="Animation" id="Animation_ialg3"]
+resource_name = "Open Door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.757858, 1),
+"update": 0,
+"values": [Vector3(0, 1.67552, 0), Vector3(0, -0.0698132, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3ja27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.67552, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqv53"]
+_data = {
+"Open Door": SubResource("Animation_ialg3"),
+"RESET": SubResource("Animation_3ja27")
+}
 
 [node name="door2" instance=ExtResource("1_7pa0s")]
+transform = Transform3D(-0.104529, 0, 0.994522, 0, 1, 0, -0.994522, 0, -0.104529, 0, 0, 0)
 
 [node name="Cube_001" parent="." index="2"]
 transform = Transform3D(-0.03, 0, -4.37114e-09, 0, 0.05, 0, 2.62268e-09, 0, -0.05, 0.06, 0.85, -0.75)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0278562, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0163574, 0.952156, -0.451721)
+shape = SubResource("BoxShape3D_yhqr1")
+
+[node name="Area3D" type="Area3D" parent="." index="4"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_ktydv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0163574, 0.952156, -0.451721)
+shape = SubResource("BoxShape3D_yhqr1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_vqv53")
+}

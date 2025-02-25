@@ -1,7 +1,7 @@
 extends Node
 
 @onready var anim_player = $"."
-var time_of_day = 0.0  # Time value from 0.0 (midnight) to 1.0 (next midnight)
+var time_of_day = 0.0
 var time_speed = 0.001  # Default speed of the cycle
 var is_reversed = false
 
@@ -11,6 +11,7 @@ func _ready():
 	set_animation_speed()  # Set initial animation speed
 
 func _process(delta):
+	GameManager.timeOfDay = time_of_day
 	# Update time of day based on the time speed and whether it's reversed
 	if is_reversed:
 		time_of_day -= time_speed * delta
@@ -30,7 +31,6 @@ func _process(delta):
 		time_of_day = 0.0
 	elif time_of_day < 0.0:
 		time_of_day = 1.0
-
 	# Sync animation position to time_of_day
 	anim_player.seek(time_of_day * anim_player.get_animation("Day").length)
 	

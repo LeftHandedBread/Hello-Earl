@@ -1797,7 +1797,7 @@ transform = Transform3D(0.380134, 0, -0.924931, 0, 1, 0, 0.924931, 0, 0.380134, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2108, 0.298116, 41.4011)
 
 [node name="door2" parent="." instance=ExtResource("35_qt7fq")]
-transform = Transform3D(-0.110485, 0, 1.01527, 0, 1.03422, 0, -0.991867, 0, -0.113091, 34.551, 0.000612438, 32.5523)
+transform = Transform3D(-0.10432, 0, 1.01595, 0, 1.03422, 0, -0.992534, 0, -0.106781, 34.551, 0.000612438, 32.5523)
 
 [node name="light" parent="." instance=ExtResource("36_vx0nf")]
 transform = Transform3D(0.378803, 0, 0, 0, -0.378803, 3.3116e-08, 0, -3.3116e-08, -0.378803, 35.5248, 3.00595, 30.602)

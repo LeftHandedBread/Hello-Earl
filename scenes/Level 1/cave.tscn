@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crryy7r0g1ukj" path="res://Assets/Level 1/objects/concrete floor.jpg" id="1_eifjr"]
 [ext_resource type="PackedScene" uid="uid://c8amxy3yj6mj" path="res://scenes/Level 1/Placeable tscn assets/granite_counter_top.tscn" id="2_lg3oj"]
-[ext_resource type="Script" path="res://Scripts/isUpsideDown.gd" id="2_o6d8j"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/isUpsideDown.gd" id="2_o6d8j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v1maf"]
 

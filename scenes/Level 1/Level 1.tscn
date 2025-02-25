@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
-[ext_resource type="Script" path="res://Scripts/camera_follows_sun.gd" id="3_cnwoo"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/camera_follows_sun.gd" id="3_cnwoo"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/day-cycle.gd" id="4_fxdxl"]
 [ext_resource type="PackedScene" uid="uid://cj68v47c1clgg" path="res://scenes/Level 1/World.tscn" id="5_7vcgx"]
 
@@ -362,9 +362,9 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966783
 shadow_enabled = true
-shadow_bias = 0.0
+shadow_bias = 1.864
 shadow_normal_bias = 1.5
-shadow_blur = 2.177
+shadow_blur = 0.0
 directional_shadow_split_1 = 0.11
 directional_shadow_split_2 = 0.19
 directional_shadow_split_3 = 0.362
@@ -407,7 +407,7 @@ libraries = {
 "": SubResource("AnimationLibrary_k13is")
 }
 autoplay = "Day"
-speed_scale = 0.05
+speed_scale = 0.001
 script = ExtResource("4_fxdxl")
 
 [node name="World" parent="." instance=ExtResource("5_7vcgx")]

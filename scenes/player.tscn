@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player.gd" id="1_yofdb"]
 [ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight.gd" id="2_ecvki"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/GUI/PlayerGUI.tscn" id="2_ywley"]
-[ext_resource type="Script" path="res://Scripts/flashlight_hitbox.gd" id="3_f34k4"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_hitbox.gd" id="3_f34k4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
 radius = 0.45826
