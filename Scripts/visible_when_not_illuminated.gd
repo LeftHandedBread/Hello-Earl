@@ -1,14 +1,13 @@
 extends Area3D
 
 var illuminated = false
-@onready var collider = $"../StaticBody3D/CollisionShape3D"
+@onready var collider_parent = $"../StaticBody3D"
 
 func _ready():
 	monitoring = true
 	monitorable = true  # Ensures this area can be detected by others
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	connect("area_exited", Callable(self, "_on_area_exited"))
-	print("Collider reference: ", collider)
 
 func _on_area_entered(body):
 	print("Body entered well: ", body)
@@ -30,7 +29,11 @@ func toggle_illumination():
 	print("illumination state toggled")
 	if illuminated:
 		self.get_parent().visible = false
-		collider.set_deferred("disabled", true)
+		for shape in collider_parent.get_children():
+			if shape is CollisionShape3D:
+				shape.set_deferred("disabled", true)
 	else:
 		self.get_parent().visible = true
-		collider.set_deferred("disabled", false)
+		for shape in collider_parent.get_children():
+			if shape is CollisionShape3D:
+				shape.set_deferred("disabled", false)

@@ -16,7 +16,15 @@ func _process(delta):
 		time_of_day -= time_speed * delta
 	else:
 		time_of_day += time_speed * delta
-
+	
+	if Input.is_action_just_pressed("time warp"):
+		time_speed = 0.5
+	if Input.is_action_just_released("time warp"):
+		time_speed = 0.001
+	if Input.is_action_just_pressed("reverse warp"):
+		time_speed = -0.5
+	if Input.is_action_just_released("reverse warp"):
+		time_speed = -0.001
 	# Loop the day cycle
 	if time_of_day > 1.0:
 		time_of_day = 0.0
