@@ -354,7 +354,8 @@ environment = SubResource("Environment_hatdx")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46637e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
 light_indirect_energy = 0.0
@@ -362,11 +363,9 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966783
 shadow_enabled = true
-shadow_bias = 1.864
-shadow_normal_bias = 1.5
-shadow_blur = 0.0
-directional_shadow_split_1 = 0.11
-directional_shadow_split_2 = 0.19
+shadow_blur = 0.593
+directional_shadow_split_1 = 0.025
+directional_shadow_split_2 = 0.114
 directional_shadow_split_3 = 0.362
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.7
@@ -374,7 +373,7 @@ directional_shadow_max_distance = 818.7
 sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]
-transform = Transform3D(-145.281, -52.8782, 0, -0.000191419, 0.000525916, -154.605, 52.8782, -145.281, -0.000559668, 0, -2.07424e-05, 483.623)
+transform = Transform3D(-145.281, -52.8782, 0, -0.000191419, 0.000525916, -154.605, 52.8782, -145.281, -0.000559669, 0, -2.07424e-05, 483.623)
 mesh = SubResource("SphereMesh_lbn6l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]

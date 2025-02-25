@@ -23,12 +23,12 @@ func _on_area_exited(body):
 
 func toggle_illumination():
 	if illuminated:
-		self.get_parent().visible = false
-		for shape in collider_parent.get_children():
-			if shape is CollisionShape3D:
-				shape.set_deferred("disabled", true)
-	else:
 		self.get_parent().visible = true
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", false)
+	else:
+		self.get_parent().visible = false
+		for shape in collider_parent.get_children():
+			if shape is CollisionShape3D:
+				shape.set_deferred("disabled", true)
