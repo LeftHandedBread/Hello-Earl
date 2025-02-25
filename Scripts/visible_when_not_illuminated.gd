@@ -5,12 +5,11 @@ var illuminated = false
 
 func _ready():
 	monitoring = true
-	monitorable = true  # Ensures this area can be detected by others
+	monitorable = true
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	connect("area_exited", Callable(self, "_on_area_exited"))
 
 func _on_area_entered(body):
-	print("Body entered well: ", body)
 	if body.is_in_group("flashlight beam"):
 		print("flashlight detected")
 		illuminated = true
@@ -18,7 +17,6 @@ func _on_area_entered(body):
 
 
 func _on_area_exited(body):
-	print("Body exited well: ", body)
 	if body.is_in_group("flashlight beam"):
 		print("flashlight detected")
 		illuminated = false
