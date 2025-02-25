@@ -10,3 +10,5 @@ func _interact() -> void:
 func _process(_delta: float) -> void:
 	if GameManager.characterShoes == GameManager.Shoes.COKE:
 		self.get_parent().visible = false
+	else:
+		self.get_parent().visible = true
