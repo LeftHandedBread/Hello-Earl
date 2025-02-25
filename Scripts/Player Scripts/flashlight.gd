@@ -2,6 +2,7 @@ extends SpotLight3D
 
 var flashlight_on = false
 var can_use_flashlight = false  # Player must find it first
+@onready var flashlight_hitbox = $Cone_006/Area3D
 @onready var flashlight_collider = $Cone_006/Area3D/CollisionShape3D
 
 func _input(event):
@@ -12,6 +13,7 @@ func _input(event):
 			flashlight_collider.disabled = false
 		elif !flashlight_on :
 			self.light_energy = 0 
+			flashlight_hitbox.monitoring = true
 			flashlight_collider.disabled = true
 		print("Flashlight Toggle")
 
@@ -21,5 +23,6 @@ func enable_flashlight():
 	print("Flashlight acquired!")
 
 func _ready():
+	GameManager.flashlight_hitbox = flashlight_hitbox
 	GameManager.flashlight = self  # Register the flashlight globally
 	self.visible = false  # Start hidden
