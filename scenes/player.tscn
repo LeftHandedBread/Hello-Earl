@@ -53,8 +53,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ajdfm")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sfodt"]
-height = 4.7496
-radius = 0.470789
+height = 6.51422
+radius = 1.23406
 
 [sub_resource type="Animation" id="Animation_fnymu"]
 length = 0.001

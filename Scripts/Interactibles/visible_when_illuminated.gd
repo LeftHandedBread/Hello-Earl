@@ -1,7 +1,9 @@
 extends Area3D
 
+var isVis = false
 var illuminated = false
 @onready var collider_parent = $"../StaticBody3D"
+@onready var fadeIn = $"../AnimationPlayer"
 
 func _ready():
 	monitoring = true
@@ -27,11 +29,25 @@ func _on_area_exited(body):
 func toggle_illumination():
 	if illuminated:
 		self.get_parent().visible = true
+		fade_in()
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", false)
 	else:
+		fade_out()
+		await fadeIn.animation_finished
 		self.get_parent().visible = false
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", true)
+				
+
+func fade_in():
+	if !isVis:
+		fadeIn.play("fade_in")
+		isVis = true
+
+func fade_out():
+	if isVis:
+		fadeIn.play_backwards("fade_in")
+		isVis = false
