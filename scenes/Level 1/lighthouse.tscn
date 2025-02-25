@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=4 uid="uid://cmwhebbqi1di5"]
+[gd_scene load_steps=36 format=4 uid="uid://cmwhebbqi1di5"]
 
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="1_vh8ss"]
+[ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="1_xh2gi"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="2_inf3c"]
 [ext_resource type="Texture2D" uid="uid://cp2y6e2t8swl8" path="res://Assets/Level 1/objects/shinglesred.jpg" id="2_vl0q8"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="3_ddgbm"]
@@ -501,6 +502,7 @@ shadow_mesh = SubResource("ArrayMesh_r474a")
 size = Vector3(0.542175, 1.05078, 0.0478516)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_xh2gi")
 
 [node name="the changbang" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
@@ -512,11 +514,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="the changbang/StaticBody3D"]
 visible = false
 shape = SubResource("ConcavePolygonShape3D_gcyuu")
+disabled = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="the changbang/StaticBody3D"]
 transform = Transform3D(0.766515, 0.642226, 0, -0.642226, 0.766515, 0, 0, 0, 1, 1.53927, -1.09574, 0.785622)
 visible = false
 shape = SubResource("BoxShape3D_83il6")
+disabled = true
 
 [node name="railings" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.36, 0, 0, 0, 2.36, 0, 0, 0, 2.36, 0, 4, 0)
@@ -557,8 +561,8 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.15538e-05, -0.243272, -1.01767)
-visible = false
 shape = SubResource("BoxShape3D_e1o5r")
+disabled = true
 
 [node name="Area3D" type="Area3D" parent="magic wall mesh"]
 collision_layer = 2
