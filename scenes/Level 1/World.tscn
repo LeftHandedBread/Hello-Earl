@@ -2053,13 +2053,13 @@ transform = Transform3D(0.670465, 0, 0.741941, 0, 1, 0, -0.741941, 0, 0.670465, 
 transform = Transform3D(2.4936, 0, 1.34183, 0, 2.8317, 0, -1.34183, 0, 2.4936, -9.03407, 2.61279, -13.4839)
 
 [node name="Node3D572" parent="." instance=ExtResource("25_315pm")]
-transform = Transform3D(1.43773, 0, -0.0567318, 0, 2.14221, 0, 0.0500809, 0, 1.62866, -5.18986, 4.39875, 1.57093)
+transform = Transform3D(1.43773, 0, -0.0567318, 0, 2.14221, 0, 0.0500809, 0, 1.62866, -5.18986, 3.90421, 1.57093)
 
 [node name="Node3D573" parent="." instance=ExtResource("25_315pm")]
-transform = Transform3D(1.15693, 0, -0.850158, 0, 2.13135, 0, 0.988256, 0, 0.995266, -6.57797, 4.45655, -0.96749)
+transform = Transform3D(1.15693, 0, -0.850158, 0, 2.13135, 0, 0.988256, 0, 0.995266, -6.57797, 4.16538, -0.96749)
 
 [node name="Node3D574" parent="." instance=ExtResource("25_315pm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.95255, 4.62514, -2.01843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13895, 4.62514, -2.2158)
 
 [node name="Node3D575" parent="." instance=ExtResource("23_q6doc")]
 transform = Transform3D(1.20731, 0.0677414, 0.451824, -0.150356, 1.03294, 0.0670103, -0.62797, -0.11708, 0.852617, -7.6664, 4.42085, 4.46825)
