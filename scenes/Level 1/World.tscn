@@ -1,5 +1,6 @@
-[gd_scene load_steps=63 format=3 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=68 format=3 uid="uid://cj68v47c1clgg"]
 
+[ext_resource type="Script" path="res://Scripts/geode_light.gd" id="3_evrx6"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/sit_handler.gd" id="5_npnlb"]
 [ext_resource type="PackedScene" uid="uid://cs23a1pcmm2sq" path="res://Assets/Level 1/objects/untitled.gltf" id="12_uc604"]
 [ext_resource type="PackedScene" uid="uid://c238ta47hh7fl" path="res://Assets/Level 1/objects/geode.gltf" id="13_ob23a"]
@@ -54,6 +55,45 @@
 [ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="50_4vojj"]
 [ext_resource type="PackedScene" uid="uid://brerpijvuqvnm" path="res://scenes/Level 1/Placeable tscn assets/usable chair.tscn" id="51_cfdhk"]
 
+[sub_resource type="Animation" id="Animation_jl0g1"]
+resource_name = "geode light"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
+
+[sub_resource type="Animation" id="Animation_iftip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd6tj"]
+_data = {
+"RESET": SubResource("Animation_iftip"),
+"geode light": SubResource("Animation_jl0g1")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t4ym6"]
+radius = 1.7296
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_52jve"]
 radius = 1.65529
 
@@ -88,6 +128,27 @@ transform = Transform3D(1.81, 0, 0, 0, 1.81, 0, 0, 0, 1.81, 34.7097, 0.010373, 3
 
 [node name="geode3" parent="." instance=ExtResource("13_ob23a")]
 transform = Transform3D(-0.0956036, 0.0134822, 0.0430779, 0.0145091, 0.104722, -0.000574844, -0.0427429, 0.005392, -0.0965479, 34.9631, 1.01942, 32.1783)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="geode3"]
+transform = Transform3D(-0.599023, 0.405197, 0.690642, 0, 0.862514, -0.506034, -0.800731, -0.303126, -0.516666, -1.27829, 0.185188, 1.47868)
+light_color = Color(0.876658, 0, 0.296975, 1)
+light_energy = 0.0
+shadow_enabled = true
+shadow_blur = 9.305
+spot_angle = 81.9045
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="geode3/SpotLight3D"]
+libraries = {
+"": SubResource("AnimationLibrary_cd6tj")
+}
+
+[node name="Area3D" type="Area3D" parent="geode3"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_evrx6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="geode3/Area3D"]
+shape = SubResource("SphereShape3D_t4ym6")
 
 [node name="TV2" parent="." instance=ExtResource("14_7b7j8")]
 transform = Transform3D(0.24909, -1.85963, 9.0639e-08, 0, -8.1735e-08, -2.085, 2.36993, 0.195455, -9.52654e-09, 38.001, 0, 29.413)

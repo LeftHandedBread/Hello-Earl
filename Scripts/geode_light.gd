@@ -1,7 +1,7 @@
 extends Area3D
 
-@onready var door_animation = $"../AnimationPlayer"
-var isOpen = false
+@onready var animation = $"../SpotLight3D/AnimationPlayer"
+var isOn = false
 var illuminated = false
 
 
@@ -24,18 +24,18 @@ func _on_area_exited(body):
 
 func _process(delta: float) -> void:
 	if GameManager.timeOfDay > .44 and GameManager.timeOfDay < .47 or illuminated:
-		open_door()
+		enable_illumination()
 	else:
-		close_door()
+		disable_illumination()
 
 		
 
-func open_door():
-	if !isOpen:
-		door_animation.play("Open Door")
-		isOpen = true
+func enable_illumination():
+	if !isOn:
+		animation.play("geode light")
+		isOn = true
 
-func close_door():
-	if isOpen:
-		door_animation.play_backwards("Open Door")
-		isOpen = false
+func disable_illumination():
+	if isOn:
+		animation.play_backwards("geode light")
+		isOn = false
