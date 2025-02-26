@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://iehjwfldlrrn"]
 
 [ext_resource type="PackedScene" uid="uid://ch73x2bfq1bxu" path="res://Assets/Level 1/objects/flashlight.gltf" id="1_tkew2"]
-[ext_resource type="Script" path="res://Scripts/Interactibles/flahslight_interactable.gd" id="2_jnats"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/normal_flashlight_interactible.gd" id="2_jnats"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/mesh_tools.gd" id="3_3b6c6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_217fh"]

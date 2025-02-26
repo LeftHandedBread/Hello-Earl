@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=15 format=4 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player.gd" id="1_yofdb"]
-[ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_manager.gd" id="2_ecvki"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight.gd" id="2_ecvki"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/GUI/PlayerGUI.tscn" id="2_ywley"]
 [ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_hitbox.gd" id="3_f34k4"]
-[ext_resource type="Script" path="res://Scripts/Player Scripts/dark_flashlight_hitbox.gd" id="4_v2r8a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
 radius = 0.225108
@@ -166,7 +165,7 @@ spot_range = 381.099
 spot_angle = 40.0583
 
 [node name="Cone_006" type="MeshInstance3D" parent="head/flashlight manager/normal flashlight"]
-transform = Transform3D(1.91068e-15, 4.37114e-08, 1, 1, -4.37114e-08, 6.29057e-21, 4.37114e-08, 1, -4.37114e-08, 0, -3.03, -3.66)
+transform = Transform3D(1.91068e-15, 4.37114e-08, 1, 1, -4.37114e-08, 8.61991e-21, 4.37114e-08, 1, -4.37114e-08, 0, -3.03, -3.66)
 layers = 2
 mesh = SubResource("ArrayMesh_q5tef")
 skeleton = NodePath("")
@@ -185,22 +184,19 @@ disabled = true
 [node name="red flashlight" type="SpotLight3D" parent="head/flashlight manager"]
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.0
-spot_range = 25.9722
 
 [node name="dark flashlight" type="SpotLight3D" parent="head/flashlight manager"]
-light_color = Color(0.547303, 0.700839, 7.70092e-07, 1)
+light_color = Color(0.298039, 0, 0.384314, 1)
 light_energy = 0.0
-light_negative = true
-spot_range = 75.6951
 
 [node name="Area3D" type="Area3D" parent="head/flashlight manager/dark flashlight"]
-transform = Transform3D(1, 5.56195e-14, 5.38717e-21, -5.56195e-14, 1, 4.32254e-14, -5.38717e-21, -4.32254e-14, 1, 0, 0, 0)
+transform = Transform3D(1, 5.56195e-14, 5.38717e-21, -5.56195e-14, 1, 4.32254e-14, -5.38717e-21, -4.32254e-14, 1, 2.73945, 1.19556, -1.79067e-08)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("4_v2r8a")
+script = ExtResource("3_f34k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight manager/dark flashlight/Area3D"]
-transform = Transform3D(1.91068e-15, 4.37114e-08, 1, 1, -4.37114e-08, 5.27757e-21, 4.37114e-08, 1, -4.37114e-08, -1.57974e-13, -0.189739, -2.46002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102089, 0, 0)
 shape = SubResource("CylinderShape3D_sfodt")
 disabled = true
 

@@ -6,7 +6,7 @@ var is_occupied = false  # Tracks if the player is sitting
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("flashlight"):
+	if Input.is_action_just_pressed("sprint"):
 		stand_up()
 
 

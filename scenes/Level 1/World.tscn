@@ -168,33 +168,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m5imy")
 
-[sub_resource type="Animation" id="Animation_thqs2"]
-resource_name = "geo_light"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OmniLight3D:light_energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.5]
-}
-
 [sub_resource type="Animation" id="Animation_su1e6"]
 length = 0.001
 tracks/0/type = "value"
@@ -220,6 +193,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_thqs2"]
+resource_name = "geo_light"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3kiuw"]
@@ -2393,7 +2393,7 @@ visible = false
 shape = SubResource("BoxShape3D_8msvw")
 
 [node name="Lighthouse Door" parent="." instance=ExtResource("33_4tqj2")]
-transform = Transform3D(0.909287, 0, 0.444668, 0, 1.01219, 0, -0.444668, 0, 0.909287, -6.5524, 5.37692, 1.12229)
+transform = Transform3D(-0.908976, 0, -0.445303, 0, 1.01219, 0, 0.445303, 0, -0.908976, -7.11415, 5.3566, 0.4125)
 script = ExtResource("50_4vojj")
 
 [node name="Node3D578" parent="." instance=ExtResource("27_w23ay")]

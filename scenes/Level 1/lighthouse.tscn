@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cmwhebbqi1di5"]
+[gd_scene load_steps=45 format=4 uid="uid://cmwhebbqi1di5"]
 
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="1_vh8ss"]
 [ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="1_xh2gi"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dim87hos05pjj" path="res://Assets/Level 1/objects/4geode.jpg" id="5_npw6f"]
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="6_egxqu"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="8_u76e3"]
+[ext_resource type="PackedScene" uid="uid://d4hgn4012kn40" path="res://scenes/Level 1/Placeable tscn assets/red_flashlight.tscn" id="9_ahmgs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gnjpg"]
 resource_name = "frame wood"
@@ -804,7 +805,7 @@ autoplay = "Lighthouse"
 layers = 512
 light_color = Color(1, 0.333333, 0.0705882, 1)
 light_energy = 7.51
-spot_range = 76.4529
+spot_range = 415.994
 spot_angle = 1.92956
 spot_angle_attenuation = 0.34151
 
@@ -822,3 +823,6 @@ shape = SubResource("ConcavePolygonShape3D_flmtr")
 transform = Transform3D(0.873165, 0.865518, 0, -0.865518, 0.873165, 0, 0, 0, 1.22945, 1.61169, -1.21867, 0.774065)
 shape = SubResource("BoxShape3D_83il6")
 disabled = true
+
+[node name="Red Flashlight" parent="." instance=ExtResource("9_ahmgs")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0408397, 15.8926, -5.01527)
