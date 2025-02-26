@@ -12,6 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not is_paused:
 			GameManager.player.set_physics_process(false)
 			GameManager.player.inputEnabled = false
+			GameManager.timeSpeed = 0
 			is_paused = true
 		
 			match Input.mouse_mode:
@@ -30,6 +31,7 @@ func _unpause() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.player.set_physics_process(true)
 	GameManager.player.inputEnabled = true
+	GameManager.timeSpeed = 0.002
 	self.hide()
 	is_paused = false
 

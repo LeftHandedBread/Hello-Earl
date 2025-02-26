@@ -210,7 +210,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 28.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, -0.0349066, 2.79253), Vector3(0, 0.0349066, 0.418879)]
+"values": [Vector3(-0.0174533, 0, 2.79253), Vector3(0.0174533, 0, 0.418879)]
 }
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
