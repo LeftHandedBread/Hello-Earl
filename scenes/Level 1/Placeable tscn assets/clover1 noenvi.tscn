@@ -10,7 +10,6 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 diffuse_mode = 2
 specular_mode = 2
-disable_ambient_light = true
 disable_fog = true
 albedo_texture = ExtResource("1_d3nma")
 metallic_specular = 0.0
@@ -54,5 +53,6 @@ shadow_mesh = SubResource("ArrayMesh_3rh15")
 
 [node name="Clover-01" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0216666, -2.38419e-07, 7.62939e-06)
+layers = 512
 mesh = SubResource("ArrayMesh_beray")
 skeleton = NodePath("")

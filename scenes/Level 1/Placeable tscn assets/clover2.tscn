@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://c33vneo5j8nu3"]
 
-[ext_resource type="Texture2D" uid="uid://b1f8b7wjnf2wk" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_clover-04.png" id="1_2w3cg"]
+[ext_resource type="Texture2D" uid="uid://bw7js3suptnbq" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_clover-04.png" id="1_2w3cg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mbps"]
 resource_name = "clover-02"

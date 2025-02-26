@@ -7,24 +7,10 @@
 [node name="Circle_002" parent="." index="0"]
 transform = Transform3D(0.275419, -0.0382313, 0.112618, -0.0218976, 0.262919, 0.142808, -0.116897, -0.139327, 0.238586, -0.00906742, 0, -0.0198256)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.87979, 0)
-light_color = Color(0.180392, 1, 0.501961, 1)
-light_energy = 0.2
-light_indirect_energy = 0.0
-light_size = 0.055
-spot_range = 12.812
-spot_attenuation = -0.84
-spot_angle = 74.88
-spot_angle_attenuation = 2.14355
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.44087, 0)
-light_color = Color(0.180392, 1, 0.501961, 1)
-light_energy = 0.1
-light_indirect_energy = 0.0
-light_size = 0.055
-spot_range = 9.081
-spot_attenuation = 0.04
-spot_angle = 57.5
-spot_angle_attenuation = 2.14355
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64175, 2.71129, 0.0102167)
+layers = 512
+light_color = Color(0.541176, 1, 0.419608, 1)
+light_energy = 0.5
+omni_range = 22.218
+omni_attenuation = 1.274

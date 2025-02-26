@@ -10,6 +10,7 @@ func _ready():
 	monitorable = true  # Ensures this area can be detected by others
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	connect("area_exited", Callable(self, "_on_area_exited"))
+	fade_out()
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
 			shape.set_deferred("disabled", true)

@@ -330,7 +330,7 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ab02k")
 size = Vector2(1.7, 0.965)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xbq7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9604, 1.14889, 31.1981)
