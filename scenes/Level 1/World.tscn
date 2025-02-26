@@ -55,21 +55,6 @@
 [ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="50_4vojj"]
 [ext_resource type="PackedScene" uid="uid://brerpijvuqvnm" path="res://scenes/Level 1/Placeable tscn assets/usable chair.tscn" id="51_cfdhk"]
 
-[sub_resource type="Animation" id="Animation_jl0g1"]
-resource_name = "geode light"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.0]
-}
-
 [sub_resource type="Animation" id="Animation_iftip"]
 length = 0.001
 tracks/0/type = "value"
@@ -83,6 +68,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jl0g1"]
+resource_name = "geode light"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cd6tj"]
