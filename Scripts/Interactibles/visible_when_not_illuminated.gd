@@ -10,7 +10,6 @@ func _ready():
 	monitorable = true
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	connect("area_exited", Callable(self, "_on_area_exited"))
-	self.get_parent().visible = true
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
 			shape.set_deferred("disabled", false)
@@ -30,14 +29,11 @@ func _on_area_exited(body):
 func toggle_illumination():
 	if illuminated:
 		fade_out()
-		await fadeOut.animation_finished
-		self.get_parent().visible = false
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", true)
 	else:
 		fade_in()
-		self.get_parent().visible = true
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", false)
