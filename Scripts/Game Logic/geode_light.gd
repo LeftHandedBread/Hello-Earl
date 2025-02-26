@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var animation = $"../SpotLight3D/AnimationPlayer"
+@onready var animation = $"../OmniLight3D/AnimationPlayer"
 var isOn = false
 var illuminated = false
 
@@ -32,10 +32,10 @@ func _process(delta: float) -> void:
 
 func enable_illumination():
 	if !isOn:
-		animation.play("geode light")
+		animation.play("geo_light")
 		isOn = true
 
 func disable_illumination():
 	if isOn:
-		animation.play_backwards("geode light")
+		animation.play_backwards("geo_light")
 		isOn = false
