@@ -503,6 +503,21 @@ _data = {
 "RESET": SubResource("Animation_vpma6")
 }
 
+[sub_resource type="Animation" id="Animation_2tkod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
 [sub_resource type="Animation" id="Animation_ow7yh"]
 resource_name = "blink"
 length = 20.0
@@ -518,21 +533,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.366021, 3.03143, 1),
 "update": 0,
 "values": [1.0, 20.0, 0.0, 20.0]
-}
-
-[sub_resource type="Animation" id="Animation_2tkod"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l4om6"]
