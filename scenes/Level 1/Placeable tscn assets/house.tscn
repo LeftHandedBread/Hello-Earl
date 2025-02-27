@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://drchhh67gxdcy"]
+[gd_scene load_steps=61 format=4 uid="uid://drchhh67gxdcy"]
 
 [ext_resource type="Texture2D" uid="uid://cdh3srxj3ubbd" path="res://Assets/Level 1/objects/shingles.jpg" id="1_pw71l"]
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="2_1t22b"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="4_v6txc"]
 [ext_resource type="Texture2D" uid="uid://v72pbreptjw7" path="res://Assets/Level 1/objects/popcorn_ceiling.webp" id="5_3pbn3"]
 [ext_resource type="Texture2D" uid="uid://5uli57jhe1ke" path="res://Assets/Level 1/objects/carpet.jpg" id="6_vlm1v"]
+[ext_resource type="Texture2D" uid="uid://2dyqvf1jp8n" path="res://Assets/Level 1/objects/rocky.jpg" id="7_e8o7m"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="7_n0hsv"]
 [ext_resource type="Texture2D" uid="uid://crryy7r0g1ukj" path="res://Assets/Level 1/objects/concrete floor.jpg" id="8_lg13i"]
 [ext_resource type="Texture2D" uid="uid://cjpvhf4xmf3l0" path="res://Assets/Level 1/objects/concrete wall alt.jpg" id="9_2lqjm"]
@@ -271,6 +272,11 @@ diffuse_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("3_wy7ac")
 roughness = 0.5
+normal_scale = 0.51
+rim = 0.0
+rim_tint = 0.0
+anisotropy = -1.0
+heightmap_scale = 2.925
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa5ua"]
 resource_name = "Material.004"
@@ -286,8 +292,17 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87cis"]
 resource_name = "Material.008"
 cull_mode = 2
+shading_mode = 2
 albedo_texture = ExtResource("6_vlm1v")
-roughness = 0.5
+metallic_specular = 0.0
+rim = 0.65
+rim_tint = 1.0
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 64
+refraction_scale = -0.36
+detail_mask = ExtResource("7_e8o7m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v80s"]
 resource_name = "Material.005"
