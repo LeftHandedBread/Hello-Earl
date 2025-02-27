@@ -41,10 +41,10 @@ func toggle_illumination():
 				
 func fade_in():
 	if !isVis:
-		fadeOut.play_backwards("fade_out")
+		self.get_parent().visible = true
 		isVis = true
 
 func fade_out():
 	if isVis:
-		fadeOut.play("fade_out")
+		self.get_parent().visible = false
 		isVis = false

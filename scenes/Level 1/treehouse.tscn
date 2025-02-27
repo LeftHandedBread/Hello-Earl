@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://bc4jurrmu6pkg"]
+[gd_scene load_steps=28 format=4 uid="uid://bc4jurrmu6pkg"]
 
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="1_a08fa"]
 [ext_resource type="Texture2D" uid="uid://cp2y6e2t8swl8" path="res://Assets/Level 1/objects/shinglesred.jpg" id="2_k7bi3"]
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="3_5aaoo"]
 [ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="5_4bpnb"]
+[ext_resource type="PackedScene" uid="uid://df66g4ei4hlsk" path="res://scenes/Level 1/Placeable tscn assets/sign.tscn" id="5_ink6h"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="6_dh1tn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vkfq"]
 resource_name = "Material.001"
@@ -220,6 +222,9 @@ shadow_mesh = SubResource("ArrayMesh_pgmm4")
 radius = 0.0792694
 height = 1.02067
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_aftky"]
+size = Vector3(0.0566406, 0.921509, 0.575195)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="treehouse" type="MeshInstance3D" parent="."]
@@ -319,3 +324,21 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64077, 0)
 shape = SubResource("CapsuleShape3D_d4ol6")
+
+[node name="sign" parent="." instance=ExtResource("5_ink6h")]
+transform = Transform3D(0.478707, 0, -0.877975, 0, 1, 0, 0.877975, 0, 0.478707, 0.672014, 10.36, -1.42528)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="sign"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sign/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472961, 0)
+shape = SubResource("BoxShape3D_aftky")
+
+[node name="Area3D" type="Area3D" parent="sign"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_dh1tn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sign/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472961, 0)
+shape = SubResource("BoxShape3D_aftky")
