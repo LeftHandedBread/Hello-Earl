@@ -3,9 +3,8 @@ extends Area3D
 var isVis = false
 var illuminated = false
 
-@onready var parent = $".."
+@onready var parent = self.get_parent_node_3d()
 @onready var collider_parent = $"../StaticBody3D"
-@onready var fadeIn = $"../AnimationPlayer"
 var tween
 
 
@@ -23,7 +22,6 @@ func _ready():
 # Detect when a flashlight has collided
 func _on_area_entered(body):
 	if body.is_in_group("flashlight beam"):
-		print("flashlight detected")
 		illuminated = true
 		toggle_illumination()
 
@@ -37,11 +35,13 @@ func _on_area_exited(body):
 func toggle_illumination():
 	if illuminated:
 		fade_in()
+		print("fading in", parent.get_path())
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", false)
 	else:
 		fade_out()
+		print("fading out", parent.get_path())
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", true)
@@ -63,7 +63,6 @@ func fade_in():
 			
 			var new_tween = create_tween()  # Create a new tween for each material
 			new_tween.tween_property(mat, "albedo_color:a", 1.0, 0.5)  # Fire it immediately
-			print("Tween started for: ", mat)
 
 
 func fade_out():
@@ -82,7 +81,6 @@ func fade_out():
 			
 			var new_tween = create_tween()  # Create a new tween for each material
 			new_tween.tween_property(mat, "albedo_color:a", 0.0, 0.5)  # Fire it immediately
-			print("Tween started for: ", mat)
 
 
 func apply_material_override():
@@ -93,7 +91,7 @@ func apply_material_override():
 	# Find all MeshInstance3D nodes inside the inherited scene
 	var mesh_instances = find_all_mesh_instances(parent)
 	if mesh_instances.is_empty():
-		push_error("No MeshInstance3D found inside the inherited scene!")
+		push_error("No MeshInstance3D found inside the inherited scene!", parent.get_path())
 		return
 	
 	# Apply overrides to all found meshes
@@ -117,10 +115,9 @@ func apply_material_override():
 			override_material.alpha_hash_scale = 0.4
 			override_material.cull_mode = 2 # cull disabled
 			override_material.depth_draw_mode = 0 # opaque only
-			override_material.shadeing_mode = 1 # per pixel
+			override_material.shading_mode = 1 # per pixel
 			override_material.diffuse_mode = 2 # lambert wrap
 			override_material.specular_mode = 0 # SchlickGGX
-			override_material.disable_ambient_light = true
 			override_material.albedo_color.a = 1.0  # Start fully transparent
 			
 			# Apply the override material
