@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dmq2228p2pybr"]
+
+[ext_resource type="Shader" path="res://Shaders/shader materials/sway.gdshader" id="1_vy8b1"]
+[ext_resource type="Texture2D" uid="uid://bvqvhn7mvqt0g" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_2.png" id="2_fi13o"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vy8b1")
+shader_parameter/sway_strength = 0.1
+shader_parameter/sway_speed = 1.0
+shader_parameter/albedo_texture = ExtResource("2_fi13o")

@@ -267,6 +267,8 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bj5ai"]
 resource_name = "Material.012"
 cull_mode = 2
+diffuse_mode = 1
+specular_mode = 2
 albedo_texture = ExtResource("3_wy7ac")
 roughness = 0.5
 
@@ -290,6 +292,8 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v80s"]
 resource_name = "Material.005"
 cull_mode = 2
+diffuse_mode = 1
+specular_mode = 2
 albedo_texture = ExtResource("3_wy7ac")
 roughness = 0.5
 
@@ -302,7 +306,8 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6phvv"]
 resource_name = "Material.007"
 cull_mode = 2
-diffuse_mode = 2
+diffuse_mode = 1
+specular_mode = 2
 albedo_texture = ExtResource("7_n0hsv")
 roughness = 0.5
 
@@ -327,6 +332,8 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t80gr"]
 resource_name = "Material.014"
 cull_mode = 2
+diffuse_mode = 1
+specular_mode = 2
 albedo_texture = ExtResource("10_on2w1")
 roughness = 0.5
 

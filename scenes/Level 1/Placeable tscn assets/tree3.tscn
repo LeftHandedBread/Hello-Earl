@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://7edcl6c0vn55"]
+[gd_scene load_steps=9 format=4 uid="uid://7edcl6c0vn55"]
 
 [ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="1_ct6ck"]
-[ext_resource type="Texture2D" uid="uid://6o23ub7ndqdh" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-02.png" id="2_blyv0"]
 [ext_resource type="Texture2D" uid="uid://uk7t2p0io3lm" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-01.png" id="3_pe5d6"]
+[ext_resource type="Material" uid="uid://dmq2228p2pybr" path="res://Shaders/shader materials/sway.tres" id="3_s8w6m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8oj4"]
 resource_name = "trunk-01"
@@ -11,17 +11,6 @@ diffuse_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("1_ct6ck")
 roughness = 0.343182
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgspd"]
-resource_name = "branch-1-02"
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-diffuse_mode = 2
-specular_mode = 2
-albedo_texture = ExtResource("2_blyv0")
-metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfhgw"]
 resource_name = "branch-1-01"
@@ -88,7 +77,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 480,
 "index_data": PackedByteArray("AAAGAAQAAAAIAAYABQAHAAYABQADAAcACAAFAAYACAACAAUABwAEAAYABwABAAQACQAPAA0ACQARAA8ADgAQAA8ADgAMABAAEQAOAA8AEQALAA4AEAANAA8AEAAKAA0AEgAYABYAEgAaABgAFwAZABgAFwAVABkAGgAXABgAGgAUABcAGQAWABgAGQATABYAGwAhAB8AGwAjACEAIAAiACEAIAAeACIAIwAgACEAIwAdACAAIgAfACEAIgAcAB8AJQAtACkAJQAuAC0AKwAmACoAKwAoACYALAApAC0ALAAnACkALwAoACsALwAkACgAMAA5ADQAMAA6ADkANwAzADYANwA1ADMAOAA0ADkAOAAyADQAOwA1ADcAOwAxADUAPwBDAEAAPwBFAEMAQgBEAEMAQgA8AEQARABAAEMARAA+AEAARQBBAEMARQA9AEEASQBNAEoASQBPAE0ASwBOAE0ASwBGAE4ATgBKAE0ATgBIAEoATwBMAE0ATwBHAEwAUQBZAFUAUQBaAFkAVwBSAFYAVwBUAFIAWABVAFkAWABTAFUAWwBUAFcAWwBQAFQAXABlAGAAXABmAGUAYwBfAGIAYwBhAF8AZABgAGUAZABeAGAAZwBhAGMAZwBdAGEAaABvAGwAaABxAG8AbgBwAG8AbgBrAHAAcQBuAG8AcQBqAG4AcABtAG8AcABpAG0AcgB4AHYAcgB6AHgAdwB5AHgAdwB1AHkAegB3AHgAegB0AHcAeQB2AHgAeQBzAHYAewCFAH8AewCHAIUAgwB+AIIAgwCBAH4AhACAAIYAhAB9AIAAiACBAIMAiAB8AIEAiQCPAI0AiQCRAI8AjgCQAI8AjgCMAJAAkQCOAI8AkQCLAI4AkACNAI8AkACKAI0AkgCYAJYAkgCaAJgAlwCZAJgAlwCVAJkAmgCXAJgAmgCUAJcAmQCWAJgAmQCTAJYAmwChAJ8AmwCjAKEAoACiAKEAoACeAKIAowCgAKEAowCdAKAAogCfAKEAogCcAJ8ApwCqAKgApwCsAKoAqQCrAKoAqQCkAKsAqwCoAKoAqwCmAKgArACpAKoArAClAKkArQC0ALAArQC1ALQAsgCvALEAsgCwAK8AswCwALQAswCuALAAtgCwALIAtgCtALAAugC+ALsAugDAAL4AvQC/AL4AvQC3AL8AvwC7AL4AvwC5ALsAwAC8AL4AwAC4ALwAwQDIAMYAwQDKAMgAxwDJAMgAxwDEAMkAygDHAMgAygDDAMcAyQDFAMgAyQDCAMUA"),
-"material": SubResource("StandardMaterial3D_lgspd"),
+"material": ExtResource("3_s8w6m"),
 "name": "branch-1-02",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

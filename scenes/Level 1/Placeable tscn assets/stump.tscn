@@ -82,6 +82,7 @@ mesh = SubResource("ArrayMesh_gxmbd")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Circle2"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Circle2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0)
