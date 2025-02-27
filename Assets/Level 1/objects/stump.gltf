@@ -84,43 +84,43 @@
 		},
 		{
 			"mimeType":"image/jpeg",
-			"name":"better wooden floor",
-			"uri":"better%20wooden%20floor.jpg"
+			"name":"stump",
+			"uri":"stump.jpg"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":56,
+			"count":126,
 			"max":[
 				0.5,
-				1.2736411094665527,
-				0.5166440606117249
+				1.2736947536468506,
+				0.5162001848220825
 			],
 			"min":[
-				-0.5506153702735901,
+				-0.5495973229408264,
 				0,
-				-0.508421778678894
+				-0.508232593536377
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":56,
+			"count":126,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":56,
+			"count":126,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":138,
+			"count":234,
 			"type":"SCALAR"
 		},
 		{
@@ -128,14 +128,14 @@
 			"componentType":5126,
 			"count":64,
 			"max":[
-				0.4986361861228943,
+				0.48244422674179077,
 				1.3019664287567139,
-				0.5166440606117249
+				0.5083914995193481
 			],
 			"min":[
-				-0.5506153702735901,
-				0.8628218770027161,
-				-0.508421778678894
+				-0.5449982285499573,
+				0.8689169883728027,
+				-0.4914133846759796
 			],
 			"type":"VEC3"
 		},
@@ -161,50 +161,50 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":672,
+			"byteLength":1512,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":672,
-			"byteOffset":672,
+			"byteLength":1512,
+			"byteOffset":1512,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":448,
-			"byteOffset":1344,
+			"byteLength":1008,
+			"byteOffset":3024,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":276,
-			"byteOffset":1792,
+			"byteLength":468,
+			"byteOffset":4032,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":768,
-			"byteOffset":2068,
+			"byteOffset":4500,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":768,
-			"byteOffset":2836,
+			"byteOffset":5268,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":512,
-			"byteOffset":3604,
+			"byteOffset":6036,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":192,
-			"byteOffset":4116,
+			"byteOffset":6548,
 			"target":34963
 		}
 	],
@@ -216,7 +216,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":4308,
+			"byteLength":6740,
 			"uri":"stump.bin"
 		}
 	]
