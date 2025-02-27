@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 func enable_visibility():
 	for child in get_all_children(self):
-		if child is MeshInstance3D:
+		if child is MeshInstance3D and !child.is_in_group("collider only"):
 			child.visible = true
 		if child is CollisionShape3D:
 			child.set_disabled(false)

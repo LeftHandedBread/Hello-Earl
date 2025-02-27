@@ -791,7 +791,7 @@ speed_scale = 7.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.5423, -4.91672)
 light_color = Color(1, 0.333333, 0.0705882, 1)
 light_energy = 9.085
-spot_range = 6.0039
+spot_range = 1169.96
 spot_angle = 39.04
 spot_angle_attenuation = 2.46229
 
@@ -802,11 +802,12 @@ libraries = {
 autoplay = "Lighthouse"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
+visible = false
 layers = 512
 light_color = Color(1, 0.333333, 0.0705882, 1)
 light_energy = 7.51
 spot_range = 415.994
-spot_angle = 1.92956
+spot_angle = 38.3867
 spot_angle_attenuation = 0.34151
 
 [node name="the changbang2" type="MeshInstance3D" parent="."]
@@ -822,7 +823,6 @@ shape = SubResource("ConcavePolygonShape3D_flmtr")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="the changbang2/StaticBody3D2"]
 transform = Transform3D(0.873165, 0.865518, 0, -0.865518, 0.873165, 0, 0, 0, 1.22945, 1.61169, -1.21867, 0.774065)
 shape = SubResource("BoxShape3D_83il6")
-disabled = true
 
 [node name="Red Flashlight" parent="." instance=ExtResource("9_ahmgs")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0408397, 15.8926, -5.01527)
