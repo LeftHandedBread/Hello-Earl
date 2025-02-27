@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b16uxr64e7l6w"]
+[gd_scene load_steps=14 format=4 uid="uid://b16uxr64e7l6w"]
 
 [ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="1_go3ha"]
 [ext_resource type="Texture2D" uid="uid://uk7t2p0io3lm" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-01.png" id="2_7b4mp"]
@@ -12,27 +12,257 @@ specular_mode = 2
 albedo_texture = ExtResource("1_go3ha")
 metallic_specular = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kno2"]
-resource_name = "branch-1-01"
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-diffuse_mode = 2
-specular_mode = 2
-albedo_texture = ExtResource("2_7b4mp")
-metallic_specular = 0.0
+[sub_resource type="Shader" id="Shader_gpvmi"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpiqh"]
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert_wrap, specular_disabled;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float alpha_scissor_threshold : hint_range(0.0, 1.0, 0.001);
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform sampler2D texture_emission : source_color, hint_default_black, filter_linear_mipmap, repeat_enable;
+uniform vec4 emission : source_color;
+uniform float emission_energy : hint_range(0.0, 100.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+uniform float sway_speed = 1.5;
+uniform float sway_strength = 1.5;
+uniform float sway_phase_len = 1.5;
+
+uniform float wind_strength : hint_range(0.0, 10.0) = 0.01;
+uniform float wind_speed : hint_range(0.0, 10.0) = 1.0;
+const vec3 wind_direction = vec3(0.0, 0.1, 0.0);  // Wind direction in world space
+uniform float random_seed : hint_range(0.0, 1.0) = 0.0;  // Random seed for variation
+
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+		float time = TIME * 1.0; // TIME is a constant value from the engine
+		float strength = COLOR.r * sway_strength;
+		float body = (VERTEX.y + 1.0) / 20.0; // for this tree, body goes from 1.0 to 10.0
+    VERTEX.x += sin(VERTEX.x * sway_phase_len * 1.123 + TIME * sway_speed + random_seed) * strength * 0.01;
+    VERTEX.y += sin(VERTEX.y * sway_phase_len + TIME * sway_speed * 1.12412 + random_seed) * strength * 0.01;
+    VERTEX.z += sin(VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123 + random_seed) * strength * 0.01;
+	
+// Calculate the wind effect using a sine wave based on time
+    float wind_angle = sin(TIME + random_seed) * wind_speed * wind_strength * 0.5;
+
+    // Normalize the wind direction to ensure it's a unit vector
+    vec3 normalized_wind_dir = normalize(wind_direction);
+
+    // Calculate the rotation matrix using the axis-angle formula
+    mat3 rotation_matrix;
+    float c = cos(wind_angle);
+    float s = sin(wind_angle);
+    float t = 1.0 - c;
+
+    rotation_matrix[0] = vec3(t * normalized_wind_dir.x * normalized_wind_dir.x + c,
+                              t * normalized_wind_dir.x * normalized_wind_dir.y - s * normalized_wind_dir.z,
+                              t * normalized_wind_dir.x * normalized_wind_dir.z + s * normalized_wind_dir.y);
+
+    rotation_matrix[1] = vec3(t * normalized_wind_dir.x * normalized_wind_dir.y + s * normalized_wind_dir.z,
+                              t * normalized_wind_dir.y * normalized_wind_dir.y + c,
+                              t * normalized_wind_dir.y * normalized_wind_dir.z - s * normalized_wind_dir.x);
+
+    rotation_matrix[2] = vec3(t * normalized_wind_dir.x * normalized_wind_dir.z - s * normalized_wind_dir.y,
+                              t * normalized_wind_dir.y * normalized_wind_dir.z + s * normalized_wind_dir.x,
+                              t * normalized_wind_dir.z * normalized_wind_dir.z + c);
+
+    // Apply the rotation matrix to the vertex position
+    VERTEX = (rotation_matrix * VERTEX.xyz);
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	vec4 albedo_tex = texture(texture_albedo, base_uv);
+
+	// Vertex Color Use as Albedo: Enabled
+	albedo_tex *= COLOR;
+
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+
+	// Emission: Enabled
+	vec3 emission_tex = texture(texture_emission, base_uv).rgb;
+	// Emission Operator: Add
+	EMISSION = (emission.rgb + emission_tex) * emission_energy;
+	ALPHA *= albedo.a * albedo_tex.a;
+	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ei7ao"]
+resource_name = "branch-1-01"
+render_priority = 0
+shader = SubResource("Shader_gpvmi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/sway_speed = 1.5
+shader_parameter/sway_strength = 1.5
+shader_parameter/sway_phase_len = 1.5
+shader_parameter/wind_strength = 0.01
+shader_parameter/wind_speed = 1.0
+shader_parameter/random_seed = 0.0
+shader_parameter/texture_albedo = ExtResource("2_7b4mp")
+
+[sub_resource type="Shader" id="Shader_r56qx"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert_wrap, specular_disabled;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float alpha_scissor_threshold : hint_range(0.0, 1.0, 0.001);
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform sampler2D texture_emission : source_color, hint_default_black, filter_linear_mipmap, repeat_enable;
+uniform vec4 emission : source_color;
+uniform float emission_energy : hint_range(0.0, 100.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+uniform float sway_speed = 1.5;
+uniform float sway_strength = 1.5;
+uniform float sway_phase_len = 1.5;
+
+uniform float wind_strength : hint_range(0.0, 10.0) = 0.01;
+uniform float wind_speed : hint_range(0.0, 10.0) = 1.0;
+const vec3 wind_direction = vec3(0.0, 0.1, 0.0);  // Wind direction in world space
+uniform float random_seed : hint_range(0.0, 1.0) = 0.0;  // Random seed for variation
+
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+		float time = TIME * 1.0; // TIME is a constant value from the engine
+		float strength = COLOR.r * sway_strength;
+		float body = (VERTEX.y + 1.0) / 20.0; // for this tree, body goes from 1.0 to 10.0
+    VERTEX.x += sin(VERTEX.x * sway_phase_len * 1.123 + TIME * sway_speed + random_seed) * strength * 0.01;
+    VERTEX.y += sin(VERTEX.y * sway_phase_len + TIME * sway_speed * 1.12412 + random_seed) * strength * 0.01;
+    VERTEX.z += sin(VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123 + random_seed) * strength * 0.01;
+	
+// Calculate the wind effect using a sine wave based on time
+    float wind_angle = sin(TIME + random_seed) * wind_speed * wind_strength * 0.5;
+
+    // Normalize the wind direction to ensure it's a unit vector
+    vec3 normalized_wind_dir = normalize(wind_direction);
+
+    // Calculate the rotation matrix using the axis-angle formula
+    mat3 rotation_matrix;
+    float c = cos(wind_angle);
+    float s = sin(wind_angle);
+    float t = 1.0 - c;
+
+    rotation_matrix[0] = vec3(t * normalized_wind_dir.x * normalized_wind_dir.x + c,
+                              t * normalized_wind_dir.x * normalized_wind_dir.y - s * normalized_wind_dir.z,
+                              t * normalized_wind_dir.x * normalized_wind_dir.z + s * normalized_wind_dir.y);
+
+    rotation_matrix[1] = vec3(t * normalized_wind_dir.x * normalized_wind_dir.y + s * normalized_wind_dir.z,
+                              t * normalized_wind_dir.y * normalized_wind_dir.y + c,
+                              t * normalized_wind_dir.y * normalized_wind_dir.z - s * normalized_wind_dir.x);
+
+    rotation_matrix[2] = vec3(t * normalized_wind_dir.x * normalized_wind_dir.z - s * normalized_wind_dir.y,
+                              t * normalized_wind_dir.y * normalized_wind_dir.z + s * normalized_wind_dir.x,
+                              t * normalized_wind_dir.z * normalized_wind_dir.z + c);
+
+    // Apply the rotation matrix to the vertex position
+    VERTEX = (rotation_matrix * VERTEX.xyz);
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	vec4 albedo_tex = texture(texture_albedo, base_uv);
+
+	// Vertex Color Use as Albedo: Enabled
+	albedo_tex *= COLOR;
+
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+
+	// Emission: Enabled
+	vec3 emission_tex = texture(texture_emission, base_uv).rgb;
+	// Emission Operator: Add
+	EMISSION = (emission.rgb + emission_tex) * emission_energy;
+	ALPHA *= albedo.a * albedo_tex.a;
+	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ovs1m"]
 resource_name = "branch-1-02"
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-diffuse_mode = 2
-specular_mode = 2
-albedo_texture = ExtResource("3_4ef27")
-metallic_specular = 0.0
+render_priority = 0
+shader = SubResource("Shader_r56qx")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/sway_speed = 1.5
+shader_parameter/sway_strength = 1.5
+shader_parameter/sway_phase_len = 1.5
+shader_parameter/wind_strength = 0.01
+shader_parameter/wind_speed = 1.0
+shader_parameter/random_seed = 0.0
+shader_parameter/texture_albedo = ExtResource("3_4ef27")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_642yu"]
 _surfaces = [{
@@ -88,7 +318,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 552,
 "index_data": PackedByteArray("AAAIAAQAAAAKAAgABwALAAkABwADAAsACgAGAAgACgACAAYACwAFAAkACwABAAUADAAVABEADAAUABUAEgATABUAEgAPABMAFAASABUAFAAOABIAEwAQABUAEwANABAAFgAdABsAFgAeAB0AHAAfAB0AHAAZAB8AHgAcAB0AHgAYABwAHwAaAB0AHwAXABoAIAAmACQAIAAnACYAJQAoACYAJQAjACgAJwAlACYAJwAiACUAKAAkACYAKAAhACQAKQAvAC0AKQAwAC8ALgAxAC8ALgAsADEAMAAuAC8AMAArAC4AMQAtAC8AMQAqAC0AMgA4ADYAMgA5ADgANwA6ADgANwA1ADoAOQA3ADgAOQA0ADcAOgA2ADgAOgAzADYAOwBGAEAAOwBEAEYAQQBDAEUAQQA+AEMARABCAEYARAA9AEIAQwA/AEUAQwA8AD8ARwBOAEsARwBPAE4ATQBQAE4ATQBKAFAATwBNAE4ATwBJAE0AUABMAE4AUABIAEwAUQBXAFUAUQBYAFcAVgBZAFcAVgBUAFkAWABWAFcAWABTAFYAWQBVAFcAWQBSAFUAWgBlAF8AWgBjAGUAYABiAGQAYABdAGIAYwBhAGUAYwBcAGEAYgBeAGQAYgBbAF4AZgBvAGsAZgBuAG8AbABtAG8AbABpAG0AbgBsAG8AbgBoAGwAbQBqAG8AbQBnAGoAcAB2AHQAcAB3AHYAdQB4AHYAdQBzAHgAdwB1AHYAdwByAHUAeAB0AHYAeABxAHQAeQB/AH0AeQCAAH8AfgCBAH8AfgB8AIEAgAB+AH8AgAB7AH4AgQB9AH8AgQB6AH0AggCLAIcAggCKAIsAiACJAIsAiACFAIkAigCIAIsAigCEAIgAiQCGAIsAiQCDAIYAjACUAJAAjACWAJQAkwCXAJUAkwCPAJcAlgCSAJQAlgCOAJIAlwCRAJUAlwCNAJEAmACfAJ0AmACgAJ8AngChAJ8AngCbAKEAoACeAJ8AoACaAJ4AoQCcAJ8AoQCZAJwAogCrAKYAogCqAKsAqACpAKsAqAClAKkAqgCoAKsAqgCkAKgAqQCnAKsAqQCjAKcArACyALAArACzALIAsQC0ALIAsQCvALQAswCxALIAswCuALEAtACwALIAtACtALAAtQC+ALoAtQC9AL4AuwC8AL4AuwC4ALwAvQC7AL4AvQC3ALsAvAC5AL4AvAC2ALkAvwDIAMMAvwDHAMgAxQDGAMgAxQDCAMYAxwDFAMgAxwDBAMUAxgDEAMgAxgDAAMQAyQDPAM0AyQDQAM8AzgDRAM8AzgDMANEA0ADOAM8A0ADLAM4A0QDNAM8A0QDKAM0A0gDYANYA0gDZANgA1wDaANgA1wDVANoA2QDXANgA2QDUANcA2gDWANgA2gDTANYA2wDhAN8A2wDiAOEA4ADjAOEA4ADeAOMA4gDgAOEA4gDdAOAA4wDfAOEA4wDcAN8A"),
-"material": SubResource("StandardMaterial3D_1kno2"),
+"material": SubResource("ShaderMaterial_ei7ao"),
 "name": "branch-1-01",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -100,7 +330,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 720,
 "index_data": PackedByteArray("AAAGAAQAAAAIAAYABQAHAAYABQADAAcACAAFAAYACAACAAUABwAEAAYABwABAAQACQAPAA0ACQARAA8ADgAQAA8ADgAMABAAEQAOAA8AEQALAA4AEAANAA8AEAAKAA0AEgAYABYAEgAaABgAFwAZABgAFwAVABkAGgAXABgAGgAUABcAGQAWABgAGQATABYAGwAhAB8AGwAjACEAIAAiACEAIAAeACIAIwAgACEAIwAdACAAIgAfACEAIgAcAB8AJQAtACkAJQAuAC0AKwAmACoAKwAoACYALAApAC0ALAAnACkALwAoACsALwAkACgAMAA5ADQAMAA6ADkANwAzADYANwA1ADMAOAA0ADkAOAAyADQAOwA1ADcAOwAxADUAPwBDAEAAPwBFAEMAQgBEAEMAQgA8AEQARABAAEMARAA+AEAARQBBAEMARQA9AEEASQBNAEoASQBPAE0ASwBOAE0ASwBGAE4ATgBKAE0ATgBIAEoATwBMAE0ATwBHAEwAUQBZAFUAUQBaAFkAVwBSAFYAVwBUAFIAWABVAFkAWABTAFUAWwBUAFcAWwBQAFQAXABlAGAAXABmAGUAYwBfAGIAYwBhAF8AZABgAGUAZABeAGAAZwBhAGMAZwBdAGEAaQBxAG0AaQByAHEAbwBqAG4AbwBsAGoAcABtAHEAcABrAG0AcwBsAG8AcwBoAGwAdAB9AHgAdAB+AH0AewB3AHoAewB5AHcAfAB4AH0AfAB2AHgAfwB5AHsAfwB1AHkAgwCGAIQAgwCIAIYAhQCHAIYAhQCAAIcAhwCEAIYAhwCCAIQAiACFAIYAiACBAIUAiQCQAI0AiQCSAJAAjwCRAJAAjwCMAJEAkgCPAJAAkgCLAI8AkQCOAJAAkQCKAI4AkwCZAJcAkwCbAJkAmACaAJkAmACWAJoAmwCYAJkAmwCVAJgAmgCXAJkAmgCUAJcAnACmAKAAnACoAKYApACfAKMApACiAJ8ApQChAKcApQCeAKEAqQCiAKQAqQCdAKIArQCwAK4ArQCyALAArwCxALAArwCqALEAsQCuALAAsQCsAK4AsgCvALAAsgCrAK8AswC8ALcAswC9ALwAugC2ALkAugC4ALYAuwC3ALwAuwC1ALcAvgC4ALoAvgC0ALgAvwDFAMMAvwDHAMUAxADGAMUAxADCAMYAxwDEAMUAxwDBAMQAxgDDAMUAxgDAAMMAyADPAMwAyADRAM8AzgDQAM8AzgDLANAA0QDOAM8A0QDKAM4A0ADNAM8A0ADJAM0A0gDbANYA0gDcANsA2QDVANgA2QDXANUA2gDWANsA2gDUANYA3QDXANkA3QDTANcA3gDkAOIA3gDmAOQA4wDlAOQA4wDhAOUA5gDjAOQA5gDgAOMA5QDiAOQA5QDfAOIA5wDtAOsA5wDvAO0A7ADuAO0A7ADqAO4A7wDsAO0A7wDpAOwA7gDrAO0A7gDoAOsA8AD2APQA8AD4APYA9QD3APYA9QDzAPcA+AD1APYA+ADyAPUA9wD0APYA9wDxAPQA+QD/AP0A+QABAf8A/gAAAf8A/gD8AAABAQH+AP8AAQH7AP4AAAH9AP8AAAH6AP0AAgEIAQYBAgEKAQgBBwEJAQgBBwEFAQkBCgEHAQgBCgEEAQcBCQEGAQgBCQEDAQYBDgERAQ8BDgETAREBEAESAREBEAELARIBEgEPAREBEgENAQ8BEwEQAREBEwEMARABFAEbARcBFAEcARsBGQEWARgBGQEXARYBGgEXARsBGgEVARcBHQEXARkBHQEUARcBIQElASIBIQEnASUBJAEmASUBJAEeASYBJgEiASUBJgEgASIBJwEjASUBJwEfASMBKAEvAS0BKAExAS8BLgEwAS8BLgErATABMQEuAS8BMQEqAS4BMAEsAS8BMAEpASwB"),
-"material": SubResource("StandardMaterial3D_qpiqh"),
+"material": SubResource("ShaderMaterial_ovs1m"),
 "name": "branch-1-02",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
