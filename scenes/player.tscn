@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0oft"]
 radius = 0.225108
-height = 1.44623
+height = 1.30648
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
 
@@ -128,7 +128,7 @@ _data = {
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.782233, 0)
 floor_stop_on_slope = false
-floor_max_angle = 1.0472
+floor_max_angle = 1.13446
 floor_snap_length = 0.13
 safe_margin = 0.4
 script = ExtResource("1_yofdb")
