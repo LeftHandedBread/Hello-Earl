@@ -1,18 +1,18 @@
-[gd_scene load_steps=11 format=4 uid="uid://7edcl6c0vn55"]
+[gd_scene load_steps=10 format=4 uid="uid://7edcl6c0vn55"]
 
 [ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="1_ct6ck"]
 [ext_resource type="Texture2D" uid="uid://6o23ub7ndqdh" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-02.png" id="2_blyv0"]
 [ext_resource type="Texture2D" uid="uid://uk7t2p0io3lm" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-01.png" id="3_pe5d6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys7tm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8oj4"]
 resource_name = "trunk-01"
 cull_mode = 2
-diffuse_mode = 2
+diffuse_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("1_ct6ck")
-metallic_specular = 0.0
+roughness = 0.343182
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpiqh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgspd"]
 resource_name = "branch-1-02"
 transparency = 2
 alpha_scissor_threshold = 0.5
@@ -23,7 +23,7 @@ specular_mode = 2
 albedo_texture = ExtResource("2_blyv0")
 metallic_specular = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kno2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfhgw"]
 resource_name = "branch-1-01"
 transparency = 2
 alpha_scissor_threshold = 0.5
@@ -34,7 +34,7 @@ specular_mode = 2
 albedo_texture = ExtResource("3_pe5d6")
 metallic_specular = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pgmm4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gbkyh"]
 _surfaces = [{
 "aabb": AABB(-0.151997, -0.00672913, -0.15307, 0.815203, 6.62415, 1.1234),
 "format": 34359742465,
@@ -68,7 +68,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cq0q2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gcexl"]
 resource_name = "uploads_files_3523647_shapespark-low-poly-plants-kit_BezierCurve_038"
 _surfaces = [{
 "aabb": AABB(-0.151997, -0.00672913, -0.15307, 0.815203, 6.62415, 1.1234),
@@ -76,7 +76,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 396,
 "index_data": PackedByteArray("BAAaABEABAAPABoACAAQABMACAADABAABgASABYACQAFABQADAAVABcADAAKABUADQAYABkAEQApAB0AEQAaACkAEwAbAB8AEwAQABsAFgAeACMAFgASAB4AFwAiACYAFwAVACIAGQAnACgAGQAYACcAHQA0ACsAHQApADQAIAAqAC8AIAAcACoAIwAeACwAJAAtADEAJQAwADIAJQAhADAAKAAzADQAKAAnADMAKwA0ADUALwA2ADkALwAqADYALgA4ADsAMQA6AD0AMQAtADoAMgA8AD4AMgAwADwANAA/ADUANAAzAD8ANwBNAKgAOQCmAEMAOQA2AKYAOwBCAEsAOwA4AEIAPQBIAK8APQA6AEgAPgCwAKEAPgA8ALAANQCjAEwANQA/AKMAqABYAE8AqABNAFgARQBOAFEARQCpAE4ASgBQAFMASgBBAFAArQBSAFQArQBHAFIAnwBUAFUAnwCsAFQATABWAFcATACjAFYATwBYAGMAUQBiAFoAUQBOAGIAUwBZAF0AUwBQAFkAVABSAFsAVQBcAF4AVQBUAFwAVwBfAGAAVwBWAF8AYQBuAGQAWgBlAGcAWgBiAGUAXQBmAGkAXQBZAGYAXABoAGoAXgBqAGsAXgBcAGoAYABsAG0AYABfAGwAZAB4AHAAZABuAHgAZwBvAHIAZwBlAG8AaQBxAAEAaQBmAHEAagAAAHQAagBoAAAAawBzAHUAawBqAHMAbQB2AHcAbQBsAHYAeQCSAIcAeQCFAJIAewCIAIkAfwCKAIwAfwB8AIoAgwCLAI4AgwB+AIsAgQCNAJAAhACPAJEAhACAAI8AhwCeAJMAhwCSAJ4AiQCUAJUAiQCIAJQAjACWAJgAjACKAJYAjgCXAJoAjgCLAJcAkACZAJwAkACNAJkAkQCbAJ0AkQCPAJsAkwCuAKAAkwCeAK4AlQCiAKQAlQCUAKIAmAClAKoAmACWAKUAmgCnAEQAmgCXAKcAnABAAEkAnACZAEAAnQBGAKsAnQCbAEYAhgB9AIIAhgB6AH0ADgAHAAsADgACAAcA"),
-"material": SubResource("StandardMaterial3D_ys7tm"),
+"material": SubResource("StandardMaterial3D_g8oj4"),
 "name": "trunk-01",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -88,7 +88,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 480,
 "index_data": PackedByteArray("AAAGAAQAAAAIAAYABQAHAAYABQADAAcACAAFAAYACAACAAUABwAEAAYABwABAAQACQAPAA0ACQARAA8ADgAQAA8ADgAMABAAEQAOAA8AEQALAA4AEAANAA8AEAAKAA0AEgAYABYAEgAaABgAFwAZABgAFwAVABkAGgAXABgAGgAUABcAGQAWABgAGQATABYAGwAhAB8AGwAjACEAIAAiACEAIAAeACIAIwAgACEAIwAdACAAIgAfACEAIgAcAB8AJQAtACkAJQAuAC0AKwAmACoAKwAoACYALAApAC0ALAAnACkALwAoACsALwAkACgAMAA5ADQAMAA6ADkANwAzADYANwA1ADMAOAA0ADkAOAAyADQAOwA1ADcAOwAxADUAPwBDAEAAPwBFAEMAQgBEAEMAQgA8AEQARABAAEMARAA+AEAARQBBAEMARQA9AEEASQBNAEoASQBPAE0ASwBOAE0ASwBGAE4ATgBKAE0ATgBIAEoATwBMAE0ATwBHAEwAUQBZAFUAUQBaAFkAVwBSAFYAVwBUAFIAWABVAFkAWABTAFUAWwBUAFcAWwBQAFQAXABlAGAAXABmAGUAYwBfAGIAYwBhAF8AZABgAGUAZABeAGAAZwBhAGMAZwBdAGEAaABvAGwAaABxAG8AbgBwAG8AbgBrAHAAcQBuAG8AcQBqAG4AcABtAG8AcABpAG0AcgB4AHYAcgB6AHgAdwB5AHgAdwB1AHkAegB3AHgAegB0AHcAeQB2AHgAeQBzAHYAewCFAH8AewCHAIUAgwB+AIIAgwCBAH4AhACAAIYAhAB9AIAAiACBAIMAiAB8AIEAiQCPAI0AiQCRAI8AjgCQAI8AjgCMAJAAkQCOAI8AkQCLAI4AkACNAI8AkACKAI0AkgCYAJYAkgCaAJgAlwCZAJgAlwCVAJkAmgCXAJgAmgCUAJcAmQCWAJgAmQCTAJYAmwChAJ8AmwCjAKEAoACiAKEAoACeAKIAowCgAKEAowCdAKAAogCfAKEAogCcAJ8ApwCqAKgApwCsAKoAqQCrAKoAqQCkAKsAqwCoAKoAqwCmAKgArACpAKoArAClAKkArQC0ALAArQC1ALQAsgCvALEAsgCwAK8AswCwALQAswCuALAAtgCwALIAtgCtALAAugC+ALsAugDAAL4AvQC/AL4AvQC3AL8AvwC7AL4AvwC5ALsAwAC8AL4AwAC4ALwAwQDIAMYAwQDKAMgAxwDJAMgAxwDEAMkAygDHAMgAygDDAMcAyQDFAMgAyQDCAMUA"),
-"material": SubResource("StandardMaterial3D_qpiqh"),
+"material": SubResource("StandardMaterial3D_lgspd"),
 "name": "branch-1-02",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -100,7 +100,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 360,
 "index_data": PackedByteArray("AAAIAAQAAAAKAAgABwALAAkABwADAAsACgAGAAgACgACAAYACwAFAAkACwABAAUADAAVABEADAAUABUAEgATABUAEgAPABMAFAASABUAFAAOABIAEwAQABUAEwANABAAFgAdABsAFgAeAB0AHAAfAB0AHAAZAB8AHgAcAB0AHgAYABwAHwAaAB0AHwAXABoAIAAmACQAIAAnACYAJQAoACYAJQAjACgAJwAlACYAJwAiACUAKAAkACYAKAAhACQAKQAvAC0AKQAwAC8ALgAxAC8ALgAsADEAMAAuAC8AMAArAC4AMQAtAC8AMQAqAC0AMgA4ADYAMgA5ADgANwA6ADgANwA1ADoAOQA3ADgAOQA0ADcAOgA2ADgAOgAzADYAOwBGAEAAOwBEAEYAQQBDAEUAQQA+AEMARABCAEYARAA9AEIAQwA/AEUAQwA8AD8ARwBOAEsARwBPAE4ATQBQAE4ATQBKAFAATwBNAE4ATwBJAE0AUABMAE4AUABIAEwAUQBXAFUAUQBYAFcAVgBZAFcAVgBUAFkAWABWAFcAWABTAFYAWQBVAFcAWQBSAFUAWgBgAF4AWgBhAGAAXwBiAGAAXwBdAGIAYQBfAGAAYQBcAF8AYgBeAGAAYgBbAF4AYwBqAGgAYwBrAGoAaQBsAGoAaQBmAGwAawBpAGoAawBlAGkAbABnAGoAbABkAGcAbQBzAHEAbQB0AHMAcgB1AHMAcgBwAHUAdAByAHMAdABvAHIAdQBxAHMAdQBuAHEAdgB/AHsAdgB+AH8AfAB9AH8AfAB5AH0AfgB8AH8AfgB4AHwAfQB6AH8AfQB3AHoAgACGAIQAgACHAIYAhQCIAIYAhQCDAIgAhwCFAIYAhwCCAIUAiACEAIYAiACBAIQAiQCPAI0AiQCQAI8AjgCRAI8AjgCMAJEAkACOAI8AkACLAI4AkQCNAI8AkQCKAI0A"),
-"material": SubResource("StandardMaterial3D_1kno2"),
+"material": SubResource("StandardMaterial3D_xfhgw"),
 "name": "branch-1-01",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -108,30 +108,21 @@ _surfaces = [{
 "vertex_data": PackedByteArray("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")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_pgmm4")
+shadow_mesh = SubResource("ArrayMesh_gbkyh")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uafar"]
-radius = 0.134704
-height = 1.51567
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cuxh7"]
-radius = 0.067067
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_longh"]
+radius = 0.0974056
+height = 2.15511
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Tree-01-3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0337753, 0, 0.000993729)
-mesh = SubResource("ArrayMesh_cq0q2")
+mesh = SubResource("ArrayMesh_gcexl")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0110802, 0.70454, 0.00850663)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00012, 0)
 visible = false
-shape = SubResource("CapsuleShape3D_uafar")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41154, 0)
-visible = false
-shape = SubResource("CapsuleShape3D_cuxh7")
+shape = SubResource("CapsuleShape3D_longh")

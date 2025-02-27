@@ -335,7 +335,7 @@ size = Vector2(1.7, 0.965)
 [node name="Node3D2" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xbq7m")]
-transform = Transform3D(0.98774, 0, 0.156107, 0, 1, 0, -0.156107, 0, 0.98774, -33.408, 0.678359, 36.1082)
+transform = Transform3D(0.98774, 0, 0.156107, 0, 1, 0, -0.156107, 0, 0.98774, -47.2396, 24.8915, 49.4781)
 floor_max_angle = 0.872665
 safe_margin = 0.01
 
@@ -418,7 +418,7 @@ transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 
 mesh = SubResource("QuadMesh_q1q4p")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1269, 2.38419e-07, 34.1377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.0151, 23.9823, 46.0533)
 
 [node name="Node3D" parent="." instance=ExtResource("7_4hgiq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.0853, 0.0014801, 34.1445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5398, 24.11, 46.946)
