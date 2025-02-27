@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cp2y6e2t8swl8" path="res://Assets/Level 1/objects/shinglesred.jpg" id="2_vl0q8"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="3_ddgbm"]
 [ext_resource type="Texture2D" uid="uid://crryy7r0g1ukj" path="res://Assets/Level 1/objects/concrete floor.jpg" id="4_oq6ps"]
-[ext_resource type="Texture2D" uid="uid://dim87hos05pjj" path="res://Assets/Level 1/objects/4geode.jpg" id="5_npw6f"]
+[ext_resource type="Texture2D" uid="uid://bmj6twxjym6ph" path="res://Assets/Level 1/objects/4geode.jpg" id="5_npw6f"]
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="6_egxqu"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="8_u76e3"]
 [ext_resource type="PackedScene" uid="uid://d4hgn4012kn40" path="res://scenes/Level 1/Placeable tscn assets/red_flashlight.tscn" id="9_ahmgs"]

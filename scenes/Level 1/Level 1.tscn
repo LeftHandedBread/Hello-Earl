@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=29 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cj68v47c1clgg" path="res://scenes/Level 1/World.tscn" id="5_7vcgx"]
 [ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="6_uq5md"]
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="7_4hgiq"]
-[ext_resource type="PackedScene" uid="uid://d4hgn4012kn40" path="res://scenes/Level 1/Placeable tscn assets/red_flashlight.tscn" id="8_6ynkd"]
-[ext_resource type="PackedScene" uid="uid://6us5swm0d0bi" path="res://scenes/Level 1/Placeable tscn assets/dark flashlight.tscn" id="9_x2y66"]
 
 [sub_resource type="GDScript" id="GDScript_gedvi"]
 
@@ -337,7 +335,7 @@ size = Vector2(1.7, 0.965)
 [node name="Node3D2" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xbq7m")]
-transform = Transform3D(0.98774, 0, 0.156107, 0, 1, 0, -0.156107, 0, 0.98774, -33.408, 0.678359, 36.1082)
+transform = Transform3D(0.98774, 0, 0.156107, 0, 1, 0, -0.156107, 0, 0.98774, -47.2396, 24.8915, 49.4781)
 floor_max_angle = 0.872665
 safe_margin = 0.01
 
@@ -414,20 +412,13 @@ speed_scale = 0.001
 script = ExtResource("4_fxdxl")
 
 [node name="World" parent="." instance=ExtResource("5_7vcgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0230179, 0.0360765, 0.0129471)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
 transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 37.6433, 1.2503, 29.4464)
 mesh = SubResource("QuadMesh_q1q4p")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1269, 2.38419e-07, 34.1377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.0151, 23.9823, 46.0533)
 
 [node name="Node3D" parent="." instance=ExtResource("7_4hgiq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.0853, 0.0014801, 34.1445)
-
-[node name="Node3D2" parent="." instance=ExtResource("8_6ynkd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5113, 0.0374361, 32.9049)
-
-[node name="Node3D3" parent="." instance=ExtResource("9_x2y66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.216, 0.0457771, 33.2408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5398, 24.11, 46.946)
