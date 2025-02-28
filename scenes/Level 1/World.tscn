@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=96 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="1_anqh5"]
 [ext_resource type="Texture2D" uid="uid://bmj6twxjym6ph" path="res://Assets/Level 1/objects/4geode.jpg" id="2_v8jlp"]
@@ -61,10 +61,15 @@
 [ext_resource type="PackedScene" uid="uid://bey73rg62fxny" path="res://scenes/Level 1/Placeable tscn assets/log.tscn" id="58_ckmkw"]
 [ext_resource type="PackedScene" uid="uid://cipscrmvcaxq3" path="res://scenes/Level 1/axe.tscn" id="59_h1fns"]
 [ext_resource type="PackedScene" uid="uid://bw3cbyua235yh" path="res://scenes/Level 1/Placeable tscn assets/sticks.tscn" id="60_75x4e"]
+[ext_resource type="PackedScene" uid="uid://cia1icks78thu" path="res://scenes/Level 1/outhouse.tscn" id="61_tqur5"]
 [ext_resource type="PackedScene" uid="uid://dvmgp1gl053d7" path="res://well magic ground.tscn" id="62_xsmma"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="64_bx5fg"]
 [ext_resource type="PackedScene" uid="uid://b6bcexdcfolkq" path="res://scenes/Level 1/Placeable tscn assets/empty.tscn" id="65_yt505"]
 [ext_resource type="PackedScene" uid="uid://dkajlf3afe74x" path="res://scenes/Level 1/Placeable tscn assets/empty2.tscn" id="66_bxuj0"]
+[ext_resource type="PackedScene" uid="uid://cqhgehdepi5ep" path="res://scenes/mannequin/maniaxe.tscn" id="67_nfdwt"]
+[ext_resource type="PackedScene" uid="uid://xrvbqisu866t" path="res://scenes/mannequin/manihouse.tscn" id="68_0h6om"]
+[ext_resource type="PackedScene" uid="uid://dcofeafntnrcx" path="res://scenes/mannequin/maniwell.tscn" id="69_jrhm2"]
+[ext_resource type="PackedScene" uid="uid://dvb14mjmq4ej4" path="res://scenes/mannequin/manitree.tscn" id="70_l8l0n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jssi7"]
 resource_name = "Material.001"
@@ -347,7 +352,7 @@ transform = Transform3D(0.146462, 0, -0.244487, 0, 0.285, 0, 0.244487, 0, 0.1464
 transform = Transform3D(0.260396, 0, 1.26855, 0, 1.295, 0, -1.26855, 0, 0.260396, 3.09006, -0.00506973, 1.77098)
 
 [node name="chair2" parent="uploads_files_4457158_Pile_Of_Trash_3_SIZES3" instance=ExtResource("15_p2qbq")]
-transform = Transform3D(-6.27912, 0, 1.15243, 0, 6.384, 0, -1.15243, 0, -6.27912, 2.88457, -0.0109148, 3.30789)
+transform = Transform3D(-0.787886, 0, 5.3856, 0, 5.44293, 0, -5.3856, 0, -0.787886, 1.49013, -0.0109148, 2.17656)
 
 [node name="uploads_files_4457158_Pile_Of_Trash_3_SIZES4" parent="." instance=ExtResource("18_nnhm5")]
 transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 35.071, 4.02451, 29.7032)
@@ -2505,7 +2510,7 @@ visible = false
 shape = SubResource("CapsuleShape3D_lkc58")
 
 [node name="Node3D607" parent="." instance=ExtResource("59_h1fns")]
-transform = Transform3D(-0.0222511, -0.014374, -0.0424061, 0.0271309, -0.041999, -8.11403e-11, -0.0356203, -0.0230103, 0.02649, 26.2907, 0.863403, 21.1865)
+transform = Transform3D(0.00355831, 0, -0.0305898, 0.0297718, 0.0070747, 0.00346314, 0.00702732, -0.0299725, 0.000817438, 25.7908, 0.731977, 19.9306)
 
 [node name="Node3D612" parent="." instance=ExtResource("27_w23ay")]
 transform = Transform3D(1.28668, 0, 0, 0, 1.28668, 0, 0, 0, 1.28668, 29.6253, 4.76837e-07, 30.6686)
@@ -2638,6 +2643,9 @@ transform = Transform3D(0.706773, 0, -0.70744, 0, 1, 0, 0.70744, 0, 0.706773, 35
 
 [node name="Node3D652" parent="." instance=ExtResource("31_rtj3g")]
 transform = Transform3D(1.22666, 0.756242, 0.778876, -0.859636, 1.39437, 0, -0.663004, -0.408745, 1.44104, 36.4862, 0.368367, 10.2955)
+
+[node name="Node3D653" parent="." instance=ExtResource("61_tqur5")]
+transform = Transform3D(0.939561, 0, 0.342381, 0, 1, 0, -0.342381, 0, 0.939561, 41.6853, 0.0199264, 19.9942)
 
 [node name="Well ground" parent="." instance=ExtResource("62_xsmma")]
 
@@ -2804,3 +2812,15 @@ transform = Transform3D(1.43841, 0, 0, 0, 1.43841, 0, 0, 0, 1.43841, -10.5971, 5
 
 [node name="Node3D695" parent="." instance=ExtResource("66_bxuj0")]
 transform = Transform3D(0.558087, 0.634452, -0.649449, -0.306784, 0.849272, 0.566034, 0.854515, -0.109461, 0.627372, 36.2709, 0.425773, 10.1481)
+
+[node name="Node3D696" parent="." instance=ExtResource("67_nfdwt")]
+transform = Transform3D(-0.3178, 0, -0.0680317, 0, 0.325, 0, 0.0680317, 0, -0.3178, 25.9148, -0.0873547, 20.3864)
+
+[node name="Node3D697" parent="." instance=ExtResource("68_0h6om")]
+transform = Transform3D(-0.235215, 0, -0.252387, 0, 0.345, 0, 0.252387, 0, -0.235215, 33.8106, 2.91517, 30.2228)
+
+[node name="Node3D698" parent="." instance=ExtResource("69_jrhm2")]
+transform = Transform3D(0.344834, -0.000150842, 0.0106943, 0.000437525, 0.344876, -0.00924341, -0.0106864, 0.00925253, 0.34471, -5.99969, 2.46485, -38.8832)
+
+[node name="Node3D699" parent="." instance=ExtResource("70_l8l0n")]
+transform = Transform3D(0.0951964, 0, 0.388507, 0, 0.4, 0, -0.388507, 0, 0.0951964, -52.5653, 23.8513, 48.2386)
