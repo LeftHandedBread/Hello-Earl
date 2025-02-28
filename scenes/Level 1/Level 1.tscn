@@ -46,7 +46,7 @@ fog_enabled = true
 fog_light_color = Color(0, 0.132272, 0.21706, 1)
 fog_light_energy = 0.77
 fog_sun_scatter = 0.09
-fog_density = 0.0095
+fog_density = 0.0
 fog_sky_affect = 0.0
 fog_height = -53.89
 fog_height_density = 0.3
@@ -214,6 +214,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector3(-0.0174533, 0, 2.79253), Vector3(0.0174533, 0, 0.418879)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../..:environment:fog_density")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.23333, 3.46667, 6.53333, 23.4, 25.1667, 29.8667, 32.7667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.01, 0.02, 0.005, 0.005, 0.01, 0.01, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
 length = 0.001
@@ -313,6 +325,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector3(1.5708, 0, -3.49066)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../..:environment:fog_density")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
 _data = {
@@ -356,7 +380,7 @@ environment = SubResource("Environment_hatdx")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46637e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -365,15 +389,15 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966783
 shadow_enabled = true
-shadow_bias = 0.01
-shadow_normal_bias = 0.0
-shadow_blur = 2.155
-directional_shadow_split_1 = 0.025
-directional_shadow_split_2 = 0.114
-directional_shadow_split_3 = 0.362
+shadow_transmittance_bias = -7.061
+shadow_opacity = 0.94
+shadow_blur = 2.326
+directional_shadow_split_1 = 0.051
+directional_shadow_split_2 = 0.097
+directional_shadow_split_3 = 0.285
 directional_shadow_blend_splits = true
-directional_shadow_fade_start = 0.7
-directional_shadow_max_distance = 818.7
+directional_shadow_fade_start = 0.443
+directional_shadow_max_distance = 300.7
 sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]

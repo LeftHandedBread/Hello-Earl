@@ -1,19 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6jyj2gxhphso"]
+[gd_scene load_steps=2 format=3 uid="uid://b6jyj2gxhphso"]
 
 [ext_resource type="PackedScene" uid="uid://dgbae8m6j40b0" path="res://scenes/Level 1/Placeable tscn assets/boulder_2_inherited.tscn" id="1_i2tts"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jixn8"]
-radius = 1.51573
-height = 7.26353
 
 [node name="Node3D" type="Node3D"]
 
 [node name="boulder2" parent="." instance=ExtResource("1_i2tts")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0188591, -1.19209e-07, -0.0208516)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="boulder2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="boulder2/StaticBody3D"]
-transform = Transform3D(0.00219913, 0.999998, 0, -0.999998, 0.00219913, 0, 0, 0, 1, 0, -0.216225, 0)
-visible = false
-shape = SubResource("CapsuleShape3D_jixn8")

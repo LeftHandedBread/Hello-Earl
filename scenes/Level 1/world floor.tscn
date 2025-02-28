@@ -6,12 +6,16 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n65yw"]
 resource_name = "Material.001"
 cull_mode = 2
+diffuse_mode = 2
 albedo_texture = ExtResource("1_2valh")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mb3w"]
 resource_name = "Material.016"
 cull_mode = 2
+diffuse_mode = 2
 albedo_texture = ExtResource("2_6l21x")
+metallic_specular = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4ppkx"]
 _surfaces = [{

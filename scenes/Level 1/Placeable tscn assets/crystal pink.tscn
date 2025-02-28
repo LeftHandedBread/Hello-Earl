@@ -54,5 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.356106, 2.58647, -0.26398)
 layers = 512
 light_color = Color(1, 0.211765, 1, 1)
 light_energy = 0.5
+light_cull_mask = 4294967294
 omni_range = 78.483
 omni_attenuation = 1.535

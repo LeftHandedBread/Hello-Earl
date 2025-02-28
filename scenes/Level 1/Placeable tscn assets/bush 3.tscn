@@ -48,7 +48,7 @@ void vertex() {
     VERTEX.x += sin(VERTEX.x * sway_phase_len * 1.123 + TIME * sway_speed + random_seed) * strength * 0.01;
     VERTEX.y += sin(VERTEX.y * sway_phase_len + TIME * sway_speed * 1.12412 + random_seed) * strength * 0.01;
     VERTEX.z += sin(VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123 + random_seed) * strength * 0.01;
-	
+
 // Calculate the wind effect using a sine wave based on time
     float wind_angle = sin(TIME + random_seed) * wind_speed * wind_strength * 0.5;
 
@@ -124,8 +124,8 @@ shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/sway_speed = 1.5
 shader_parameter/sway_strength = 1.5
 shader_parameter/sway_phase_len = 1.5
-shader_parameter/wind_strength = 1.0
-shader_parameter/wind_speed = 1.0
+shader_parameter/wind_strength = 0.5
+shader_parameter/wind_speed = 0.5
 shader_parameter/random_seed = 0.0
 shader_parameter/texture_albedo = ExtResource("1_qano7")
 
@@ -174,9 +174,9 @@ void vertex() {
     VERTEX.x += sin(VERTEX.x * sway_phase_len * 1.123 + TIME * sway_speed + random_seed) * strength * 0.01;
     VERTEX.y += sin(VERTEX.y * sway_phase_len + TIME * sway_speed * 1.12412 + random_seed) * strength * 0.01;
     VERTEX.z += sin(VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123 + random_seed) * strength * 0.01;
-	
+
 // Calculate the wind effect using a sine wave based on time
-    float wind_angle = sin(TIME + random_seed) * wind_speed * wind_strength * 0.5;
+    float wind_angle = sin(TIME + random_seed) * wind_speed * wind_strength * 0.25;
 
     // Normalize the wind direction to ensure it's a unit vector
     vec3 normalized_wind_dir = normalize(wind_direction);
@@ -251,7 +251,7 @@ shader_parameter/sway_speed = 1.5
 shader_parameter/sway_strength = 1.5
 shader_parameter/sway_phase_len = 1.5
 shader_parameter/wind_strength = 0.01
-shader_parameter/wind_speed = 1.0
+shader_parameter/wind_speed = 0.5
 shader_parameter/random_seed = 0.566
 shader_parameter/texture_albedo = ExtResource("2_ufoj7")
 
