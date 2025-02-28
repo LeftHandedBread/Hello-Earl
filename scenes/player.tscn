@@ -132,8 +132,11 @@ floor_max_angle = 1.13446
 floor_snap_length = 0.13
 safe_margin = 0.4
 script = ExtResource("1_yofdb")
-GROUND_FRICTION = 20
-AIR_FRICTION = 1.0
+DEFAULT_SPEED = 4.0
+JUMP_VELOCITY = 6.0
+AIR_ACCELERATION = 1.0
+GROUND_ACCELERATION = 10.0
+GRAVITY = 15.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0106263, 0)
