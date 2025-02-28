@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://cclv70xggxrun"]
+[gd_scene load_steps=82 format=4 uid="uid://cclv70xggxrun"]
 
 [ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="1_bpqrl"]
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="1_ek12u"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="8_di64h"]
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="8_o55ac"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="11_qtcwo"]
+[ext_resource type="PackedScene" uid="uid://bw38mp0kciw03" path="res://Assets/Level 1/objects/chair.gltf" id="12_1y13s"]
+[ext_resource type="PackedScene" uid="uid://c86a1so63auep" path="res://scenes/mannequin/manitower.tscn" id="13_e5fa3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxe3w"]
 resource_name = "drywall"
@@ -1303,7 +1305,6 @@ script = ExtResource("1_bpqrl")
 
 [node name="the changbang" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.32415, 0, 0, 0, 1.32415, 0, 0, 0, 1.32415, 0, 1, 2.09238)
-visible = false
 mesh = SubResource("ArrayMesh_s73p7")
 skeleton = NodePath("")
 
@@ -1515,3 +1516,9 @@ libraries = {
 "": SubResource("AnimationLibrary_d4dlu")
 }
 autoplay = "Lighthouse"
+
+[node name="chair2" parent="." instance=ExtResource("12_1y13s")]
+transform = Transform3D(-0.985883, 0, -0.724097, 0, 1.22323, 0, 0.724097, 0, -0.985883, 0.017283, 7.87036, -0.330695)
+
+[node name="Node3D2" parent="." instance=ExtResource("13_e5fa3")]
+transform = Transform3D(0.275082, 0, 0.119706, 0, 0.3, 0, -0.119706, 0, 0.275082, 0.350182, 7.80412, -0.301521)
