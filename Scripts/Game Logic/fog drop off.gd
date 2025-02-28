@@ -11,7 +11,7 @@ extends WorldEnvironment
 @export var target_node: Node3D  # Assign your player or reference node
 
 # Called every frame to update fog and sun scatter dynamically
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not target_node or not environment:
 		return
 

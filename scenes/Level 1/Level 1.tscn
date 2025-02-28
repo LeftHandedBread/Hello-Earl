@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=33 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://r3gcl5ung20g" path="res://scenes/Level 1/moon.tscn" id="6_sp1d7"]
 [ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="6_uq5md"]
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="7_4hgiq"]
+[ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="7_cpi1g"]
+[ext_resource type="Script" path="res://Scripts/outhouse_teleport.gd" id="9_s5ov0"]
 
 [sub_resource type="GDScript" id="GDScript_gedvi"]
 
@@ -386,7 +388,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -434,7 +436,7 @@ libraries = {
 }
 script = ExtResource("4_fxdxl")
 
-[node name="Node3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D" instance=ExtResource("6_sp1d7")]
+[node name="Moon" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D" instance=ExtResource("6_sp1d7")]
 transform = Transform3D(-0.00597441, 0.00197394, -0.00149876, 0.00217689, 0.00230941, -0.00563597, -0.00118487, -0.00571021, -0.00279749, -0.00908783, -0.191628, -4.92943)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle"]
@@ -454,6 +456,10 @@ mesh = SubResource("QuadMesh_q1q4p")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.0151, 23.9823, 46.0533)
+
+[node name="Outhouse" parent="." instance=ExtResource("7_cpi1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8733, 0.0244501, 20.2793)
+script = ExtResource("9_s5ov0")
 
 [node name="Node3D" parent="." instance=ExtResource("7_4hgiq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5398, 24.11, 46.946)

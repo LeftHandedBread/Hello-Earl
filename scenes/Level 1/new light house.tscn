@@ -1240,7 +1240,7 @@ data = PackedVector3Array(-0.3621, 4.0264, -0.1651, -0.7531, 4.1139, -0.165, -0.
 
 [sub_resource type="Animation" id="Animation_fmbq1"]
 resource_name = "Lighthouse"
-length = 20.0
+length = 40.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1249,7 +1249,7 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10, 20),
+"times": PackedFloat32Array(0, 20, 40),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -6.28319, 0), Vector3(0, 6.28319, 0), Vector3(0, 18.8496, 0)]
@@ -1261,8 +1261,20 @@ tracks/1/path = NodePath(".:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10, 20),
+"times": PackedFloat32Array(0, 20, 40),
 "transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [20.0, 0.0, 20.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpotLight3D2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 20, 40),
+"transitions": PackedFloat32Array(0.574349, 1.8025, 1),
 "update": 0,
 "values": [20.0, 0.0, 20.0]
 }
@@ -1292,6 +1304,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [9.085]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpotLight3D2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d4dlu"]
@@ -1502,6 +1526,12 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stair collider 3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mia7q")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 4.46638e-06, 1.95232e-13, 0, -4.37114e-08, 1, 4.46638e-06, -1, -4.37114e-08, -3.88433e-14, 7.49486, -0.711141)
+light_color = Color(1, 0.333333, 0.0705882, 1)
+spot_range = 8.99458
+spot_angle = 30.5673
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.924, -0.711141)
