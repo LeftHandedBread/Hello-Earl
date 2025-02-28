@@ -128,9 +128,9 @@ func apply_material_override():
 			mesh_instance.set_surface_override_material(i, override_material)
 
 # Helper function to find all MeshInstance3D nodes inside an inherited scene
-func find_all_mesh_instances(parent: Node3D) -> Array:
+func find_all_mesh_instances(mesh_parent: Node3D) -> Array:
 	var meshes = []
-	for child in parent.get_children():
+	for child in mesh_parent.get_children():
 		if child is MeshInstance3D:
 			meshes.append(child)
 		elif child is Node3D:  # Recursively search deeper

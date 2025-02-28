@@ -22,7 +22,7 @@ func _on_area_exited(body):
 		illuminated = false
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if GameManager.timeOfDay > .44 and GameManager.timeOfDay < .47 or illuminated:
 		open_door()
 	else:

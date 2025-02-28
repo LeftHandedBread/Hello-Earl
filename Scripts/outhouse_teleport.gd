@@ -1,50 +1,27 @@
-extends Area3D
+extends Node
 
-var isVis = false
-var illuminated = false
-
-@onready var parent = $".."
-@onready var collider_parent = $"../StaticBody3D"
-var tween
+@onready var door_open = self.get_node("Node3D/Plane_001/Door Interact").door_open
+@onready var player_present = self.get_node("Player Detector").player_present
+@onready var parent = self
 
 
-func _ready():
-	monitoring = true
-	monitorable = true  # Ensures this area can be detected by others
-	connect("area_entered", Callable(self, "_on_area_entered"))
-	connect("area_exited", Callable(self, "_on_area_exited"))
-	apply_material_override()
-	fade_in()
-	for shape in collider_parent.get_children():
-		if shape is CollisionShape3D:
-			shape.set_deferred("disabled", false)
-
-# Detect when a flashlight has collided
-func _on_area_entered(body):
-	if body.is_in_group("flashlight beam"):
-		illuminated = true
-		toggle_illumination()
-
-# Detect when a flashlight has left the collision bounds
-func _on_area_exited(body):
-	if body.is_in_group("flashlight beam"):
-		illuminated = false
-		toggle_illumination()
-
-
-func toggle_illumination():
-	if illuminated:
-		fade_out()
-		print("fading out", parent.get_path())
-		for shape in collider_parent.get_children():
-			if shape is CollisionShape3D:
-				shape.set_deferred("disabled", true)
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	player_present = self.get_node("Player Detector").player_present
+	door_open = self.get_node("Node3D/Plane_001/Door Interact").door_open
+	
+	if GameManager.timeOfDay > 0.25 and GameManager.timeOfDay < 0.4:
+		if !player_present or !door_open:
+			self.global_position = Vector3(41.685, 0.02, 20)
+			self.global_rotation = Vector3(0, 20, 0)
+		else:
+			return
 	else:
-		fade_in()
-		print("fading in", parent.get_path())
-		for shape in collider_parent.get_children():
-			if shape is CollisionShape3D:
-				shape.set_deferred("disabled", false)
+		if !player_present or !door_open:
+			self.global_position = Vector3(41.5, 0.02, 22)
+			self.global_rotation = Vector3(0, -90, 0)
+
+
 
 
 func fade_in():
@@ -113,11 +90,12 @@ func apply_material_override():
 			# Ensure material settings are correct
 			override_material.transparency = 3 # Transparecy : alpha hash
 			override_material.alpha_hash_scale = 0.4
-			override_material.cull_mode = 0 # cull BACK
+			override_material.cull_mode = 2 # cull disabled
 			override_material.depth_draw_mode = 1 # always
 			override_material.shading_mode = 1 # per pixel
 			override_material.diffuse_mode = 2 # lambert wrap
 			override_material.specular_mode = 0 # SchlickGGX
+			override_material.disable_ambient_light = true
 			override_material.albedo_color.a = 1.0  # Start fully opaque
 			override_material.albedo_color.r = 1.0  # Start fully red
 			override_material.albedo_color.g = 1.0  # Start fully green

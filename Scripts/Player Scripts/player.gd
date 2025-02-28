@@ -34,6 +34,8 @@ var interactionsEnabled := true # can the player interact with Interactibles3D?
 #region Main control flow 
 
 func _ready():
+	self.add_to_group("player")
+	self.get_node("Player Detector").add_to_group("player")
 	$MeshInstance3D.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.player = self

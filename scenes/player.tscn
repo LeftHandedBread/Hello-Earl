@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=17 format=4 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player.gd" id="1_yofdb"]
 [ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_manager.gd" id="2_ecvki"]
@@ -125,8 +125,14 @@ _data = {
 "sprint": SubResource("Animation_px50k")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_evgwd"]
+radius = 0.243801
+height = 1.4254
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.782233, 0)
+collision_layer = 5
+collision_mask = 5
 floor_stop_on_slope = false
 floor_max_angle = 1.13446
 floor_snap_length = 0.13
@@ -135,7 +141,7 @@ script = ExtResource("1_yofdb")
 GROUND_FRICTION = 20
 AIR_FRICTION = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0106263, 0)
 shape = SubResource("CapsuleShape3D_p0oft")
 
@@ -210,3 +216,8 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_auuwx")
 }
+
+[node name="Player Detector" type="Area3D" parent="." groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Detector"]
+shape = SubResource("CapsuleShape3D_evgwd")
