@@ -388,7 +388,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46637e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -437,7 +437,7 @@ libraries = {
 script = ExtResource("4_fxdxl")
 
 [node name="Moon" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D" instance=ExtResource("6_sp1d7")]
-transform = Transform3D(-0.00597441, 0.00197394, -0.00149876, 0.00217689, 0.00230941, -0.00563597, -0.00118487, -0.00571021, -0.00279749, -0.00908783, -0.191628, -4.92943)
+transform = Transform3D(-0.00597441, 0.00197395, -0.00149876, 0.00217689, 0.00230941, -0.00563597, -0.00118487, -0.00571021, -0.00279749, -0.00908783, -0.191628, -4.92943)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle"]
 root_node = NodePath("../WorldEnvironment/Node3D/DirectionalLight3D")
