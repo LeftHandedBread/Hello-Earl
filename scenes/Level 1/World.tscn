@@ -61,7 +61,7 @@
 [ext_resource type="PackedScene" uid="uid://bey73rg62fxny" path="res://scenes/Level 1/Placeable tscn assets/log.tscn" id="58_ckmkw"]
 [ext_resource type="PackedScene" uid="uid://cipscrmvcaxq3" path="res://scenes/Level 1/axe.tscn" id="59_h1fns"]
 [ext_resource type="PackedScene" uid="uid://bw3cbyua235yh" path="res://scenes/Level 1/Placeable tscn assets/sticks.tscn" id="60_75x4e"]
-[ext_resource type="PackedScene" uid="uid://cia1icks78thu" path="res://scenes/Level 1/outhouse.tscn" id="61_tqur5"]
+[ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="61_tqur5"]
 [ext_resource type="PackedScene" uid="uid://dvmgp1gl053d7" path="res://well magic ground.tscn" id="62_xsmma"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="64_bx5fg"]
 [ext_resource type="PackedScene" uid="uid://b6bcexdcfolkq" path="res://scenes/Level 1/Placeable tscn assets/empty.tscn" id="65_yt505"]
