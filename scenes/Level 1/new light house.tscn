@@ -1530,6 +1530,7 @@ shape = SubResource("ConcavePolygonShape3D_mia7q")
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 4.46638e-06, 1.95232e-13, 0, -4.37114e-08, 1, 4.46638e-06, -1, -4.37114e-08, -3.88433e-14, 7.49486, -0.711141)
 light_color = Color(1, 0.333333, 0.0705882, 1)
+shadow_enabled = true
 spot_range = 8.99458
 spot_angle = 30.5673
 

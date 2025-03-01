@@ -437,7 +437,7 @@ libraries = {
 script = ExtResource("4_fxdxl")
 
 [node name="Moon" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D" instance=ExtResource("6_sp1d7")]
-transform = Transform3D(-0.00597441, 0.00197395, -0.00149876, 0.00217689, 0.00230941, -0.00563597, -0.00118487, -0.00571021, -0.00279749, -0.00908783, -0.191628, -4.92943)
+transform = Transform3D(-0.00597441, 0.00197394, -0.00149876, 0.00217689, 0.00230941, -0.00563597, -0.00118487, -0.00571021, -0.00279749, -0.00908783, -0.191628, -4.92943)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle"]
 root_node = NodePath("../WorldEnvironment/Node3D/DirectionalLight3D")
