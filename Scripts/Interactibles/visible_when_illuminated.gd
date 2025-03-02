@@ -3,7 +3,7 @@ extends Area3D
 var isVis = false
 var illuminated = false
 
-@onready var parent = self.get_parent_node_3d()
+@onready var parent = $".."
 @onready var collider_parent = $"../StaticBody3D"
 var tween
 
@@ -18,6 +18,11 @@ func _ready():
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
 			shape.set_deferred("disabled", true)
+	print("scanning for meshes in", parent.get_path())
+	var meshes = find_all_mesh_instances(parent)
+	for mesh in meshes:
+		print("found mesh:", mesh.name)
+
 
 # Detect when a flashlight has collided
 func _on_area_entered(body):
@@ -111,18 +116,7 @@ func apply_material_override():
 			# Duplicate the material for override
 			var override_material = original_material.duplicate()
 			# Ensure material settings are correct
-			override_material.transparency = 3 # Transparecy : alpha hash
-			override_material.alpha_hash_scale = 0.4
-			override_material.cull_mode = 2 # cull disabled
-			override_material.depth_draw_mode = 1 # always
-			override_material.shading_mode = 1 # per pixel
-			override_material.diffuse_mode = 2 # lambert wrap
-			override_material.specular_mode = 0 # SchlickGGX
-			override_material.disable_ambient_light = true
-			override_material.albedo_color.a = 1.0  # Start fully opaque
-			override_material.albedo_color.r = 1.0  # Start fully red
-			override_material.albedo_color.g = 1.0  # Start fully green
-			override_material.albedo_color.b = 1.0  # Start fully blue
+
 			
 			# Apply the override material
 			mesh_instance.set_surface_override_material(i, override_material)
@@ -130,6 +124,10 @@ func apply_material_override():
 # Helper function to find all MeshInstance3D nodes inside an inherited scene
 func find_all_mesh_instances(mesh_parent: Node3D) -> Array:
 	var meshes = []
+	
+	if mesh_parent is MeshInstance3D:
+		meshes.append(mesh_parent)
+	
 	for child in mesh_parent.get_children():
 		if child is MeshInstance3D:
 			meshes.append(child)

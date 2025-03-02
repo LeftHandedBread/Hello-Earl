@@ -1,8 +1,10 @@
-[gd_scene load_steps=28 format=4 uid="uid://bc4jurrmu6pkg"]
+[gd_scene load_steps=30 format=4 uid="uid://bc4jurrmu6pkg"]
 
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="1_a08fa"]
+[ext_resource type="Texture2D" uid="uid://kdyvb8nweua8" path="res://Assets/Level 1/objects/better wooden floor normal.jpg" id="2_05tx6"]
 [ext_resource type="Texture2D" uid="uid://cp2y6e2t8swl8" path="res://Assets/Level 1/objects/shinglesred.jpg" id="2_k7bi3"]
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="3_5aaoo"]
+[ext_resource type="Texture2D" uid="uid://ccivxyeolk8bn" path="res://Assets/Level 1/objects/shinglesnormal.jpg" id="4_5biv1"]
 [ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="5_4bpnb"]
 [ext_resource type="PackedScene" uid="uid://df66g4ei4hlsk" path="res://scenes/Level 1/Placeable tscn assets/sign.tscn" id="5_ink6h"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="6_dh1tn"]
@@ -11,11 +13,17 @@
 resource_name = "Material.001"
 cull_mode = 2
 albedo_texture = ExtResource("1_a08fa")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_05tx6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cumvf"]
 resource_name = "Material.002"
 cull_mode = 2
 albedo_texture = ExtResource("2_k7bi3")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("4_5biv1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahrpo"]
 resource_name = "Material.003"

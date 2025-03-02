@@ -1,16 +1,20 @@
-[gd_scene load_steps=61 format=4 uid="uid://drchhh67gxdcy"]
+[gd_scene load_steps=65 format=4 uid="uid://drchhh67gxdcy"]
 
 [ext_resource type="Texture2D" uid="uid://cdh3srxj3ubbd" path="res://Assets/Level 1/objects/shingles.jpg" id="1_pw71l"]
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="2_1t22b"]
+[ext_resource type="Texture2D" uid="uid://ccivxyeolk8bn" path="res://Assets/Level 1/objects/shinglesnormal.jpg" id="3_macah"]
 [ext_resource type="Texture2D" uid="uid://qa2p7icuoyl2" path="res://Assets/Level 1/objects/siding.jpg" id="3_wy7ac"]
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="4_v6txc"]
 [ext_resource type="Texture2D" uid="uid://v72pbreptjw7" path="res://Assets/Level 1/objects/popcorn_ceiling.webp" id="5_3pbn3"]
+[ext_resource type="Texture2D" uid="uid://bq1byn83wxd2o" path="res://Assets/Level 1/objects/sidingnormal.jpg" id="5_26ckl"]
 [ext_resource type="Texture2D" uid="uid://5uli57jhe1ke" path="res://Assets/Level 1/objects/carpet.jpg" id="6_vlm1v"]
 [ext_resource type="Texture2D" uid="uid://2dyqvf1jp8n" path="res://Assets/Level 1/objects/rocky.jpg" id="7_e8o7m"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="7_n0hsv"]
 [ext_resource type="Texture2D" uid="uid://crryy7r0g1ukj" path="res://Assets/Level 1/objects/concrete floor.jpg" id="8_lg13i"]
 [ext_resource type="Texture2D" uid="uid://cjpvhf4xmf3l0" path="res://Assets/Level 1/objects/concrete wall alt.jpg" id="9_2lqjm"]
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="10_on2w1"]
+[ext_resource type="Texture2D" uid="uid://kdyvb8nweua8" path="res://Assets/Level 1/objects/better wooden floor normal.jpg" id="11_0lnnn"]
+[ext_resource type="Texture2D" uid="uid://ph5t4u3bsgmp" path="res://Assets/Level 1/objects/drywallnormal.jpg" id="13_hts5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgg6y"]
 resource_name = "Material.023"
@@ -258,6 +262,9 @@ shadow_mesh = SubResource("ArrayMesh_ia8g8")
 resource_name = "Material.003"
 cull_mode = 2
 albedo_texture = ExtResource("1_pw71l")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("3_macah")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rqv6"]
 resource_name = "Material.006"
@@ -270,9 +277,12 @@ resource_name = "Material.012"
 cull_mode = 2
 diffuse_mode = 1
 specular_mode = 2
+albedo_color = Color(0.894922, 0.894922, 0.894922, 1)
 albedo_texture = ExtResource("3_wy7ac")
 roughness = 0.5
-normal_scale = 0.51
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("5_26ckl")
 rim = 0.0
 rim_tint = 0.0
 anisotropy = -1.0
@@ -311,6 +321,9 @@ diffuse_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("3_wy7ac")
 roughness = 0.5
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("5_26ckl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e58vr"]
 resource_name = "Material.002"
@@ -325,6 +338,9 @@ diffuse_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("7_n0hsv")
 roughness = 0.5
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("11_0lnnn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2f6q"]
 resource_name = "Material.009"
@@ -351,6 +367,9 @@ diffuse_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("10_on2w1")
 roughness = 0.5
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("13_hts5a")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12v3l"]
 resource_name = "Material.015"

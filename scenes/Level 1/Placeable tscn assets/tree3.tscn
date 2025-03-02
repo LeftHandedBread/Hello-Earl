@@ -9,7 +9,6 @@ resource_name = "trunk-01"
 diffuse_mode = 2
 specular_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_b1coe")
 emission_enabled = true
 
