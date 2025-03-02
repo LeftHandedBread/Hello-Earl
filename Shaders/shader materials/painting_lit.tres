@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c0ewd34kij3qm"]
+
+[ext_resource type="Texture2D" uid="uid://cdnhlh386jyy8" path="res://Assets/Level 1/painting_lit.png" id="1_ng58g"]
+[ext_resource type="Texture2D" uid="uid://bksq5s6vsodtd" path="res://Assets/Level 1/canvasnormal.png" id="2_a8aou"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_ng58g")
+metallic = 0.130435
+roughness = 0.84058
+normal_enabled = true
+normal_texture = ExtResource("2_a8aou")
