@@ -143,21 +143,6 @@ shadow_mesh = SubResource("ArrayMesh_6wccm")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r7j7f"]
 
-[sub_resource type="Animation" id="Animation_jkjkd"]
-resource_name = "material change"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:mesh:surface_2/material:shader_parameter/blend_factor")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_osd71"]
 length = 0.001
 tracks/0/type = "value"
@@ -171,6 +156,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_jkjkd"]
+resource_name = "material change"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:mesh:surface_2/material:shader_parameter/blend_factor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggdbe"]
@@ -192,6 +192,8 @@ mesh = SubResource("ArrayMesh_j6dgt")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="Plane"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("8_qu54q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/Area3D"]
