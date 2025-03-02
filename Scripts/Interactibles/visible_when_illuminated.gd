@@ -3,7 +3,7 @@ extends Area3D
 var isVis = false
 var illuminated = false
 
-@onready var parent = self.get_parent_node_3d()
+@onready var parent = $".."
 @onready var collider_parent = $"../StaticBody3D"
 var tween
 
@@ -18,6 +18,11 @@ func _ready():
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
 			shape.set_deferred("disabled", true)
+	print("scanning for meshes in", parent.get_path())
+	var meshes = find_all_mesh_instances(parent)
+	for mesh in meshes:
+		print("found mesh:", mesh.name)
+
 
 # Detect when a flashlight has collided
 func _on_area_entered(body):
@@ -130,6 +135,10 @@ func apply_material_override():
 # Helper function to find all MeshInstance3D nodes inside an inherited scene
 func find_all_mesh_instances(mesh_parent: Node3D) -> Array:
 	var meshes = []
+	
+	if mesh_parent is MeshInstance3D:
+		meshes.append(mesh_parent)
+	
 	for child in mesh_parent.get_children():
 		if child is MeshInstance3D:
 			meshes.append(child)
