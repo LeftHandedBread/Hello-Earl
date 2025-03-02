@@ -193,6 +193,8 @@ mesh = SubResource("ArrayMesh_j6dgt")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="Plane"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("8_qu54q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/Area3D"]
@@ -205,3 +207,5 @@ libraries = {
 "": SubResource("AnimationLibrary_ggdbe")
 }
 speed_scale = 10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
