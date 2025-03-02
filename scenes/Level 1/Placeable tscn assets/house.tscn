@@ -751,7 +751,7 @@ size = Vector3(1, 0.0117188, 1.27423)
 size = Vector3(0.943359, 0.013916, 1.33887)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6j3h"]
-size = Vector3(1, 0.0205078, 4.36102)
+size = Vector3(1, 0.0205078, 4.35152)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qyddp"]
 size = Vector3(1, 0.0187988, 1.05862)
@@ -788,7 +788,6 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house2"]
 transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 33, 0, 30.584)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02376, -1.0296, -1.48668)
@@ -851,7 +850,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53031, -3.1053, -3.33265)
 shape = SubResource("BoxShape3D_xk5pi")
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="house2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.718151, 0.695888, 0, -0.695888, 0.718151, 3.54491, 0.501356, -1.58363)
+transform = Transform3D(1, -0.000361115, -0.000348471, 0.000501696, 0.721465, 0.692452, 9.38773e-07, -0.692462, 0.721468, 3.548, 0.501449, -1.75476)
 shape = SubResource("BoxShape3D_o6j3h")
 
 [node name="CollisionShape3D17" type="CollisionShape3D" parent="house2/StaticBody3D"]
