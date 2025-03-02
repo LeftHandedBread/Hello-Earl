@@ -388,7 +388,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46637e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -451,7 +451,7 @@ script = ExtResource("4_fxdxl")
 [node name="World" parent="." instance=ExtResource("5_7vcgx")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 37.6433, 1.2503, 29.4464)
+transform = Transform3D(0.0890199, 0, -1.08277, 0, 1.08642, 0, 1.08277, 0, 0.0890199, 37.817, 1.61967, 29.941)
 mesh = SubResource("QuadMesh_q1q4p")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
