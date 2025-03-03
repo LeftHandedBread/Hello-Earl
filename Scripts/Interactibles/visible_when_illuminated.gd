@@ -3,7 +3,7 @@ extends Area3D
 var isVis = false
 var illuminated = false
 
-@onready var parent = self.get_parent_node_3d()
+@onready var parent = $".."
 @onready var collider_parent = $"../StaticBody3D"
 var tween
 
