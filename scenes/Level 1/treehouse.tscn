@@ -274,6 +274,10 @@ shape = SubResource("BoxShape3D_hsmro")
 transform = Transform3D(0.926207, 0, -0.377017, 0, 1, 0, 0.377017, 0, 0.926207, 1.84205, 0.459404, -4.36785)
 shape = SubResource("BoxShape3D_hsmro")
 
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="treehouse/StaticBody3D2"]
+transform = Transform3D(0.92416, 0, -0.382007, 0, 1, 0, 0.382007, 0, 0.92416, 1.0793, 1.16946, -2.56175)
+shape = SubResource("BoxShape3D_ca76h")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="treehouse/StaticBody3D2"]
 transform = Transform3D(0.924453, 0, 0.381296, 0, 1, 0, -0.381296, 0, 0.924453, -1.05222, 1.17235, -2.57263)
 shape = SubResource("BoxShape3D_ca76h")
