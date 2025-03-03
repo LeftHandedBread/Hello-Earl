@@ -35,13 +35,11 @@ func _on_area_exited(body):
 func toggle_illumination():
 	if illuminated:
 		fade_out()
-		print("fading out", parent.get_path())
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", true)
 	else:
 		fade_in()
-		print("fading in", parent.get_path())
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", false)

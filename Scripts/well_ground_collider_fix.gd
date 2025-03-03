@@ -2,8 +2,9 @@ extends Area3D
 
 var isVis = false
 var illuminated = false
+var player_detected = false
 
-@onready var parent = self.get_parent_node_3d()
+@onready var parent = $".."
 @onready var collider_parent = $"../StaticBody3D"
 var tween
 
@@ -14,10 +15,10 @@ func _ready():
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	connect("area_exited", Callable(self, "_on_area_exited"))
 	apply_material_override()
-	fade_out()
+	fade_in()
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
-			shape.set_deferred("disabled", true)
+			shape.set_deferred("disabled", false)
 
 # Detect when a flashlight has collided
 func _on_area_entered(body):
@@ -34,15 +35,16 @@ func _on_area_exited(body):
 
 func toggle_illumination():
 	if illuminated:
-		fade_in()
-		for shape in collider_parent.get_children():
-			if shape is CollisionShape3D:
-				shape.set_deferred("disabled", false)
-	else:
 		fade_out()
 		for shape in collider_parent.get_children():
 			if shape is CollisionShape3D:
 				shape.set_deferred("disabled", true)
+	else:
+		fade_in()
+		if player_detected == false:
+			for shape in collider_parent.get_children():
+				if shape is CollisionShape3D:
+					shape.set_deferred("disabled", false)
 
 
 func fade_in():
@@ -109,7 +111,6 @@ func apply_material_override():
 			# Duplicate the material for override
 			var override_material = original_material.duplicate()
 			# Ensure material settings are correct
-
 			
 			# Apply the override material
 			mesh_instance.set_surface_override_material(i, override_material)
@@ -123,3 +124,10 @@ func find_all_mesh_instances(mesh_parent: Node3D) -> Array:
 		elif child is Node3D:  # Recursively search deeper
 			meshes.append_array(find_all_mesh_instances(child))
 	return meshes
+
+func detect_player():
+	for body in self.get_overlapping_areas():
+		print(body)
+		if body.is_in_group("player"):
+			print("player detected: ", player_detected)
+			player_detected = true
