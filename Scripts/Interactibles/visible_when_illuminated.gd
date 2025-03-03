@@ -109,7 +109,6 @@ func apply_material_override():
 			# Duplicate the material for override
 			var override_material = original_material.duplicate()
 			# Ensure material settings are correct
-
 			
 			# Apply the override material
 			mesh_instance.set_surface_override_material(i, override_material)
@@ -117,6 +116,10 @@ func apply_material_override():
 # Helper function to find all MeshInstance3D nodes inside an inherited scene
 func find_all_mesh_instances(mesh_parent: Node3D) -> Array:
 	var meshes = []
+	
+	if mesh_parent is MeshInstance3D:  # If the node itself is a mesh, add it
+		meshes.append(mesh_parent)
+	
 	for child in mesh_parent.get_children():
 		if child is MeshInstance3D:
 			meshes.append(child)
