@@ -139,6 +139,7 @@ func _unhandled_input(event : InputEvent):
 			self.rotation_degrees.y -= mouseInput.x * mouse_sensitivity
 			head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
 	
+	
 	var head_x_rot = fposmod(head.rotation_degrees.x, 360)
 	if !GameManager.isUpsideDown:
 		if head_x_rot > 100 and head_x_rot < 260 :
