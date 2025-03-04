@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://fxy5tq8maduj" path="res://Assets/Level 1/mannequin.webp" id="1_g0x4b"]
 [ext_resource type="Texture2D" uid="uid://d3y3gxn56u86g" path="res://Assets/Level 1/mannequinnormal.webp" id="2_twrt6"]
 [ext_resource type="Texture2D" uid="uid://52dq5p8yvccx" path="res://Assets/Level 1/canvas.png" id="3_4k0ra"]
-[ext_resource type="Texture2D" uid="uid://bksq5s6vsodtd" path="res://Assets/Level 1/canvasnormal.png" id="4_5vsdh"]
+[ext_resource type="Texture2D" uid="uid://brmgu7enqwe8u" path="res://Assets/Level 1/canvasnormal.png" id="4_5vsdh"]
 [ext_resource type="Shader" path="res://Shaders/shader materials/painting.gdshader" id="5_ug857"]
 [ext_resource type="Texture2D" uid="uid://cdnhlh386jyy8" path="res://Assets/Level 1/painting_lit.png" id="5_wp3lf"]
 [ext_resource type="Texture2D" uid="uid://bj3v13ngwd7c5" path="res://Assets/Level 1/painting_unlit.png" id="6_qor3x"]
@@ -189,6 +189,7 @@ skeleton = NodePath("")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.343613, 0, 0, 0, 0.343613, 0, 0, 0, 0.343613, 0, 0, 0)
+layers = 3
 mesh = SubResource("ArrayMesh_j6dgt")
 skeleton = NodePath("")
 

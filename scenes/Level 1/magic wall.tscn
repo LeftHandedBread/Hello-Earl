@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmmr26uwmlj04"]
+[gd_scene load_steps=5 format=3 uid="uid://bmmr26uwmlj04"]
 
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="1_xa7pl"]
-[ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="2_i2g1u"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxlue"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxe3w"]
 resource_name = "drywall"
+transparency = 3
+alpha_hash_scale = 0.4
+alpha_antialiasing_mode = 0
 cull_mode = 2
-diffuse_mode = 1
+diffuse_mode = 2
 disable_ambient_light = true
 albedo_texture = ExtResource("1_xa7pl")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xnm60"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_316g3"]
 _surfaces = [{
 "aabb": AABB(-0.280001, -0.768762, -1, 0.560002, 1.04613, 1e-05),
 "format": 34896613377,
@@ -24,7 +26,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6kdng"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_opw1k"]
 resource_name = "lighthouse_Cube_018"
 _surfaces = [{
 "aabb": AABB(-0.280001, -0.768762, -1, 0.560002, 1.04613, 1e-05),
@@ -32,7 +34,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
-"material": SubResource("StandardMaterial3D_nxlue"),
+"material": SubResource("StandardMaterial3D_lxe3w"),
 "name": "drywall",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -40,29 +42,11 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_xnm60")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_85hvw"]
-size = Vector3(0.603271, 1.06445, 0.0332031)
+shadow_mesh = SubResource("ArrayMesh_316g3")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="magic wall mesh" type="MeshInstance3D" parent="."]
+[node name="magic wall mesh2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.32415, 0, 0, 0, 1.32415, 0, 0, 0, 1.32415, 0, 1, 2.09238)
-mesh = SubResource("ArrayMesh_6kdng")
+mesh = SubResource("ArrayMesh_opw1k")
 skeleton = NodePath("")
-
-[node name="Area3D" type="Area3D" parent="magic wall mesh"]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("2_i2g1u")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.246439, -1.0132)
-shape = SubResource("BoxShape3D_85hvw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="magic wall mesh"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.246439, -1.0132)
-shape = SubResource("BoxShape3D_85hvw")
