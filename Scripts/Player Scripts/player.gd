@@ -140,11 +140,16 @@ func _unhandled_input(event : InputEvent):
 			head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
 	
 	var head_x_rot = fposmod(head.rotation_degrees.x, 360)
-	if head_x_rot > 100 and head_x_rot < 260 :
-		GameManager.isUpsideDown = true
-	else :
-		GameManager.isUpsideDown = false
-
+	if !GameManager.isUpsideDown:
+		if head_x_rot > 100 and head_x_rot < 260 :
+			GameManager.isUpsideDown = true
+		else :
+			GameManager.isUpsideDown = false
+	else:
+		if head_x_rot > 80 and head_x_rot < 280 :
+			GameManager.isUpsideDown = true
+		else :
+			GameManager.isUpsideDown = false
 #endregion
 
 #region Processing Character States

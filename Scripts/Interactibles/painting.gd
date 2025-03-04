@@ -40,14 +40,14 @@ func toggle_illumination():
 				shape.set_deferred("disabled", true)
 
 
-func fade_in():
+func fade_out():
 	paint.play("material change")
 	print("fade in")
 	illuminated = true
 
 
 
-func fade_out():
+func fade_in():
 	paint.play_backwards("material change")
 	print("fade out")
 	illuminated = false

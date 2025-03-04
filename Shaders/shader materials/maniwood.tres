@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dly7bl8f6cada"]
+
+[ext_resource type="Texture2D" uid="uid://dsfcjwbrrj6un" path="res://Assets/mannequin.webp" id="1_olor3"]
+[ext_resource type="Texture2D" uid="uid://cp7poxh28jmhw" path="res://Assets/mannequinnormal.webp" id="2_2fomj"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+diffuse_mode = 1
+specular_mode = 1
+albedo_texture = ExtResource("1_olor3")
+metallic = 0.67
+metallic_specular = 0.28
+roughness = 0.78
+normal_enabled = true
+normal_texture = ExtResource("2_2fomj")

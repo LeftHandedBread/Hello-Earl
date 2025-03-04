@@ -228,11 +228,11 @@ mesh = SubResource("ArrayMesh_pb6li")
 skeleton = NodePath("")
 
 [node name="Cylinder3" type="MeshInstance3D" parent="." index="4"]
-transform = Transform3D(0.0449772, -0.0250911, -0.109528, 0.210656, 0.00650666, 0.00923366, 0.0160326, -0.0151029, 0.185942, -0.459, 0.241039, 0.87598)
+transform = Transform3D(0.0449772, -0.0250911, -0.109528, 0.210656, 0.00650666, 0.00923366, 0.0160326, -0.0151029, 0.185942, -0.278608, 0.241039, 0.584624)
 mesh = SubResource("ArrayMesh_i6fpq")
 skeleton = NodePath("")
 
 [node name="Circle3" type="MeshInstance3D" parent="." index="5"]
-transform = Transform3D(0.00827414, 0.0137548, -0.0253445, 0.028819, -0.003029, 0.00776457, 0.00100104, -0.0264883, -0.0140487, -0.304, 0.367, 0.601)
+transform = Transform3D(0.00827414, 0.0137548, -0.0253445, 0.028819, -0.003029, 0.00776457, 0.00100104, -0.0264883, -0.0140487, -0.123608, 0.367, 0.309644)
 mesh = SubResource("ArrayMesh_pb6li")
 skeleton = NodePath("")

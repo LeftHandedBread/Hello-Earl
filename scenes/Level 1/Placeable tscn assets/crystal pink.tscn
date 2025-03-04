@@ -2,13 +2,16 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p273k"]
 resource_name = "Material.001"
-cull_mode = 2
-disable_ambient_light = true
-albedo_color = Color(0.907117, 0, 0.829013, 1)
-metallic = 0.826772
-roughness = 0.271654
+transparency = 1
+depth_draw_mode = 1
+disable_fog = true
+albedo_color = Color(0.905882, 0, 0.827451, 0.937255)
+metallic = 0.1
+metallic_specular = 0.59
+roughness = 0.44
 emission_enabled = true
-emission = Color(0.23967, 0, 0.2478, 1)
+emission = Color(0.805243, 0.000506528, 0.805237, 1)
+emission_energy_multiplier = 0.11
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c7e4g"]
 _surfaces = [{
@@ -50,10 +53,11 @@ mesh = SubResource("ArrayMesh_gnp83")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.356106, 2.58647, -0.26398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330855, 1.95544, 0.0469308)
 layers = 512
 light_color = Color(1, 0.211765, 1, 1)
-light_energy = 0.5
+light_energy = 0.75
 light_cull_mask = 4294967294
+shadow_enabled = true
 omni_range = 78.483
 omni_attenuation = 1.535
