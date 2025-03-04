@@ -161,7 +161,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
-visible = false
 shape = SubResource("ConcavePolygonShape3D_f3q5d")
 
 [node name="Node3D" type="Node3D" parent="."]

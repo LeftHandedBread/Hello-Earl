@@ -452,7 +452,7 @@ script = ExtResource("4_fxdxl")
 [node name="World" parent="." instance=ExtResource("5_7vcgx")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(0.0890199, 0, -1.08277, 0, 1.08642, 0, 1.08277, 0, 0.0890199, 37.817, 1.61967, 29.941)
+transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 37.6433, 1.2503, 29.4464)
 mesh = SubResource("QuadMesh_q1q4p")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
