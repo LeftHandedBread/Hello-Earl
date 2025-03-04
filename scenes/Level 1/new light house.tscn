@@ -102,23 +102,27 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v3kg"]
 resource_name = "drywall"
 cull_mode = 2
+disable_ambient_light = true
 albedo_texture = ExtResource("1_ek12u")
 metallic = 0.54
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqxm6"]
 resource_name = "redshingles"
 cull_mode = 2
+disable_ambient_light = true
 albedo_texture = ExtResource("2_baboq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ktwn"]
 resource_name = "wooden tiles"
 cull_mode = 2
+disable_ambient_light = true
 albedo_texture = ExtResource("3_wnrh6")
 roughness = 0.675258
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2u5m"]
 resource_name = "concrete floor"
 cull_mode = 2
+disable_ambient_light = true
 albedo_texture = ExtResource("4_rlb2j")
 roughness = 0.5
 
@@ -1073,11 +1077,13 @@ shadow_mesh = SubResource("ArrayMesh_3j100")
 script = ExtResource("1_bpqrl")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 4.46638e-06, 1.95232e-13, 0, -4.37114e-08, 1, 4.46638e-06, -1, -4.37114e-08, -3.88433e-14, 7.49486, -0.711141)
+transform = Transform3D(1, 4.46638e-06, 1.95232e-13, 0, -4.37114e-08, 1, 4.46638e-06, -1, -4.37114e-08, 1.99423e-14, 7.79597, -0.711141)
 light_color = Color(1, 0.333333, 0.0705882, 1)
 shadow_enabled = true
 spot_range = 15.2268
-spot_angle = 30.5673
+spot_attenuation = 0.0
+spot_angle = 41.56
+spot_angle_attenuation = 15.455
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.924, -0.711141)
@@ -1196,6 +1202,14 @@ transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_y5qhg")
 
+[node name="Area3D" type="Area3D" parent="stairs_001"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("11_qtcwo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_001/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_y5qhg")
+
 [node name="stairs_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.10009, 0, 0.512688, 0, 1.41, 0, -0.512688, 0, 1.10009, 0, -0.876419, -0.713233)
 mesh = SubResource("ArrayMesh_xrubd")
@@ -1204,6 +1218,14 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="stairs_002"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_002/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_kcvfv")
+
+[node name="Area3D" type="Area3D" parent="stairs_002"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("8_di64h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_002/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_kcvfv")
 
 [node name="stairs_003" type="MeshInstance3D" parent="."]
@@ -1237,6 +1259,14 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="floor second"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor second/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2mvvj")
+
+[node name="Area3D" type="Area3D" parent="floor second"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("8_di64h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor second/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_2mvvj")
 
 [node name="floor third" type="MeshInstance3D" parent="."]
