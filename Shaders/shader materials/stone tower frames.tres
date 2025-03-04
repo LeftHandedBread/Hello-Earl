@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c5cpikaw02qvr"]
+
+[ext_resource type="Texture2D" uid="uid://bg0f1cnxpjubi" path="res://Assets/Level 1/stone.jpg" id="1_tak7f"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_tak7f")
+metallic = 0.123596
+roughness = 0.814607

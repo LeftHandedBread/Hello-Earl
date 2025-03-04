@@ -236,7 +236,7 @@ size = Vector3(0.0566406, 0.921509, 0.575195)
 [node name="Node3D" type="Node3D"]
 
 [node name="treehouse" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0790507, 10.2908, 0.00162923)
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -0.0790507, 10.2908, 0.00162923)
 mesh = SubResource("ArrayMesh_5xr1k")
 skeleton = NodePath("")
 

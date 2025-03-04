@@ -51,7 +51,9 @@ normal_texture = ExtResource("6_s0jk1")
 resource_name = "Material.029"
 cull_mode = 2
 albedo_texture = ExtResource("7_e6d2l")
-metallic = 1.0
+metallic = 0.49
+metallic_specular = 0.68
+roughness = 0.9
 normal_enabled = true
 normal_texture = ExtResource("8_2u51h")
 

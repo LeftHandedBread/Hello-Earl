@@ -64,6 +64,7 @@ shader = ExtResource("5_ug857")
 shader_parameter/blend_factor = 1.0
 shader_parameter/texture1 = ExtResource("5_wp3lf")
 shader_parameter/texture2 = ExtResource("6_qor3x")
+shader_parameter/normal_map = ExtResource("3_4k0ra")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6wccm"]
 _surfaces = [{
