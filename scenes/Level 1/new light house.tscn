@@ -1,8 +1,9 @@
-[gd_scene load_steps=70 format=4 uid="uid://cclv70xggxrun"]
+[gd_scene load_steps=72 format=4 uid="uid://cclv70xggxrun"]
 
 [ext_resource type="Script" path="res://Scripts/visible_during_night.gd" id="1_bpqrl"]
 [ext_resource type="Texture2D" uid="uid://dh6rahumquxlo" path="res://Assets/Level 1/objects/drywall.jpg" id="1_ek12u"]
 [ext_resource type="Texture2D" uid="uid://cp2y6e2t8swl8" path="res://Assets/Level 1/objects/shinglesred.jpg" id="2_baboq"]
+[ext_resource type="Script" path="res://Scripts/lighthouse_switch.gd" id="2_rr7ks"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="3_wnrh6"]
 [ext_resource type="Texture2D" uid="uid://crryy7r0g1ukj" path="res://Assets/Level 1/objects/concrete floor.jpg" id="4_rlb2j"]
 [ext_resource type="Texture2D" uid="uid://bmj6twxjym6ph" path="res://Assets/Level 1/objects/4geode.jpg" id="5_prgy3"]
@@ -12,6 +13,9 @@
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="11_qtcwo"]
 [ext_resource type="PackedScene" uid="uid://bw38mp0kciw03" path="res://Assets/Level 1/objects/chair.gltf" id="12_1y13s"]
 [ext_resource type="PackedScene" uid="uid://c86a1so63auep" path="res://scenes/mannequin/manitower.tscn" id="13_e5fa3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0j1g"]
+size = Vector3(0.0629272, 0.0678711, 0.103638)
 
 [sub_resource type="Animation" id="Animation_fmbq1"]
 resource_name = "Lighthouse"
@@ -44,7 +48,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../SpotLight3D2:light_energy")
+tracks/2/path = NodePath("../Interactible3D/SpotLight3D2:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -83,7 +87,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../SpotLight3D2:light_energy")
+tracks/2/path = NodePath("../Interactible3D/SpotLight3D2:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1076,7 +1080,15 @@ shadow_mesh = SubResource("ArrayMesh_3j100")
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_bpqrl")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+[node name="Interactible3D" type="Area3D" parent="."]
+script = ExtResource("2_rr7ks")
+InteractText = "[E]"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.210301, 8.58947, -0.851627)
+shape = SubResource("BoxShape3D_a0j1g")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Interactible3D"]
 transform = Transform3D(1, 4.46638e-06, 1.95232e-13, 0, -4.37114e-08, 1, 4.46638e-06, -1, -4.37114e-08, 1.99423e-14, 7.79597, -0.711141)
 light_color = Color(1, 0.333333, 0.0705882, 1)
 shadow_enabled = true
@@ -1085,7 +1097,7 @@ spot_attenuation = 0.0
 spot_angle = 41.56
 spot_angle_attenuation = 15.455
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="SpotLight3D" type="SpotLight3D" parent="Interactible3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.924, -0.711141)
 light_color = Color(1, 0.333333, 0.0705882, 1)
 light_energy = 9.085
@@ -1093,7 +1105,7 @@ spot_range = 21.6748
 spot_angle = 39.04
 spot_angle_attenuation = 2.46229
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Interactible3D/SpotLight3D"]
 libraries = {
 "": SubResource("AnimationLibrary_d4dlu")
 }
