@@ -59,9 +59,9 @@
 [ext_resource type="PackedScene" uid="uid://bey73rg62fxny" path="res://scenes/Level 1/Placeable tscn assets/log.tscn" id="58_ckmkw"]
 [ext_resource type="PackedScene" uid="uid://cipscrmvcaxq3" path="res://scenes/Level 1/axe.tscn" id="59_h1fns"]
 [ext_resource type="PackedScene" uid="uid://bw3cbyua235yh" path="res://scenes/Level 1/Placeable tscn assets/sticks.tscn" id="60_75x4e"]
+[ext_resource type="Script" path="res://Scripts/well_ground_collider_fix.gd" id="60_xm53k"]
 [ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="61_tqur5"]
 [ext_resource type="PackedScene" uid="uid://dvmgp1gl053d7" path="res://well magic ground.tscn" id="62_xsmma"]
-[ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="64_bx5fg"]
 [ext_resource type="PackedScene" uid="uid://b6bcexdcfolkq" path="res://scenes/Level 1/Placeable tscn assets/empty.tscn" id="65_yt505"]
 [ext_resource type="PackedScene" uid="uid://dkajlf3afe74x" path="res://scenes/Level 1/Placeable tscn assets/empty2.tscn" id="66_bxuj0"]
 [ext_resource type="PackedScene" uid="uid://cqhgehdepi5ep" path="res://scenes/mannequin/maniaxe.tscn" id="67_nfdwt"]
@@ -1652,7 +1652,7 @@ transform = Transform3D(1.90011, 0, 2.38688, 0, 2.12409, 0, -2.38688, 0, 1.90011
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93885, 1.42741, -35.8403)
 
 [node name="Node3D431" parent="." instance=ExtResource("26_exboa")]
-transform = Transform3D(0.827142, 0, 1.06823, 0, 1.35103, 0, -1.06823, 0, 0.827142, -10.0753, 3.95783, -47.8329)
+transform = Transform3D(1.12712, 0, 1.45564, 0, 1.841, 0, -1.45564, 0, 1.12712, -10.0753, 3.95783, -47.8329)
 
 [node name="Node3D432" parent="." instance=ExtResource("27_w23ay")]
 transform = Transform3D(0.861159, 0, 0.508335, 0, 1, 0, -0.508335, 0, 0.861159, -14.2374, 1.65985, -38.3227)
@@ -2647,29 +2647,29 @@ shape = SubResource("ConcavePolygonShape3D_31ptv")
 
 [node name="Area3D" type="Area3D" parent="Well ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("64_bx5fg")
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("60_xm53k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Well ground/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.741, 1.58886, -41.8388)
 shape = SubResource("CylinderShape3D_ce0ce")
 
-[node name="Node3D542" parent="." instance=ExtResource("38_iegmp")]
+[node name="Well" parent="." instance=ExtResource("38_iegmp")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D542"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Well"]
 transform = Transform3D(-0.242017, 0, -3.47659, 0, 3.485, 0, 3.47659, 0, -0.242017, -1.76514, 3.1145, -41.8661)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D542/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Well/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6kdpf")
 
-[node name="Area3D" type="Area3D" parent="Node3D542"]
+[node name="Area3D" type="Area3D" parent="Well"]
 transform = Transform3D(-0.242017, 0, -3.47659, 0, 3.485, 0, 3.47659, 0, -0.242017, -1.76514, 3.1145, -41.8661)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("41_6pj5a")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D542/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Well/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_6kdpf")
 
 [node name="Node3D562" parent="." instance=ExtResource("65_yt505")]
