@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=111 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="1_anqh5"]
 [ext_resource type="Texture2D" uid="uid://bmj6twxjym6ph" path="res://Assets/Level 1/objects/4geode.jpg" id="2_v8jlp"]
@@ -84,6 +84,7 @@
 [ext_resource type="PackedScene" uid="uid://db6kjwhhwvnfb" path="res://scenes/Level 1/bridge segment.tscn" id="82_syfmf"]
 [ext_resource type="PackedScene" uid="uid://bmiwvxui7ysk7" path="res://scenes/Level 1/telescope.tscn" id="83_gx44s"]
 [ext_resource type="PackedScene" uid="uid://co4o5m5yjduvs" path="res://scenes/Level 1/mine.tscn" id="84_o2g62"]
+[ext_resource type="PackedScene" uid="uid://bb4apb71u4r1r" path="res://scenes/Level 1/ferbishings/sundial.tscn" id="85_ru4n7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jssi7"]
 resource_name = "Material.001"
@@ -3369,7 +3370,7 @@ transform = Transform3D(1.45996, 0, -1.19394, 0, 1.886, 0, 1.19394, 0, 1.45996, 
 transform = Transform3D(1.15554, 0, -1.00524, 0, 1.53159, 0, 1.00524, 0, 1.15554, -7.81524, 6.2575, 26.4762)
 
 [node name="Node3D795" parent="." instance=ExtResource("83_gx44s")]
-transform = Transform3D(-1.34841, 0, 0.823652, 0, 1.58006, 0, -0.823652, 0, -1.34841, -52.2559, 23.9392, 45.9883)
+transform = Transform3D(-1.34841, 0, 0.823652, 0, 1.58006, 0, -0.823652, 0, -1.34841, -51.7834, 23.9392, 45.2148)
 
 [node name="Node3D796" parent="." instance=ExtResource("19_bsy6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08704, 9.07373, 48.0801)
@@ -3436,3 +3437,6 @@ transform = Transform3D(0.949272, -0.0465176, -0.310997, 0, 0.988998, -0.14793, 
 
 [node name="Node3D815" parent="." instance=ExtResource("57_ps4e1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4977, 4.90459, -44.4344)
+
+[node name="Node3D816" parent="." instance=ExtResource("85_ru4n7")]
+transform = Transform3D(0.00836001, 0, 0.999965, 0, 1, 0, -0.999965, 0, 0.00836001, 33.7544, 0, 19.313)
