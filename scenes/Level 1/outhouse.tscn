@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="1_6y37k"]
 [ext_resource type="Texture2D" uid="uid://cdh3srxj3ubbd" path="res://Assets/Level 1/objects/shingles.jpg" id="2_p0lov"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/open_door.gd" id="3_lbu6k"]
-[ext_resource type="Script" path="res://scenes/Level 1/outhouse_player_detect.gd" id="4_ck8c8"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/outhouse_player_detect.gd" id="4_ck8c8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnipk"]
 resource_name = "Material.001"
@@ -159,9 +159,9 @@ mesh = SubResource("ArrayMesh_ffnt6")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
-visible = false
 shape = SubResource("ConcavePolygonShape3D_f3q5d")
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -173,6 +173,7 @@ mesh = SubResource("ArrayMesh_ydwpu")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Plane_001"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Plane_001/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896912, 0.926804, 0.0416718)
@@ -198,4 +199,5 @@ script = ExtResource("4_ck8c8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player Detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866638, 0)
+visible = false
 shape = SubResource("BoxShape3D_tuh3w")

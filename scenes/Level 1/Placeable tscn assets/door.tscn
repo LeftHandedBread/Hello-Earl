@@ -185,7 +185,6 @@ skeleton = NodePath("")
 
 [node name="Interactible3D" type="Area3D" parent="Node3D/Cube"]
 script = ExtResource("2_tiaej")
-InteractText = "Door [E]"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cube/Interactible3D"]
 transform = Transform3D(4.735, 0, 0, 0, 4.735, 0, 0, 0, 4.735, 1.38836, 2.20035, 5.94847)
