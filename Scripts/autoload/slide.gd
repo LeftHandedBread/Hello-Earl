@@ -1,5 +1,5 @@
 extends Node3D
-@onready var slide:= $AnimationPlayer
+@onready var slide := $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

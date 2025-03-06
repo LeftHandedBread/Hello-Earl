@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://co4o5m5yjduvs"]
+[gd_scene load_steps=79 format=4 uid="uid://co4o5m5yjduvs"]
 
 [ext_resource type="Texture2D" uid="uid://bganthcnvdqhx" path="res://Assets/Level 1/objects/stone.jpg" id="1_uutcd"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="2_yqylc"]
@@ -820,37 +820,24 @@ shadow_mesh = SubResource("ArrayMesh_5pm7n")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_t3ni8"]
 height = 0.142562
 
+[sub_resource type="Curve3D" id="Curve3D_nsmu7"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0121059, -0.0406895, 0.0525208, 0, 0, 0, 0, 0, 0, -4.72694, -0.899553, -2.64144),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ht0j2"]
 height = 0.133685
 
-[sub_resource type="Animation" id="Animation_3hkn1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("first stone:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0637321, -1.35852, 6.1927)]
+[sub_resource type="Curve3D" id="Curve3D_c5e6f"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.41886, 1.55965, 7.04571, 0, 0, 0, 0, 0, 0, -0.00303268, 0.00482225, 0.00554848),
+"tilts": PackedFloat32Array(0, 0)
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("second stone:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-6.24039, 0.0231113, -0.0302567)]
-}
+point_count = 2
 
-[sub_resource type="Animation" id="Animation_uvxnt"]
+[sub_resource type="Animation" id="Animation_m0i4v"]
 resource_name = "slide"
 length = 12.0
 loop_mode = 1
@@ -858,32 +845,59 @@ step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("first stone:position")
+tracks/0/path = NodePath("second stone/Path3D/PathFollow3D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 6, 8),
+"times": PackedFloat32Array(0, 4, 6, 10),
 "transitions": PackedFloat32Array(-2, -2, -2, -2),
 "update": 0,
-"values": [Vector3(0.0637321, -1.35852, 6.1927), Vector3(0.0637321, -1.35852, 6.1927), Vector3(-6.31777, 0.387051, 0.0378872), Vector3(-6.31777, 0.387051, 0.0378872)]
+"values": [0.0, 1.0, 1.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("second stone:position")
+tracks/1/path = NodePath("first stone/Path3D/PathFollow3D:progress_ratio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 6, 8),
+"times": PackedFloat32Array(0, 4, 6, 10),
 "transitions": PackedFloat32Array(-2, -2, -2, -2),
 "update": 0,
-"values": [Vector3(-6.24039, 0.0231113, -0.0302567), Vector3(-6.24039, 0.0231113, -0.0302567), Vector3(-1.97457, -0.804446, -2.93715), Vector3(-1.97457, -0.804446, -2.93715)]
+"values": [1.0, 0.0, 0.0, 1.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_awdrf"]
+[sub_resource type="Animation" id="Animation_7tw6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("second stone/Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("first stone/Path3D/PathFollow3D:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ycib"]
 _data = {
-"RESET": SubResource("Animation_3hkn1"),
-"slide": SubResource("Animation_uvxnt")
+"RESET": SubResource("Animation_7tw6p"),
+"slide": SubResource("Animation_m0i4v")
 }
 
 [node name="Node3D" type="Node3D"]
@@ -1057,36 +1071,57 @@ shape = SubResource("BoxShape3D_td3r8")
 [node name="second stone" type="Node3D" parent="static grate"]
 transform = Transform3D(-0.420767, 0, -0.907169, 0, 1, 0, 0.907169, 0, -0.420767, -6.24039, 0.0231113, -0.0302567)
 
-[node name="Cube" type="MeshInstance3D" parent="static grate/second stone"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="static grate/second stone"]
+transform = Transform3D(0.999986, 0, 0, 0, 0.999988, 0, 0, 0, 0.999989, 0.0121059, -0.0406895, 0.0525208)
+
+[node name="Cube" type="MeshInstance3D" parent="static grate/second stone/AnimatableBody3D"]
 transform = Transform3D(0.741538, 0, 0, 0, 0.140689, 0, 0, 0, 0.692477, 0, 0.0267987, 0)
 mesh = SubResource("ArrayMesh_o0agt")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="static grate/second stone"]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="static grate/second stone/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="static grate/second stone/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0417104, 0)
 shape = SubResource("CylinderShape3D_t3ni8")
+
+[node name="Path3D" type="Path3D" parent="static grate/second stone"]
+curve = SubResource("Curve3D_nsmu7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="static grate/second stone/Path3D"]
+transform = Transform3D(0.999986, 0, 0, 0, 0.999988, 0, 0, 0, 0.999989, 0.0121059, -0.0406895, 0.0525208)
+rotation_mode = 0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="static grate/second stone/Path3D/PathFollow3D"]
+remote_path = NodePath("../../../AnimatableBody3D")
 
 [node name="first stone" type="Node3D" parent="static grate"]
 transform = Transform3D(-0.990241, 0, -0.139363, 0, 1, 0, 0.139363, 0, -0.990241, 0.0637321, -1.35852, 6.1927)
 
-[node name="Cube" type="MeshInstance3D" parent="static grate/first stone"]
-transform = Transform3D(0.741538, 0, 0, 0, 0.140689, 0, 0, 0, 0.692477, 0, 0.0267987, 0)
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="static grate/first stone"]
+transform = Transform3D(0.999986, 0, 2.98023e-08, 0, 0.999982, 0, -2.98023e-08, 0, 0.999989, -0.00303268, 0.00482225, 0.00555038)
+
+[node name="Cube" type="MeshInstance3D" parent="static grate/first stone/AnimatableBody3D"]
+transform = Transform3D(0.741538, 0, -2.98023e-08, 0, 0.140689, 0, -2.98023e-08, 0, 0.692477, 0, 0.0267987, 0)
 mesh = SubResource("ArrayMesh_o0agt")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="static grate/first stone"]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="static grate/first stone/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0380421, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="static grate/first stone/AnimatableBody3D"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.0380421, 0)
 shape = SubResource("CylinderShape3D_ht0j2")
+
+[node name="Path3D" type="Path3D" parent="static grate/first stone"]
+curve = SubResource("Curve3D_c5e6f")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="static grate/first stone/Path3D"]
+transform = Transform3D(0.999986, 0, 0, 0, 0.999982, 0, 0, 0, 0.999989, -0.00303269, 0.00482226, 0.00554849)
+progress = 9.02099
+rotation_mode = 0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="static grate/first stone/Path3D/PathFollow3D"]
+remote_path = NodePath("../../../AnimatableBody3D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="static grate"]
 libraries = {
-"": SubResource("AnimationLibrary_awdrf")
+"": SubResource("AnimationLibrary_0ycib")
 }
 
 [node name="light" parent="." instance=ExtResource("9_3216i")]

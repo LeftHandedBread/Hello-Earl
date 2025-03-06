@@ -86,6 +86,6 @@ shadow_mesh = SubResource("ArrayMesh_ud5lr")
 
 [node name="Grid_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
-layers = 512
+layers = 513
 mesh = SubResource("ArrayMesh_xbwox")
 skeleton = NodePath("")

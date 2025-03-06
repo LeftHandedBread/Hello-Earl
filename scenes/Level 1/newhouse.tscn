@@ -21,7 +21,7 @@ albedo_texture = ExtResource("1_832gv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0cp6"]
 resource_name = "Material.025"
-transparency = 4
+transparency = 1
 cull_mode = 2
 albedo_color = Color(0.606205, 0.873591, 0.906532, 0.392857)
 metallic = 0.785714
@@ -31,6 +31,8 @@ roughness = 0.0
 resource_name = "Material.026"
 cull_mode = 2
 albedo_texture = ExtResource("2_xdr7o")
+metallic = 0.3
+metallic_specular = 0.21
 normal_enabled = true
 normal_texture = ExtResource("3_qcnvp")
 
