@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=37 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="7_4hgiq"]
 [ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="7_cpi1g"]
 [ext_resource type="Script" path="res://Scripts/outhouse_teleport.gd" id="9_s5ov0"]
+[ext_resource type="Texture2D" uid="uid://dnb73ygbkorfq" path="res://Assets/Level 1/objects/lightrays.png" id="12_2fq5b"]
 
 [sub_resource type="GDScript" id="GDScript_gedvi"]
 
@@ -230,6 +231,66 @@ tracks/8/keys = {
 "update": 0,
 "values": [0.0, 0.01, 0.02, 0.005, 0.005, 0.01, 0.01, 0.0]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../../Node3D2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(21.2333, 25.4333, 28.2, 30.8667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(38.426, 2.422, 31.783), Vector3(38.348, 2.355, 31.819), Vector3(38.276, 2.359, 31.83), Vector3(38.205, 2.38, 31.825)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../../Node3D2:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(21.2333, 30.8667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.00166785, 0.40681, 0.832914), Vector3(-0.0192432, -0.0423781, -0.13)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../../Node3D2:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(21.3, 30.8667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 0.445, 0.93), Vector3(1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../../../Node3D2/Cube:mesh:surface_0/material:uv1_offset")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(21.0667, 31.1333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../../../Node3D2/Cube:mesh:surface_0/material:albedo_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(21.2333, 21.3333, 30.4667, 30.8667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.768627), Color(1, 1, 1, 0.768627), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
 length = 0.001
@@ -341,6 +402,66 @@ tracks/8/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../../Node3D2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(38.426, 2.422, 31.783)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../../Node3D2:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00166785, 0.40681, 0.832914)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../../Node3D2:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.445, 0.93)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../../../Node3D2/Cube:mesh:surface_0/material:uv1_offset")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../../../Node3D2/Cube:mesh:surface_0/material:albedo_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
 _data = {
@@ -359,6 +480,47 @@ albedo_texture = SubResource("ViewportTexture_pr33b")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ab02k")
 size = Vector2(1.7, 0.965)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlfl5"]
+resource_name = "Material.001"
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("12_2fq5b")
+roughness = 0.5
+disable_receive_shadows = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7jpib"]
+_surfaces = [{
+"aabb": AABB(-3.67745, -0.154188, -0.227889, 1.28265, 0.323535, 0.427121),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AgAHAAMAAgAGAAcABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAA//8AAAAA//8AAAAAAAD//8L/AAD+/wAAAAAAAP//AAD//wAA/v///wAAAAD/////wv8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c1ay6"]
+resource_name = "lightbeams_Cube"
+_surfaces = [{
+"aabb": AABB(-3.67745, -0.154188, -0.227889, 1.28265, 0.323535, 0.427121),
+"attribute_data": PackedByteArray("7LQP/zW1h/8t4of/k5eH/17LV//Q4Z//u8uH/2v///9/tYp/NbUCgC3iAoCTlwKA8cvSf2TiG4C7ywKA//96gA=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("BQAPAAcABQANAA8ACQADAAsACQABAAMABAAIAAwABAAAAAgADgACAAYADgAKAAIA"),
+"material": SubResource("StandardMaterial3D_rlfl5"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(1.88235, 1.54624, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAAAA//8AAAAAAABU1QAAAAD///+/AAAAAP//VNUAAP//AAD//wAA//8AAB/VAAD//8L//78AAP//wv8f1f7/AAAAAP///v8AAAAAVNX//wAA////v///AAD//1TV/v///wAA///+////AAAf1f/////C//+//////8L/H9VGwLe/VFVUVROAE4BUVVRVRsC3v+mqiqoTgBOA6aqKqkbAt79UVVRVE4ATgFRVVFVGwLe/6aqKqhOAE4Dpqoqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7jpib")
 
 [node name="Node3D2" type="Node3D"]
 
@@ -464,3 +626,11 @@ script = ExtResource("9_s5ov0")
 
 [node name="Node3D" parent="." instance=ExtResource("7_4hgiq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2892, 0.0578365, 33.8832)
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(0.618308, -0.302185, 0.367984, 0.739894, 0.299361, -0.0015511, -0.265051, 0.130738, 0.854099, 38.426, 2.422, 31.783)
+
+[node name="Cube" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(-0.986762, 8.74228e-08, 0.162172, -0.162172, 4.37114e-08, -0.986762, -9.33543e-08, -1, -2.89552e-08, -3.50536, -0.575855, -1.87603e-08)
+mesh = SubResource("ArrayMesh_c1ay6")
+skeleton = NodePath("")
