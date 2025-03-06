@@ -1041,10 +1041,12 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="cave"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cave/StaticBody3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_1byfj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="cave/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.972513, 0.232851, 0, -0.232851, 0.972513, 0.0428772, -0.00954282, -2.46491)
+visible = false
 shape = SubResource("BoxShape3D_qg04b")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="cave/StaticBody3D"]

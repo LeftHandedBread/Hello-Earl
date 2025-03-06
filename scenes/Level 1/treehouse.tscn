@@ -136,7 +136,7 @@ size = Vector3(0.0488281, 2.41119, 0.619873)
 size = Vector3(0.0449219, 0.709076, 1.02539)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_62x4h"]
-height = 0.0516026
+height = 0.331579
 radius = 4.40445
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_prkuy"]
@@ -722,7 +722,7 @@ transform = Transform3D(0.91844, 0, 0.395562, 0, 1, 0, -0.395562, 0, 0.91844, 2.
 shape = SubResource("BoxShape3D_etqs8")
 
 [node name="CollisionShape3D18" type="CollisionShape3D" parent="treehouse/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30443, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23277, 0)
 shape = SubResource("CylinderShape3D_62x4h")
 
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="treehouse/StaticBody3D2"]
