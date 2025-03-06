@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c4fphmtxruh5e"]
+[gd_scene load_steps=12 format=4 uid="uid://c4fphmtxruh5e"]
 
 [ext_resource type="Texture2D" uid="uid://dadwn0vl45vxl" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_bark.jpg" id="1_rw0lm"]
 [ext_resource type="Texture2D" uid="uid://uk7t2p0io3lm" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit_branch-01.png" id="2_rc1in"]
@@ -340,9 +340,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oxph8")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ba7xu"]
+size = Vector3(0.113174, 1, 0.187256)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Tree-01-4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0190182, 0, -0.0218182)
 mesh = SubResource("ArrayMesh_armvw")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-4"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00722504, 0.481404, -0.020874)
+shape = SubResource("BoxShape3D_ba7xu")

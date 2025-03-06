@@ -220,7 +220,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6owdw")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_longh"]
-radius = 0.0974056
+radius = 0.108989
 height = 2.15511
 
 [node name="Node3D" type="Node3D"]
@@ -234,6 +234,6 @@ skeleton = NodePath("")
 transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00012, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0133348, 1.00012, 0.0280306)
 visible = false
 shape = SubResource("CapsuleShape3D_longh")
