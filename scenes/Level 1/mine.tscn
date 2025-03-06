@@ -20,6 +20,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_echjr"]
 resource_name = "Material.024"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("1_uutcd")
 metallic = 0.309524
 
@@ -31,6 +33,8 @@ albedo_texture = ExtResource("2_yqylc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwh6q"]
 resource_name = "Material.028"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("3_o30vl")
 roughness = 0.5
 
@@ -126,6 +130,7 @@ size = Vector3(0.357178, 0.0391846, 2.65796)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm3ft"]
 resource_name = "Material.027"
 cull_mode = 2
+disable_ambient_light = true
 albedo_texture = ExtResource("4_lqh1e")
 metallic = 0.175
 
@@ -166,6 +171,8 @@ shadow_mesh = SubResource("ArrayMesh_qh7qt")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5tmao"]
 resource_name = "Material.029"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("5_34vlf")
 roughness = 0.865079
 
@@ -209,6 +216,7 @@ data = PackedVector3Array(-23.5876, -5.1526, 38.2615, -23.5274, -5.1526, 38.1986
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eno50"]
 resource_name = "Material.065"
 cull_mode = 2
+disable_ambient_light = true
 albedo_texture = ExtResource("6_pg2cd")
 metallic = 0.357143
 roughness = 0.714286
@@ -216,6 +224,8 @@ roughness = 0.714286
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl8ks"]
 resource_name = "Material.039"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_color = Color(0.101261, 0.101261, 0.101261, 1)
 metallic = 0.611111
 roughness = 0.301587
@@ -281,6 +291,8 @@ shadow_mesh = SubResource("ArrayMesh_4ftxw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqx6e"]
 resource_name = "Material.066"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_color = Color(0.906723, 0.878455, 0.199851, 1)
 roughness = 0.5
 emission_enabled = true
@@ -345,7 +357,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fkry3")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dcsbw"]
-radius = 0.249008
+radius = 0.485715
 
 [sub_resource type="Animation" id="Animation_o7lpg"]
 length = 0.001
@@ -614,6 +626,8 @@ size = Vector3(1, 1.7489, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ssh3"]
 resource_name = "Material.030"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("7_82a3h")
 metallic = 0.0555556
 
@@ -654,6 +668,8 @@ shadow_mesh = SubResource("ArrayMesh_ry42k")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdg0d"]
 resource_name = "Material.026"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_color = Color(0.499989, 0.499989, 0.499989, 1)
 metallic = 0.753968
 roughness = 0.492064
@@ -737,6 +753,8 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x128s"]
 resource_name = "Material.026"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_color = Color(0.499989, 0.499989, 0.499989, 1)
 metallic = 0.753968
 roughness = 0.492064
@@ -781,6 +799,8 @@ size = Vector3(6.16675, 3.42529, 0.177856)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ge3d"]
 resource_name = "Material"
 cull_mode = 2
+disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("8_gdrbr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5pm7n"]
@@ -837,6 +857,33 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_7tw6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("second stone/Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("first stone/Path3D/PathFollow3D:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
 [sub_resource type="Animation" id="Animation_m0i4v"]
 resource_name = "slide"
 length = 12.0
@@ -867,33 +914,6 @@ tracks/1/keys = {
 "values": [1.0, 0.0, 0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_7tw6p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("second stone/Path3D/PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("first stone/Path3D/PathFollow3D:progress_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ycib"]
 _data = {
 "RESET": SubResource("Animation_7tw6p"),
@@ -903,6 +923,7 @@ _data = {
 [node name="Node3D" type="Node3D"]
 
 [node name="cave" type="MeshInstance3D" parent="."]
+layers = 512
 mesh = SubResource("ArrayMesh_6a2r6")
 skeleton = NodePath("")
 
@@ -923,10 +944,12 @@ visible = false
 shape = SubResource("BoxShape3D_olkvj")
 
 [node name="hint paper" type="MeshInstance3D" parent="."]
+layers = 512
 mesh = SubResource("ArrayMesh_sy3v3")
 skeleton = NodePath("")
 
 [node name="table" type="MeshInstance3D" parent="."]
+layers = 512
 mesh = SubResource("ArrayMesh_ao7ec")
 skeleton = NodePath("")
 
@@ -938,6 +961,7 @@ shape = SubResource("ConcavePolygonShape3D_xdqyd")
 
 [node name="oribt toy" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0)
+layers = 512
 mesh = SubResource("ArrayMesh_3oj00")
 skeleton = NodePath("")
 
@@ -960,7 +984,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6938, 5.11919, -39.0031)
 script = ExtResource("7_d1ek3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="oribt toy/Node3D3/Interactible3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6938, -5.11919, 39.0031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0204, -5.11919, 38.6683)
 shape = SubResource("SphereShape3D_dcsbw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="oribt toy/Node3D3/Interactible3D"]
@@ -1025,6 +1049,7 @@ visible = false
 shape = SubResource("BoxShape3D_wur1b")
 
 [node name="paper" type="MeshInstance3D" parent="."]
+layers = 512
 mesh = SubResource("ArrayMesh_4t00m")
 skeleton = NodePath("")
 
@@ -1034,6 +1059,7 @@ script = ExtResource("12_htepu")
 
 [node name="grate" type="MeshInstance3D" parent="fancy grate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27386, 5.46214, -10.5885)
+layers = 512
 mesh = SubResource("ArrayMesh_5hbua")
 skeleton = NodePath("")
 
@@ -1058,6 +1084,7 @@ script = ExtResource("14_snwxb")
 
 [node name="grate" type="MeshInstance3D" parent="static grate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.86211, -10.8963)
+layers = 512
 mesh = SubResource("ArrayMesh_oa45f")
 skeleton = NodePath("")
 
@@ -1076,6 +1103,7 @@ transform = Transform3D(0.999986, 0, 0, 0, 0.999988, 0, 0, 0, 0.999989, 0.012105
 
 [node name="Cube" type="MeshInstance3D" parent="static grate/second stone/AnimatableBody3D"]
 transform = Transform3D(0.741538, 0, 0, 0, 0.140689, 0, 0, 0, 0.692477, 0, 0.0267987, 0)
+layers = 512
 mesh = SubResource("ArrayMesh_o0agt")
 skeleton = NodePath("")
 
@@ -1097,10 +1125,11 @@ remote_path = NodePath("../../../AnimatableBody3D")
 transform = Transform3D(-0.990241, 0, -0.139363, 0, 1, 0, 0.139363, 0, -0.990241, 0.0637321, -1.35852, 6.1927)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="static grate/first stone"]
-transform = Transform3D(0.999986, 0, 2.98023e-08, 0, 0.999982, 0, -2.98023e-08, 0, 0.999989, -0.00303268, 0.00482225, 0.00555038)
+transform = Transform3D(0.999986, 0, 2.98023e-08, 0, 0.999982, 0, 0, 0, 0.999989, -0.00303268, 0.00482225, 0.00555038)
 
 [node name="Cube" type="MeshInstance3D" parent="static grate/first stone/AnimatableBody3D"]
 transform = Transform3D(0.741538, 0, -2.98023e-08, 0, 0.140689, 0, -2.98023e-08, 0, 0.692477, 0, 0.0267987, 0)
+layers = 512
 mesh = SubResource("ArrayMesh_o0agt")
 skeleton = NodePath("")
 
@@ -1112,7 +1141,7 @@ shape = SubResource("CylinderShape3D_ht0j2")
 curve = SubResource("Curve3D_c5e6f")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="static grate/first stone/Path3D"]
-transform = Transform3D(0.999986, 0, 0, 0, 0.999982, 0, 0, 0, 0.999989, -0.00303269, 0.00482226, 0.00554849)
+transform = Transform3D(0.999986, 0, 0, 0, 0.999982, 0, 0, 0, 0.999989, -0.0030324, 0.00482233, 0.00554886)
 progress = 9.02099
 rotation_mode = 0
 
