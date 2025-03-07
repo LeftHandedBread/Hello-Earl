@@ -56,7 +56,7 @@ script = ExtResource("2_nf0c6")
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.00622976, 0.0661197, -2.79397e-09)
 light_color = Color(1, 0.333333, 0.0705882, 1)
 shadow_enabled = true
-spot_range = 15.0628
+spot_range = 1.82536
 spot_angle = 28.7013
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="flashlight/Interactible3D/SpotLight3D"]
