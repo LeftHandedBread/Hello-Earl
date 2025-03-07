@@ -6,6 +6,7 @@ func _interact() -> void:
 		GameManager.currentLightType = GameManager.Light.NORMAL
 		if GameManager.flashlightManager.flashlight_on:
 			GameManager.flashlightManager.disable_flashlights()
+		MusicTheme.finale()
 		print("Normal Flashlight Found!")
 
 func _process(_delta: float) -> void:

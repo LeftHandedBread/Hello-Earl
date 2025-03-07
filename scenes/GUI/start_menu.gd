@@ -6,9 +6,10 @@ const START = preload("res://scenes/Level 1/Level 1.tscn")
 
 #play button
 func _on_button_pressed() -> void:
-	AudioEngine.play_music(2)
+	MusicTheme.set("parameters/switch_to_clip", "B")
 	Ani.play("fadetoblack")
 	await Ani.animation_finished
+	MusicTheme.set("parameters/switch_to_clip", "C")
 	get_tree().change_scene_to_packed(START)
 
 

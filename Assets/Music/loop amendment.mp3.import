@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cts6qhmxffdju"
+path="res://.godot/imported/loop amendment.mp3-2bfe936b7a6ba72089fe3696fa9d65f9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/loop amendment.mp3"
+dest_files=["res://.godot/imported/loop amendment.mp3-2bfe936b7a6ba72089fe3696fa9d65f9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=64.0
+beat_count=99
+bar_beats=4

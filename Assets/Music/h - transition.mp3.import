@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/h - transition.mp3-89cfacd499ad4b2efb24b85671
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
+loop=true
+loop_offset=0.0
+bpm=64.0
+beat_count=32
 bar_beats=4

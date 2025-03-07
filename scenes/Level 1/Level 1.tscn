@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=43 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="2_5viyr"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="6_uq5md"]
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="7_4hgiq"]
 [ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="7_cpi1g"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/house area detect.gd" id="8_53ffn"]
 [ext_resource type="Script" path="res://Scripts/outhouse_teleport.gd" id="9_s5ov0"]
 [ext_resource type="Texture2D" uid="uid://dnb73ygbkorfq" path="res://Assets/Level 1/objects/lightrays.png" id="12_2fq5b"]
 [ext_resource type="Texture2D" uid="uid://j3b2lo7tlddv" path="res://Assets/Level 1/objects/noise.png" id="13_ogufq"]
@@ -605,6 +606,9 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ab02k")
 size = Vector2(1.7, 0.965)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqr0n"]
+size = Vector3(5.03467, 7.69874, 5.06274)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlfl5"]
 resource_name = "Material.001"
 transparency = 1
@@ -708,7 +712,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178171, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.513541, 0.937887, 0.34694, -4.46638e-06, 0.178172, -0.481643, 0.858064, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -774,6 +778,13 @@ script = ExtResource("4_fxdxl")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
 transform = Transform3D(0.0890199, 0, -1.08277, 0, 1.08642, 0, 1.08277, 0, 0.0890199, 37.817, 1.61967, 29.941)
 mesh = SubResource("QuadMesh_q1q4p")
+
+[node name="HouseArea" type="Area3D" parent="World"]
+script = ExtResource("8_53ffn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/HouseArea"]
+transform = Transform3D(0.995966, 0, 0.0897287, 0, 1, 0, -0.0897287, 0, 0.995966, 35.7494, 0.703662, 30.7589)
+shape = SubResource("BoxShape3D_gqr0n")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5569, 0.129552, 33.584)

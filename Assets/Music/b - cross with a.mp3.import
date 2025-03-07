@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/b - cross with a.mp3-724524c5c9c0a042761b888f
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
-beat_count=0
+loop_offset=0.0
+bpm=64.0
+beat_count=99
 bar_beats=4
