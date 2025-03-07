@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bwok3kqwxnwpv"]
+
+[ext_resource type="FontFile" uid="uid://b5i30vm3iuys8" path="res://Assets/textures/Terminal.ttf" id="1_wa464"]
+
+[resource]
+default_font = ExtResource("1_wa464")
+default_font_size = 24
+Button/colors/font_color = Color(0.87451, 0.713726, 0.470588, 1)
+Button/colors/font_hover_color = Color(0.94902, 1, 0.113725, 1)
+MarginContainer/constants/margin_bottom = 24

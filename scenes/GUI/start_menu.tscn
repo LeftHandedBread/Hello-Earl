@@ -1,0 +1,446 @@
+[gd_scene load_steps=25 format=3 uid="uid://cgbiqlh0ednt"]
+
+[ext_resource type="Script" path="res://scenes/GUI/FIRST THING.gd" id="1_cbp6j"]
+[ext_resource type="Theme" uid="uid://bwok3kqwxnwpv" path="res://Assets/textures/startmenu.tres" id="1_ribnf"]
+[ext_resource type="AudioStream" uid="uid://ycfvpcwra6t4" path="res://Assets/Music/a - menu.mp3" id="2_cdajy"]
+[ext_resource type="PackedScene" uid="uid://1k5riwn43nsk" path="res://scenes/Level 1/world floor.tscn" id="2_nu836"]
+[ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="3_86xae"]
+[ext_resource type="PackedScene" uid="uid://brerpijvuqvnm" path="res://scenes/Level 1/Placeable tscn assets/usable chair.tscn" id="4_idssp"]
+[ext_resource type="PackedScene" uid="uid://7edcl6c0vn55" path="res://scenes/Level 1/Placeable tscn assets/tree3.tscn" id="5_oqyi6"]
+[ext_resource type="PackedScene" uid="uid://xrvbqisu866t" path="res://scenes/mannequin/manihouse.tscn" id="6_u3if7"]
+[ext_resource type="PackedScene" uid="uid://5qpn7mir1xao" path="res://scenes/Level 1/Placeable tscn assets/flowers 4.tscn" id="7_ydfu0"]
+[ext_resource type="PackedScene" uid="uid://b6jyj2gxhphso" path="res://scenes/Level 1/Placeable tscn assets/boulder2.tscn" id="8_n0ae0"]
+[ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="8_uf77k"]
+[ext_resource type="PackedScene" uid="uid://bf3fv7uapkgip" path="res://scenes/Level 1/Placeable tscn assets/bush 3.tscn" id="9_nh8ny"]
+[ext_resource type="PackedScene" uid="uid://bqtr3l3hrlbpv" path="res://scenes/Level 1/Placeable tscn assets/bush 5.tscn" id="10_2rnth"]
+[ext_resource type="PackedScene" uid="uid://cf322s6rbu578" path="res://scenes/Level 1/Placeable tscn assets/flowers 3.tscn" id="11_8qggo"]
+[ext_resource type="PackedScene" uid="uid://bu7ddtdjy5tj3" path="res://scenes/Level 1/Placeable tscn assets/rocks5.tscn" id="12_mxeuf"]
+[ext_resource type="Script" path="res://scenes/GUI/start_menu.gd" id="14_bwnxt"]
+[ext_resource type="Texture2D" uid="uid://crynqetupnxn4" path="res://Assets/textures/studio.png" id="17_cuuro"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_viowm"]
+panorama = ExtResource("3_86xae")
+energy_multiplier = 1.5
+
+[sub_resource type="Sky" id="Sky_jkqt8"]
+sky_material = SubResource("PanoramaSkyMaterial_viowm")
+
+[sub_resource type="Environment" id="Environment_c0cq4"]
+background_mode = 2
+sky = SubResource("Sky_jkqt8")
+sky_rotation = Vector3(0.938987, 0.802851, 1.30725)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+adjustment_enabled = true
+adjustment_brightness = 1.5
+
+[sub_resource type="Animation" id="Animation_s1gam"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.938987, 0.802851, 1.30725)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ColorRect2:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ColorRect2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Sprite2D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ColorRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_o3kgf"]
+resource_name = "studiofade"
+length = 180.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.25, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ColorRect2:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.938987, 0.802851, 0), Vector3(0.938987, 0.802851, 3.14159)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ColorRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprite2D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nl2kp"]
+resource_name = "fadetoblack"
+length = 3.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -20.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ColorRect2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wo7dn"]
+_data = {
+"RESET": SubResource("Animation_s1gam"),
+"fadetoblack": SubResource("Animation_nl2kp"),
+"studiofade": SubResource("Animation_o3kgf")
+}
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_cbp6j")
+
+[node name="background" type="Node3D" parent="."]
+
+[node name="Node3D" parent="background" instance=ExtResource("2_nu836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.69, 0, -36.77)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="background"]
+environment = SubResource("Environment_c0cq4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="background/WorldEnvironment"]
+transform = Transform3D(-0.0757672, -0.602386, 0.794601, 0.092414, 0.789219, 0.607118, -0.992834, 0.119432, -0.00412792, -4.37059, 10.025, -87.2765)
+light_color = Color(1, 0.659754, 0.410898, 1)
+light_energy = 0.05
+light_indirect_energy = 0.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="background/WorldEnvironment"]
+transform = Transform3D(-0.673064, -4.01178e-08, 0.739584, 0.466077, 0.776443, 0.424157, -0.574245, 0.630188, -0.522596, -7.5018, 8.42319, -86.9567)
+light_color = Color(1, 0.815686, 0.556863, 1)
+light_energy = 0.025
+light_indirect_energy = 0.0
+spot_range = 6.74781
+
+[node name="OmniLight3D" type="OmniLight3D" parent="background/WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60049, 6.99407, -83.9678)
+light_color = Color(1, 0.729412, 0.627451, 1)
+light_energy = 0.1
+
+[node name="chair2" parent="background" instance=ExtResource("4_idssp")]
+transform = Transform3D(-0.867627, 0, 0.497216, 0, 1, 0, -0.497216, 0, -0.867627, -10.466, 4.71872, -83.2435)
+
+[node name="Node3D2" parent="background" instance=ExtResource("5_oqyi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5553, 4.99824, -85.267)
+
+[node name="Node3D3" parent="background" instance=ExtResource("6_u3if7")]
+transform = Transform3D(0.240762, 0, -0.588179, 0, 0.635547, 0, 0.588179, 0, 0.240762, -10.789, 4.36969, -83.5101)
+
+[node name="flashlight" parent="background" instance=ExtResource("8_uf77k")]
+transform = Transform3D(0.416882, 0.609216, -0.410175, 0.278096, 0.305585, 0.736518, 0.679743, -0.49865, -0.0497657, -9.75749, 5.69344, -83.0611)
+visible = false
+
+[node name="Node3D4" parent="background" instance=ExtResource("7_ydfu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9566, 4.6677, -82.1031)
+
+[node name="Node3D5" parent="background" instance=ExtResource("8_n0ae0")]
+transform = Transform3D(0.948948, 0.315434, 0, -0.315434, 0.948948, 0, 0, 0, 1, -10.8461, 4.69427, -81.1477)
+
+[node name="Node3D6" parent="background" instance=ExtResource("7_ydfu0")]
+transform = Transform3D(-0.338139, 0, 0.28788, 0, 0.444086, 0, -0.28788, 0, -0.338139, -10.2578, 4.69786, -81.8039)
+
+[node name="Node3D7" parent="background" instance=ExtResource("9_nh8ny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0462, 4.96968, -84.7121)
+
+[node name="Node3D8" parent="background" instance=ExtResource("9_nh8ny")]
+transform = Transform3D(0.862381, 0, 0.50626, 0, 1, 0, -0.50626, 0, 0.862381, -10.3787, 4.62286, -85.1675)
+
+[node name="Node3D9" parent="background" instance=ExtResource("10_2rnth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.27473, 4.21611, -85.7054)
+
+[node name="Node3D10" parent="background" instance=ExtResource("10_2rnth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0277, 4.80046, -79.5928)
+
+[node name="Node3D11" parent="background" instance=ExtResource("11_8qggo")]
+transform = Transform3D(0.992211, -0.124571, 0, 0.12311, 0.980573, 0.15271, -0.0190233, -0.15152, 0.988271, -8.33302, 4.8037, -82.8249)
+
+[node name="rocks" parent="background" instance=ExtResource("12_mxeuf")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -9.86564, 4.66468, -82.6744)
+
+[node name="rocks2" parent="background" instance=ExtResource("12_mxeuf")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -9.31679, 4.50649, -83.8751)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="background/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="background/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.0276441, 0.156831, 0.987238, -0.00416547, 0.987625, -0.156776, -0.999609, 0.000221616, 0.0279553, -5.07721, 6.01, -83.6708)
+fov = 50.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ribnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+script = ExtResource("14_bwnxt")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Hello, Earl."
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"FlatButton"
+text = "Play"
+
+[node name="Button2" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"FlatButton"
+text = "Settings"
+
+[node name="Button3" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"FlatButton"
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cdajy")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 312)
+scale = Vector2(0.27963, 0.243518)
+texture = ExtResource("17_cuuro")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../background")
+libraries = {
+"": SubResource("AnimationLibrary_wo7dn")
+}
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Button" to="Control/MarginContainer/VBoxContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Button3" to="Control/MarginContainer/VBoxContainer" method="_on_button_3_pressed"]

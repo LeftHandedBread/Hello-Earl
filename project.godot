@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hello earl world"
-run/main_scene="res://scenes/GUI/mainMenu.tscn"
+run/main_scene="res://scenes/GUI/start_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

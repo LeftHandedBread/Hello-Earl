@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
-[ext_resource type="AudioStream" uid="uid://cag0olqpj7kse" path="res://Assets/Music/Original.mp3" id="2_fyrm4"]
+[ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="2_5viyr"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/camera_follows_sun.gd" id="3_cnwoo"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/fog drop off.gd" id="3_nha8n"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/day-cycle.gd" id="4_fxdxl"]
@@ -34,7 +34,9 @@ curve_y = SubResource("Curve_eydtw")
 curve_z = SubResource("Curve_g0gvs")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mu0k0"]
+panorama = ExtResource("2_5viyr")
 filter = false
+energy_multiplier = 1.5
 
 [sub_resource type="Sky" id="Sky_ih2gf"]
 sky_material = SubResource("PanoramaSkyMaterial_mu0k0")
@@ -42,7 +44,7 @@ sky_material = SubResource("PanoramaSkyMaterial_mu0k0")
 [sub_resource type="Environment" id="Environment_hatdx"]
 background_mode = 2
 sky = SubResource("Sky_ih2gf")
-sky_rotation = Vector3(0, 0, -0.794125)
+sky_rotation = Vector3(0.785398, 0.785398, 0)
 ambient_light_source = 2
 ambient_light_color = Color(0.767196, 0.930646, 0.995519, 1)
 ambient_light_energy = 0.1
@@ -317,6 +319,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), Vector3(0, 10, 0)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../..:environment:sky_rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.785398, 0.785398, 0), Vector3(0.785398, 0.785398, 6.28319)]
+}
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
 length = 0.001
@@ -512,6 +526,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../..:environment:sky_rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.785398, 0.785398, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
 _data = {
@@ -618,12 +644,6 @@ shadow_mesh = SubResource("ArrayMesh_6fq0d")
 transform = Transform3D(0.98774, 0, 0.156107, 0, 1, 0, -0.156107, 0, 0.98774, -33.2754, 0.725434, 35.2809)
 floor_max_angle = 0.872665
 safe_margin = 0.01
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_fyrm4")
-autoplay = true
-parameters/looping = true
-script = SubResource("GDScript_gedvi")
 
 [node name="Day Cycle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485046, 50.7393, 0.156724)
