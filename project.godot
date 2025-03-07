@@ -98,6 +98,11 @@ debug={
 ]
 }
 
+[physics]
+
+3d/run_on_separate_thread=true
+common/physics_interpolation=true
+
 [rendering]
 
 occlusion_culling/use_occlusion_culling=true
