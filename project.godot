@@ -13,12 +13,14 @@ config_version=5
 config/name="hello earl world"
 run/main_scene="res://scenes/GUI/start_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://Assets/textures/huh.png"
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Scripts/autoload/GameManager.gd"
 SettingsHandler="*res://Scripts/autoload/SettingsHandler.gd"
+AudioEngine="*res://Scripts/autoload/audioEngine.tscn"
 
 [editor]
 
