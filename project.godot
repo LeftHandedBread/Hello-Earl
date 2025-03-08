@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/autoload/GameManager.gd"
 SettingsHandler="*res://Scripts/autoload/SettingsHandler.gd"
-AudioEngine="*res://Scripts/autoload/audioEngine.tscn"
+MusicTheme="*res://Scripts/autoload/main themes.tscn"
 
 [editor]
 

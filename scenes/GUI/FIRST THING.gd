@@ -4,7 +4,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioEngine.play_music(1)
+	MusicTheme.play()
 	Ani.play("studiofade")
 	pass # Replace with function body.
 
