@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=48 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="2_5viyr"]
@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="7_4hgiq"]
 [ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="7_cpi1g"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/house area detect.gd" id="8_53ffn"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/tpzone.gd" id="8_an6md"]
 [ext_resource type="Script" path="res://Scripts/outhouse_teleport.gd" id="9_s5ov0"]
 [ext_resource type="Texture2D" uid="uid://dnb73ygbkorfq" path="res://Assets/Level 1/objects/lightrays.png" id="12_2fq5b"]
 [ext_resource type="Texture2D" uid="uid://j3b2lo7tlddv" path="res://Assets/Level 1/objects/noise.png" id="13_ogufq"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/returnzone.gd" id="17_kdwo6"]
 
 [sub_resource type="GDScript" id="GDScript_gedvi"]
 
@@ -393,6 +395,30 @@ tracks/21/keys = {
 "update": 1,
 "values": [1.0, false, 1.0, false, 1.0, false, 1.0, false, 1.0, false]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../../newouthouse/tpzone:active")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(5, 15, 15.25, 15.5, 15.75, 20, 20.25, 20.5, 20.75, 29, 29.25, 29.5, 29.75, 45, 45.25, 45.5, 45.75, 47.5, 47.75, 48, 48.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../../../../Area3D:active")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(16.25, 16.5, 16.75, 17, 21.25, 21.5, 21.75, 22, 30.25, 30.5, 30.75, 31, 46.25, 46.5, 46.75, 47, 48.75, 49, 49.25, 49.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_sr7h4"]
 length = 0.001
@@ -660,12 +686,39 @@ tracks/21/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../../newouthouse/tpzone:active")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../../../../Area3D:active")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k13is"]
 _data = {
 "Day": SubResource("Animation_5m47g"),
 "RESET": SubResource("Animation_sr7h4")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0mgh"]
+size = Vector3(0.752274, 0.492676, 0.48999)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pr33b"]
 viewport_path = NodePath("Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/SubViewport")
@@ -763,6 +816,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6fq0d")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_51yfy"]
+
 [node name="Node3D2" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xbq7m")]
@@ -850,6 +905,13 @@ script = ExtResource("4_fxdxl")
 transform = Transform3D(0.965948, 0, 0.258735, 0, 1, 0, -0.258735, 0, 0.965948, 43.8437, -47.2976, 7.19729)
 vis = true
 
+[node name="tpzone" type="Area3D" parent="Day Cycle/newouthouse"]
+script = ExtResource("8_an6md")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Day Cycle/newouthouse/tpzone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.0159855)
+shape = SubResource("BoxShape3D_e0mgh")
+
 [node name="World" parent="." instance=ExtResource("5_7vcgx")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
@@ -884,7 +946,7 @@ skeleton = NodePath("")
 [node name="Node3D3" type="Node3D" parent="."]
 
 [node name="Plane" type="MeshInstance3D" parent="Node3D3"]
-transform = Transform3D(-5.39038e-06, -1.48906, 0, 1.48906, -5.39038e-06, 0, 0, 0, 1.48906, -1, -3.55835, 0)
+transform = Transform3D(-5.39038e-06, -1.48906, 0, 1.48906, -5.39038e-06, 0, 0, 0, 1.48906, -1, 0.262, 0)
 mesh = SubResource("ArrayMesh_icq7b")
 skeleton = NodePath("")
 
@@ -895,3 +957,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("17_kdwo6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_51yfy")

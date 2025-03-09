@@ -1284,10 +1284,11 @@ shape = SubResource("ConcavePolygonShape3D_jlslc")
 transform = Transform3D(-0.025656, -0.50901, 0.0187333, 0.0211515, -0.0198056, -0.509176, 0.508915, -0.0248376, 0.0221067, 0.00780216, 8.56688, -0.720802)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.85391, -0.650742)
-light_color = Color(1, 0.33, 0.07, 1)
-spot_range = 792.8
-spot_angle = 40.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.15012, -0.650742)
+light_color = Color(1, 0, 0, 1)
+spot_range = 75.0
+spot_attenuation = -1.0
+spot_angle = 5.83812
 script = ExtResource("14_klc43")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight3D"]
@@ -1297,9 +1298,10 @@ libraries = {
 autoplay = "Lighthouse Spin"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
-transform = Transform3D(1, 0, 5.55112e-17, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00450346, -0.425653, -0.0549507)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00450346, -0.678772, -0.0549507)
 light_color = Color(1, 0.33, 0.07, 1)
 shadow_enabled = true
-spot_range = 9.79853
+spot_range = 8.4612
+spot_attenuation = -1.0
 spot_angle = 21.3646
 spot_angle_attenuation = 20.3931
