@@ -75,7 +75,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":4004,
+			"count":7613,
 			"max":[
 				22.11754035949707,
 				24.28052520751953,
@@ -91,45 +91,45 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":4004,
+			"count":7613,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":4004,
+			"count":7613,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":23568,
+			"count":26928,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":48048,
+			"byteLength":91356,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":48048,
-			"byteOffset":48048,
+			"byteLength":91356,
+			"byteOffset":91356,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":32032,
-			"byteOffset":96096,
+			"byteLength":60904,
+			"byteOffset":182712,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":47136,
-			"byteOffset":128128,
+			"byteLength":53856,
+			"byteOffset":243616,
 			"target":34963
 		}
 	],
@@ -141,7 +141,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":175264,
+			"byteLength":297472,
 			"uri":"moon.bin"
 		}
 	]

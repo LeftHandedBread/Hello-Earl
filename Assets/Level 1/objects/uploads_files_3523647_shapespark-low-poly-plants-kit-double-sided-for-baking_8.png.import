@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv81rwejmt605"
+uid="uid://dpnbq6uiwmvo"
 path.s3tc="res://.godot/imported/uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking_8.png-186def1556374f3ba68e997189dc51fd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "ec3593f1be2b44eec649fe1714a01032"
 }
 
 [deps]

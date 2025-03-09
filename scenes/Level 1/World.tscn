@@ -283,21 +283,6 @@ radius = 2.45309
 [sub_resource type="BoxShape3D" id="BoxShape3D_51sj5"]
 size = Vector3(1.78129, 0.389526, 0.95874)
 
-[sub_resource type="Animation" id="Animation_hbguc"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(5.96046e-08, 0.0333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
 [sub_resource type="Animation" id="Animation_b0c7q"]
 length = 0.001
 tracks/0/type = "value"
@@ -313,6 +298,21 @@ tracks/0/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_hbguc"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.96046e-08, 0.0333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_advq7"]
 _data = {
 "RESET": SubResource("Animation_b0c7q"),
@@ -324,6 +324,21 @@ size = Vector3(2.10922, 2.03711, 2.1355)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qprbw"]
 size = Vector3(0.488525, 0.846222, 0.500763)
+
+[sub_resource type="Animation" id="Animation_4qq80"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sign3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qn3k4"]
 resource_name = "fade"
@@ -338,21 +353,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_4qq80"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sign3:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i3tdt"]
@@ -2660,6 +2660,7 @@ transform = Transform3D(1.60815, 0, 0.817907, 0, 1.80419, 0, -0.817907, 0, 1.608
 
 [node name="sign3" parent="Node3D577" instance=ExtResource("35_wi3uo")]
 transform = Transform3D(-0.374861, 0.0576244, -0.23734, 0.0881365, 0.437396, -0.033008, 0.227778, -0.0744101, -0.377825, -0.126431, 9.53718, -1.15133)
+visible = false
 
 [node name="Interactible3D2" type="Area3D" parent="Node3D577/sign3"]
 script = ExtResource("32_ts30l")
@@ -3772,3 +3773,6 @@ InteractText = "[E] Sit | [Esc] Stand up"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0890503, 0.423215, 0.0607719)
 visible = false
 shape = SubResource("BoxShape3D_qprbw")
+
+[node name="Node3D826" parent="." instance=ExtResource("66_bxuj0")]
+transform = Transform3D(0.781241, 0, 0, 0, 0.0290363, -0.780701, 0, 0.780701, 0.0290363, -43.8449, 1.35606, 12.6667)
