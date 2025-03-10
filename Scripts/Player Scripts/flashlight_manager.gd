@@ -72,3 +72,7 @@ func _ready():
 	normal_flashlight.visible = true
 	red_flashlight.visible = true
 	dark_flashlight.visible = true
+	
+func disable_colliders():
+	normal_flashlight_collider.disabled = true
+	dark_flashlight_collider.disabled = true

@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d0f4n68auga3y" path="res://Assets/Level 1/mannequin.webp" id="13_s3xjl"]
 [ext_resource type="Texture2D" uid="uid://cp7poxh28jmhw" path="res://Assets/mannequinnormal.webp" id="14_kp6qx"]
 [ext_resource type="Texture2D" uid="uid://bmj6twxjym6ph" path="res://Assets/Level 1/objects/4geode.jpg" id="15_p40pv"]
-[ext_resource type="Script" path="res://Scripts/Game Logic/tower geode.gd" id="16_2ubo0"]
+[ext_resource type="Script" path="res://Scripts/Interactibles/tower Geode.gd" id="16_y6d8i"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r7a3y"]
 _surfaces = [{
@@ -1566,7 +1566,7 @@ shadow_enabled = true
 transform = Transform3D(1, -3.72529e-09, 0, -7.45058e-09, 1, 3.72529e-09, 5.96046e-08, -7.45058e-09, 1, 0, 0, 0)
 collision_layer = 6
 collision_mask = 6
-script = ExtResource("16_2ubo0")
+script = ExtResource("16_y6d8i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere2/Area3D"]
 shape = SubResource("SphereShape3D_2ctjf")

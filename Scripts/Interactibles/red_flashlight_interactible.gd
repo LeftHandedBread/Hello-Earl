@@ -9,6 +9,7 @@ func _interact() -> void:
 		print("Red Flashlight Found!")
 
 func _process(_delta: float) -> void:
+	pass
 	if GameManager.currentLightType == GameManager.Light.RED:
 		self.get_parent().visible = false
 	else:
