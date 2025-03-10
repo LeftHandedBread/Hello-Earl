@@ -903,6 +903,7 @@ script = ExtResource("4_fxdxl")
 
 [node name="newouthouse" parent="Day Cycle" instance=ExtResource("7_0e7rr")]
 transform = Transform3D(0.965948, 0, 0.258735, 0, 1, 0, -0.258735, 0, 0.965948, 43.8437, -47.2976, 7.19729)
+vis = true
 
 [node name="tpzone" type="Area3D" parent="Day Cycle/newouthouse"]
 script = ExtResource("8_an6md")

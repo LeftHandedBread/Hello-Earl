@@ -1,11 +1,10 @@
 extends Interactible3D
 
-var current = 0
+var current = 2
 
 @onready var fl = $fl
 @onready var rfl = $rfl
-@onready var flcoll = $fl/Area3D2/CollisionShape3D
-@onready var rflcoll = $rfl/Area3D2/CollisionShape3D
+@onready var biggy = $"../.."
 
 ## Override function. Called when OnInteract is fired. Does nothing, since you're supposed to override it
 func _interact() -> void:
@@ -16,46 +15,40 @@ func _interact() -> void:
 			GameManager.flashlightManager.disable_colliders()
 		if GameManager.currentLightType == GameManager.Light.NORMAL and current == 0:
 			fl.show()
-			flcoll.disabled = false
 			GameManager.currentLightType = GameManager.Light.NONE
 			current = 1
 			print("1 0")
 			return
 		if GameManager.currentLightType == GameManager.Light.RED and current == 0:
 			rfl.show()
-			rflcoll.disabled = false
 			GameManager.currentLightType = GameManager.Light.NONE
 			current = 2
 			print("2 0")
 			return
 		if GameManager.currentLightType == GameManager.Light.NORMAL and current == 2:
 			fl.show()
-			flcoll.disabled = false
 			rfl.hide()
-			rflcoll.disabled = true
+			biggy.flipper(1)
 			GameManager.currentLightType = GameManager.Light.RED
 			current = 1
 			print("1 2")
 			return
 		if GameManager.currentLightType == GameManager.Light.RED and current == 1:
 			rfl.show()
-			rflcoll.disabled = false
 			fl.hide()
-			flcoll.disabled = true
+			biggy.flipper(2)
 			GameManager.currentLightType = GameManager.Light.NORMAL
 			current = 2
 			print("2 1")
 			return
 		if GameManager.currentLightType == GameManager.Light.NONE and current == 1:
 			fl.hide()
-			flcoll.disabled = true
 			GameManager.currentLightType = GameManager.Light.NORMAL
 			current = 0
 			print("0 1")
 			return
 		if GameManager.currentLightType == GameManager.Light.NONE and current == 2:
 			rfl.hide()
-			rflcoll.disabled = true
 			GameManager.currentLightType = GameManager.Light.RED
 			current = 0
 			print("0 2")
@@ -67,7 +60,5 @@ func _interact() -> void:
 func _ready() -> void:
 	OnInteract.connect(_interact.bind())
 	fl.hide()
-	rfl.hide()
-	rflcoll.disabled = true
-	flcoll.disabled = true
+	rfl.show()
 	
