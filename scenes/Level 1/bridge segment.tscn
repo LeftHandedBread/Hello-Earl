@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://db6kjwhhwvnfb"]
 
-[ext_resource type="Texture2D" uid="uid://fxy5tq8maduj" path="res://Assets/Level 1/mannequin.webp" id="1_40xph"]
+[ext_resource type="Texture2D" uid="uid://d0f4n68auga3y" path="res://Assets/Level 1/mannequin.webp" id="1_40xph"]
 [ext_resource type="Texture2D" uid="uid://vlhejxrb62mu" path="res://Assets/Level 1/uploads_files_3523647_shapespark-low-poly-plants-kit_0.png" id="2_f7t0h"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_illuminated.gd" id="3_2vhfe"]
 [ext_resource type="Texture2D" uid="uid://cp7poxh28jmhw" path="res://Assets/mannequinnormal.webp" id="3_ks52v"]

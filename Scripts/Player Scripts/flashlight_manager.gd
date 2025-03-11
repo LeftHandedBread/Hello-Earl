@@ -6,6 +6,7 @@ var flashlight_on = false
 @onready var normal_flashlight_hitbox = $"normal flashlight/Cone_006/Area3D"
 @onready var normal_flashlight_collider = $"normal flashlight/Cone_006/Area3D/CollisionShape3D"
 @onready var red_flashlight = $"red flashlight"
+@onready var red_flashlight_collider = $"red flashlight/Area3D2/CollisionShape3D"
 @onready var dark_flashlight = $"dark flashlight"
 @onready var dark_flashlight_hitbox = $"dark flashlight/Area3D"
 @onready var dark_flashlight_collider = $"dark flashlight/Area3D/CollisionShape3D"
@@ -41,8 +42,10 @@ func enable_normal_flashlight():
 func enable_red_flashlight():
 	if flashlight_on :
 		red_flashlight.light_energy = 2
+		red_flashlight_collider.disabled = false
 	else:
 		red_flashlight.light_energy = 0
+		red_flashlight_collider.disabled = true
 
 
 func enable_dark_flashlight():
@@ -76,3 +79,5 @@ func _ready():
 func disable_colliders():
 	normal_flashlight_collider.disabled = true
 	dark_flashlight_collider.disabled = true
+	red_flashlight_collider.disabled = true
+	

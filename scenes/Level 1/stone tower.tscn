@@ -1537,7 +1537,7 @@ mesh = SubResource("ArrayMesh_0bpui")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Icosphere2"]
-transform = Transform3D(1, 9.45245e-09, -1.00826e-07, -9.45245e-09, 1, 3.4659e-08, 1.00826e-07, -3.4659e-08, 1, -1.46188, 1.02547, 3.25607)
+transform = Transform3D(9.45862, -3.57628e-06, 1.04904e-05, 4.76837e-07, 9.4586, -1.90735e-06, 2.38419e-06, -2.38419e-07, 9.4586, -7.57378, 3.46751, 7.06351)
 layers = 2
 light_color = Color(0, 0.787786, 0.660274, 1)
 light_energy = 0.0
@@ -1554,7 +1554,7 @@ libraries = {
 speed_scale = 1.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Icosphere2/OmniLight3D"]
-transform = Transform3D(1, 3.72529e-09, -8.9407e-08, -9.31323e-09, 1, -3.72529e-09, 5.96046e-08, -1.11759e-08, 1, 0.0749054, -0.0103035, 0.0134401)
+transform = Transform3D(1, -1.49012e-08, -8.9407e-08, 0, 1, -5.96046e-08, 5.96046e-08, 1.04308e-07, 1, 1.43361, 1.95304, -1.02839)
 layers = 2
 light_color = Color(1, 0.627451, 1, 1)
 light_energy = 0.0

@@ -1,16 +1,32 @@
 extends Interactible3D
 
+var current = 1
+
+@onready var fl = $"."
+
+## Override function. Called when OnInteract is fired. Does nothing, since you're supposed to override it
 func _interact() -> void:
 	if Input.is_action_just_pressed("interact"):
-		GameManager.currentLightType = GameManager.Light.NONE
-		GameManager.currentLightType = GameManager.Light.NORMAL
+		print("stand logic attempt")
+		MusicTheme.finale()
 		if GameManager.flashlightManager.flashlight_on:
 			GameManager.flashlightManager.disable_flashlights()
-		MusicTheme.finale()
-		print("Normal Flashlight Found!")
+			GameManager.flashlightManager.disable_colliders()
+		if GameManager.currentLightType == GameManager.Light.NONE and current == 1:
+			GameManager.currentLightType = GameManager.Light.NORMAL
+			current = 0
+			print("0 1")
+			$"..".queue_free()
+			return
+		if GameManager.currentLightType == GameManager.Light.NORMAL and current == 1:
+			print("SKIBIDI BIDEN HAS BEEN RELEASED!!!")
+			$"..".queue_free()
+			return
+		if GameManager.currentLightType == GameManager.Light.NONE and current == 0:
+			print("SPAGHETTI")
+			return
 
-func _process(_delta: float) -> void:
-	if GameManager.currentLightType == GameManager.Light.NORMAL:
-		self.get_parent().visible = false
-	else:
-		self.get_parent().visible = true
+func _ready() -> void:
+	OnInteract.connect(_interact.bind())
+	fl.hide()
+	

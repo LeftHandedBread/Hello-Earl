@@ -70,7 +70,6 @@ normal_texture = ExtResource("10_ah00u")
 resource_name = "Material.031"
 cull_mode = 2
 diffuse_mode = 2
-disable_ambient_light = true
 albedo_texture = ExtResource("11_ecx0u")
 metallic_specular = 0.0
 roughness = 0.5

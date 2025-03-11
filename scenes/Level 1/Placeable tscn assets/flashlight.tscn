@@ -3,14 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://ch73x2bfq1bxu" path="res://Assets/Level 1/objects/flashlight.gltf" id="1_tkew2"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/normal_flashlight_interactible.gd" id="2_jnats"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/mesh_tools.gd" id="3_3b6c6"]
-[ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_hitbox.gd" id="4_ssdw0"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_t6kwj"]
-height = 6.51422
-radius = 1.23406
+[ext_resource type="Script" path="res://Scripts/Game Logic/lighthouse beam.gd" id="4_ccmvt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_217fh"]
 size = Vector3(0.286133, 0.112305, 0.143555)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_38tpl"]
+height = 3.68097
+radius = 0.734642
 
 [node name="flashlight" instance=ExtResource("1_tkew2")]
 
@@ -18,26 +18,27 @@ size = Vector3(0.286133, 0.112305, 0.143555)
 transform = Transform3D(0.300003, -4.86944, 0, 1.80494, 0.809361, 0, 0, 0, 5.35228, 0.01087, 0.0953845, 0.000351111)
 script = ExtResource("3_3b6c6")
 
-[node name="Area3D" type="Area3D" parent="." index="1"]
-transform = Transform3D(-1.63918e-08, -0.375, -1.62095e-14, 0.375, -1.63918e-08, 1.31165e-21, -2.02019e-21, -1.62095e-14, 0.375, -1.25834, 0.222294, -6.71501e-09)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_ssdw0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1.70715, 0.265196, 1.14632e-14, -0.265196, 1.70715, -8.85041e-16, -1.14632e-14, -8.85075e-16, 1.72762, 0.687393, 2.57309, 1.06581e-13)
-shape = SubResource("CylinderShape3D_t6kwj")
-disabled = true
-
-[node name="Interactible3D" type="Area3D" parent="." index="2"]
+[node name="Interactible3D" type="Area3D" parent="." index="1"]
 transform = Transform3D(0.936305, 0.351188, 0, -0.351188, 0.936305, 0, 0, 0, 1, 0, 0.0777391, 0)
 script = ExtResource("2_jnats")
 InteractText = "E - Pickup \\n F - Toggle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D" index="0"]
-transform = Transform3D(0.981561, -0.191152, 0, 0.191152, 0.981561, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(2.838, -0.55268, 0, 0.55268, 2.838, 0, 0, 0, 2.89131, 0, 0, 0)
 shape = SubResource("BoxShape3D_217fh")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Interactible3D" index="1"]
 transform = Transform3D(-4.09272e-08, -0.351188, 0.936305, -1.53509e-08, 0.936305, 0.351188, -1, 0, -4.37114e-08, -0.136967, -0.0396156, 0)
-light_energy = 2.0
+layers = 513
+light_energy = 2.949
+spot_range = 2.303
+spot_angle = 24.3634
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_ccmvt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(-0.165048, 0.986286, 0, -0.986286, -0.165048, 0, 0, 0, 1, -1.98401, 0.334177, 0)
+shape = SubResource("CylinderShape3D_38tpl")
