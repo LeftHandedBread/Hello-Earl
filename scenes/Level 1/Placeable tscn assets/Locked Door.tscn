@@ -98,8 +98,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0163574, 0.952156, -0.4517
 shape = SubResource("BoxShape3D_yhqr1")
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("2_ktydv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

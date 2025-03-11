@@ -12,9 +12,9 @@ func _ready():
 func _process(delta: float) -> void:
 	if active and present :
 		print("tping!")
-		var roty = GameManager.player.rotation.y
+		var roty = GameManager.player.global_rotation.y
 		GameManager.player.set_global_transform(Transform3D(Basis(), Vector3.ZERO - Vector3(0, 0.2, 0)))
-		GameManager.player.global_transform.basis = Basis.from_euler(Vector3(0, roty - $"..".rotation.y, 0))
+		GameManager.player.global_transform.basis = Basis.from_euler(Vector3(0, roty - $"..".global_rotation.y + 90, 0))
 
 func _on_area_entered(body):
 	print(body.name, " is in group: ", body.get_groups()) 

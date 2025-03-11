@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/Interactibles/outhouse_player_detect.gd" id="10_styek"]
 [ext_resource type="Script" path="res://Scripts/autoload/swingy.gd" id="12_htepu"]
 [ext_resource type="Texture2D" uid="uid://cs4u0kbywp7d2" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking_bark.jpg" id="13_uerth"]
-[ext_resource type="Texture2D" uid="uid://lvjs3qld4f7h" path="res://Assets/Level 1/objects/stump.jpg" id="14_o4ybu"]
+[ext_resource type="Texture2D" uid="uid://dawackpumt3pp" path="res://Assets/Level 1/objects/stump.jpg" id="14_o4ybu"]
 [ext_resource type="Script" path="res://Scripts/autoload/slide.gd" id="14_snwxb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_echjr"]
@@ -1255,7 +1255,7 @@ shape = SubResource("CylinderShape3D_ht0j2")
 curve = SubResource("Curve3D_c5e6f")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="static grate/first stone/Path3D"]
-transform = Transform3D(0.999986, 0, 0, 0, 0.999982, 0, 0, 0, 0.999989, -0.0030324, 0.00482233, 0.00554886)
+transform = Transform3D(0.999986, 0, 0, 0, 0.999982, 0, 0, 0, 0.999989, -0.00303269, 0.00482225, 0.00554849)
 progress = 9.02099
 rotation_mode = 0
 

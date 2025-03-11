@@ -10,6 +10,7 @@ extends WorldEnvironment
 @export var fade_end: float = 75.0    # Distance where it reaches min values
 @export var target_node: Node3D  # Assign your player or reference node
 
+
 # Called every frame to update fog and sun scatter dynamically
 func _process(_delta: float) -> void:
 	if not target_node or not environment:
@@ -20,6 +21,7 @@ func _process(_delta: float) -> void:
 	var fog_energy = max_fog_energy
 	var sun_scatter = max_sun_scatter
 	var fog_height = max_fog_height
+	var aerial_prespective = 0
 
 	if distance > fade_start:
 		var t = (distance - fade_start) / (fade_end - fade_start)
@@ -27,7 +29,9 @@ func _process(_delta: float) -> void:
 		fog_energy = lerp(max_fog_energy, min_fog_energy, t)
 		sun_scatter = lerp(max_sun_scatter, min_sun_scatter, t)
 		fog_height = lerp(max_fog_height, min_fog_height, t)
+		aerial_prespective = 1 - lerp(1.0, 0.0, t)
 
 	environment.fog_light_energy = fog_energy
 	environment.fog_sun_scatter = sun_scatter
 	environment.fog_height = fog_height
+	environment.fog_aerial_perspective = aerial_prespective
