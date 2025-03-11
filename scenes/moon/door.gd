@@ -1,13 +1,18 @@
 extends Node3D
 
+@onready var skibidi = $AnimationPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func doorcoll():
-	$"../CollisionShape3D6".disabled = true
+func open():
+	skibidi.play("door")
+
+func close():
+	skibidi.play_backwards("door")
