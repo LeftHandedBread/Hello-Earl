@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://r3gcl5ung20g"]
+[gd_scene load_steps=31 format=4 uid="uid://r3gcl5ung20g"]
 
 [ext_resource type="Texture2D" uid="uid://4a6d166syufx" path="res://Assets/Level 1/objects/real moon.jpg" id="1_870eo"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="2_kq3sd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Interactibles/skibididoor.gd" id="4_ab28f"]
 [ext_resource type="PackedScene" uid="uid://cotppr2ybcus7" path="res://scenes/moon/door.tscn" id="8_q7irv"]
 [ext_resource type="PackedScene" uid="uid://0oqbh3ji1t0f" path="res://scenes/moon/plat.tscn" id="9_v7pmd"]
+[ext_resource type="Script" path="res://scenes/moon/moongravlogic.gd" id="10_bay1f"]
 [ext_resource type="Script" path="res://scenes/moon/moonscenebutton.gd" id="10_nfhc5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnipk"]
@@ -212,6 +213,12 @@ data = PackedVector3Array(-15.6367, -8.1359, 15.7124, -16.7363, -7.55, 15.1098, 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0p2ml"]
 radius = 0.316256
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_aptgn"]
+radius = 36.6691
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d6yto"]
+radius = 13.99
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("3_qwj1u")
 
@@ -285,3 +292,17 @@ InteractText = "Switch Gravity"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/Interactible3D"]
 shape = SubResource("SphereShape3D_0p2ml")
+
+[node name="Area3D" type="Area3D" parent="."]
+gravity_space_override = 3
+gravity_point = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_aptgn")
+disabled = true
+
+[node name="Area3D" type="Area3D" parent="Area3D"]
+script = ExtResource("10_bay1f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Area3D"]
+shape = SubResource("SphereShape3D_d6yto")

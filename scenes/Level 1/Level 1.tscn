@@ -909,7 +909,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804769, -0.51354, 0.937887, 0.34694, -4.46637e-06, 0.178171, -0.481643, 0.858063, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804769, -0.51354, 0.937887, 0.34694, -4.46637e-06, 0.178172, -0.481643, 0.858063, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -978,7 +978,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.99994, -3.27806e-06, 1.70522e-13, 7.95046e-07, 0.242521, -0.970094, 3.18019e-06, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
+transform = Transform3D(0.99994, 0, 0, 0, 0.242521, -0.970094, 0, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
 transform = Transform3D(0.67579, 0.646767, 0.353555, 0.0922906, -0.550132, 0.829962, 0.731294, -0.52825, -0.431464, -6.14575, 6.8625, 8.38806)
@@ -1029,7 +1029,7 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.99994, -3.27806e-06, 1.70522e-13, 7.95046e-07, 0.242521, -0.970094, 3.18019e-06, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
+transform = Transform3D(0.99994, 0, 0, 0, 0.242521, -0.970094, 0, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 remote_path = NodePath("../../../AnimatableBody3D2")

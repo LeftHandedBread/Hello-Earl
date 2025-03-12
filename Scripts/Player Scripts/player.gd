@@ -43,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	if !inputEnabled:
 		return
 	
+	up_direction = -get_gravity().normalized()
+	print(up_direction)
+	
 	# Apply gravity if in the air
 	if not is_on_floor():
 		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
