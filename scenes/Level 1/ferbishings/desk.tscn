@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cu2nbkb08dtde"]
+[gd_scene load_steps=11 format=4 uid="uid://cu2nbkb08dtde"]
 
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="1_6qmp0"]
 [ext_resource type="Texture2D" uid="uid://kdyvb8nweua8" path="res://Assets/Level 1/objects/better wooden floor normal.jpg" id="2_h4qkt"]
@@ -102,9 +102,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yl87h")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l51wu"]
+size = Vector3(1.03015, 1.10291, 1.98863)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="desk" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.499, 0, 0, 0, 0.062, 0, 0, 0, 1, 0, 1.094, 0)
 mesh = SubResource("ArrayMesh_qkivm")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150757, 0.80198, -0.000724792)
+shape = SubResource("BoxShape3D_l51wu")

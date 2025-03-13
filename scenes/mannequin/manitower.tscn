@@ -1,13 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://c86a1so63auep"]
+[gd_scene load_steps=19 format=4 uid="uid://c86a1so63auep"]
 
+[ext_resource type="Script" path="res://scenes/mannequin/manitower.gd" id="1_5yjtp"]
 [ext_resource type="Texture2D" uid="uid://dsfcjwbrrj6un" path="res://Assets/mannequin.webp" id="1_muhld"]
 [ext_resource type="Texture2D" uid="uid://cp7poxh28jmhw" path="res://Assets/mannequinnormal.webp" id="2_kkq6p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jr4p"]
 resource_name = "Material.001"
+transparency = 3
+alpha_hash_scale = 0.4
+alpha_antialiasing_mode = 0
 cull_mode = 2
 diffuse_mode = 1
 specular_mode = 1
+albedo_color = Color(1, 1, 1, 0)
 albedo_texture = ExtResource("1_muhld")
 metallic = 0.67
 metallic_specular = 0.28
@@ -119,6 +124,42 @@ bind/25/pose = Transform3D(0.458295, 3.59764e-07, -4.58185e-08, 2.2131e-07, -0.0
 bind/26/name = &"ORG-heel.02.R"
 bind/26/bone = -1
 bind/26/pose = Transform3D(5.46848e-08, 2.34925e-06, 0.458301, 0.458295, -4.14032e-08, -3.49514e-07, 2.94504e-08, 0.458295, -1.83023e-06, -0.0260819, -0.0308552, -0.010492)
+
+[sub_resource type="Animation" id="Animation_kvi83"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mannequin:mesh:surface_0/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_42ldy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mannequin:mesh:surface_0/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hes8"]
+_data = {
+"RESET": SubResource("Animation_42ldy"),
+"fade": SubResource("Animation_kvi83")
+}
 
 [sub_resource type="Animation" id="Animation_ma8kk"]
 resource_name = "Action"
@@ -1531,7 +1572,12 @@ _data = {
 "tree house": SubResource("Animation_abhhj")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ql4ep"]
+height = 3.49353
+radius = 0.735335
+
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_5yjtp")
 
 [node name="rig" type="Node3D" parent="."]
 transform = Transform3D(-2.182, 0, -3.29473e-07, 0, 2.182, 0, 3.29473e-07, 0, -2.182, 0, 0, 0)
@@ -1731,7 +1777,18 @@ bones/26/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_jylrn")
 skin = SubResource("Skin_05ifg")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="rig/Skeleton3D"]
+libraries = {
+"": SubResource("AnimationLibrary_0hes8")
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_jhbv3")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67769, -0.389228)
+shape = SubResource("CylinderShape3D_ql4ep")

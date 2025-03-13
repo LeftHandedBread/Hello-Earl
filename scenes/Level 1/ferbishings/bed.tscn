@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bwstl52jo6tla"]
+[gd_scene load_steps=8 format=4 uid="uid://bwstl52jo6tla"]
 
 [ext_resource type="Texture2D" uid="uid://1sxtftv8k2iv" path="res://Assets/Level 1/objects/matress.png" id="1_q5atq"]
 [ext_resource type="Texture2D" uid="uid://dxdqh713njeu4" path="res://Assets/Level 1/objects/pink canvas fabric.png" id="2_6hkcr"]
@@ -73,9 +73,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t1nyx")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bofmf"]
+size = Vector3(1.22021, 0.508301, 2.37549)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="bed2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.627311, 0, 0, 0, 0.0850392, 0, 0, 0, 1.22656, 0, 0.155, 4.45)
 mesh = SubResource("ArrayMesh_ia3cf")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317383, 0.24585, -1.24097)
+shape = SubResource("BoxShape3D_bofmf")

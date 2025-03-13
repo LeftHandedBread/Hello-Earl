@@ -86,7 +86,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_whqtp")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ludrx"]
-size = Vector3(1.51891, 7.92958, 3.78241)
+size = Vector3(5.50886, 7.92958, 3.78241)
 
 [sub_resource type="Animation" id="Animation_57q15"]
 resource_name = "Door Open"
@@ -174,7 +174,7 @@ size = Vector3(0.0571289, 1.90016, 0.937866)
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="door" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.025, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 0.966108, 0, 0, 0, 1, 1.025, 0.98295, 0)
 mesh = SubResource("ArrayMesh_tkiiq")
 skeleton = NodePath("")
 
@@ -185,10 +185,10 @@ skeleton = NodePath("")
 
 [node name="Interactible3D" type="Area3D" parent="Node3D/Cube"]
 script = ExtResource("2_tiaej")
+InteractText = "+"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cube/Interactible3D"]
-transform = Transform3D(4.735, 0, 0, 0, 4.735, 0, 0, 0, 4.735, 1.38836, 2.20035, 5.94847)
-visible = false
+transform = Transform3D(4.735, 0, 0, 0, 4.73504, 0, 0, 0, 4.735, 1.03923, 2.20035, 5.94847)
 shape = SubResource("BoxShape3D_ludrx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Cube/Interactible3D"]

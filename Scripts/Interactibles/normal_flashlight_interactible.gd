@@ -9,6 +9,10 @@ func _interact() -> void:
 	if Input.is_action_just_pressed("interact"):
 		print("stand logic attempt")
 		MusicTheme.finale()
+		GameManager.solvedBasement = true
+		if GameManager.hasSeenBedroom:
+			GameManager.house = false
+			GameManager.axe = true
 		if GameManager.flashlightManager.flashlight_on:
 			GameManager.flashlightManager.disable_flashlights()
 			GameManager.flashlightManager.disable_colliders()

@@ -11,6 +11,15 @@ var currentLightType : Light = Light.NONE
 var timeOfDay = 0.0
 var timeSpeed = 0.002
 
+#this is for the mannequin appearing logic. wish i set this up in a better way to make this cleaner
+var axe = false
+var house = false
+var tower = false
+var tree = false
+var well = false
+var hasSeenBedroom = false
+var solvedBasement = false
+
 enum Shoes {
 	NONE = 0,
 	NICOTINE = 1,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=57 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="2_5viyr"]
@@ -10,11 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://iehjwfldlrrn" path="res://scenes/Level 1/Placeable tscn assets/flashlight.tscn" id="6_uq5md"]
 [ext_resource type="PackedScene" uid="uid://dmcp5aoq3lrup" path="res://scenes/Level 1/skibidi.tscn" id="7_0e7rr"]
 [ext_resource type="PackedScene" uid="uid://b6v7po57r0005" path="res://scenes/Level 1/Placeable tscn assets/NICSHOES.tscn" id="7_4hgiq"]
-[ext_resource type="PackedScene" uid="uid://dak0eg2sicmey" path="res://scenes/Level 1/outhouse.tscn" id="7_cpi1g"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/house area detect.gd" id="8_53ffn"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/tpzone.gd" id="8_an6md"]
 [ext_resource type="PackedScene" uid="uid://behkm56aldjjo" path="res://scenes/Level 1/Placeable tscn assets/boingers.tscn" id="9_jbasq"]
-[ext_resource type="Script" path="res://Scripts/outhouse_teleport.gd" id="9_s5ov0"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/boinger_shoes.gd" id="10_l2o7k"]
 [ext_resource type="Texture2D" uid="uid://dnb73ygbkorfq" path="res://Assets/Level 1/objects/lightrays.png" id="12_2fq5b"]
 [ext_resource type="Texture2D" uid="uid://j3b2lo7tlddv" path="res://Assets/Level 1/objects/noise.png" id="13_ogufq"]
@@ -978,7 +976,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.99994, 0, 0, 0, 0.242521, -0.970094, 0, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
+transform = Transform3D(0.99994, 0, 0, 0, 0.242521, -0.970093, 0, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
 transform = Transform3D(0.67579, 0.646767, 0.353555, 0.0922906, -0.550132, 0.829962, 0.731294, -0.52825, -0.431464, -6.14575, 6.8625, 8.38806)
@@ -1029,7 +1027,7 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.99994, 0, 0, 0, 0.242521, -0.970094, 0, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
+transform = Transform3D(0.99994, 0, 0, 0, 0.242521, -0.970093, 0, 0.970085, 0.242523, 443.412, -33.7529, -75.5749)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 remote_path = NodePath("../../../AnimatableBody3D2")
@@ -1049,10 +1047,6 @@ shape = SubResource("BoxShape3D_gqr0n")
 
 [node name="flashlight" parent="." instance=ExtResource("6_uq5md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5569, 0.129552, 33.584)
-
-[node name="Outhouse" parent="." instance=ExtResource("7_cpi1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8733, 0.0244501, 20.2793)
-script = ExtResource("9_s5ov0")
 
 [node name="Node3D" parent="." instance=ExtResource("7_4hgiq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2892, 0.0578365, 33.8832)
