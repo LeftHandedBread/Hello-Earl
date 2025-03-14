@@ -1070,7 +1070,7 @@ _data = {
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fsh52"]
 height = 30.0125
-radius = 4.22106
+radius = 5.58663
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1ovj"]
 resource_name = "Material.001"

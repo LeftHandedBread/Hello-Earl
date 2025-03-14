@@ -1,16 +1,11 @@
 extends Node3D
 
-@onready var button = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	GameManager.sungrav = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func press():
-	button.play("press")
-	$"../Area3D/Area3D".moongrav()

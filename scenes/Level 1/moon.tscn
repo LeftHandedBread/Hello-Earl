@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://r3gcl5ung20g"]
+[gd_scene load_steps=34 format=4 uid="uid://r3gcl5ung20g"]
 
 [ext_resource type="Texture2D" uid="uid://4a6d166syufx" path="res://Assets/Level 1/objects/real moon.jpg" id="1_870eo"]
 [ext_resource type="Texture2D" uid="uid://lsb2orimajcl" path="res://Assets/Level 1/objects/better wooden floor.jpg" id="2_kq3sd"]
@@ -214,10 +214,47 @@ data = PackedVector3Array(-15.6367, -8.1359, 15.7124, -16.7363, -7.55, 15.1098, 
 radius = 0.316256
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aptgn"]
-radius = 36.6691
+radius = 30.0303
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d6yto"]
-radius = 13.99
+radius = 1.89763
+
+[sub_resource type="Animation" id="Animation_lacd4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:gravity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0chf7"]
+resource_name = "grav fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:gravity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 5),
+"update": 0,
+"values": [0.0, 64.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_seu16"]
+_data = {
+"RESET": SubResource("Animation_lacd4"),
+"grav fade": SubResource("Animation_0chf7")
+}
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("3_qwj1u")
@@ -294,8 +331,12 @@ InteractText = "Switch Gravity"
 shape = SubResource("SphereShape3D_0p2ml")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144547, -9.97596, -6.14505)
 gravity_space_override = 3
 gravity_point = true
+gravity_point_center = Vector3(0, 0, 0)
+gravity_direction = Vector3(0, 0, 0)
+gravity = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_aptgn")
@@ -305,4 +346,10 @@ disabled = true
 script = ExtResource("10_bay1f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57628e-07, -1.64421, -1.00146)
 shape = SubResource("SphereShape3D_d6yto")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+libraries = {
+"": SubResource("AnimationLibrary_seu16")
+}

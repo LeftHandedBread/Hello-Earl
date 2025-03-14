@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b67gox8wfb1v5"]
+
+[ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_iwfmr"]
+[ext_resource type="Script" path="res://scenes/Sun Station/sun_level.gd" id="1_krkmo"]
+
+[sub_resource type="Environment" id="Environment_x518s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcgs4"]
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(0.999818, 0.934772, 0.550879, 1)
+emission_enabled = true
+emission = Color(0.999818, 0.934772, 0.550879, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tb1fq"]
+material = SubResource("StandardMaterial3D_rcgs4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7q0l"]
+size = Vector3(6.85687, 0.119141, 4.58261)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_krkmo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x518s")
+
+[node name="spawnroom" type="Node3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="spawnroom"]
+transform = Transform3D(3.74266, 0, 0, 0, 3.74266, 0, 0, 0, 3.74266, 0, -2.09663, 0.797085)
+mesh = SubResource("PlaneMesh_tb1fq")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="spawnroom"]
+transform = Transform3D(3.74266, 0, 0, 0, -3.74266, 3.27193e-07, 0, -3.27193e-07, -3.74266, 0, 4.59166, -0.781746)
+mesh = SubResource("PlaneMesh_tb1fq")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="spawnroom"]
+transform = Transform3D(-1.63597e-07, -3.74266, 1.63597e-07, 0, -1.63597e-07, -3.74266, 3.74266, -1.63597e-07, 7.15104e-15, 3.86069, 1.14835, -0.781746)
+mesh = SubResource("PlaneMesh_tb1fq")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="spawnroom"]
+transform = Transform3D(-1.63597e-07, 3.74266, -1.63597e-07, 0, -1.63597e-07, -3.74266, -3.74266, -1.63597e-07, 7.15104e-15, -3.33466, 1.14836, -0.781746)
+mesh = SubResource("PlaneMesh_tb1fq")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="spawnroom"]
+transform = Transform3D(3.74266, 0, 0, 0, -1.63597e-07, -3.74266, 0, 3.74266, -1.63597e-07, 0, 1.14836, -0.781746)
+mesh = SubResource("PlaneMesh_tb1fq")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="spawnroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500443, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spawnroom/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147186, 0.44043, 1.50859)
+shape = SubResource("BoxShape3D_x7q0l")
+
+[node name="Player" parent="." instance=ExtResource("1_iwfmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0247566, 0.78179, -0.00170684)

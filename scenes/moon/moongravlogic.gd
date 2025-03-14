@@ -1,13 +1,17 @@
 extends Area3D
 
-@onready var gravcoll = $".."
+@onready var gravcoll = $"../CollisionShape3D"
+
+var ohbaby = false
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_area_entered"))
 	connect("body_exited", Callable(self, "_on_area_exited"))
 
 func _on_area_entered(body):
-	gravcoll.gravity = -9.8 * 2
+	if GameManager.currentLightType == GameManager.Light.NORMAL and ohbaby:
+		gravcoll.disabled = true
+		GameManager.sungrav = true
 
-func _on_area_exited(body):
-	gravcoll.gravity = 9.8 * 2
+func moongrav():
+	ohbaby = true

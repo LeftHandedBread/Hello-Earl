@@ -61,9 +61,14 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if !GameManager.isUpsideDown :
 		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		$CollisionShape3D2.position = Vector3(0, -0.53, -0.321)
 	elif GameManager.isUpsideDown :
 		direction = (transform.basis * Vector3(input_dir.x, 0, -input_dir.y)).normalized()
+		$CollisionShape3D2.position = Vector3(0, -0.53, 0.321)
 	
+	#tryna disable movement when flying into sun
+	if GameManager.sungrav:
+		direction = (transform.basis * Vector3.ZERO)
 
 	# Movement
 	if direction != Vector3.ZERO:
@@ -87,6 +92,10 @@ func _physics_process(delta: float) -> void:
 		reset_shoe_effects()
 		DEFAULT_SPEED = 5
 		SPRINT_SPEED = 12
+	elif GameManager.characterShoes == GameManager.Shoes.LEAD:
+		reset_shoe_effects()
+		DEFAULT_SPEED = .01
+		SPRINT_SPEED = .01
 	
 	# All of the other processing functions go here
 	_process_interact()

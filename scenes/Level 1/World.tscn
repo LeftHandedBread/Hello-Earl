@@ -964,6 +964,11 @@ transform = Transform3D(0.0181, 0, 0, 0, 0.0181, 0, 0, 0, 0.0181, 34.7097, 0.010
 mesh = SubResource("ArrayMesh_pxvdb")
 skeleton = NodePath("")
 
+[node name="STOOL4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0116153, 0.000901121, -0.00694118, -0.000773527, -0.0135313, -0.00046225, -0.00695655, 4.36116e-11, 0.0116411, -13.1009, -1.44651, -24.358)
+mesh = SubResource("ArrayMesh_pxvdb")
+skeleton = NodePath("")
+
 [node name="Icosphere2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0956036, 0.0134822, 0.0430779, 0.0145091, 0.104722, -0.000574844, -0.0427429, 0.005392, -0.0965479, 34.9968, 1.01897, 32.1028)
 mesh = SubResource("ArrayMesh_vyk4x")
@@ -1575,7 +1580,7 @@ transform = Transform3D(0.839658, 0, 0.543116, 0, 1, 0, -0.543116, 0, 0.839658, 
 [node name="Node3D196" type="Node3D" parent="."]
 
 [node name="Node3D53" parent="." instance=ExtResource("33_4tqj2")]
-transform = Transform3D(-0.125697, 0, 0.992069, 0, 1, 0, -0.992069, 0, -0.125697, 34.881, 0.013, 28.2431)
+transform = Transform3D(0.0768955, 0, -0.953431, 0, 0.956527, 0, 0.953431, 0, 0.0768955, 34.0461, 0.013, 28.4001)
 
 [node name="House" parent="." instance=ExtResource("24_d2yq2")]
 visible = false
@@ -4176,7 +4181,7 @@ transform = Transform3D(0.949272, -0.0465176, -0.310997, 0, 0.988998, -0.14793, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4977, 4.90459, -44.4344)
 
 [node name="Node3D816" parent="." instance=ExtResource("85_ru4n7")]
-transform = Transform3D(0.00577327, 0, 0.690558, 0, 0.690582, 0, -0.690558, 0, 0.00577327, 34.8026, 3.19735, 29.0797)
+transform = Transform3D(0.103316, 0, 0.048164, 0, 0.113991, 0, -0.048164, 0, 0.103316, 33.3626, 3.90831, 30.1666)
 
 [node name="washingmachineopen" parent="." instance=ExtResource("87_jx2uq")]
 transform = Transform3D(-0.000214071, 0.00050459, -1.13687e-12, 1.11397e-05, 4.72598e-06, -0.000547988, -0.000504467, -0.000214019, -1.21007e-05, 33.3861, 4.93168, 30.9517)
@@ -4269,6 +4274,7 @@ script = ExtResource("94_hnyhq")
 
 [node name="bedroom" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7434, 3.56167, 30.6309)
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/bedroom"]
 transform = Transform3D(0.998598, 0, 0.0529285, 0, 1, 0, -0.0529285, 0, 0.998598, 0.0158195, 0.00561523, 0.244257)
@@ -4276,12 +4282,14 @@ shape = SubResource("BoxShape3D_x4vhn")
 
 [node name="axeyard" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6419, 0, 20.2541)
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/axeyard"]
 shape = SubResource("SphereShape3D_juaa5")
 
 [node name="wellhole" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75412, -3.36882, -41.8584)
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/wellhole"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19571, 0)
@@ -4289,6 +4297,7 @@ shape = SubResource("SphereShape3D_1bank")
 
 [node name="lightroom" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9345, 19.5956, -4.49883)
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/lightroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8421, 0)
@@ -4296,6 +4305,7 @@ shape = SubResource("CylinderShape3D_wd7hm")
 
 [node name="treeplatty" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4062, 24.0475, 47.831)
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/treeplatty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53559, 0)

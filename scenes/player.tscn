@@ -187,6 +187,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 5.56195e-14, 5.38717e-21, -5.56195e-14, 1, 4.32254e-14, -5.38717e-21, -4.32254e-14, 1, 2.73945, 1.19556, -1.79067e-08)
 collision_layer = 2
 collision_mask = 2
+monitoring = false
 script = ExtResource("3_f34k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight manager/normal flashlight/Cone_006/Area3D"]
@@ -202,6 +203,7 @@ spot_range = 25.9722
 [node name="Area3D2" type="Area3D" parent="head/flashlight manager/red flashlight"]
 collision_layer = 4
 collision_mask = 4
+monitoring = false
 script = ExtResource("3_f34k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight manager/red flashlight/Area3D2"]
@@ -220,6 +222,7 @@ spot_range = 75.6951
 transform = Transform3D(1, 5.56195e-14, 5.38717e-21, -5.56195e-14, 1, 4.32254e-14, -5.38717e-21, -4.32254e-14, 1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
+monitoring = false
 script = ExtResource("4_v2r8a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/flashlight manager/dark flashlight/Area3D"]

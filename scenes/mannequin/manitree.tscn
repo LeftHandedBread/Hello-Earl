@@ -125,21 +125,6 @@ bind/26/name = &"ORG-heel.02.R"
 bind/26/bone = -1
 bind/26/pose = Transform3D(5.46848e-08, 2.34925e-06, 0.458301, 0.458295, -4.14032e-08, -3.49514e-07, 2.94504e-08, 0.458295, -1.83023e-06, -0.0260819, -0.0308552, -0.010492)
 
-[sub_resource type="Animation" id="Animation_t87o5"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("mannequin:mesh:surface_0/material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_0hmyn"]
 length = 0.001
 tracks/0/type = "value"
@@ -153,6 +138,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t87o5"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mannequin:mesh:surface_0/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3nwvp"]

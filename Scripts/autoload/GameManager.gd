@@ -20,10 +20,13 @@ var well = false
 var hasSeenBedroom = false
 var solvedBasement = false
 
+var sungrav = false
+
 enum Shoes {
 	NONE = 0,
 	NICOTINE = 1,
-	COKE = 2
+	COKE = 2,
+	LEAD = 3
 }
 
 enum Light {
