@@ -23,18 +23,9 @@ func _ready():
 			shape.set_deferred("disabled", true)
 	
 	add_child(sfx)
+	self.add_to_group("flashlight_interact")
 
-# Detect when a flashlight has collided
-func _on_area_entered(body):
-	if body.is_in_group("flashlight beam"):
-		illuminated = true
-		toggle_illumination()
 
-# Detect when a flashlight has left the collision bounds
-func _on_area_exited(body):
-	if body.is_in_group("flashlight beam"):
-		illuminated = false
-		toggle_illumination()
 
 
 func toggle_illumination():
