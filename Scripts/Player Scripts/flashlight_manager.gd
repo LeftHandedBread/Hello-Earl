@@ -13,7 +13,7 @@ var flashlight_on = false
 
 
 func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_F:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		print("flashlight toggled, type: ", GameManager.currentLightType)
 		if GameManager.currentLightType == GameManager.Light.NONE:
 			print()

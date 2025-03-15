@@ -4,7 +4,7 @@ extends Area3D
 ## Base for all objects that player can interact with by pressing E (or some other button)
 
 ## Text that shows up when player hovers over the Interactible3D
-@export var InteractText : String = "Press [E] to interact"
+@export var InteractText : String = "RMB"
 
 ## Self-explanatory. If you have eyes, you know what it does.
 @export var CanInteract : bool = true

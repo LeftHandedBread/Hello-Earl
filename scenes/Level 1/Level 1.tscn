@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=82 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="Script" path="res://Scripts/Game Logic/music_areas.gd" id="1_jq4wo"]
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://Scripts/Game Logic/returnzone.gd" id="17_kdwo6"]
 [ext_resource type="Script" path="res://scenes/moon/stop watch.gd" id="18_lqwlt"]
 [ext_resource type="Script" path="res://scenes/moon/well_clip_fix.gd" id="19_noqj7"]
+[ext_resource type="PackedScene" uid="uid://b87g6mmlgv1kd" path="res://scenes/GUI/hud.tscn" id="24_y5weg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_frcqr"]
 radius = 0.879236
@@ -1458,6 +1459,8 @@ speed_scale = 2.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 transform = Transform3D(102.06, 0, 0, 0, 102.06, 0, 0, 0, 102.06, 0, 17.3564, 0)
 shape = SubResource("BoxShape3D_krugd")
+
+[node name="HUD" parent="." instance=ExtResource("24_y5weg")]
 
 [connection signal="body_exited" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_exited"]
 [connection signal="body_entered" from="music areas/entering mine" to="music areas" method="_on_entering_mine_body_entered"]

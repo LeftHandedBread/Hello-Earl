@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b87g6mmlgv1kd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvqjj"]
+bg_color = Color(0, 0, 0, 0.380392)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -55.0
+offset_right = 221.0
+offset_bottom = -15.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fvqjj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
