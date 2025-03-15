@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://big4cclh1y3kj"]
+[gd_scene load_steps=19 format=4 uid="uid://big4cclh1y3kj"]
 
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="1_mdsut"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/open_door.gd" id="2_tiaej"]
+[ext_resource type="AudioStream" uid="uid://wfijcyiry8o7" path="res://Assets/sfx/door close.ogg" id="3_as50o"]
+[ext_resource type="AudioStream" uid="uid://cmx1vweuolxvl" path="res://Assets/sfx/door open.ogg" id="4_h7hl2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1lea"]
 resource_name = "Material.004"
@@ -210,3 +212,10 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_0g86n")
 }
+
+[node name="close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_as50o")
+
+[node name="open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_h7hl2")
+max_db = 0.0

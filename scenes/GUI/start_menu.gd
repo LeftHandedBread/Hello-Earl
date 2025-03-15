@@ -10,6 +10,8 @@ func _on_button_pressed() -> void:
 	Ani.play("fadetoblack")
 	await Ani.animation_finished
 	MusicTheme.set("parameters/switch_to_clip", "C")
+	#MusicTheme.minemu.set("parameters/switch_to_clip", "wind")
+	MusicTheme.minemu.play()
 	get_tree().change_scene_to_packed(START)
 
 

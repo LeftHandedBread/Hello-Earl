@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmx1vweuolxvl"
+path="res://.godot/imported/door open.ogg-a2e4caacaae34ea3e9e34da255eece88.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/sfx/door open.ogg"
+dest_files=["res://.godot/imported/door open.ogg-a2e4caacaae34ea3e9e34da255eece88.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

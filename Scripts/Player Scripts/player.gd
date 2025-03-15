@@ -38,6 +38,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.player = self
 	change_state(CharacterState.WALKING)
+	MusicTheme.minemuFade.play("wind fade")
 
 func _physics_process(delta: float) -> void:
 	if !inputEnabled:
@@ -55,6 +56,8 @@ func _physics_process(delta: float) -> void:
 	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$jump.pitch_scale = randf() * 0.2 + 0.8
+		$jump.play()
 	
 	# Get movement input
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -96,6 +99,21 @@ func _physics_process(delta: float) -> void:
 		reset_shoe_effects()
 		DEFAULT_SPEED = .01
 		SPRINT_SPEED = .01
+	
+	
+	if velocity.length() != 0 and is_on_floor():
+		if $Timer.time_left <= 0:
+			
+			$stepping.pitch_scale = randf() * 0.2 + 0.8
+			$stepping.volume_db = randf() * 2.0 - 5.0
+			$stepping.play()
+			if currentState == CharacterState.WALKING:
+				$Timer.start(randf() * 0.1 + 0.4)
+			if currentState == CharacterState.SPRINTING:
+				$Timer.start(randf() * 0.1 + 0.2)
+			if currentState == CharacterState.CROUCHING:
+				$Timer.start(randf() * 0.1 + 0.75)
+	
 	
 	# All of the other processing functions go here
 	_process_interact()

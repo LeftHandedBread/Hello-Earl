@@ -7,6 +7,9 @@ var illuminated = false
 @onready var collider_parent = $"../StaticBody3D"
 var tween
 
+@onready var sfx = AudioStreamPlayer3D.new()
+@onready var outsfx = preload("res://Assets/sfx/fadeout.ogg")
+@onready var insfx = preload("res://Assets/sfx/fadein.ogg")
 
 func _ready():
 	monitoring = true
@@ -18,6 +21,8 @@ func _ready():
 	for shape in collider_parent.get_children():
 		if shape is CollisionShape3D:
 			shape.set_deferred("disabled", true)
+	
+	add_child(sfx)
 
 # Detect when a flashlight has collided
 func _on_area_entered(body):
@@ -61,6 +66,11 @@ func fade_in():
 			
 			var new_tween = create_tween()  # Create a new tween for each material
 			new_tween.tween_property(mat, "albedo_color:a", 1.0, 0.5)  # Fire it immediately
+			
+	sfx.stream = insfx
+	sfx.volume_db = -10
+	sfx.pitch_scale = randf() * 0.2 + 1
+	sfx.play()
 
 
 func fade_out():
@@ -79,6 +89,11 @@ func fade_out():
 			
 			var new_tween = create_tween()  # Create a new tween for each material
 			new_tween.tween_property(mat, "albedo_color:a", 0.0, 0.5)  # Fire it immediately
+			
+	sfx.stream = outsfx
+	sfx.volume_db = -10
+	sfx.pitch_scale = randf() * 0.2 + 1
+	sfx.play()
 
 
 func apply_material_override():
