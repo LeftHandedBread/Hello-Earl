@@ -2049,7 +2049,7 @@ shape = SubResource("BoxShape3D_5kl51")
 
 [node name="Area3D" type="Area3D" parent="magic wall mesh"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/Area3D"]
@@ -2063,7 +2063,7 @@ skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="stairs"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs/Area3D"]
@@ -2082,7 +2082,7 @@ skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="stairs_001"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("11_qtcwo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_001/Area3D"]
@@ -2100,7 +2100,7 @@ skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="stairs_002"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_002/Area3D"]
@@ -2125,7 +2125,7 @@ shape = SubResource("ConcavePolygonShape3D_km84t")
 
 [node name="Area3D" type="Area3D" parent="floor first"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("11_qtcwo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor first/Area3D"]
@@ -2143,7 +2143,7 @@ shape = SubResource("ConcavePolygonShape3D_2mvvj")
 
 [node name="Area3D" type="Area3D" parent="floor second"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor second/Area3D"]
@@ -2164,7 +2164,7 @@ shape = SubResource("ConcavePolygonShape3D_2mvvj")
 [node name="Area3D" type="Area3D" parent="granite floor2"]
 transform = Transform3D(0.991445, 0, -0.130526, 0, 1, 0, 0.130526, 0, 0.991445, 0, 0, 0)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="granite floor2/Area3D"]

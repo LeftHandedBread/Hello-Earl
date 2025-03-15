@@ -42,6 +42,7 @@ import/blender/enabled=false
 [global_group]
 
 player=""
+flashlight_interact="objects that interact with the flashlight"
 
 [input]
 

@@ -23,7 +23,7 @@
 [ext_resource type="Script" path="res://Scripts/Game Logic/returnzone.gd" id="17_kdwo6"]
 [ext_resource type="Script" path="res://scenes/moon/stop watch.gd" id="18_lqwlt"]
 [ext_resource type="Script" path="res://scenes/moon/well_clip_fix.gd" id="19_noqj7"]
-[ext_resource type="PackedScene" uid="uid://b87g6mmlgv1kd" path="res://scenes/GUI/hud.tscn" id="24_y5weg"]
+[ext_resource type="Script" path="res://scenes/Level 1/physics_debug.gd" id="24_qdbth"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_frcqr"]
 radius = 0.879236
@@ -1460,7 +1460,8 @@ speed_scale = 2.0
 transform = Transform3D(102.06, 0, 0, 0, 102.06, 0, 0, 0, 102.06, 0, 17.3564, 0)
 shape = SubResource("BoxShape3D_krugd")
 
-[node name="HUD" parent="." instance=ExtResource("24_y5weg")]
+[node name="physics debug" type="Node3D" parent="."]
+script = ExtResource("24_qdbth")
 
 [connection signal="body_exited" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_exited"]
 [connection signal="body_entered" from="music areas/entering mine" to="music areas" method="_on_entering_mine_body_entered"]
