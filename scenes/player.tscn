@@ -163,7 +163,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 fov = 80.0
 
 [node name="RayCast3D" type="RayCast3D" parent="head"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 target_position = Vector3(0, 0, -1.815)
 collide_with_areas = true
 collide_with_bodies = false

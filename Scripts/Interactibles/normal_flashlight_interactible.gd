@@ -20,6 +20,7 @@ func _interact() -> void:
 			GameManager.currentLightType = GameManager.Light.NORMAL
 			current = 0
 			print("0 1")
+			Hud.LMB()
 			$"..".queue_free()
 			return
 		if GameManager.currentLightType == GameManager.Light.NORMAL and current == 1:

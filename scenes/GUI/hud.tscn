@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b87g6mmlgv1kd"]
+[gd_scene load_steps=9 format=3 uid="uid://b87g6mmlgv1kd"]
+
+[ext_resource type="Script" path="res://scenes/GUI/hud.gd" id="1_dp7ht"]
+[ext_resource type="Texture2D" uid="uid://dqruucjo540pr" path="res://Assets/textures/LMB.png" id="2_02eac"]
+[ext_resource type="Texture2D" uid="uid://dlo2vw4e05x17" path="res://Assets/textures/RMB.png" id="3_3hg1o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvqjj"]
 bg_color = Color(0, 0, 0, 0.380392)
@@ -7,9 +11,77 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="Animation" id="Animation_2p5pe"]
+resource_name = "LMB"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LMB:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_30273"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LMB:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RMB:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_risdl"]
+resource_name = "RMB"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RMB:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fi2uj"]
+_data = {
+"LMB": SubResource("Animation_2p5pe"),
+"RESET": SubResource("Animation_30273"),
+"RMB": SubResource("Animation_risdl")
+}
+
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_dp7ht")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -20,6 +92,43 @@ offset_bottom = -15.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fvqjj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="LMB" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -158.0
+offset_right = 216.0
+offset_bottom = 117.0
+grow_vertical = 0
+scale = Vector2(0.45, 0.45)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("2_02eac")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="RMB" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -158.0
+offset_right = 216.0
+offset_bottom = 117.0
+grow_vertical = 0
+scale = Vector2(0.45, 0.45)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("3_3hg1o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fi2uj")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

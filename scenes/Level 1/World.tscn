@@ -3075,7 +3075,6 @@ shape = SubResource("BoxShape3D_lfmsh")
 
 [node name="Interactible3D" type="Area3D" parent="chair2"]
 script = ExtResource("5_npnlb")
-InteractText = "[E] Sit | [Esc] Stand up"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chair2/Interactible3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0890503, 0.423215, 0.0607719)

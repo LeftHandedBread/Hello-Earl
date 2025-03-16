@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=88 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="Script" path="res://Scripts/Game Logic/music_areas.gd" id="1_jq4wo"]
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
@@ -23,12 +23,23 @@
 [ext_resource type="Script" path="res://Scripts/Game Logic/returnzone.gd" id="17_kdwo6"]
 [ext_resource type="Script" path="res://scenes/moon/stop watch.gd" id="18_lqwlt"]
 [ext_resource type="Script" path="res://scenes/moon/well_clip_fix.gd" id="19_noqj7"]
+[ext_resource type="Script" path="res://Scripts/Game Logic/wellgrav.gd" id="21_0336w"]
 [ext_resource type="Script" path="res://scenes/Level 1/physics_debug.gd" id="24_qdbth"]
+[ext_resource type="PackedScene" uid="uid://b87g6mmlgv1kd" path="res://scenes/GUI/hud.tscn" id="25_cqsl5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_frcqr"]
 radius = 0.879236
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m3x3j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2okom"]
+size = Vector3(6.19087, 6.72766, 3.94946)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ew5a6"]
+radius = 1.14906
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvn7y"]
+size = Vector3(15.3771, 8.12171, 19.7681)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3vog"]
 resource_name = "Material.001"
@@ -172,124 +183,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_62n1i")
 
 [sub_resource type="GDScript" id="GDScript_gedvi"]
-
-[sub_resource type="Curve" id="Curve_o82yl"]
-_data = [Vector2(0, 0.054945), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_eydtw"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.923077), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_g0gvs"]
-_data = [Vector2(0, 0.208791), 0.0, 0.0, 0, 0, Vector2(0.484211, 0.406593), 0.875576, 0.875576, 0, 0, Vector2(1, 0.868132), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_kisck"]
-curve_x = SubResource("Curve_o82yl")
-curve_y = SubResource("Curve_eydtw")
-curve_z = SubResource("Curve_g0gvs")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mu0k0"]
-panorama = ExtResource("2_5viyr")
-filter = false
-energy_multiplier = 1.5
-
-[sub_resource type="Sky" id="Sky_ih2gf"]
-sky_material = SubResource("PanoramaSkyMaterial_mu0k0")
-
-[sub_resource type="Environment" id="Environment_hatdx"]
-background_mode = 2
-sky = SubResource("Sky_ih2gf")
-sky_rotation = Vector3(0.785398, 0.785398, 0)
-ambient_light_source = 2
-ambient_light_color = Color(0.767196, 0.930646, 0.995519, 1)
-ambient_light_energy = 0.1
-tonemap_mode = 2
-tonemap_exposure = 0.9
-fog_enabled = true
-fog_light_color = Color(0, 0.132272, 0.21706, 1)
-fog_light_energy = 0.77
-fog_sun_scatter = 0.09
-fog_density = 0.0
-fog_sky_affect = 0.0
-fog_height = -50.84
-fog_height_density = 0.3
-fog_depth_curve = 2.0
-fog_depth_begin = 20.0
-volumetric_fog_albedo = Color(0.0652313, 0.261841, 0.241536, 1)
-volumetric_fog_emission = Color(0.955963, 0.955963, 0.955963, 1)
-adjustment_enabled = true
-adjustment_brightness = 0.9
-adjustment_contrast = 1.2
-adjustment_saturation = 0.85
-adjustment_color_correction = SubResource("CurveXYZTexture_kisck")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gflcj"]
-transparency = 1
-cull_mode = 2
-shading_mode = 0
-disable_fog = true
-albedo_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_lbn6l"]
-material = SubResource("StandardMaterial3D_gflcj")
-radial_segments = 20
-rings = 11
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_hc7md"]
-radius = 0.291095
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_v3sq0"]
-radius = 0.291101
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a3401"]
-size = Vector3(0.0453491, 6.30227, 3.85013)
-
-[sub_resource type="Environment" id="Environment_dao3u"]
-background_mode = 1
-background_color = Color(0.44191, 0.777218, 0.967648, 1)
-ambient_light_energy = 0.0
-
-[sub_resource type="Animation" id="Animation_l2fuw"]
-resource_name = "tv"
-length = 60.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:environment:background_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.63333, 3.13333, 14.3333, 23.2333, 26.0667, 28.0333, 30.5667, 31.8333, 56.9333, 59.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.878431, 0.560784, 0.662745, 1), Color(0.865382, 0.651955, 0.915155, 1), Color(0.540964, 0.785607, 1, 1), Color(0.671268, 0.956535, 1, 1), Color(0.541176, 0.784314, 1, 1), Color(0.866667, 0.65098, 0.913725, 1), Color(0.880031, 0.562868, 0.664307, 1), Color(1.74474e-07, 0.250758, 0.131907, 1), Color(0.0117234, 0.132525, 0.524109, 1), Color(0.0117647, 0.133333, 0.52549, 1), Color(0, 0.25098, 0.133333, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_b48wc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:environment:background_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.44191, 0.777218, 0.967648, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekwmf"]
-_data = {
-"Day": SubResource("Animation_l2fuw"),
-"RESET": SubResource("Animation_b48wc")
-}
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_dkk5b"]
-radius = 14.9828
 
 [sub_resource type="Animation" id="Animation_5m47g"]
 resource_name = "Day"
@@ -965,6 +858,124 @@ _data = {
 "RESET": SubResource("Animation_sr7h4")
 }
 
+[sub_resource type="Curve" id="Curve_o82yl"]
+_data = [Vector2(0, 0.054945), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_eydtw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.923077), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g0gvs"]
+_data = [Vector2(0, 0.208791), 0.0, 0.0, 0, 0, Vector2(0.484211, 0.406593), 0.875576, 0.875576, 0, 0, Vector2(1, 0.868132), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_kisck"]
+curve_x = SubResource("Curve_o82yl")
+curve_y = SubResource("Curve_eydtw")
+curve_z = SubResource("Curve_g0gvs")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mu0k0"]
+panorama = ExtResource("2_5viyr")
+filter = false
+energy_multiplier = 1.5
+
+[sub_resource type="Sky" id="Sky_ih2gf"]
+sky_material = SubResource("PanoramaSkyMaterial_mu0k0")
+
+[sub_resource type="Environment" id="Environment_hatdx"]
+background_mode = 2
+sky = SubResource("Sky_ih2gf")
+sky_rotation = Vector3(0.785398, 0.785398, 0)
+ambient_light_source = 2
+ambient_light_color = Color(0.767196, 0.930646, 0.995519, 1)
+ambient_light_energy = 0.1
+tonemap_mode = 2
+tonemap_exposure = 0.9
+fog_enabled = true
+fog_light_color = Color(0, 0.132272, 0.21706, 1)
+fog_light_energy = 0.77
+fog_sun_scatter = 0.09
+fog_density = 0.0
+fog_sky_affect = 0.0
+fog_height = -50.84
+fog_height_density = 0.3
+fog_depth_curve = 2.0
+fog_depth_begin = 20.0
+volumetric_fog_albedo = Color(0.0652313, 0.261841, 0.241536, 1)
+volumetric_fog_emission = Color(0.955963, 0.955963, 0.955963, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.2
+adjustment_saturation = 0.85
+adjustment_color_correction = SubResource("CurveXYZTexture_kisck")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gflcj"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lbn6l"]
+material = SubResource("StandardMaterial3D_gflcj")
+radial_segments = 20
+rings = 11
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hc7md"]
+radius = 0.291095
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v3sq0"]
+radius = 0.291101
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3401"]
+size = Vector3(0.0453491, 6.30227, 3.85013)
+
+[sub_resource type="Environment" id="Environment_dao3u"]
+background_mode = 1
+background_color = Color(0.44191, 0.777218, 0.967648, 1)
+ambient_light_energy = 0.0
+
+[sub_resource type="Animation" id="Animation_l2fuw"]
+resource_name = "tv"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:background_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.63333, 3.13333, 14.3333, 23.2333, 26.0667, 28.0333, 30.5667, 31.8333, 56.9333, 59.1333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.878431, 0.560784, 0.662745, 1), Color(0.865382, 0.651955, 0.915155, 1), Color(0.540964, 0.785607, 1, 1), Color(0.671268, 0.956535, 1, 1), Color(0.541176, 0.784314, 1, 1), Color(0.866667, 0.65098, 0.913725, 1), Color(0.880031, 0.562868, 0.664307, 1), Color(1.74474e-07, 0.250758, 0.131907, 1), Color(0.0117234, 0.132525, 0.524109, 1), Color(0.0117647, 0.133333, 0.52549, 1), Color(0, 0.25098, 0.133333, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b48wc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:background_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.44191, 0.777218, 0.967648, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekwmf"]
+_data = {
+"Day": SubResource("Animation_l2fuw"),
+"RESET": SubResource("Animation_b48wc")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dkk5b"]
+radius = 14.9828
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_e0mgh"]
 size = Vector3(0.752274, 0.492676, 0.48999)
 
@@ -1095,6 +1106,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6fq0d")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ad48e"]
+height = 6.15327
+radius = 0.19917
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_51yfy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ah6wr"]
@@ -1174,6 +1189,7 @@ script = ExtResource("1_jq4wo")
 
 [node name="exiting mine" type="Area3D" parent="music areas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4002, 3.51732, -31.7049)
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="music areas/exiting mine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30164, 3.07328, -3.23943)
@@ -1181,10 +1197,35 @@ shape = SubResource("SphereShape3D_frcqr")
 
 [node name="entering mine" type="Area3D" parent="music areas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5072, 3.39833, -30.8343)
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="music areas/entering mine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18489, 2.57419, -2.67042)
 shape = SubResource("SphereShape3D_m3x3j")
+
+[node name="finale mine" type="Area3D" parent="music areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4954, 0, 9.8379)
+collision_layer = 4
+gravity = -1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="music areas/finale mine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08862, -1.3847, -0.0933838)
+shape = SubResource("BoxShape3D_2okom")
+
+[node name="leaving mines end" type="Area3D" parent="music areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4954, -2.69775, 4.93461)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="music areas/leaving mines end"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478456, 0.325745, 0)
+shape = SubResource("SphereShape3D_ew5a6")
+
+[node name="well" type="Area3D" parent="music areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91476, 0, -42.0371)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="music areas/well"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16675, -4.30494, 7.27905)
+shape = SubResource("BoxShape3D_uvn7y")
 
 [node name="Player" parent="." instance=ExtResource("1_xbq7m")]
 transform = Transform3D(0.98774, 0, 0.156107, 0, 1, 0, -0.156107, 0, 0.98774, -33.2754, 0.725434, 35.2809)
@@ -1207,6 +1248,15 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485046, 50.7393, 0.156724)
 script = SubResource("GDScript_gedvi")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle"]
+root_node = NodePath("../WorldEnvironment/Node3D/DirectionalLight3D")
+libraries = {
+"": SubResource("AnimationLibrary_k13is")
+}
+autoplay = "Day"
+speed_scale = 0.001
+script = ExtResource("4_fxdxl")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Day Cycle" node_paths=PackedStringArray("target_node")]
 environment = SubResource("Environment_hatdx")
 script = ExtResource("3_nha8n")
@@ -1218,7 +1268,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46637e-06, 0.178172, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46637e-06, 0.178171, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -1296,15 +1346,6 @@ script = ExtResource("6_potkj")
 shape = SubResource("SphereShape3D_dkk5b")
 disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle"]
-root_node = NodePath("../WorldEnvironment/Node3D/DirectionalLight3D")
-libraries = {
-"": SubResource("AnimationLibrary_k13is")
-}
-autoplay = "Day"
-speed_scale = 0.001
-script = ExtResource("4_fxdxl")
-
 [node name="newouthouse" parent="Day Cycle" instance=ExtResource("7_0e7rr")]
 transform = Transform3D(0.965948, 0, 0.258735, 0, 1, 0, -0.258735, 0, 0.965948, 43.8437, -47.2976, 7.19729)
 
@@ -1316,7 +1357,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.999903, 0, 0, 0, 0.242514, -0.970056, 0, 0.970056, 0.242514, 443.412, -33.7529, -75.5749)
+transform = Transform3D(-0.170116, 0.253694, -0.952111, -0.974764, 0.0977262, 0.200206, 0.143849, 0.962238, 0.230691, -137.271, -428.283, -49.1439)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
 transform = Transform3D(0.67579, 0.646767, 0.353555, 0.0922906, -0.550132, 0.829962, 0.731294, -0.52825, -0.431464, -6.14575, 6.8625, 8.38806)
@@ -1367,7 +1408,7 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.999903, 0, 0, 0, 0.242514, -0.970056, 0, 0.970056, 0.242514, 443.412, -33.7529, -75.5749)
+transform = Transform3D(-0.170116, 0.253694, -0.952111, -0.974764, 0.0977262, 0.200206, 0.143849, 0.962238, 0.230691, -137.271, -428.283, -49.1439)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 remote_path = NodePath("../../../AnimatableBody3D2")
@@ -1405,6 +1446,14 @@ skeleton = NodePath("")
 transform = Transform3D(-5.39038e-06, -1.48906, 0, 1.48906, -5.39038e-06, 0, 0, 0, 1.48906, -1, 0.262, 0)
 mesh = SubResource("ArrayMesh_icq7b")
 skeleton = NodePath("")
+
+[node name="wellgrav" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75052, 0, -41.8981)
+gravity = -7.0
+script = ExtResource("21_0336w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wellgrav"]
+shape = SubResource("CylinderShape3D_ad48e")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -1463,8 +1512,12 @@ shape = SubResource("BoxShape3D_krugd")
 [node name="physics debug" type="Node3D" parent="."]
 script = ExtResource("24_qdbth")
 
-[connection signal="body_exited" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_exited"]
+[node name="HUD" parent="." instance=ExtResource("25_cqsl5")]
+
+[connection signal="body_entered" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_entered"]
 [connection signal="body_entered" from="music areas/entering mine" to="music areas" method="_on_entering_mine_body_entered"]
+[connection signal="body_entered" from="music areas/finale mine" to="music areas" method="_on_finale_mine_body_entered"]
+[connection signal="body_entered" from="music areas/leaving mines end" to="music areas" method="_on_leaving_mines_end_body_entered"]
 [connection signal="body_entered" from="well clip fix" to="well clip fix" method="_on_body_entered"]
 [connection signal="body_exited" from="well clip fix" to="well clip fix" method="_on_body_exited"]
 [connection signal="body_entered" from="Area3D2" to="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/Area3D" method="_on_area_3d_2_body_entered"]

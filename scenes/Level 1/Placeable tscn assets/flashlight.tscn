@@ -21,7 +21,6 @@ script = ExtResource("3_3b6c6")
 [node name="Interactible3D" type="Area3D" parent="." index="1"]
 transform = Transform3D(0.936305, 0.351188, 0, -0.351188, 0.936305, 0, 0, 0, 1, 0, 0.0777391, 0)
 script = ExtResource("2_jnats")
-InteractText = "E - Pickup \\n F - Toggle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible3D" index="0"]
 transform = Transform3D(2.838, -0.55268, 0, 0.55268, 2.838, 0, 0, 0, 2.89131, 0, 0, 0)

@@ -131,23 +131,35 @@ func _process_interact():
 	# Check if the raycast detects a collision
 	if not InteractRaycast.is_colliding():
 		plrGUI.update_text("")
+		Hud.RMBout()
 		return
 	
 	# Get the collider hit by the RayCast
 	var collider = InteractRaycast.get_collider()
+	var sign = false
 	
 	# Ensure the collider is an interactable object
 	if not collider is Interactible3D:
 		plrGUI.update_text("")
+		Hud.RMBout()
 		return
+	
+	if collider.get_parent().name == "sign":
+		sign = true
 	
 	if collider == currentBody and not Input.is_action_just_pressed("interact"): # This is a bit hacky imo, but works
 		plrGUI.update_text(currentBody.InteractText)
+		if !sign:
+			Hud.RMBin()
 		return
 	
 	currentBody = collider
 	plrGUI.update_text(currentBody.InteractText)
+	if !sign:
+		Hud.RMBin()
 	if Input.is_action_just_pressed("interact") && currentBody.CanInteract:
+		if !sign:
+			Hud.rmbCount += 1
 		currentBody.OnInteract.emit()
 
 
