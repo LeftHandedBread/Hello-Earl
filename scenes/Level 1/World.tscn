@@ -969,6 +969,18 @@ transform = Transform3D(-0.0116153, 0.000901121, -0.00694118, -0.000773527, -0.0
 mesh = SubResource("ArrayMesh_pxvdb")
 skeleton = NodePath("")
 
+[node name="Node3D827" parent="." instance=ExtResource("4_v8exc")]
+transform = Transform3D(0.994265, -2.87546e-07, 0.106941, 4.787e-07, 1, -4.65661e-08, -0.106941, -1.28523e-07, 0.994266, 37.7668, 0.193782, 29.9672)
+
+[node name="Node3D828" parent="." instance=ExtResource("5_856hn")]
+transform = Transform3D(0.996727, -2.87546e-07, 0.0808428, -3.95346e-07, 1, -6.14673e-08, -0.0808432, -1.28523e-07, 0.996727, 37.8274, 0.998417, 29.942)
+
+[node name="Node3D829" parent="." instance=ExtResource("6_6chrk")]
+transform = Transform3D(0.371017, 2.62517e-08, -8.9407e-08, -7.46804e-08, 0.371016, -3.07336e-08, -3.8743e-07, 9.31323e-09, 0.371016, 33.5338, 3.5301, 30.9025)
+
+[node name="Node3D830" parent="." instance=ExtResource("46_lg2o8")]
+transform = Transform3D(0.0944308, 5.00586e-08, -4.84288e-08, 4.49945e-08, 0.0944308, 7.10133e-09, 3.72529e-08, 2.11876e-08, 0.0944308, 33.5304, 3.69964, 30.9018)
+
 [node name="Icosphere2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0956036, 0.0134822, 0.0430779, 0.0145091, 0.104722, -0.000574844, -0.0427429, 0.005392, -0.0965479, 34.9968, 1.01897, 32.1028)
 mesh = SubResource("ArrayMesh_vyk4x")
@@ -1008,18 +1020,6 @@ script = ExtResource("3_evrx6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere2/Area3D"]
 shape = SubResource("SphereShape3D_t4ym6")
-
-[node name="Node3D" parent="Icosphere2/Area3D" instance=ExtResource("4_v8exc")]
-transform = Transform3D(-8.09521, 1.29806, -4.71677, 1.14769, 9.36897, 0.608622, 4.75559, -0.0514277, -8.176, -16.5965, -5.42028, 29.1647)
-
-[node name="Node3D2" parent="Icosphere2/Area3D" instance=ExtResource("5_856hn")]
-transform = Transform3D(-8.21606, 1.29806, -4.50296, 1.16324, 9.36897, 0.57833, 4.53965, -0.0514277, -8.29784, -15.9744, 2.17931, 29.5739)
-
-[node name="Node3D3" parent="Icosphere2/Area3D" instance=ExtResource("6_6chrk")]
-transform = Transform3D(-3.17338, 0.4816, -1.41877, 0.447516, 3.47604, 0.178977, 1.42989, -0.0190805, -3.20472, 20.363, 21.183, 4.60025)
-
-[node name="Node3D4" parent="Icosphere2/Area3D" instance=ExtResource("46_lg2o8")]
-transform = Transform3D(-0.807686, 0.122576, -0.361104, 0.113902, 0.884719, 0.0455532, 0.363933, -0.00485635, -0.815663, 20.6147, 22.767, 4.58463)
 
 [node name="Node3D" parent="." instance=ExtResource("19_bsy6g")]
 transform = Transform3D(1.575, 0, 0, 0, 1.575, 0, 0, 0, 1.575, -32.348, 2.38419e-07, 28.2371)

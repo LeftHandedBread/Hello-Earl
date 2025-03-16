@@ -1222,6 +1222,7 @@ shape = SubResource("SphereShape3D_ew5a6")
 
 [node name="well" type="Area3D" parent="music areas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91476, 0, -42.0371)
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="music areas/well"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16675, -4.30494, 7.27905)
@@ -1306,6 +1307,7 @@ shape = SubResource("SphereShape3D_hc7md")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
 transform = Transform3D(1, 0, -2.98023e-08, 2.98023e-08, 1, -2.98023e-08, -2.98023e-08, 0, 1, 0, 0, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 2.98023e-08, 1, 0, 0, 0)
@@ -1335,6 +1337,7 @@ libraries = {
 script = ExtResource("4_fxdxl")
 
 [node name="Area3D" type="Area3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
+collision_layer = 4
 gravity_space_override = 3
 gravity_point = true
 gravity_point_center = Vector3(0, 0, 0)
@@ -1348,8 +1351,10 @@ disabled = true
 
 [node name="newouthouse" parent="Day Cycle" instance=ExtResource("7_0e7rr")]
 transform = Transform3D(0.965948, 0, 0.258735, 0, 1, 0, -0.258735, 0, 0.965948, 43.8437, -47.2976, 7.19729)
+vis = true
 
 [node name="tpzone" type="Area3D" parent="Day Cycle/newouthouse"]
+collision_layer = 4
 script = ExtResource("8_an6md")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day Cycle/newouthouse/tpzone"]
@@ -1357,7 +1362,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(-0.170116, 0.253694, -0.952111, -0.974764, 0.0977262, 0.200206, 0.143849, 0.962238, 0.230691, -137.271, -428.283, -49.1439)
+transform = Transform3D(-0.0583648, 0.205852, -0.976745, -0.986285, 0.138784, 0.0881851, 0.153723, 0.968595, 0.194949, -53.7412, -440.747, -68.1798)
+collision_layer = 16
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
 transform = Transform3D(0.67579, 0.646767, 0.353555, 0.0922906, -0.550132, 0.829962, 0.731294, -0.52825, -0.431464, -6.14575, 6.8625, 8.38806)
@@ -1388,6 +1394,7 @@ shape = SubResource("ConcavePolygonShape3D_lio6c")
 
 [node name="Area3D" type="Area3D" parent="AnimatableBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75819, 6.80656, 7.81037)
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D2/Area3D"]
 transform = Transform3D(0.848261, -0.529562, -0.00427016, 0.289467, 0.470396, -0.833629, 0.443466, 0.705898, 0.552309, 0, 0, 0)
@@ -1408,7 +1415,7 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.170116, 0.253694, -0.952111, -0.974764, 0.0977262, 0.200206, 0.143849, 0.962238, 0.230691, -137.271, -428.283, -49.1439)
+transform = Transform3D(-0.0583648, 0.205852, -0.976745, -0.986285, 0.138784, 0.0881851, 0.153723, 0.968595, 0.194949, -53.7412, -440.747, -68.1798)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 remote_path = NodePath("../../../AnimatableBody3D2")
@@ -1420,6 +1427,7 @@ transform = Transform3D(0.0890199, 0, -1.08277, 0, 1.08642, 0, 1.08277, 0, 0.089
 mesh = SubResource("QuadMesh_q1q4p")
 
 [node name="HouseArea" type="Area3D" parent="World"]
+collision_layer = 4
 script = ExtResource("8_53ffn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/HouseArea"]
@@ -1449,6 +1457,7 @@ skeleton = NodePath("")
 
 [node name="wellgrav" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75052, 0, -41.8981)
+collision_layer = 4
 gravity = -7.0
 script = ExtResource("21_0336w")
 
@@ -1464,6 +1473,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
 script = ExtResource("17_kdwo6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -1491,6 +1501,7 @@ shape = SubResource("SphereShape3D_ah6wr")
 
 [node name="well clip fix" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73381, 1.8395, -41.8618)
+collision_layer = 4
 script = ExtResource("19_noqj7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="well clip fix"]
@@ -1504,6 +1515,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Area3D2" type="Area3D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 transform = Transform3D(102.06, 0, 0, 0, 102.06, 0, 0, 0, 102.06, 0, 17.3564, 0)

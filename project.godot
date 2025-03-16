@@ -108,6 +108,14 @@ debug={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="flashlight"
+3d_physics/layer_3="area detection"
+3d_physics/layer_4="illuminatees"
+3d_physics/layer_5="solids"
+
 [physics]
 
 3d/run_on_separate_thread=true
