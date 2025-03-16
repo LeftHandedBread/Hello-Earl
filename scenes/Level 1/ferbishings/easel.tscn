@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://d1ur1jpow7so5"]
+[gd_scene load_steps=7 format=4 uid="uid://d1ur1jpow7so5"]
 
-[ext_resource type="Texture2D" uid="uid://fxy5tq8maduj" path="res://Assets/Level 1/mannequin.webp" id="1_w1bs0"]
+[ext_resource type="Texture2D" uid="uid://d0f4n68auga3y" path="res://Assets/Level 1/mannequin.webp" id="1_w1bs0"]
 [ext_resource type="Texture2D" uid="uid://d3y3gxn56u86g" path="res://Assets/Level 1/mannequinnormal.webp" id="2_vs5la"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duqy3"]
@@ -43,9 +43,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5ylpr")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3rywn"]
+size = Vector3(0.354065, 1, 0.661621)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.000145983, 0.0214495, -0.00931315, 0.000323523, 0.00900402, 0.0221859, 0.265179, -2.27932e-05, -2.19402e-05, 0.215915, 0.614939, -0.00361799)
 mesh = SubResource("ArrayMesh_v3yr1")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0344543, 0.618105, -0.0178223)
+shape = SubResource("BoxShape3D_3rywn")

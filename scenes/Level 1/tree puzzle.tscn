@@ -356,6 +356,7 @@ mesh = SubResource("ArrayMesh_cq0q2")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-3"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-3/StaticBody3D"]
 visible = false

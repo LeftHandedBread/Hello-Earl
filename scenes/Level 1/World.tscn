@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=4 uid="uid://cj68v47c1clgg"]
+[gd_scene load_steps=166 format=4 uid="uid://cj68v47c1clgg"]
 
 [ext_resource type="Texture2D" uid="uid://ci02bvwg07dye" path="res://Assets/Level 1/objects/wooden floor.jpg" id="1_anqh5"]
 [ext_resource type="Texture2D" uid="uid://bmj6twxjym6ph" path="res://Assets/Level 1/objects/4geode.jpg" id="2_v8jlp"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://c4fphmtxruh5e" path="res://scenes/Level 1/Placeable tscn assets/tree4.tscn" id="22_cygau"]
 [ext_resource type="PackedScene" uid="uid://imy7utxp7mq0" path="res://scenes/Level 1/Placeable tscn assets/hedge.tscn" id="23_q6doc"]
 [ext_resource type="PackedScene" uid="uid://cf322s6rbu578" path="res://scenes/Level 1/Placeable tscn assets/flowers 3.tscn" id="24_33myn"]
-[ext_resource type="PackedScene" uid="uid://drchhh67gxdcy" path="res://scenes/Level 1/Placeable tscn assets/house.tscn" id="24_d2yq2"]
 [ext_resource type="PackedScene" uid="uid://5qpn7mir1xao" path="res://scenes/Level 1/Placeable tscn assets/flowers 4.tscn" id="25_315pm"]
 [ext_resource type="PackedScene" uid="uid://b16uxr64e7l6w" path="res://scenes/Level 1/Placeable tscn assets/tree 2.tscn" id="26_exboa"]
 [ext_resource type="PackedScene" uid="uid://bv7pi5f8wslex" path="res://scenes/Level 1/Placeable tscn assets/clover1.tscn" id="26_ue82y"]
@@ -1014,8 +1013,8 @@ shadow_enabled = true
 
 [node name="Area3D" type="Area3D" parent="Icosphere2"]
 transform = Transform3D(1, -3.72529e-09, 0, -7.45058e-09, 1, 3.72529e-09, 5.96046e-08, -7.45058e-09, 1, 0, 0, 0)
-collision_layer = 6
-collision_mask = 6
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("3_evrx6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere2/Area3D"]
@@ -1476,9 +1475,9 @@ transform = Transform3D(1.885, 0, 0, 0, 1.72967, 0.749318, 0, -0.749318, 1.72967
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.0435667, 0, -0.488059, 0, 0.49, 0, 0.488059, 0, -0.0435667, -46.4183, 4.74167, -34.7372)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-visible = false
 shape = SubResource("SphereShape3D_52jve")
 
 [node name="Node3D164" parent="." instance=ExtResource("30_6ib88")]
@@ -1577,13 +1576,8 @@ transform = Transform3D(0.778279, 0.11985, -0.83123, -0.114444, 1.13784, 0.05690
 [node name="Node3D195" parent="." instance=ExtResource("23_q6doc")]
 transform = Transform3D(0.839658, 0, 0.543116, 0, 1, 0, -0.543116, 0, 0.839658, -31.1022, 3.95423, -46.5756)
 
-[node name="Node3D196" type="Node3D" parent="."]
-
 [node name="Node3D53" parent="." instance=ExtResource("33_4tqj2")]
 transform = Transform3D(0.0768955, 0, -0.953431, 0, 0.956527, 0, 0.953431, 0, 0.0768955, 34.0461, 0.013, 28.4001)
-
-[node name="House" parent="." instance=ExtResource("24_d2yq2")]
-visible = false
 
 [node name="Node3D198" parent="." instance=ExtResource("29_qrxxo")]
 transform = Transform3D(0.913553, 0.162392, 0, -0.206816, 0.717319, 0, 0, 0, 0.864356, -37.2678, 0.173277, 34.1365)
@@ -1914,10 +1908,10 @@ transform = Transform3D(-2.02568, -0.591422, -0.496363, -0.942774, 1.35671, 0, 0
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8329, 3.61304, -23.8119)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
 transform = Transform3D(0.880736, 0.124258, 0.457016, 0.0136873, 0.957887, -0.286818, -0.473409, 0.258866, 0.841945, -3.0458, -1.77804, -3.95983)
-visible = false
 shape = SubResource("BoxShape3D_yhkry")
 
 [node name="Node3D301" parent="." instance=ExtResource("30_6ib88")]
@@ -2718,6 +2712,7 @@ transform = Transform3D(4.01, 0, 0, 0, 4.01, 0, 0, 0, 4.01, -5.75931, 5.76806, 1
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.0733521, 0, -0.821733, 0, 0.825, 0, 0.821733, 0, -0.0733521, -47.4776, 4.74167, -34.6399)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 visible = false
@@ -2725,6 +2720,7 @@ shape = SubResource("SphereShape3D_52jve")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.0284517, 0, -0.318733, 0, 0.32, 0, 0.318733, 0, -0.0284517, -46.7711, 4.58368, -33.3706)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 visible = false
@@ -2732,13 +2728,14 @@ shape = SubResource("SphereShape3D_52jve")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8329, 3.61304, -23.8119)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
 transform = Transform3D(0.899944, -0.0449017, 0.433687, 0.0484943, 0.998819, 0.00278234, -0.433301, 0.0185274, 0.901059, -4.76928, -0.223091, -14.8685)
-visible = false
 shape = SubResource("BoxShape3D_yhkry")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 2.28705, -32.3433)
@@ -2746,6 +2743,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0331, 1.37814, -29.8818)
@@ -2753,6 +2751,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6712, 1.4479, -30.3841)
@@ -2760,6 +2759,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D9" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 0.50797, -27.5832)
@@ -2767,6 +2767,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D10" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9172, 0.608813, -28.1324)
@@ -2774,6 +2775,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D11" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8396, -0.166435, -25.7093)
@@ -2781,6 +2783,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D12" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3794, 2.83789, -38.2211)
@@ -2788,6 +2791,7 @@ visible = false
 shape = SubResource("SphereShape3D_cdh0o")
 
 [node name="StaticBody3D13" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3342, 1.64112, -36.5332)
@@ -2795,6 +2799,7 @@ visible = false
 shape = SubResource("SphereShape3D_nnk27")
 
 [node name="StaticBody3D14" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7787, 2.28705, -32.3433)
@@ -3067,6 +3072,7 @@ transform = Transform3D(-0.131755, 0, 0.991282, 0, 1, 0, -0.991282, 0, -0.131755
 transform = Transform3D(-0.997563, 0, -0.0697564, 0, 1, 0, 0.0697564, 0, -0.997563, -0.00795746, 0.0624447, 0.0734463)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="chair2"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chair2/StaticBody3D"]
 transform = Transform3D(0.23, 0, -2.6077e-08, 0, 0.23, 0, 2.6077e-08, 0, 0.23, 0.0824814, 0.241284, 0.0625935)
@@ -3147,6 +3153,7 @@ transform = Transform3D(0.714167, 7.31205e-08, 0.699975, 2.9764e-09, 1, -2.53506
 transform = Transform3D(0.985211, -0.171344, 2.08616e-07, 0.171345, 0.985211, 6.41681e-09, 5.96046e-08, 5.96046e-08, 1, 22.6567, 3.45707e-06, 22.6831)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D611"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D611/StaticBody3D"]
 transform = Transform3D(0.985541, 4.42964e-05, -0.169442, -0.169432, 0.0113192, -0.985478, 0.00187429, 0.999937, 0.011163, 0.015522, 0.419027, -2.60416)
@@ -3158,6 +3165,7 @@ transform = Transform3D(0.147147, -0.375938, 0.657891, 0.718783, 0.281341, 9.470
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D606"]
 transform = Transform3D(1, 1.49012e-08, 1.49012e-08, 0, 1, -2.98023e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D606/StaticBody3D"]
 transform = Transform3D(0.901325, -0.0410204, -0.431197, 0.4331, 0.0711548, 0.898533, -0.00617654, -0.996622, 0.0818996, -1.32265, -0.143499, -2.66082)
@@ -3304,40 +3312,47 @@ transform = Transform3D(1.22666, 0.756242, 0.778876, -0.859636, 1.39437, 0, -0.6
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Well ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Well ground/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.741, 1.23705, -41.8926)
+visible = false
 shape = SubResource("CylinderShape3D_pa231")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Well ground/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00999995, 0)
+visible = false
 shape = SubResource("ConcavePolygonShape3D_31ptv")
 
 [node name="Area3D" type="Area3D" parent="Well ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-collision_layer = 7
-collision_mask = 7
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("60_xm53k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Well ground/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.741, 1.58886, -41.8388)
+visible = false
 shape = SubResource("CylinderShape3D_ce0ce")
 
 [node name="Well" parent="." instance=ExtResource("38_iegmp")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Well"]
 transform = Transform3D(-0.242017, 0, -3.47659, 0, 3.485, 0, 3.47659, 0, -0.242017, -1.76514, 3.1145, -41.8661)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Well/StaticBody3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_6kdpf")
 
 [node name="Area3D" type="Area3D" parent="Well"]
 transform = Transform3D(-0.242017, 0, -3.47659, 0, 3.485, 0, 3.47659, 0, -0.242017, -1.76514, 3.1145, -41.8661)
-collision_layer = 2
+collision_layer = 10
 collision_mask = 2
 script = ExtResource("41_6pj5a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Well/Area3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_6kdpf")
 
 [node name="Node3D562" parent="." instance=ExtResource("65_yt505")]
@@ -3686,6 +3701,7 @@ mesh = SubResource("ArrayMesh_y2a3h")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D750/Cylinder"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D750/Cylinder/StaticBody3D"]
 transform = Transform3D(0.0959248, 0, 0, 0, 0.0959248, 0, 0, 0, 0.0959248, 0, 0.151609, 0)
@@ -3713,7 +3729,7 @@ skeleton = NodePath("")
 
 [node name="Area3D2" type="Area3D" parent="Node3D750/Cylinder/Interactible3D/fl"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("86_g0pht")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D750/Cylinder/Interactible3D/fl/Area3D2"]
@@ -3737,7 +3753,7 @@ skeleton = NodePath("")
 
 [node name="Area3D2" type="Area3D" parent="Node3D750/Cylinder/Interactible3D/rfl"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("87_kpjgw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D750/Cylinder/Interactible3D/rfl/Area3D2"]
@@ -4108,9 +4124,11 @@ transform = Transform3D(1.15554, 0, -1.00524, 0, 1.53159, 0, 1.00524, 0, 1.15554
 transform = Transform3D(-1.34841, 0, 0.823652, 0, 1.58006, 0, -0.823652, 0, -1.34841, -51.7834, 23.9392, 45.2148)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D795"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D795/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0840617, 0.333339, 0.0239495)
+visible = false
 shape = SubResource("CapsuleShape3D_slb0u")
 
 [node name="Node3D796" parent="." instance=ExtResource("19_bsy6g")]
@@ -4193,6 +4211,7 @@ mesh = SubResource("ArrayMesh_5qvwq")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="inert outhouse/Plane"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="inert outhouse/Plane/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qg4hu")
@@ -4203,6 +4222,7 @@ mesh = SubResource("ArrayMesh_sa5d2")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="inert outhouse/Plane_001"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="inert outhouse/Plane_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0bjld")
@@ -4250,6 +4270,7 @@ transform = Transform3D(-0.612162, 0, -0.790732, 0, 1, 0, 0.790732, 0, -0.612162
 transform = Transform3D(-0.997563, 0, -0.0697564, 0, 1, 0, 0.0697564, 0, -0.997563, -0.00795746, 0.0624447, 0.0734463)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="chair3"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chair3/StaticBody3D"]
 transform = Transform3D(0.23, 0, -2.6077e-08, 0, 0.23, 0, 2.6077e-08, 0, 0.23, 0.0824814, 0.241284, 0.0625935)
@@ -4273,6 +4294,7 @@ script = ExtResource("94_hnyhq")
 
 [node name="bedroom" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7434, 3.56167, 30.6309)
+collision_layer = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/bedroom"]
@@ -4281,6 +4303,7 @@ shape = SubResource("BoxShape3D_x4vhn")
 
 [node name="axeyard" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6419, 0, 20.2541)
+collision_layer = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/axeyard"]
@@ -4288,6 +4311,7 @@ shape = SubResource("SphereShape3D_juaa5")
 
 [node name="wellhole" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75412, -3.36882, -41.8584)
+collision_layer = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/wellhole"]
@@ -4296,6 +4320,7 @@ shape = SubResource("SphereShape3D_1bank")
 
 [node name="lightroom" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9345, 19.5956, -4.49883)
+collision_layer = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/lightroom"]
@@ -4304,6 +4329,7 @@ shape = SubResource("CylinderShape3D_wd7hm")
 
 [node name="treeplatty" type="Area3D" parent="manparty"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4062, 24.0475, 47.831)
+collision_layer = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="manparty/treeplatty"]

@@ -170,6 +170,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Plane_001"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Plane_001/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896912, 0.926804, 0.0416718)
@@ -177,7 +178,6 @@ shape = SubResource("BoxShape3D_g1tyc")
 
 [node name="Door Interact" type="Area3D" parent="Node3D/Plane_001"]
 script = ExtResource("3_lbu6k")
-InteractText = "+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Plane_001/Door Interact"]
 root_node = NodePath("../../..")

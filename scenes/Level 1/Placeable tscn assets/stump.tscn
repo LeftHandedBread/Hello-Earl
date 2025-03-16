@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://bfg35mkisg3hj"]
 
 [ext_resource type="Texture2D" uid="uid://cs4u0kbywp7d2" path="res://Assets/Level 1/objects/uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking_bark.jpg" id="1_dussl"]
-[ext_resource type="Texture2D" uid="uid://lvjs3qld4f7h" path="res://Assets/Level 1/objects/stump.jpg" id="2_vhoxl"]
+[ext_resource type="Texture2D" uid="uid://dawackpumt3pp" path="res://Assets/Level 1/objects/stump.jpg" id="2_vhoxl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syp0n"]
 resource_name = "Material.001"
@@ -83,6 +83,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Circle2"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Circle2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0)

@@ -230,6 +230,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Case"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Case/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_phmo3")
@@ -254,7 +255,7 @@ shape = SubResource("ConcavePolygonShape3D_r6wkt")
 
 [node name="Area3D" type="Area3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501399, 1.10205, 0.373809)
-collision_layer = 2
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("3_ih5eu")
 

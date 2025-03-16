@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjvusyv8yg72x"]
-
-[ext_resource type="PackedScene" uid="uid://bnbv5yjthfcbg" path="res://Assets/test_scene_assets/washingmachine asset/washingmachineopen.gltf" id="1_5r3m7"]
-
-[node name="washingmachineopen" instance=ExtResource("1_5r3m7")]
-transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, -0.01, 0, 0.01, -4.37114e-10, 0, 0, 0)

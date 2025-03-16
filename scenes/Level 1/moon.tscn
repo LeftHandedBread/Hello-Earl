@@ -267,6 +267,7 @@ mesh = SubResource("ArrayMesh_0514c")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="outhouse/Case"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="outhouse/Case/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rw8yx")
@@ -286,13 +287,14 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="outhouse/Node3D/door"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="outhouse/Node3D/door/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_lb8lt")
 
 [node name="Area3D" type="Area3D" parent="outhouse/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501399, 1.10205, 0.373809)
-collision_layer = 2
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("4_ab28f")
 
@@ -311,6 +313,7 @@ mesh = SubResource("ArrayMesh_jsjyj")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Icosphere2"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xtr1q")
@@ -332,6 +335,7 @@ shape = SubResource("SphereShape3D_0p2ml")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144547, -9.97596, -6.14505)
+collision_layer = 4
 gravity_space_override = 3
 gravity_point = true
 gravity_point_center = Vector3(0, 0, 0)
@@ -343,6 +347,7 @@ shape = SubResource("SphereShape3D_aptgn")
 disabled = true
 
 [node name="Area3D" type="Area3D" parent="Area3D"]
+collision_layer = 4
 script = ExtResource("10_bay1f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Area3D"]

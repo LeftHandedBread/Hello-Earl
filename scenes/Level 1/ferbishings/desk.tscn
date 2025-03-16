@@ -113,6 +113,7 @@ mesh = SubResource("ArrayMesh_qkivm")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150757, 0.80198, -0.000724792)

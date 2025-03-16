@@ -54,6 +54,7 @@ mesh = SubResource("ArrayMesh_rbks4")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="shelves"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shelves/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000290051, 0.117523, -0.00762939)

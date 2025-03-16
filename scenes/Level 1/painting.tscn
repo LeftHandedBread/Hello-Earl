@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://ddrrab6oc5r4e"]
 
-[ext_resource type="Texture2D" uid="uid://fxy5tq8maduj" path="res://Assets/Level 1/mannequin.webp" id="1_g0x4b"]
+[ext_resource type="Texture2D" uid="uid://d0f4n68auga3y" path="res://Assets/Level 1/mannequin.webp" id="1_g0x4b"]
 [ext_resource type="Texture2D" uid="uid://d3y3gxn56u86g" path="res://Assets/Level 1/mannequinnormal.webp" id="2_twrt6"]
 [ext_resource type="Texture2D" uid="uid://52dq5p8yvccx" path="res://Assets/Level 1/canvas.png" id="3_4k0ra"]
 [ext_resource type="Texture2D" uid="uid://brmgu7enqwe8u" path="res://Assets/Level 1/canvasnormal.png" id="4_5vsdh"]
@@ -194,7 +194,7 @@ mesh = SubResource("ArrayMesh_j6dgt")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="Plane"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("8_qu54q")
 
@@ -208,5 +208,3 @@ libraries = {
 "": SubResource("AnimationLibrary_ggdbe")
 }
 speed_scale = 10.0
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane"]

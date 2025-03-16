@@ -12,6 +12,7 @@ transform = Transform3D(0.391364, 0.0707011, 0.102936, 0.124878, -0.221576, -0.3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="geode"]
 transform = Transform3D(2.42759, -1.8622e-08, -3.35609e-08, 1.27018e-08, 2.42759, -3.57628e-07, 1.35495e-08, 3.57628e-07, 2.42759, 0, 0, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="geode/StaticBody3D"]
 visible = false

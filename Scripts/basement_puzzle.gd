@@ -4,6 +4,8 @@ extends Area3D
 var isOpen = false
 var illuminated = false
 
+@onready var opensfx := $"../open"
+@onready var closesfx := $"../close"
 
 func _ready():
 	monitoring = true
@@ -34,8 +36,10 @@ func open_door():
 	if !isOpen:
 		door_animation.play("Open Door")
 		isOpen = true
+		opensfx.play()
 
 func close_door():
 	if isOpen:
 		door_animation.play_backwards("Open Door")
 		isOpen = false
+		closesfx.play()

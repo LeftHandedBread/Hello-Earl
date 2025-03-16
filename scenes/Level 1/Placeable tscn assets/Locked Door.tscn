@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://bqyjsakub54ti"]
+[gd_scene load_steps=12 format=4 uid="uid://bqyjsakub54ti"]
 
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="1_7j1f7"]
 [ext_resource type="Script" path="res://Scripts/basement_puzzle.gd" id="2_ktydv"]
+[ext_resource type="AudioStream" uid="uid://wfijcyiry8o7" path="res://Assets/sfx/door close.ogg" id="3_4p8vl"]
+[ext_resource type="AudioStream" uid="uid://cmx1vweuolxvl" path="res://Assets/sfx/door open.ogg" id="4_mb1hf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h8vy"]
 resource_name = "Material.004"
@@ -92,14 +94,15 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0278562, 0, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0163574, 0.952156, -0.451721)
 shape = SubResource("BoxShape3D_yhqr1")
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("2_ktydv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -110,3 +113,10 @@ shape = SubResource("BoxShape3D_yhqr1")
 libraries = {
 "": SubResource("AnimationLibrary_vqv53")
 }
+
+[node name="close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_4p8vl")
+
+[node name="open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_mb1hf")
+max_db = 0.0

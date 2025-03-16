@@ -1993,6 +1993,7 @@ mesh = SubResource("ArrayMesh_aemt2")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="the changbang"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="the changbang/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0on00")
@@ -2012,6 +2013,7 @@ mesh = SubResource("ArrayMesh_gfy3k")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="glass"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="glass/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xejes")
@@ -2042,14 +2044,15 @@ mesh = SubResource("ArrayMesh_u75tx")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="magic wall mesh"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250218, -0.980523)
 shape = SubResource("BoxShape3D_5kl51")
 
 [node name="Area3D" type="Area3D" parent="magic wall mesh"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="magic wall mesh/Area3D"]
@@ -2062,14 +2065,15 @@ mesh = SubResource("ArrayMesh_den3f")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="stairs"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_3twmp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="stairs"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1e1d3")
@@ -2081,14 +2085,15 @@ mesh = SubResource("ArrayMesh_ye3mw")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="stairs_001"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("11_qtcwo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_001/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_y5qhg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="stairs_001"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_av1ko")
@@ -2099,8 +2104,8 @@ mesh = SubResource("ArrayMesh_xrubd")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="stairs_002"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_002/Area3D"]
@@ -2108,6 +2113,7 @@ shape = SubResource("ConcavePolygonShape3D_kcvfv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="stairs_002"]
 transform = Transform3D(0.84266, -7.36677e-08, -0.438661, -8.30516e-08, -0.95, 0, -0.438661, 3.8349e-08, -0.84266, 0, 7.945, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_002/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_av1ko")
@@ -2119,13 +2125,14 @@ mesh = SubResource("ArrayMesh_6aa8o")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor first"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor first/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_km84t")
 
 [node name="Area3D" type="Area3D" parent="floor first"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("11_qtcwo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor first/Area3D"]
@@ -2137,13 +2144,14 @@ mesh = SubResource("ArrayMesh_l42ur")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor second"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor second/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2mvvj")
 
 [node name="Area3D" type="Area3D" parent="floor second"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor second/Area3D"]
@@ -2156,6 +2164,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="granite floor2"]
 transform = Transform3D(0.991445, 0, -0.130526, 0, 1, 0, 0.130526, 0, 0.991445, 0, 0, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="granite floor2/StaticBody3D"]
 transform = Transform3D(0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, 0)
@@ -2163,8 +2172,8 @@ shape = SubResource("ConcavePolygonShape3D_2mvvj")
 
 [node name="Area3D" type="Area3D" parent="granite floor2"]
 transform = Transform3D(0.991445, 0, -0.130526, 0, 1, 0, 0.130526, 0, 0.991445, 0, 0, 0)
-collision_layer = 2
-collision_mask = 8
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("8_di64h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="granite floor2/Area3D"]
@@ -2180,6 +2189,7 @@ mesh = SubResource("ArrayMesh_w055t")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/floor ufourth2"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/floor ufourth2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jlslc")
@@ -2211,8 +2221,8 @@ omni_attenuation = -0.1
 
 [node name="Area3D" type="Area3D" parent="SpotLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000636905, 0, 0.000635147)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 10
+collision_mask = 10
 script = ExtResource("15_7ryq8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpotLight3D/Area3D"]
@@ -2268,8 +2278,8 @@ mesh = SubResource("ArrayMesh_c8kpp")
 skeleton = NodePath("")
 
 [node name="Area3D2" type="Area3D" parent="SpotLight3D"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 10
+collision_mask = 10
 script = ExtResource("15_7ryq8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpotLight3D/Area3D2"]

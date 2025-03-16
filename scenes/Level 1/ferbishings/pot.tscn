@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cvrgxfrqyjown"]
+[gd_scene load_steps=7 format=4 uid="uid://cvrgxfrqyjown"]
 
 [ext_resource type="Texture2D" uid="uid://b8tbgwy4f1t5" path="res://Assets/Level 1/objects/grass.jpg" id="1_ivl61"]
 
@@ -70,9 +70,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sixux")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6b70n"]
+height = 0.455658
+radius = 0.275048
+
 [node name="Node3D" type="Node3D"]
 
 [node name="pot" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.249374, 0, 0, 0, 0.249374, 0, 0, 0, 0.249374, 0, 0, 0)
 mesh = SubResource("ArrayMesh_nnpn3")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298129, 0)
+shape = SubResource("CylinderShape3D_6b70n")

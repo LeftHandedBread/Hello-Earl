@@ -192,6 +192,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0278562, 0, 0)
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0163574, 0.952156, -0.451721)
@@ -201,7 +202,6 @@ shape = SubResource("BoxShape3D_o6wpe")
 [node name="Interactible3D" type="Area3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.85, -0.75)
 script = ExtResource("2_tiaej")
-InteractText = "+"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Interactible3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0742346, 0.0825722, 0.294206)

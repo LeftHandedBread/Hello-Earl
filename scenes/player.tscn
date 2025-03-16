@@ -135,7 +135,7 @@ height = 1.4254
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.782233, 0)
-collision_mask = 5
+collision_mask = 21
 floor_stop_on_slope = false
 floor_max_angle = 1.13446
 floor_snap_length = 0.13

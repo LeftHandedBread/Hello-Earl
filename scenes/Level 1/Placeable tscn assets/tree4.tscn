@@ -352,6 +352,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tree-01-4"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree-01-4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00722504, 0.481404, -0.020874)

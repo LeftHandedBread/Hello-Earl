@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://b6fkg4k5ec45b"]
+[gd_scene load_steps=6 format=4 uid="uid://b6fkg4k5ec45b"]
 
 [ext_resource type="Texture2D" uid="uid://di10dsgpef8qs" path="res://Assets/Level 1/objects/frame wood.jpg" id="1_bmrjk"]
 
@@ -41,9 +41,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ayisf")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bdhw"]
+size = Vector3(0.729309, 0.798523, 2.06195)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="tv table" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.348858, 0, 0, 0, 0.401176, 0, 0, 0, 1.02909, 0, 0.357431, 0)
 mesh = SubResource("ArrayMesh_1sei8")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357431, 0)
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122367, -0.00167757, 9.15471e-05)
+shape = SubResource("BoxShape3D_6bdhw")

@@ -991,6 +991,7 @@ mesh = SubResource("ArrayMesh_6a2r6")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="cave"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cave/StaticBody3D"]
 visible = false
@@ -1017,6 +1018,7 @@ mesh = SubResource("ArrayMesh_ao7ec")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="table"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="table/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0299, -4.83733, 38.7057)
@@ -1088,6 +1090,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="fancy grate"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fancy grate/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14377, 1.33168, 0.322146)
@@ -1116,6 +1119,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="static grate"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="static grate/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17493, 1.21265, -0.00250244)
@@ -1126,6 +1130,7 @@ transform = Transform3D(-0.420767, 0, -0.907169, 0, 1, 0, 0.907169, 0, -0.420767
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="static grate/second stone"]
 transform = Transform3D(0.999986, 0, 0, 0, 0.999988, 0, 0, 0, 0.999989, 0.0121059, -0.0406895, 0.0525208)
+collision_layer = 16
 
 [node name="Cube" type="MeshInstance3D" parent="static grate/second stone/AnimatableBody3D"]
 transform = Transform3D(0.741538, 0, 0, 0, 0.140689, 0, 0, 0, 0.692477, 0, 0.0267987, 0)
@@ -1152,6 +1157,7 @@ transform = Transform3D(-0.990241, 0, -0.139363, 0, 1, 0, 0.139363, 0, -0.990241
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="static grate/first stone"]
 transform = Transform3D(0.999986, 0, 2.98023e-08, 0, 0.999982, 0, 0, 0, 0.999989, -0.00303268, 0.00482225, 0.00555038)
+collision_layer = 16
 
 [node name="Cube" type="MeshInstance3D" parent="static grate/first stone/AnimatableBody3D"]
 transform = Transform3D(0.741538, 0, -2.98023e-08, 0, 0.140689, 0, -2.98023e-08, 0, 0.692477, 0, 0.0267987, 0)

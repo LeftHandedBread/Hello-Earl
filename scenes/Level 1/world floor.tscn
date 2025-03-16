@@ -84,6 +84,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Grid"]
 visible = false
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Grid/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_kfub3")
