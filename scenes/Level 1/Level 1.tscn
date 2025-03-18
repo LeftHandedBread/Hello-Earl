@@ -1318,6 +1318,7 @@ transform = Transform3D(0.999996, 2.2538e-07, -8.49366e-07, 7.63685e-08, 0.99994
 shape = SubResource("BoxShape3D_a3401")
 
 [node name="SubViewport" type="SubViewport" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
+disable_3d = true
 handle_input_locally = false
 size = Vector2i(720, 480)
 render_target_update_mode = 4

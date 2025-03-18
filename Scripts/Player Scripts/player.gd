@@ -268,5 +268,12 @@ func reset_shoe_effects():
 	JUMP_VELOCITY = 7.5
 	DEFAULT_SPEED = 4
 	SPRINT_SPEED = 7.5
+	
+	
+func stairAssist(yes):
+	if yes:
+		$CollisionShape3D2.disabled = false
+	else:
+		$CollisionShape3D2.disabled = true
 
 #endregion

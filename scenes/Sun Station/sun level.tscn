@@ -1,9 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://b67gox8wfb1v5"]
+[gd_scene load_steps=15 format=3 uid="uid://b67gox8wfb1v5"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_iwfmr"]
 [ext_resource type="Script" path="res://scenes/Sun Station/sun_level.gd" id="1_krkmo"]
+[ext_resource type="MeshLibrary" uid="uid://dj3e3pmtm1wvt" path="res://Assets/sun/tileset.tres" id="3_agpl0"]
+[ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="3_qpp3i"]
+[ext_resource type="PackedScene" uid="uid://bygwej3ni6auw" path="res://scenes/Level 1/Placeable tscn assets/light.tscn" id="4_wma6e"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6nmbc"]
+panorama = ExtResource("3_qpp3i")
+energy_multiplier = 3.42
+
+[sub_resource type="Sky" id="Sky_rtt45"]
+sky_material = SubResource("PanoramaSkyMaterial_6nmbc")
 
 [sub_resource type="Environment" id="Environment_x518s"]
+background_mode = 2
+sky = SubResource("Sky_rtt45")
+ambient_light_energy = 0.0
+reflected_light_source = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcgs4"]
 disable_ambient_light = true
@@ -17,48 +31,105 @@ disable_receive_shadows = true
 material = SubResource("StandardMaterial3D_rcgs4")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7q0l"]
-size = Vector3(6.85687, 0.119141, 4.58261)
+size = Vector3(6.85687, 0.119141, 4.79277)
+
+[sub_resource type="Animation" id="Animation_4cvit"]
+resource_name = "dayCycle"
+length = 600.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 600),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.28319, 6.28319, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_npa6c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1aff"]
+_data = {
+"RESET": SubResource("Animation_npa6c"),
+"dayCycle": SubResource("Animation_4cvit")
+}
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_krkmo")
+
+[node name="Player" parent="." instance=ExtResource("1_iwfmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0247566, 2.41341, -5.19929)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x518s")
 
 [node name="spawnroom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="spawnroom"]
-transform = Transform3D(3.74266, 0, 0, 0, 3.74266, 0, 0, 0, 3.74266, 0, -2.09663, 0.797085)
+transform = Transform3D(3.74266, 0, 0, 0, 3.74266, 0, 0, 0, 3.74266, 0, -1.011, -4.73)
 mesh = SubResource("PlaneMesh_tb1fq")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="spawnroom"]
-transform = Transform3D(3.74266, 0, 0, 0, -3.74266, 3.27193e-07, 0, -3.27193e-07, -3.74266, 0, 4.59166, -0.781746)
+transform = Transform3D(3.74266, 0, 0, 0, -3.74266, 3.27193e-07, 0, -3.27193e-07, -3.74266, 0, 5, -5)
 mesh = SubResource("PlaneMesh_tb1fq")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="spawnroom"]
-transform = Transform3D(-1.63597e-07, -3.74266, 1.63597e-07, 0, -1.63597e-07, -3.74266, 3.74266, -1.63597e-07, 7.15104e-15, 3.86069, 1.14835, -0.781746)
+transform = Transform3D(-1.63597e-07, -3.74266, 1.63597e-07, 0, -1.63597e-07, -3.74266, 3.74266, -1.63597e-07, 7.15104e-15, 3, 2, -5)
 mesh = SubResource("PlaneMesh_tb1fq")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="spawnroom"]
-transform = Transform3D(-1.63597e-07, 3.74266, -1.63597e-07, 0, -1.63597e-07, -3.74266, -3.74266, -1.63597e-07, 7.15104e-15, -3.33466, 1.14836, -0.781746)
+transform = Transform3D(-1.63597e-07, 3.74266, -1.63597e-07, 0, -1.63597e-07, -3.74266, -3.74266, -1.63597e-07, 7.15104e-15, -3, 2, -5)
 mesh = SubResource("PlaneMesh_tb1fq")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="spawnroom"]
-transform = Transform3D(3.74266, 0, 0, 0, -1.63597e-07, -3.74266, 0, 3.74266, -1.63597e-07, 0, 1.14836, -0.781746)
+transform = Transform3D(3.74266, 0, 0, 0, -1.63597e-07, -3.74266, 0, 3.74266, -1.63597e-07, 0, 2, -8)
 mesh = SubResource("PlaneMesh_tb1fq")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="spawnroom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500443, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -5)
 collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spawnroom/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147186, 0.44043, 1.50859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147186, -0.0498782, 1.61367)
 shape = SubResource("BoxShape3D_x7q0l")
 
-[node name="Player" parent="." instance=ExtResource("1_iwfmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0247566, 0.78179, -0.00170684)
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_agpl0")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65534, 65535, 655360, 1, 65535, 655360, 65533, 65535, 655360, 2, 65535, 655360, 65534, 0, 2, 65535, 0, 2, 65535, 65535, 2, 0, 65535, 2, 0, 0, 2, 1, 0, 2, 2, 0, 2, 65533, 0, 2, 3, 65535, 655361, 65532, 65535, 1441793, 65532, 1, 1, 3, 1, 1048577, 65532, 0, 1441792, 3, 0, 1048576, 2, 1, 0, 65533, 1, 0, 1, 1, 0, 65534, 1, 0, 65535, 2, 1441792, 65535, 3, 1441792, 65535, 1, 3, 0, 1, 1048579, 0, 2, 1048576, 0, 3, 1048576, 65535, 4, 1441795, 0, 4, 655363, 1, 4, 655360, 2, 4, 655360, 65534, 4, 655360, 65533, 4, 655360, 3, 4, 655361, 65532, 4, 1441793, 65532, 5, 1441792, 65532, 6, 1441792, 65532, 7, 1441792, 3, 5, 1048576, 3, 6, 1048576, 3, 7, 1048576, 3, 8, 1048576, 3, 9, 1048576, 3, 10, 1048576, 65532, 8, 1441792, 65532, 9, 1441792, 65532, 10, 1441792, 65533, 11, 0, 2, 11, 0, 1, 11, 0, 65534, 11, 0, 0, 11, 1048579, 65535, 11, 3, 65532, 11, 1, 3, 11, 1048577, 65535, 12, 1441792, 0, 12, 1048576, 0, 13, 1048576, 0, 14, 1048577, 65535, 13, 1441795, 65535, 14, 0, 65534, 13, 655360, 65534, 14, 0, 65533, 5, 2, 65533, 6, 2, 65533, 7, 2, 65533, 8, 2, 65533, 9, 2, 65533, 10, 2, 65534, 10, 2, 65535, 10, 2, 0, 10, 2, 1, 10, 2, 2, 10, 2, 2, 9, 2, 2, 8, 2, 2, 7, 2, 2, 6, 2, 2, 5, 2, 1, 5, 2, 0, 5, 2, 65534, 5, 2, 65535, 5, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="ferbishings" type="Node3D" parent="."]
+
+[node name="light" parent="ferbishings" instance=ExtResource("4_wma6e")]
+transform = Transform3D(-0.2, 3.01992e-08, 0, -3.01992e-08, -0.2, 0, 0, 0, 0.2, 6.72006e-10, 2.99931, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i1aff")
+}
