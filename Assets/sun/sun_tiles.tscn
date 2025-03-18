@@ -3,3 +3,45 @@
 [ext_resource type="PackedScene" uid="uid://drnn8s36o1x0c" path="res://Assets/sun/sun tiles.glb" id="1_6llk1"]
 
 [node name="sun tiles" instance=ExtResource("1_6llk1")]
+
+[node name="StaticBody3D" parent="wall" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="cornerin" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="floor" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="cornerout" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="holecorner" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="ceiling" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="carpet" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="holeedge" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="holewall" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="doorway" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="doorwayop" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="holeedgetop" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="holecornertop" index="0"]
+collision_layer = 16
+
+[node name="StaticBody3D" parent="holewallcor" index="0"]
+collision_layer = 16

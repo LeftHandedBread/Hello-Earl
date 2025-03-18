@@ -271,9 +271,10 @@ func reset_shoe_effects():
 	
 	
 func stairAssist(yes):
-	if yes:
-		$CollisionShape3D2.disabled = false
-	else:
-		$CollisionShape3D2.disabled = true
+	pass
+	#if yes:
+		#$CollisionShape3D2.disabled = false
+	#else:
+		#$CollisionShape3D2.disabled = true
 
 #endregion
