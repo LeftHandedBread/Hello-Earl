@@ -150,7 +150,6 @@ shape = SubResource("CapsuleShape3D_p0oft")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.53, -0.320519)
 shape = SubResource("SeparationRayShape3D_q3nuy")
-disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.5, 0, -0.0302949, 0)
