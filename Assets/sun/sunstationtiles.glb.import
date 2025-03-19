@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drnn8s36o1x0c"
-path="res://.godot/imported/sun tiles.glb-6fbd6103562ab28b4990c7bbe9224d8a.scn"
+uid="uid://bqckbdltd3m1j"
+path="res://.godot/imported/sunstationtiles.glb-ceda58b89f231ff3fd5cd20f20435517.scn"
 
 [deps]
 
-source_file="res://Assets/sun/sun tiles.glb"
-dest_files=["res://.godot/imported/sun tiles.glb-6fbd6103562ab28b4990c7bbe9224d8a.scn"]
+source_file="res://Assets/sun/sunstationtiles.glb"
+dest_files=["res://.godot/imported/sunstationtiles.glb-ceda58b89f231ff3fd5cd20f20435517.scn"]
 
 [params]
 

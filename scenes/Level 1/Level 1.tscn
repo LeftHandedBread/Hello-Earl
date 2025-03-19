@@ -1,5 +1,6 @@
 [gd_scene load_steps=88 format=4 uid="uid://piq1qo6dhgdh"]
 
+[ext_resource type="Script" path="res://scenes/Level 1/level_1.gd" id="1_c4ui1"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/music_areas.gd" id="1_jq4wo"]
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_xbq7m"]
 [ext_resource type="Texture2D" uid="uid://cd74ymkemm7n" path="res://Assets/textures/skybox.jpeg" id="2_5viyr"]
@@ -890,8 +891,12 @@ sky_rotation = Vector3(0.785398, 0.785398, 0)
 ambient_light_source = 2
 ambient_light_color = Color(0.767196, 0.930646, 0.995519, 1)
 ambient_light_energy = 0.1
-tonemap_mode = 2
+tonemap_mode = 3
 tonemap_exposure = 0.9
+ssao_enabled = true
+ssil_enabled = true
+ssil_radius = 0.94
+sdfgi_bounce_feedback = 0.24
 fog_enabled = true
 fog_light_color = Color(0, 0.132272, 0.21706, 1)
 fog_light_energy = 0.77
@@ -927,9 +932,6 @@ radius = 0.291095
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v3sq0"]
 radius = 0.291101
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a3401"]
-size = Vector3(0.0453491, 6.30227, 3.85013)
 
 [sub_resource type="Environment" id="Environment_dao3u"]
 background_mode = 1
@@ -1147,7 +1149,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_y5bfa"]
 resource_name = "fade to sun"
-length = 5.0
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1155,10 +1157,10 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.566667, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.266667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 0.352941, 0, 0), Color(1, 0.352941, 0, 0.74902), Color(0.999818, 0.934772, 0.550879, 1), Color(0.999818, 0.934772, 0.550879, 1)]
+"values": [Color(1, 0.352941, 0, 0), Color(1, 0.352941, 0, 0.74902), Color(0.999818, 0.934772, 0.550879, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1183,6 +1185,7 @@ _data = {
 size = Vector3(1, 0.642185, 1)
 
 [node name="Node3D2" type="Node3D"]
+script = ExtResource("1_c4ui1")
 
 [node name="music areas" type="Node3D" parent="."]
 script = ExtResource("1_jq4wo")
@@ -1242,6 +1245,7 @@ mesh = SubResource("ArrayMesh_pww1b")
 skeleton = NodePath("")
 
 [node name="Circle_001" type="MeshInstance3D" parent="Player/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jx18l")
 skeleton = NodePath("")
 
@@ -1269,7 +1273,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46637e-06, 0.178172, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46636e-06, 0.178171, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -1278,15 +1282,18 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966783
 shadow_enabled = true
+shadow_bias = 0.001
+shadow_normal_bias = 9.034
 shadow_transmittance_bias = -7.061
-shadow_opacity = 0.94
-shadow_blur = 2.326
+shadow_opacity = 0.95
+shadow_blur = 3.597
 directional_shadow_split_1 = 0.051
 directional_shadow_split_2 = 0.097
 directional_shadow_split_3 = 0.285
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.443
-directional_shadow_max_distance = 300.7
+directional_shadow_max_distance = 200.0
+directional_shadow_pancake_size = 37.7
 sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]
@@ -1312,10 +1319,6 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 2.98023e-08, 1, 0, 0, 0)
 shape = SubResource("SphereShape3D_v3sq0")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(0.999996, 2.2538e-07, -8.49366e-07, 7.63685e-08, 0.999949, -1.58767e-06, 4.88013e-07, 7.52974e-07, 0.999975, 0.00771876, -0.0185287, 1.89783)
-shape = SubResource("BoxShape3D_a3401")
 
 [node name="SubViewport" type="SubViewport" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
 disable_3d = true
@@ -1362,7 +1365,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.999898, 0, 0, 0, 0.242513, -0.970052, 0, 0.970051, 0.242513, 443.412, -33.7529, -75.5749)
+transform = Transform3D(0.999895, -3.27794e-06, 1.70514e-13, 7.9501e-07, 0.242512, -0.97005, 3.18004e-06, 0.970048, 0.242512, 443.412, -33.7529, -75.5749)
 collision_layer = 16
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
@@ -1415,7 +1418,8 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.999898, 0, 0, 0, 0.242513, -0.970052, 0, 0.970051, 0.242513, 443.412, -33.7529, -75.5749)
+transform = Transform3D(0.999895, -3.27794e-06, 1.70514e-13, 7.9501e-07, 0.242512, -0.97005, 3.18004e-06, 0.970048, 0.242512, 443.412, -33.7529, -75.5749)
+progress = 2969.99
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 remote_path = NodePath("../../../AnimatableBody3D2")
@@ -1489,6 +1493,7 @@ mesh = SubResource("ArrayMesh_pww1b")
 skeleton = NodePath("")
 
 [node name="Circle_002" type="MeshInstance3D" parent="lil watch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jx18l")
 skeleton = NodePath("")
 
@@ -1526,6 +1531,10 @@ shape = SubResource("BoxShape3D_krugd")
 script = ExtResource("24_qdbth")
 
 [node name="HUD" parent="." instance=ExtResource("25_cqsl5")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
 
 [connection signal="body_entered" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_entered"]
 [connection signal="body_entered" from="music areas/entering mine" to="music areas" method="_on_entering_mine_body_entered"]

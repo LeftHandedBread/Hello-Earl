@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dusjnag2vx4vl"
-path.s3tc="res://.godot/imported/sun tiles_carpet.jpg-834b21cee3467780cf29940bfb3a3edb.s3tc.ctex"
+uid="uid://bdww82kx335qg"
+path.s3tc="res://.godot/imported/sunstationtiles_carpet.jpg-3ba648fcfc8a5001011bf974f1c58746.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/sun/sun tiles_carpet.jpg"
-dest_files=["res://.godot/imported/sun tiles_carpet.jpg-834b21cee3467780cf29940bfb3a3edb.s3tc.ctex"]
+source_file="res://Assets/sun/sunstationtiles_carpet.jpg"
+dest_files=["res://.godot/imported/sunstationtiles_carpet.jpg-3ba648fcfc8a5001011bf974f1c58746.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dusjnag2vx4vl"
-path.s3tc="res://.godot/imported/sun tiles_carpet.jpg-834b21cee3467780cf29940bfb3a3edb.s3tc.ctex"
+uid="uid://dgpq3w1fwlcmm"
+path.s3tc="res://.godot/imported/sunstationtiles_frame wood.jpg-0c6179e21a6b6c76168cf20d11a675b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "42df39000a5c95f0324289b6d772236d"
+"md5": "a3ae86fd530830ce0769a0770e93d968"
 }
 
 [deps]
 
-source_file="res://Assets/sun/sun tiles_carpet.jpg"
-dest_files=["res://.godot/imported/sun tiles_carpet.jpg-834b21cee3467780cf29940bfb3a3edb.s3tc.ctex"]
+source_file="res://Assets/sun/sunstationtiles_frame wood.jpg"
+dest_files=["res://.godot/imported/sunstationtiles_frame wood.jpg-0c6179e21a6b6c76168cf20d11a675b8.s3tc.ctex"]
 
 [params]
 

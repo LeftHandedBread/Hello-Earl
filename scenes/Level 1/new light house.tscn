@@ -24,6 +24,7 @@ transparency = 3
 alpha_hash_scale = 0.4
 alpha_antialiasing_mode = 0
 cull_mode = 2
+diffuse_mode = 2
 disable_ambient_light = true
 albedo_color = Color(1, 1, 1, 0)
 albedo_texture = ExtResource("1_ek12u")

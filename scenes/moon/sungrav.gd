@@ -8,10 +8,21 @@ extends Area3D
 @onready var fadeout = $"../../../../../../fadeToSun"
 
 var flipper = 1
+var timeRun = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GameManager.sungrav:
+		if !timeRun:
+			$"../../../../../../Timer".start()
+			timeRun = true
+			preload("res://scenes/Sun Station/sun level.tscn")
+				
+		if $"../../../../../../Timer".time_left == 0:
+			GameManager.player.velocity *= .9
+			if GameManager.player.velocity.length() <= 4:
+				$"../../../../../../Timer".start()
+			
 		GameManager.characterShoes = GameManager.Shoes.LEAD
 		coll.disabled = false
 		daycycle.pause()
@@ -23,15 +34,12 @@ func _process(delta: float) -> void:
 		
 		set_gravity(flipper * (distance/100 + 16))
 		
-		print(distance, "   ", get_gravity())
+		print(GameManager.player.velocity)
 		
 		if distance < 75:
 			fadeout.play("fade to sun")
 			await fadeout.animation_finished
-			var new_scene = load("res://scenes/Sun Station/sun level.tscn").instantiate()
-			get_tree().root.add_child(new_scene)
-			get_tree().current_scene.queue_free()
-			get_tree().current_scene = new_scene
+			$"../../../../../..".itsTime()
 			
 	if !GameManager.sungrav:
 		coll.disabled = true

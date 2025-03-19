@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bygwej3ni6auw"]
+[gd_scene load_steps=3 format=3 uid="uid://bygwej3ni6auw"]
 
 [ext_resource type="PackedScene" uid="uid://c4spsvnlpiyw3" path="res://Assets/Level 1/objects/light.gltf" id="1_4lw5e"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ufii1"]
+points = PackedVector3Array(0.266466, -0.0133254, 0.826112, -0.15978, -0.0133254, -0.852825, -0.266466, -0.0133254, -0.826112, -0.0957861, 0.492835, -0.167701, -0.799399, -0.0133254, 0.372986, 0.799399, -0.0133254, -0.372986, 0.193155, 0.397963, 0.507012, 0.484025, 0.349946, -0.41139, -0.583819, 0.374843, -0.072863, 0.729882, 0.177744, 0.327178, -0.416583, 0.302175, 0.563685, -0.521067, 0.253183, -0.545783, -0.799399, -0.0133254, -0.372986, 0.149905, 0.253183, -0.725091, 0.583819, 0.374843, 0.072863, -0.372986, -0.0133254, 0.799399, 0.692879, -0.0133254, 0.559646, 0.479673, -0.0133254, -0.746139, 0.149909, 0.253183, 0.725109, -0.0957858, 0.492835, 0.1677, -0.169586, 0.422797, -0.460327, -0.760087, 0.202532, 0.177322, 0.521067, 0.253183, 0.545783, 0.336104, 0.469312, 0.0239214, 0.760087, 0.202532, -0.177322, 0.852825, -0.0133254, 0.15978, -0.149909, 0.253183, -0.725109, 0.169584, 0.422795, -0.460321, 0.571334, 0.203525, -0.546433, -0.460321, 0.422795, 0.169584, -0.760075, 0.202533, -0.177319, -0.169584, 0.422795, 0.460321)
 
 [node name="light" instance=ExtResource("1_4lw5e")]
 
 [node name="Cube" parent="." index="0"]
 cast_shadow = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ufii1")
 
 [node name="Cube_001" parent="." index="1"]
 cast_shadow = 0
@@ -19,5 +28,7 @@ light_color = Color(1, 0.788087, 0.598686, 1)
 light_indirect_energy = 0.0
 shadow_enabled = true
 shadow_bias = 0.02
-shadow_normal_bias = 0.5
+shadow_normal_bias = 3.606
+shadow_opacity = 0.65
+shadow_blur = 2.949
 omni_range = 6.12744
