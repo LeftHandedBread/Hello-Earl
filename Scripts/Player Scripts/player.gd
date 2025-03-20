@@ -13,19 +13,21 @@ enum CharacterState {
 @onready var InteractRaycast := $head/RayCast3D
 @onready var camera := $head/Camera3D
 @onready var animator := $AnimationPlayer
+@onready var body := $CollisionShape3D
+@onready var feltGrav = Vector3.ZERO
 var currentBody : Interactible3D = null
 var currentState : CharacterState = CharacterState.WALKING
 @onready var SPEED = DEFAULT_SPEED # DEFAULT_SPEED doesn't load until _ready(), so we have to use @onready (you could also just move SPEED a bit to the bottom)
 
 # Options
-@export var DEFAULT_SPEED := 4
+@export var DEFAULT_SPEED := 4.0
 @export var SPRINT_SPEED := 7.5
 @export var JUMP_VELOCITY := 7.5
 @export var mouse_sensitivity := 0.1
 @export var CROUCH_SPEED := 2.5
-@export var GROUND_FRICTION := 10
+@export var GROUND_FRICTION := 10.0
 @export var AIR_FRICTION := 0.5
-@export var GRAVITY_MULTIPLIER := 2
+@export var GRAVITY_MULTIPLIER := 2.0
 var inputEnabled := true # can the player move?
 var aimlookEnabled := true # can the player look around?
 var interactionsEnabled := true # can the player interact with Interactibles3D?
@@ -45,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	up_direction = -get_gravity().normalized()
-	#print(up_direction)
+	feltGrav = get_gravity()
 	
 	# Apply gravity if in the air
 	if not is_on_floor():
@@ -95,10 +97,8 @@ func _physics_process(delta: float) -> void:
 		reset_shoe_effects()
 		DEFAULT_SPEED = 5
 		SPRINT_SPEED = 12
-	elif GameManager.characterShoes == GameManager.Shoes.LEAD:
-		reset_shoe_effects()
-		DEFAULT_SPEED = .01
-		SPRINT_SPEED = .01
+	elif GameManager.characterShoes == GameManager.Shoes.SUN:
+		pass
 	
 	
 	if velocity.length() != 0 and is_on_floor():
@@ -108,11 +108,11 @@ func _physics_process(delta: float) -> void:
 			$stepping.volume_db = randf() * 2.0 - 5.0
 			$stepping.play()
 			if currentState == CharacterState.WALKING:
-				$Timer.start(randf() * 0.1 + 0.4)
+				$Timer.start((randf() * 0.1 + 0.4) * (4.0 / DEFAULT_SPEED))
 			if currentState == CharacterState.SPRINTING:
-				$Timer.start(randf() * 0.1 + 0.2)
+				$Timer.start((randf() * 0.1 + 0.2) * (7.5 / SPRINT_SPEED))
 			if currentState == CharacterState.CROUCHING:
-				$Timer.start(randf() * 0.1 + 0.75)
+				$Timer.start((randf() * 0.1 + 0.75) * (2.5 / CROUCH_SPEED))
 	
 	
 	# All of the other processing functions go here
