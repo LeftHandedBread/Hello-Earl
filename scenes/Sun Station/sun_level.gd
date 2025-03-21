@@ -11,4 +11,4 @@ func _ready() -> void:
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("dayCycle")
 	$"magic material/dark platties/AnimationPlayer".play("swang")
-	
+	$WorldEnvironment.environment.fog_enabled = false

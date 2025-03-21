@@ -26,7 +26,8 @@ enum Shoes {
 	NONE = 0,
 	NICOTINE = 1,
 	COKE = 2,
-	SUN = 3
+	SUN = 3,
+	GRAV = 4
 }
 
 enum Light {

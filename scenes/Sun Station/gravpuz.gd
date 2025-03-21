@@ -23,7 +23,11 @@ func _process(_delta: float) -> void:
 			if area is Area3D:
 				for coll in area.get_children():
 					if coll is CollisionShape3D:
-						coll.disabled = false
+						if !coll.name == "shaft":
+							coll.disabled = false
+						else:
+							if GameManager.characterShoes == GameManager.Shoes.GRAV:
+								coll.disabled = false
 			if area is StaticBody3D:
 				for coll in area.get_children():
 					coll.disabled = false

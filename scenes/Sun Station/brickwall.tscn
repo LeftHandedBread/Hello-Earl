@@ -1,0 +1,153 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvoxnvd0nidew"]
+
+[ext_resource type="Script" path="res://scenes/Sun Station/brickwall.gd" id="1_mnvel"]
+[ext_resource type="Texture2D" uid="uid://c87cp2yapnn8b" path="res://Assets/sun/sunstationtiles_wll paper 2.jpg" id="1_xo0k0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4wco"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_xo0k0")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vmmtd"]
+_surfaces = [{
+"aabb": AABB(-0.5, -1, 0.5, 1, 1, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 2, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4wckm"]
+resource_name = "sunstationtiles_Plane_014"
+_surfaces = [{
+"aabb": AABB(-0.5, -1, 0.5, 1, 1, 1e-05),
+"attribute_data": PackedByteArray(192, 122, 185, 126, 255, 255, 185, 126, 192, 122, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_v4wco"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(1.92125, 1.98031, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vmmtd")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_mnvel")
+
+[node name="holewall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")
+
+[node name="holewall18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.948246)
+visible = false
+mesh = SubResource("ArrayMesh_4wckm")
+skeleton = NodePath("")

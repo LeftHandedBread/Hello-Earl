@@ -56,8 +56,14 @@ func _physics_process(delta: float) -> void:
 	
 	
 	# Jumping
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and !GameManager.isUpsideDown:
+		print("is on floor")
 		velocity.y = JUMP_VELOCITY
+		$jump.pitch_scale = randf() * 0.2 + 0.8
+		$jump.play()
+	elif Input.is_action_just_pressed("jump") and is_on_floor() and GameManager.isUpsideDown:
+		print("is on ceiling")
+		velocity.y = -JUMP_VELOCITY
 		$jump.pitch_scale = randf() * 0.2 + 0.8
 		$jump.play()
 	
@@ -99,6 +105,8 @@ func _physics_process(delta: float) -> void:
 		SPRINT_SPEED = 12
 	elif GameManager.characterShoes == GameManager.Shoes.SUN:
 		pass
+	elif GameManager.characterShoes == GameManager.Shoes.GRAV:
+		pass
 	
 	
 	if velocity.length() != 0 and is_on_floor():
@@ -108,11 +116,11 @@ func _physics_process(delta: float) -> void:
 			$stepping.volume_db = randf() * 2.0 - 5.0
 			$stepping.play()
 			if currentState == CharacterState.WALKING:
-				$Timer.start((randf() * 0.1 + 0.4) * (4.0 / DEFAULT_SPEED))
+				$Timer.start((randf() * 0.1 + 0.4))
 			if currentState == CharacterState.SPRINTING:
-				$Timer.start((randf() * 0.1 + 0.2) * (7.5 / SPRINT_SPEED))
+				$Timer.start((randf() * 0.1 + 0.2))
 			if currentState == CharacterState.CROUCHING:
-				$Timer.start((randf() * 0.1 + 0.75) * (2.5 / CROUCH_SPEED))
+				$Timer.start((randf() * 0.1 + 0.75))
 	
 	
 	# All of the other processing functions go here
@@ -275,5 +283,11 @@ func stairAssist(yes):
 		$CollisionShape3D2.disabled = false
 	else:
 		$CollisionShape3D2.disabled = true
+		
+func secret(k):
+	if k:
+		$secret.disabled = false
+	else:
+		$secret.disabled = true
 
 #endregion

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=21 format=4 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player.gd" id="1_yofdb"]
 [ext_resource type="Script" path="res://Scripts/Player Scripts/flashlight_manager.gd" id="2_ecvki"]
@@ -13,6 +13,10 @@ height = 1.30648
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_q3nuy"]
 length = 0.25
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ntbc"]
+radius = 0.625782
+height = 1.42066
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
 
@@ -122,10 +126,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2)
 }
 
+[sub_resource type="Animation" id="Animation_llg52"]
+resource_name = "grouch"
+length = 0.25
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.25, 1, 1, 1.505, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0, 0.25, 1, 0, 1.8, 0)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_auuwx"]
 _data = {
 "RESET": SubResource("Animation_fnymu"),
 "crouch": SubResource("Animation_nuoua"),
+"grouch": SubResource("Animation_llg52"),
 "sprint": SubResource("Animation_px50k")
 }
 
@@ -149,6 +172,10 @@ shape = SubResource("CapsuleShape3D_p0oft")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.53, -0.320519)
 shape = SubResource("SeparationRayShape3D_q3nuy")
+
+[node name="secret" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0ntbc")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.5, 0, -0.0302949, 0)
