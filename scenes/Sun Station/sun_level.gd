@@ -12,3 +12,9 @@ func _ready() -> void:
 	$AnimationPlayer.play("dayCycle")
 	$"magic material/dark platties/AnimationPlayer".play("swang")
 	$WorldEnvironment.environment.fog_enabled = false
+
+
+func goodbye():
+	for child in get_children():
+		if !child == $Player and !child == $WorldEnvironment and !child == $AnimationPlayer:
+				child.queue_free()

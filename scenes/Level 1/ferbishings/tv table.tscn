@@ -52,9 +52,7 @@ mesh = SubResource("ArrayMesh_1sei8")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357431, 0)
-collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122367, -0.00167757, 9.15471e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122367, 0.355753, 9.15471e-05)
 shape = SubResource("BoxShape3D_6bdhw")

@@ -1272,7 +1272,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46637e-06, 0.178172, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46636e-06, 0.178171, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -1296,7 +1296,7 @@ directional_shadow_pancake_size = 37.7
 sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D"]
-transform = Transform3D(-145.281, -52.8782, 0, -0.000191419, 0.000525916, -154.605, 52.8782, -145.281, -0.000559669, 0, -2.07424e-05, 483.623)
+transform = Transform3D(-145.281, -52.8782, 0, -0.000191419, 0.000525916, -154.605, 52.8782, -145.281, -0.000559668, 0, -2.07424e-05, 483.623)
 layers = 2
 mesh = SubResource("SphereMesh_lbn6l")
 
@@ -1320,17 +1320,23 @@ transform = Transform3D(1, -2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 2.9
 shape = SubResource("SphereShape3D_v3sq0")
 
 [node name="SubViewport" type="SubViewport" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
-disable_3d = true
 handle_input_locally = false
+mesh_lod_threshold = 583.5
+scaling_3d_scale = 0.36
+texture_mipmap_bias = -1.0
 size = Vector2i(720, 480)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/SubViewport"]
 transform = Transform3D(0.84772, -0.443777, -0.290572, 0.0553122, -0.47085, 0.880477, -0.527552, -0.762471, -0.374603, -141.108, 430.907, -179.325)
-cull_mask = 1048573
+cull_mask = 1
 environment = SubResource("Environment_dao3u")
+h_offset = 3.435
+current = true
 fov = 13.8
-far = 668.55
+size = 100.0
+near = 10.0
+far = 550.0
 script = ExtResource("3_cnwoo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/SubViewport/Camera3D"]
@@ -1338,6 +1344,8 @@ libraries = {
 "": SubResource("AnimationLibrary_ekwmf")
 }
 script = ExtResource("4_fxdxl")
+
+[node name="fps" type="Timer" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/SubViewport"]
 
 [node name="Area3D" type="Area3D" parent="Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D"]
 collision_layer = 4
@@ -1364,7 +1372,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.999895, -3.69523e-06, -6.8524e-07, 2.31441e-07, 0.242511, -0.97005, 3.75107e-06, 0.970048, 0.242512, 443.412, -33.7537, -75.5747)
+transform = Transform3D(0.999892, -3.27793e-06, 1.70514e-13, 7.95008e-07, 0.242511, -0.970049, 3.18003e-06, 0.970045, 0.242512, 443.412, -33.7529, -75.5749)
 collision_layer = 16
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
@@ -1417,7 +1425,7 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.999895, -3.69523e-06, -6.8524e-07, 2.31441e-07, 0.242511, -0.97005, 3.75107e-06, 0.970048, 0.242512, 443.412, -33.7537, -75.5747)
+transform = Transform3D(0.999892, -3.27793e-06, 1.70514e-13, 7.95008e-07, 0.242511, -0.970049, 3.18003e-06, 0.970045, 0.242512, 443.412, -33.7529, -75.5749)
 progress = 2969.99
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]

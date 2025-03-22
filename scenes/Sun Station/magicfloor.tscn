@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ykwyyai733jm"]
+
+[ext_resource type="Script" path="res://Scripts/Interactibles/visible_when_not_illuminated.gd" id="2_4ef5h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a7i8f"]
+load_path = "res://.godot/imported/sunstationtiles_carpet.jpg-3ba648fcfc8a5001011bf974f1c58746.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jwvg"]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_a7i8f")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fsmyh"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 1, 0, 3, 0, 2, 0, 0, 0, 1, 0),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_et8y0"]
+resource_name = "sunstationtiles_Plane_012"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 10, 250, 255, 255, 10, 250),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 1, 0, 3, 0, 2, 0, 0, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_3jwvg"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fsmyh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8yaq"]
+size = Vector3(1, 0.00524902, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsap7"]
+size = Vector3(1, 0.0488281, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="carpet" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_et8y0")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00250244, 0)
+visible = false
+shape = SubResource("BoxShape3D_c8yaq")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 10
+collision_mask = 10
+script = ExtResource("2_4ef5h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000976563, 0)
+visible = false
+shape = SubResource("BoxShape3D_jsap7")

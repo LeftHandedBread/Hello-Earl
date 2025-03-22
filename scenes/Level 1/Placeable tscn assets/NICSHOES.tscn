@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://b6v7po57r0005"]
 
-[ext_resource type="Texture2D" uid="uid://bl87fvfi20qxg" path="res://Assets/sun/tiledgraniteslabs_tiledgraniteslabs_granite.jpg" id="1_trnyq"]
+[ext_resource type="Texture2D" uid="uid://dvit8r4y5gbua" path="res://Assets/Level 1/objects/cigarette.webp" id="1_qypbu"]
 [ext_resource type="Script" path="res://Scripts/Interactibles/nicotine_shoes.gd" id="2_3jy6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bif3b"]
@@ -13,11 +13,9 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bbwi"]
 resource_name = "Material.002"
 cull_mode = 2
-albedo_texture = ExtResource("1_trnyq")
+albedo_texture = ExtResource("1_qypbu")
 roughness = 0.5
-uv1_scale = Vector3(-0.38, -0.38, -0.38)
 uv1_offset = Vector3(0.06, 0, 0)
-uv1_triplanar = true
 uv1_triplanar_sharpness = 4.2871
 uv1_world_triplanar = true
 

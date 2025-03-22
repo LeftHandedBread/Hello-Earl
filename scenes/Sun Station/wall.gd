@@ -11,4 +11,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		for mesh in $".".get_children():
 			if mesh is MeshInstance3D:
 				mesh.visible = true
-		$StaticBody3D/CollisionShape3D.disabled = false
+		$StaticBody3D/CollisionShape3D.call_deferred("set", "disabled", false)

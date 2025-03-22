@@ -286,8 +286,8 @@ func stairAssist(yes):
 		
 func secret(k):
 	if k:
-		$secret.disabled = false
+		$secret.call_deferred("set", "disabled", false)
 	else:
-		$secret.disabled = true
+		$secret.call_deferred("set", "disabled", true)
 
 #endregion

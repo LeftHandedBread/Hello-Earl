@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 			if GameManager.player.velocity.length() <= 4:
 				$"../../../../../../Timer".start()
 			
-		GameManager.characterShoes = GameManager.Shoes.LEAD
 		coll.disabled = false
 		daycycle.pause()
 		light.light_color = "c3d4f1"

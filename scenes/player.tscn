@@ -111,21 +111,6 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0, 0.25, 1, 0, 0.2, 0)
 
-[sub_resource type="Animation" id="Animation_px50k"]
-resource_name = "sprint"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("head/Camera3D:fov")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(90, -0.1, 0, 0.1, 0, 95, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0, 0.2)
-}
-
 [sub_resource type="Animation" id="Animation_llg52"]
 resource_name = "grouch"
 length = 0.25
@@ -143,6 +128,21 @@ tracks/1/path = NodePath("head")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0, 0.25, 1, 0, 1.8, 0)
+
+[sub_resource type="Animation" id="Animation_px50k"]
+resource_name = "sprint"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("head/Camera3D:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(90, -0.1, 0, 0.1, 0, 95, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_auuwx"]
 _data = {
@@ -172,6 +172,7 @@ shape = SubResource("CapsuleShape3D_p0oft")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.53, -0.320519)
 shape = SubResource("SeparationRayShape3D_q3nuy")
+disabled = true
 
 [node name="secret" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0ntbc")
