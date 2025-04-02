@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c86a1so63auep"]
+[gd_scene load_steps=20 format=4 uid="uid://c86a1so63auep"]
 
 [ext_resource type="Script" path="res://scenes/mannequin/manitower.gd" id="1_5yjtp"]
 [ext_resource type="Texture2D" uid="uid://dsfcjwbrrj6un" path="res://Assets/mannequin.webp" id="1_muhld"]
@@ -134,10 +134,10 @@ tracks/0/path = NodePath("mannequin:mesh:surface_0/material:albedo_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_kvi83"]
@@ -1576,6 +1576,10 @@ _data = {
 height = 3.49353
 radius = 0.735335
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d6ta5"]
+height = 4.03832
+radius = 3.06679
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_5yjtp")
 
@@ -1616,7 +1620,7 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(1, -3.94084e-08, -1.90506e-07, 4.57761e-08, 0.999437, 0.0335413, 1.89077e-07, -0.0335413, 0.999437, -6.18949e-15, 0.0620889, -2.79397e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(-6.18949e-15, 0.0620889, -2.79397e-09)
-bones/4/rotation = Quaternion(-0.387201, 0.0753157, -0.0197069, 0.918702)
+bones/4/rotation = Quaternion(-0.387201, 0.0753157, -0.0197069, 0.918703)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "ORG-shoulder.L"
 bones/5/parent = 2
@@ -1658,14 +1662,14 @@ bones/10/parent = 9
 bones/10/rest = Transform3D(-0.0855718, -0.45766, -0.885, -0.0327138, 0.88907, -0.456601, 0.995795, -0.0101204, -0.091051, -0.019394, 0.191247, -0.0010612)
 bones/10/enabled = true
 bones/10/position = Vector3(-0.019394, 0.191247, -0.0010612)
-bones/10/rotation = Quaternion(0.843674, -0.307109, 0.150517, 0.413816)
+bones/10/rotation = Quaternion(0.843673, -0.307109, 0.150517, 0.413816)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/name = "ORG-forearm.R"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.984114, 0.00613025, 0.177428, -0.00397063, 0.999914, -0.0125243, -0.17749, 0.0116208, 0.984054, -1.40426e-07, 0.354018, 8.44011e-09)
 bones/11/enabled = true
 bones/11/position = Vector3(-1.40426e-07, 0.354018, 8.44011e-09)
-bones/11/rotation = Quaternion(0.00124624, 0.721678, -0.0651893, 0.689152)
+bones/11/rotation = Quaternion(0.00124623, 0.721678, -0.0651893, 0.689151)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "ORG-hand.R"
 bones/12/parent = 11
@@ -1749,7 +1753,7 @@ bones/23/parent = 22
 bones/23/rest = Transform3D(0.999999, -3.23503e-05, 0.00111134, 7.7012e-05, 0.999191, -0.0402107, -0.00110914, 0.0402108, 0.999191, 3.12548e-09, 0.422001, -1.80444e-09)
 bones/23/enabled = true
 bones/23/position = Vector3(3.12548e-09, 0.422001, -1.80444e-09)
-bones/23/rotation = Quaternion(0.818729, 0.00322602, 0.0827141, 0.568181)
+bones/23/rotation = Quaternion(0.818729, 0.00322602, 0.0827142, 0.568181)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/name = "ORG-foot.R"
 bones/24/parent = 23
@@ -1793,3 +1797,12 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67769, -0.389228)
 shape = SubResource("CylinderShape3D_ql4ep")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.923274, 3.22321, -1.58851)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803246, 0.968069, 0.251617)
+shape = SubResource("CylinderShape3D_d6ta5")
+
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
