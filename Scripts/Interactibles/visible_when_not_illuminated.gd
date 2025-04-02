@@ -103,8 +103,8 @@ func apply_material_override():
 			override_material.cull_mode = 2 # cull disabled
 			override_material.depth_draw_mode = 0 # opaque only
 			override_material.shading_mode = 1 # per pixel
-			override_material.diffuse_mode = 2 # lambert wrap
-			override_material.specular_mode = 0 # SchlickGGX
+			#override_material.diffuse_mode = 2 # lambert wrap
+			#override_material.specular_mode = 0 # SchlickGGX
 			override_material.albedo_color.a = 1.0  # Start fully opaque
 			# Apply the override material
 			mesh_instance.set_surface_override_material(i, override_material)

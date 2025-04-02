@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=88 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="Script" path="res://scenes/Level 1/level_1.gd" id="1_c4ui1"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/music_areas.gd" id="1_jq4wo"]
@@ -51,12 +51,14 @@ roughness = 0.380952
 emission_enabled = true
 emission = Color(1, 0.8, 0, 1)
 emission_energy_multiplier = 0.02
+billboard_keep_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1uwd"]
 resource_name = "Material.002"
 cull_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 roughness = 0.5
+billboard_keep_scale = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qh7cc"]
 _surfaces = [{
@@ -124,6 +126,7 @@ roughness = 0.5
 emission_enabled = true
 emission = Color(1, 0.834238, 0, 1)
 emission_energy_multiplier = 1.1
+billboard_keep_scale = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_62n1i"]
 _surfaces = [{
@@ -1184,10 +1187,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_krugd"]
 size = Vector3(1, 0.642185, 1)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_j16oa"]
-height = 4.04609
-radius = 1.93548
-
 [node name="Node3D2" type="Node3D"]
 script = ExtResource("1_c4ui1")
 
@@ -1276,7 +1275,7 @@ target_node = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 0.932323, 0.361625, 0, -0.361624, 0.932324, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Day Cycle/WorldEnvironment/Node3D"]
-transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46637e-06, 0.178172, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
+transform = Transform3D(0.297695, -0.804768, -0.51354, 0.937887, 0.346939, -4.46636e-06, 0.178171, -0.481642, 0.858062, -0.485046, 4.10208, 3.41707)
 layers = 513
 light_color = Color(0.932913, 0.42069, 3.85046e-07, 1)
 light_energy = 6.0
@@ -1366,7 +1365,6 @@ disabled = true
 
 [node name="newouthouse" parent="Day Cycle" instance=ExtResource("7_0e7rr")]
 transform = Transform3D(0.965948, 0, 0.258735, 0, 1, 0, -0.258735, 0, 0.965948, 43.8437, -47.2976, 7.19729)
-vis = true
 
 [node name="tpzone" type="Area3D" parent="Day Cycle/newouthouse"]
 collision_layer = 4
@@ -1377,7 +1375,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192337, 0.53839, -0.015985
 shape = SubResource("BoxShape3D_e0mgh")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.759398, -0.168391, -0.628293, -0.634811, 0.0187108, -0.772309, 0.141818, 0.985439, -0.0926979, 378.174, -351.789, -38.4233)
+transform = Transform3D(0.999891, -3.27792e-06, 1.70514e-13, 7.95007e-07, 0.242511, -0.970048, 3.18003e-06, 0.970043, 0.242512, 443.412, -33.7529, -75.5749)
 collision_layer = 16
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D2"]
@@ -1430,7 +1428,7 @@ shape = SubResource("BoxShape3D_sp42e")
 curve = SubResource("Curve3D_g6d37")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.759398, -0.168391, -0.628293, -0.634811, 0.0187108, -0.772309, 0.141818, 0.985439, -0.0926979, 378.174, -351.789, -38.4233)
+transform = Transform3D(0.999891, -3.27792e-06, 1.70514e-13, 7.95007e-07, 0.242511, -0.970048, 3.18003e-06, 0.970043, 0.242512, 443.412, -33.7529, -75.5749)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 remote_path = NodePath("../../../AnimatableBody3D2")
@@ -1545,16 +1543,6 @@ script = ExtResource("24_qdbth")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
-
-[node name="Area3D3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9023, 14.8423, -5.75445)
-gravity_space_override = 3
-gravity_point_center = Vector3(0, 1, 0)
-gravity_direction = Vector3(0, 1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57215, 1.46661, 1.16588)
-shape = SubResource("CylinderShape3D_j16oa")
 
 [connection signal="body_entered" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_entered"]
 [connection signal="body_entered" from="music areas/entering mine" to="music areas" method="_on_entering_mine_body_entered"]
