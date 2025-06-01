@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=89 format=4 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="Script" path="res://scenes/Level 1/level_1.gd" id="1_c4ui1"]
 [ext_resource type="Script" path="res://Scripts/Game Logic/music_areas.gd" id="1_jq4wo"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Scripts/Game Logic/wellgrav.gd" id="21_0336w"]
 [ext_resource type="Script" path="res://scenes/Level 1/physics_debug.gd" id="24_qdbth"]
 [ext_resource type="PackedScene" uid="uid://b87g6mmlgv1kd" path="res://scenes/GUI/hud.tscn" id="25_cqsl5"]
+[ext_resource type="PackedScene" uid="uid://crgm35h32v4f4" path="res://linux_coin_final_3_FINAL.tscn" id="28_6l03p"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_frcqr"]
 radius = 0.879236
@@ -1543,6 +1544,9 @@ script = ExtResource("24_qdbth")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
+
+[node name="Node3D4" parent="." instance=ExtResource("28_6l03p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.8655, 2.38419e-07, -0.708773)
 
 [connection signal="body_entered" from="music areas/exiting mine" to="music areas" method="_on_exiting_mine_body_entered"]
 [connection signal="body_entered" from="music areas/entering mine" to="music areas" method="_on_entering_mine_body_entered"]
