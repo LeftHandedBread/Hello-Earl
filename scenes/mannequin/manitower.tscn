@@ -1577,7 +1577,7 @@ height = 3.49353
 radius = 0.735335
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_d6ta5"]
-height = 4.03832
+height = 6.03717
 radius = 3.06679
 
 [node name="Node3D" type="Node3D"]
@@ -1802,7 +1802,7 @@ shape = SubResource("CylinderShape3D_ql4ep")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.923274, 3.22321, -1.58851)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803246, 0.968069, 0.251617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803246, 0.0324895, 0.251617)
 shape = SubResource("CylinderShape3D_d6ta5")
 
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
