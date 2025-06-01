@@ -2,6 +2,7 @@ extends Node3D
 
 func _ready() -> void:
 	GameManager.player.stairAssist(true)
+	
 #@export var target_fps: int = 30  # Desired FPS
 #
 #@onready var viewport := $"Day Cycle/WorldEnvironment/Node3D/DirectionalLight3D/MeshInstance3D/SubViewport" # Adjust the path
